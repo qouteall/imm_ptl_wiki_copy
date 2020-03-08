@@ -1,3 +1,5 @@
+This wiki describes Immersive Portals Mod for 1.15.
+
 # Nether Portals
 A nether portal can have a non-rectangular shape and can be horizontal.
 
@@ -34,7 +36,7 @@ Example:
 With this, you will return to the overworld when dropping into the void in end.
 This connection is one-way. If you want to make it bi-way, use
 `/portal connect_ceil minecraft:overworld minecraft:the_end`
-Then you can see end above overworld.
+Then you can see the end above overworld.
 Use `/portal connection_remove_floor <dimension>` `/portal connection_remove_ceil <dimension>` to remove a connecting portal.
 
 ### Using Vertical Connection to Break Height Limit
@@ -54,23 +56,20 @@ For example
 # Alternate Dimensions
 This mod provides 5 alternate dimensions. Their sky is similar to the overworld.
 You can use them to connect with the overworld.
-
-immersive_portals:alternate1: Mono-biome Skyland. The biome is randomly selected when the server starts.
-
-immersive_portals:alternate2: Skyland with overworld biome distribution.
-
-immersive_portals:alternate3: Stretched skyland with chaos biome distribution.
-
-immersive_portals:alternate4: Full of crazy world generation errors.
-
-immersive_portals:alternate5: Void.
+|Dimension id|Description|
+|-|-|
+|immersive_portals:alternate1| Mono-biome Skyland. The biome is randomly selected when the server starts|
+|immersive_portals:alternate2| Skyland with overworld biome distribution|
+|immersive_portals:alternate3| Stretched skyland with chaos biome distribution|
+|immersive_portals:alternate4| Full of crazy world generation errors|
+|immersive_portals:alternate5| Void|
 
 ## Details of alternate4 dimension
 Alternate4 dimension is very chaotic. For every 4x4 chunks region in this dimension, the world generation follows a randomly generated math expression. The terrain exists from y=0 to y=128.
 
 Different region types use different ways to turn math expression into terrain.
 | Region Type|Trait| Possibility Weight   |
-| ----------- | ---------- | ---------|
+| ----------- | ---------- | ---------- |
 | mountain| Stone usually fill in corners|25|
 | classicalSolid| Similar to mountain but the shape is closer to skyland|40|
 | classicalHollow| The terrain is hollow|50|
@@ -91,25 +90,47 @@ The spawner spawns randomly stacked vanilla mobs including oversized slime.
 The treasure is unique. You may get a full box of useless items. You may also get some rare things that cannot be acquired in normal survival such as a level 5 protection enchantment book.
 This is my attempt of making alternate4 an adventurous dimension.
 
-## Portal customization
+## Portal Customization
 This mod provides a new block called "Portal Helper". Use this block to create two identical frames, light it using flint and steel, then portals will be generated. You cannot generate a cross-dimension portal or a portal that links to far places. To achieve that you need to use commands to edit the portal.
 
 ### Portal Entities
-Global portals don't exist in the entity form. All other portals, including nether portals, end portals, mirrors, exist as entities in the world.
+Global portals don't exist as entities in the world, they are global. All other portals, including nether portals, end portals, mirrors, exist as entities in the world.
 
-A portal entity is one-way and one-faced. A normal nether portal consists of 2 portal entities in the overworld and 2 portal entities in the nether.
+A portal entity is one-way and one-faced. A normal nether portal consists of 2 portal entities in the overworld and 2 portal entities in the nether. The end portal is one-way and one-faced. An end portal only consists of one portal entity.
 
 ### Portal-targeted Commands
 These commands can only be invoked by a player. When invoking these commands you should point to a portal entity.
 |Command|Functionality|
+|-|-|
 |`/portal set_portal_nbt <nbt>`|Set a porta's nbt data|
 |`/portal set_portal_destination <dimenision> <x> <y> <z>`|Change a portal's destination|
 |`/portal set_portal_custom_name <name>`|Set a portal's custom name|
 |`/portal view_portal_data`|View a portal's nbt data|
 |`/portal delete_portal`|Remove a portal|
-|`/portal complete_bi_way_portal`|Create a new portal which points from destination to source|
-|`/portal complete_bi_faced_portal`|Create a new portal which is the flipped version of current portal|
-|`/portal complete_bi_way_bi_faced_portal`||
-|`/portal remove_connected_portals`||
+|`/portal complete_bi_way_portal`|Create a new portal entity to make the portal two-way|
+|`/portal complete_bi_faced_portal`|Create a new portal entity to make the portal two-faced|
+|`/portal complete_bi_way_bi_faced_portal`|Create new portal entities to make the portal two-way and two-faced|
+|`/portal remove_connected_portals`|Remove portal entities to make the portal one-way and one-faced|
+
+### Portal Nbt Tags
+Tags for `immersive_portals:portal` `immersive_portals:nether_portal_new` `immersive_portals:end_portal` `immersive_portals:mirror` `immersive_portals:breakable_mirror` `immersive_portals:global_tracked_portal` `immersive_portals:` `immersive_portals:border_portal` `immersive_portals:end_floor_portal`
+|Tag|Description|
+|-|-|
+|width,height|The portal area length along axisW and axisH|
+|axisWX,axisWY,axisWZ,axisHX,axisHY,axisHZ|axisW and axisH an unit vectors which define the facing of the portal|
+|dimensionTo|Raw id of the destination dimension(0 for overworld, -1 for nether, 1 for end)|
+|destinationX,destinationY,destinationZ|Portal destination|
+|specialShape|Optional. Every 2 numbers represent a 2d point(x axis is axisW and y axis is AxisH). Every 3 points represent a triangle|
+|teleportable|If set to false then you cannot teleport through but can still see through|
+|cullableXStart,cullableXEnd,cullableYStart,cullableYEnd|For frustum culling|
+|loadFewerChunks|(deprecated)|
+|||
+|||
+|||
+|||
+
+
+
+
 
 
