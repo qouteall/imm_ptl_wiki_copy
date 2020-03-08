@@ -1,1 +1,2 @@
-Welcome to the ImmersivePortalsMod wiki!
+
+This wiki describes Immersive Portals Mod for 1.15.
