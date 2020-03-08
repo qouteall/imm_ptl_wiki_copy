@@ -115,7 +115,7 @@ These commands can only be invoked by a player. When invoking these commands you
 ### Portal Nbt Tags
 Tags for `immersive_portals:portal` `immersive_portals:nether_portal_new` `immersive_portals:end_portal` `immersive_portals:mirror` `immersive_portals:breakable_mirror` `immersive_portals:global_tracked_portal` `immersive_portals:` `immersive_portals:border_portal` `immersive_portals:end_floor_portal`
 |Tag|Description|
-|-|-|
+|-|---|
 |width,height|The portal area length along axisW and axisH|
 |axisWX,axisWY,axisWZ,axisHX,axisHY,axisHZ|axisW and axisH an unit vectors which define the facing of the portal|
 |dimensionTo|Raw id of the destination dimension(0 for overworld, -1 for nether, 1 for end)|
