@@ -8,3 +8,5 @@ This wiki describes Immersive Portals Mod for 1.15.
 [Alternate Dimensions](https://github.com/qouteall/ImmersivePortalsMod/wiki/Alternate-Dimensions)
 
 [Miscellaneous](https://github.com/qouteall/ImmersivePortalsMod/wiki/Miscellaneous)
+
+[Implementation Details](https://github.com/qouteall/ImmersivePortalsMod/wiki/Implementation-Details)
