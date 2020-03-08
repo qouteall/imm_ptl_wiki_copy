@@ -91,4 +91,25 @@ The spawner spawns randomly stacked vanilla mobs including oversized slime.
 The treasure is unique. You may get a full box of useless items. You may also get some rare things that cannot be acquired in normal survival such as a level 5 protection enchantment book.
 This is my attempt of making alternate4 an adventurous dimension.
 
-## Portal Editing
+## Portal customization
+This mod provides a new block called "Portal Helper". Use this block to create two identical frames, light it using flint and steel, then portals will be generated. You cannot generate a cross-dimension portal or a portal that links to far places. To achieve that you need to use commands to edit the portal.
+
+### Portal Entities
+Global portals don't exist in the entity form. All other portals, including nether portals, end portals, mirrors, exist as entities in the world.
+
+A portal entity is one-way and one-faced. A normal nether portal consists of 2 portal entities in the overworld and 2 portal entities in the nether.
+
+### Portal-targeted Commands
+These commands can only be invoked by a player. When invoking these commands you should point to a portal entity.
+|Command|Functionality|
+|`/portal set_portal_nbt <nbt>`|Set a porta's nbt data|
+|`/portal set_portal_destination <dimenision> <x> <y> <z>`|Change a portal's destination|
+|`/portal set_portal_custom_name <name>`|Set a portal's custom name|
+|`/portal view_portal_data`|View a portal's nbt data|
+|`/portal delete_portal`|Remove a portal|
+|`/portal complete_bi_way_portal`|Create a new portal which points from destination to source|
+|`/portal complete_bi_faced_portal`|Create a new portal which is the flipped version of current portal|
+|`/portal complete_bi_way_bi_faced_portal`||
+|`/portal remove_connected_portals`||
+
+
