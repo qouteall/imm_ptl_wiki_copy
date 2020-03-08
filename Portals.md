@@ -27,6 +27,10 @@ Use command `/portal border_remove` to remove the world wrapping portal.
 
 The world wrapping portal works normally in very large areas.
 
+After setting up the border portals, some artifacts may manifest.
+Use command `/portal fill_border_with_barrier` to fill outer border layer with barrier blocks. Then the artifacts will vanish.
+(NOTE This operation cannot be undone. You should backup the world before trying this.)
+
 ## Vertical Dimension Connecting Portal
 The vertical dimension connecting portals connects two dimensions vertically.
 
