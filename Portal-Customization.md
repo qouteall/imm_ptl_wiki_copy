@@ -1,4 +1,4 @@
-This mod provides a new block called "Portal Helper". Use this block to create two identical frames, light it using flint and steel, then portals will be generated. You cannot generate a cross-dimension portal or a portal that links to far places. To achieve that you need to use commands to edit the portal.
+This mod provides a new block called "Portal Helper". Use this block to create two identical frames, light it using flint and steel, a two-way portal (4 portal entities) will be generated. You cannot generate a cross-dimension portal or a portal that links to far places. To achieve that you need to use commands to edit the portal.
 
 ### Portal Entities
 Global portals don't exist as entities in the world, they are global. All other portals, including nether portals, end portals, mirrors, exist as entities in the world.
@@ -45,7 +45,7 @@ Tags for `immersive_portals:breakable_mirror`
 |boxXL,boxYL,boxZL,<br>boxXH,boxYH,boxZH|Glass wall area|
 
 ### Examples
-Make a nether portal unbreakable `/portal set_portal_nbt {unbreakable:1b}`
+Make a nether portal entity unbreakable: `/portal set_portal_nbt {unbreakable:1b}`
 
 Change the portal's destination: `/portal set_portal_destination minecraft:the_end 0 70 0`
 
