@@ -1,4 +1,4 @@
-This mod provides a new block called "Portal Helper". Use this block to create two identical frames, light it using flint and steel, a two-way portal (4 portal entities) will be generated. You cannot generate a cross-dimension portal or a portal that links to far places. To achieve that you need to use commands to edit the portal.
+This mod provides a new block called "Portal Helper". Use this block to create two identical frames, light it using flint and steel, a two-way portal (4 portal entities) will be generated. You cannot generate a cross-dimension portal or a portal that links to far places using portal helper. To achieve that you need to use commands to edit the portal.
 
 ### Portal Entities
 Global portals don't exist as entities in the world, they are global. All other portals, including nether portals, end portals, mirrors, exist as entities in the world.
@@ -18,6 +18,7 @@ These commands can only be invoked by a player. When invoking these commands you
 |`/portal complete_bi_faced_portal`|Create a new portal entity to make the portal two-faced|
 |`/portal complete_bi_way_bi_faced_portal`|Create new portal entities to make the portal two-way and two-faced|
 |`/portal remove_connected_portals`|Remove portal entities to make the portal one-way and one-faced|
+Portal-targeted commands don't work with global portals.
 
 ### Portal Nbt Tags
 Tags for `immersive_portals:portal` `immersive_portals:nether_portal_new` `immersive_portals:end_portal` `immersive_portals:mirror` `immersive_portals:breakable_mirror` `immersive_portals:global_tracked_portal`  `immersive_portals:border_portal` `immersive_portals:end_floor_portal`
