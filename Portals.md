@@ -4,7 +4,7 @@ A nether portal can have a non-rectangular shape and can be horizontal.
 
 The max portal area is 400.
 
-When you use flint and steel to light an obsidian frame, it will load chunks on the other side and then search for an existing obsidian frame with identical shape. The searching range can be configured.
+When you use flint and steel to light an obsidian frame, it will load chunks on the other side and then search for an existing obsidian frame with identical shape. If it finds one, it will link with that existing obsidian frame. Otherwise, a new obsidian frame will be generated. The searching range can be configured.
 
 If the obsidian frame is broken, then the nether portal will break.
 
@@ -28,7 +28,7 @@ Use command `/portal border_remove` to remove the world wrapping portal.
 The world wrapping portal works normally in very large areas.
 
 After setting up the border portals, some artifacts may manifest.
-Use command `/portal fill_border_with_barrier` to fill outer border layer with barrier blocks. Then the artifacts will vanish.
+Use command `/portal fill_border_with_barrier` to fill the outer border layer with barrier blocks. Then the artifacts will vanish.
 (NOTE This operation cannot be undone. You should backup the world before trying this.)
 
 ## Vertical Dimension Connecting Portal
@@ -56,6 +56,9 @@ For example
 
 `/portal connect_ceil immersive_portals:alternate4 immersive_portals:alternate4`
 
+# The Portal that Changes Direction
+
+Currently, this mod does not support the portal that changes the player's direction after going through. But I am considering adding this feature.
 
 
 
