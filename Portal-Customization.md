@@ -18,6 +18,7 @@ These commands can only be invoked by a player. When invoking these commands you
 |`/portal complete_bi_faced_portal`|Create a new portal entity to make the portal two-faced|
 |`/portal complete_bi_way_bi_faced_portal`|Create new portal entities to make the portal two-way and two-faced|
 |`/portal remove_connected_portals`|Remove portal entities to make the portal one-way and one-faced|
+
 Portal-targeted commands don't work with global portals.
 
 ### Portal Nbt Tags
