@@ -1,5 +1,5 @@
 
-# Nether Portals
+## Nether Portals
 A nether portal can have a non-rectangular shape and can be horizontal.
 
 The max portal area is 400.
@@ -8,16 +8,16 @@ When you use flint and steel to light an obsidian frame, it will load chunks on 
 
 If the obsidian frame is broken, then the nether portal will break.
 
-# End Portals
+## End Portals
 All end portals will point to (0 120 0) in the end dimension. When a player jumps into an end portal, the player will get slow falling effect for 6 seconds except when wearing elytra.
 
-# Mirrors
+## Mirrors
 Use flint and steel to right-click on a glass wall creates a mirror. Currently, mirrors can only be in a rectangular shape. Mirrors can be horizontal. Mirror breaks when the glass wall is broken.
 
-# Global Portals
+## Global Portals
 Global portals cannot be created in normal survival. They can only be created or removed by commands.
 
-## World Wrapping Portal
+### World Wrapping Portal
 
 The world wrapping portal wraps finite space and "repeat" it "infinitely". When you go to the right side then you appear on the left side. It is an invisible boundary.
 
@@ -31,7 +31,7 @@ After setting up the border portals, some artifacts may manifest.
 Use command `/portal fill_border_with_barrier` to fill the outer border layer with barrier blocks. Then the artifacts will vanish.
 (NOTE This operation cannot be undone. You should backup the world before trying this.)
 
-## Vertical Dimension Connecting Portal
+### Vertical Dimension Connecting Portal
 The vertical dimension connecting portals connects two dimensions vertically.
 
 Example:
@@ -42,21 +42,22 @@ This connection is one-way. If you want to make it bi-way, use
 Then you can see the end above overworld.
 Use `/portal connection_remove_floor <dimension>` `/portal connection_remove_ceil <dimension>` to remove a connecting portal.
 
-### Using Vertical Connection to Break Height Limit
+#### Using Vertical Connection to Break Height Limit
 By connecting a dimension above the overworld, you increase the overworld's height limit from 256 to 512.
 
 The connection portal does not really connect them. It's just an illusion. 
 Cross-portal collision is not perfect but it works in simple cases.
 Cross-portal entity rendering has problems.
 Redstone or fluid cannot work across the portal.
+Entity AI does not work cross-portal.
 
-### Vertical World Wrapping
+#### Vertical World Wrapping
 For example
 `/portal connect_floor immersive_portals:alternate4 immersive_portals:alternate4`
 
 `/portal connect_ceil immersive_portals:alternate4 immersive_portals:alternate4`
 
-# The Portal that Changes Direction
+## The Portal that Changes Direction
 
 Currently, this mod does not support the portal that changes the player's direction after going through. But I am considering adding this feature.
 
