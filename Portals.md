@@ -57,9 +57,4 @@ For example
 
 `/portal connect_ceil immersive_portals:alternate4 immersive_portals:alternate4`
 
-## The Portal that Changes Direction
-
-Currently, this mod does not support the portal that changes the player's direction after going through. But I am considering adding this feature.
-
-
 
