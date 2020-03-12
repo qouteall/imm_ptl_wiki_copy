@@ -1,5 +1,5 @@
 
-This wiki describes Immersive Portals Mod for 1.15.
+This wiki describes Immersive Portals Mod for Fabric 1.15 (The Forge version is mostly the same as the Fabric version).
 
 [Portals](https://github.com/qouteall/ImmersivePortalsMod/wiki/Portals)
 
