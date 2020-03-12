@@ -1,4 +1,4 @@
-This mod provides a new block called "Portal Helper". Use this block to create two identical frames, light it using flint and steel, a two-way portal (4 portal entities) will be generated. You cannot generate a cross-dimension portal or a portal that links to far places using portal helper. To achieve that you need to use commands to edit the portal.
+This mod provides a new block called "Portal Helper". Use this block to create two identical frames, light it using flint and steel, a two-way portal (4 portal entities) will be generated. You cannot generate a cross-dimension portal or a portal that links to far places using the portal helper. To achieve that you need to use commands to edit the portal.
 
 ### Portal Entities
 Global portals don't exist as entities in the world, they are global. All other portals, including nether portals, end portals, mirrors, exist as entities in the world.
@@ -18,6 +18,8 @@ These commands can only be invoked by a player. When invoking these commands you
 |`/portal complete_bi_faced_portal`|Create a new portal entity to make the portal two-faced|
 |`/portal complete_bi_way_bi_faced_portal`|Create new portal entities to make the portal two-way and two-faced|
 |`/portal remove_connected_portals`|Remove portal entities to make the portal one-way and one-faced|
+|`/portal set_portal_rotation <axisX> <axisY> <axisZ> <angleDegrees>`|Set the portal's rotating transformation.<br>The rotation transformation is defined by a rotating axis vector and the angle in degrees.<br>When the axis is pointing on you positive angle corresponds rotating counterclockwise|
+|`/portal rotate_portal_body <axisX> <axisY> <axisZ> <angleDegrees>`|Rotate the portal.<br>This command does not change the portal's rotating transformation|
 
 Portal-targeted commands don't work with global portals.
 
@@ -33,6 +35,8 @@ Tags for `immersive_portals:portal` `immersive_portals:nether_portal_new` `immer
 |teleportable|If set to false then you cannot teleport through but can still see through|
 |cullableXStart,cullableXEnd,<br>cullableYStart,cullableYEnd|For frustum culling|
 |loadFewerChunks|(deprecated)|
+|rotationA,rotationB,<br>rotationC,rotationD|A quaternion that defines the portal's rotating transformation. Optional|
+|motionAffinity|If it's positive, then players colliding with portal will be accelerated in the portal's facing direction. If it's negative, the player will be decellerated when moving fast|
 
 Tags for `immersive_portals:nether_portal_new`
 |Tag|Description|
