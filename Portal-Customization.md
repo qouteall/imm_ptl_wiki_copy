@@ -73,7 +73,7 @@ Tags for `immersive_portals:breakable_mirror`
 
 ### Other Things
 
-'/portal set_portal_destination' command cannot be invoked by command blocks. If you want to change a portal's destination using command blocks, you can create some portals with different destinations and use a command block to teleport these portals.
+`/portal set_portal_destination` command cannot be invoked by command blocks. If you want to change a portal's destination using command blocks, you can create some portals with different destinations and use a command block to teleport these portals.
 
 After editing the portal shape you should also change width,height,cullableXStart,cullableXEnd,cullableYStart,cullableYEnd.
 If you don't change these accordingly some sections may not be rendered due to advanced frustum culling.
