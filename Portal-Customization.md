@@ -1,5 +1,26 @@
 This mod provides a new block called "Portal Helper". Use this block to create two identical frames, light it using flint and steel, a two-way portal (4 portal entities) will be generated. You cannot generate a cross-dimension portal or a portal that links to far places using the portal helper. To achieve that you need to use commands to edit the portal.
 
+### Simple Examples
+Make a nether portal entity unbreakable: `/portal set_portal_nbt {unbreakable:1b}`
+
+Change the portal's destination: `/portal set_portal_destination minecraft:the_end 0 70 0`
+
+Make the portal not able to teleport. Turn it into a video surveillance: `/portal set_portal_nbt {teleportable:0b}`
+
+Change the shape of the portal: `/portal set_portal_nbt {specialShape:[0d,0d,0d,1d,1d,0d]}`
+
+Move a portal: `/portal set_portal_custom_name "whatever"` `/tp @e[name="whatever"] @p`
+
+Delete a portal: `/portal delete_portal`
+
+Turn a one-way portal to two-way portal: `/portal complete_bi_way_portal`
+
+Turn a one-way portal to two-way two-faced portal: `/portal complete_bi_way_bi_faced_portal`
+
+Make two-way or two-faced portal become one-way and one-faced: `/portal remove_connected_portals`
+
+Make a portal have a rotation transformation: `/portal set_portal_rotation 0 1 0 45`
+
 ### Portal Entities
 Global portals don't exist as entities in the world, they are global. All other portals, including nether portals, end portals, mirrors, exist as entities in the world.
 
@@ -50,26 +71,9 @@ Tags for `immersive_portals:breakable_mirror`
 |-|-|
 |boxXL,boxYL,boxZL,<br>boxXH,boxYH,boxZH|Glass wall area|
 
-### Examples
-Make a nether portal entity unbreakable: `/portal set_portal_nbt {unbreakable:1b}`
+### Other Things
 
-Change the portal's destination: `/portal set_portal_destination minecraft:the_end 0 70 0`
+'/portal set_portal_destination' command cannot be invoked by command blocks. If you want to change a portal's destination using command blocks, you can create some portals with different destinations and use a command block to teleport these portals.
 
-(NOTE This command cannot be invoked by command blocks. If you want to change a portal's destination using command blocks, you can create some portals with different destinations and use command block to teleport these portals)
-
-Make the portal not able to teleport. Turn it into a video surveillance: `/portal set_portal_nbt {teleportable:0b}`
-
-Change the shape of the portal: `/portal set_portal_nbt {specialShape:[0d,0d,0d,1d,1d,0d]}`
-
-(NOTE After changing shape you should also change width,height,cullableXStart,cullableXEnd,cullableYStart,cullableYEnd.
-If you don't change these accordingly some sections may not be rendered due to advanced frustum culling)
-
-Move a portal: `/portal set_portal_custom_name "whatever"` `/tp @e[name="whatever"] @p`
-
-Delete a portal: `/portal delete_portal`
-
-Turn a one-way portal to two-way portal: `/portal complete_bi_way_portal`
-
-Turn a one-way portal to two-way two-faced portal: `/portal complete_bi_way_bi_faced_portal`
-
-Make two-way or two-faced portal become one-way and one-faced: `/portal remove_connected_portals`
+After editing the portal shape you should also change width,height,cullableXStart,cullableXEnd,cullableYStart,cullableYEnd.
+If you don't change these accordingly some sections may not be rendered due to advanced frustum culling.
