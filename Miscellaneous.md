@@ -1,8 +1,11 @@
-## `/portal tpme` Command
+### `/portal tpme` Command
 `/portal tpme <dimension> <x> <y> <z>`
 Use this command to teleport yourself across dimensions without loading screen. Can only be invoked by player.
 
-## Hand Reach Tweak
+### `/portal goback` Command
+Sometimes you went into a one-way portal and want to come back, but you forgot the coordinate where you come in. Use this command to come back.
+
+### Hand Reach Tweak
 Creative players can break and place blocks in a longer range.
 This can be disabled in the config.
 
