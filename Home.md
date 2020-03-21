@@ -7,7 +7,7 @@ This wiki describes Immersive Portals Mod for 1.15.
 
 [Alternate Dimensions](https://github.com/qouteall/ImmersivePortalsMod/wiki/Alternate-Dimensions)
 
-[Altius World Type](https://github.com/qouteall/ImmersivePortalsMod/wiki/Altius-World-Type)
+[Dimension Stack](https://github.com/qouteall/ImmersivePortalsMod/wiki/Dimension-Stack)
 
 [Miscellaneous](https://github.com/qouteall/ImmersivePortalsMod/wiki/Miscellaneous)
 
