@@ -6,8 +6,9 @@ Use this command to teleport yourself across dimensions without loading screen. 
 Sometimes you went into a one-way portal and want to come back, but you forgot the coordinate where you come in. Use this command to come back.
 
 ### Hand Reach Tweak
-Creative players can break and place blocks in a longer range.
-This can be disabled in the config.
+Creative players can break and place blocks in a longer range. This aims to make building easier.
+
+It can be disabled in the config.
 
 This mod adds a status effect `immersive_portals:longer_reach`.
 You can use `/effect give @p immersive_portals:longer_reach` to increase a player's hand reach.
