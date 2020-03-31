@@ -13,7 +13,7 @@ Turning down the max portal layer can save your FPS.
 
 ![](https://i.ibb.co/MCLrYZt/Untitled4.png)
 
-### Active Load Remote Chunks
+### Actively Load Remote Chunks
 The chunks near the player are directly loaded.
 The chunks that are only visible through the portal are remote chunks.
 If this is turned off, remote chunks will not be ticked.
@@ -24,7 +24,7 @@ This can reduce server lag.
 Load fewer chunks from portals. Reduce server lag.
 
 ### Render Dimension Redirect
-This option make it possible to render a dimension using the shader of another dimension.
+This option makes it possible to render a dimension using the shader of another dimension.
 For example, render end using overworld shader `minecraft:the_end->minecraft:overworld`
 ![](https://i.ibb.co/c1fWpHx/2020-03-31-15-09-16.png)
 
@@ -32,3 +32,5 @@ Sometimes shader rendering is broken in mod dimensions. Use this option to redir
 
 If the nether in shaders is too red and too dark, but you want to use shaders for overworld, you can redirect nether rendering to vanilla `minecraft:the_nether->vanilla`
 ![](https://i.ibb.co/4tFy6w8/2020-03-31-15-07-25.png)
+
+If this option is changed in-game, to apply the changes you need to log out and turn off shader and turn on again.
