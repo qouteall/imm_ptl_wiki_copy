@@ -41,6 +41,7 @@ These commands can only be invoked by a player. When invoking these commands you
 |`/portal remove_connected_portals`|Remove portal entities to make the portal one-way and one-faced|
 |`/portal set_portal_rotation <axisX> <axisY> <axisZ> <angleDegrees>`|Set the portal's rotating transformation.<br>The rotation transformation is defined by a rotating axis vector and the angle in degrees.<br>When the axis is pointing on you positive angle corresponds rotating counterclockwise|
 |`/portal rotate_portal_body <axisX> <axisY> <axisZ> <angleDegrees>`|Rotate the portal.<br>This command does not change the portal's rotating transformation|
+|`/portal move_portal_half_block`|Move the portal half block in the direcction that you are looking at.|
 
 Portal-targeted commands don't work with global portals.
 
