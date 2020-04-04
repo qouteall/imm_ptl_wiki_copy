@@ -15,4 +15,6 @@ This wiki describes Immersive Portals Mod for 1.15.
 
 [Implementation Details](https://github.com/qouteall/ImmersivePortalsMod/wiki/Implementation-Details)
 
+[API for Other Mods](https://github.com/qouteall/ImmersivePortalsMod/wiki/API-for-Other-Mods)
+
 Discord server: https://discord.gg/BZxgURK
