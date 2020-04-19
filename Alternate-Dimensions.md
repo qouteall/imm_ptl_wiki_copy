@@ -8,6 +8,9 @@ You can use them to connect with the overworld.
 |immersive_portals:alternate4| Full of crazy world generation errors|
 |immersive_portals:alternate5| Void|
 
+You can use a bed to record spawn point in alternate dimensions.
+(Sleeping in nether biome can still lead to an explosion.)
+
 ## Details of alternate4 dimension
 Alternate4 dimension is very chaotic. For every 4x4 chunks region in this dimension, the world generation follows a randomly generated math expression. The terrain exists from y=0 to y=128.
 
