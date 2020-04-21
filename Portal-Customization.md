@@ -83,8 +83,11 @@ If you don't change these accordingly some sections may not be rendered due to a
 ### Commands for Command Blocks
 `/portal cb_set_portal_destination` `/portal cb_complete_bi_way_portal` `/portal cb_complete_bi_faced_portal` `/portal cb_complete_bi_way_bi_faced_portal` `/portal cb_remove_connected_portals` `/portal cb_set_portal_specific_accessor`
 
+Using command blocks (or a datapack) to make a mobile tardis is possible.
+
 ### Creating the Portal that Points to Different Destinations for Different Players
 By using `/portal set_portal_specific_accessor` command you can make a portal only accessible for one player. By putting two different portal entities that are specific for two different players into the same place, you can create a portal that points to different destinations for different players.
 
 But if two portals overlap then the portal targeted commands cannot select the portal entity accurately. You can manage that using `/portal multidest` command. Managing it using command blocks is also possible.
 
+(Portal targeted commands can still be used on the portal that's invisible to you)
