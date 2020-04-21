@@ -41,7 +41,11 @@ These commands can only be invoked by a player. When invoking these commands you
 |`/portal remove_connected_portals`|Remove portal entities to make the portal one-way and one-faced|
 |`/portal set_portal_rotation <axisX> <axisY> <axisZ> <angleDegrees>`|Set the portal's rotating transformation.<br>The rotation transformation is defined by a rotating axis vector and the angle in degrees.<br>When the axis is pointing on you positive angle corresponds rotating counterclockwise|
 |`/portal rotate_portal_body <axisX> <axisY> <axisZ> <angleDegrees>`|Rotate the portal.<br>This command does not change the portal's rotating transformation|
-|`/portal move_portal_half_block`|Move the portal half block in the direcction that you are looking at.|
+|`/portal move_portal <distance>`|Move the portal in the direcction that you are looking at|
+|`/portal set_portal_specific_accessor <player>`|Make the portal entity only accessible by one player|
+|`/portal set_portal_specific_accessor `|Make the portal entity accessible to all players|
+|`/portal multidest <player> <dimension> <x> <y> <z> <isBiFaced> <isBiWay>`|Set the portal destination for only one player (see below)|
+|`/portal multidest <player>`|Remove the player-specific portal from the portal clutter (see below)|
 
 Portal-targeted commands don't work with global portals.
 
@@ -59,6 +63,7 @@ Tags for `immersive_portals:portal` `immersive_portals:nether_portal_new` `immer
 |loadFewerChunks|(deprecated)|
 |rotationA,rotationB,<br>rotationC,rotationD|A quaternion that defines the portal's rotating transformation. Optional|
 |motionAffinity|If it's positive, then players colliding with portal will be accelerated in the portal's facing direction. If it's negative, the player will be decellerated when moving fast|
+|specificPlayerId|The UUID of the specific player that can access this portal. Optional|
 
 Tags for `immersive_portals:nether_portal_new`
 |Tag|Description|
@@ -76,4 +81,10 @@ After editing the portal shape you should also change width,height,cullableXStar
 If you don't change these accordingly some sections may not be rendered due to advanced frustum culling.
 
 ### Commands for Command Blocks
-`/portal cb_set_portal_destination` can be used by command blocks.
+`/portal cb_set_portal_destination` `/portal cb_complete_bi_way_portal` `/portal cb_complete_bi_faced_portal` `/portal cb_complete_bi_way_bi_faced_portal` `/portal cb_remove_connected_portals` `/portal cb_set_portal_specific_accessor`
+
+### Creating the Portal that Points to Different Destinations for Different Players
+By using `/portal set_portal_specific_accessor` command you can make a portal only accessible for one player. By putting two different portal entities that are specific for two different players into the same place, you can create a portal that points to different destinations for different players.
+
+But if two portals overlap then the portal targeted commands cannot select the portal entity accurately. You can manage that using `/portal multidest` command. Managing it using command blocks is also possible.
+
