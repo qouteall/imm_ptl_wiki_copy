@@ -47,7 +47,7 @@ These commands can only be invoked by a player. When invoking these commands you
 |`/portal multidest <player> <dimension> <x> <y> <z> <isBiFaced> <isBiWay>`|Set the portal destination for only one player (see below)|
 |`/portal multidest <player>`|Remove the player-specific portal from the portal clutter (see below)|
 
-NOTE: Before using command `/portal set_portal_rotation`, `/portal move_portal` or `/portal set_portal_rotation` you should use '/portal remove_connected_portals' first or there will be unwanted portals remain.
+NOTE: Before using command `/portal set_portal_rotation`, `/portal move_portal` or `/portal set_portal_rotation` you should use `/portal remove_connected_portals` first or there will be unwanted portals remain.
 
 Portal-targeted commands don't work with global portals.
 
