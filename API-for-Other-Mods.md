@@ -1,4 +1,6 @@
 
+Use CurseMaven for dependency https://github.com/Wyn-Price/CurseMaven
+
 ### Creating a Portal Entity
 
 Check [this](https://github.com/qouteall/ImmersivePortalsMod/wiki/Portal-Customization) to have an idea about how this mod's portal is stored and organized.
