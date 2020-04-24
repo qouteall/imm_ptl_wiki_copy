@@ -1,6 +1,3 @@
-### How to Setup Dev Environment (Fabric)
-Using `modCompile` to add this mod as a dependency will mess up with OptiFine.
-You can [download](https://github.com/qouteall/ImmersivePortalsMod/releases) the mod dev jar, put it into run/mods folder and use `compileOnly` in build.gradle.
 
 ### Creating a Portal Entity
 
