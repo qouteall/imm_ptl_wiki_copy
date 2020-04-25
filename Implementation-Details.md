@@ -60,7 +60,13 @@ But oblique projection won't work when the angle between culling plane normal wi
 
 (Rendering portals and mirrors with ray tracing is much simpler than in rasterization.)
 
-# Breaking hacks
+## Mirror Rendering
+After applying one mirror transformation, all counter-clockwise triangles will become clockwise. So the face culling should be inverted. Applying two mirror transformations cancels that. The face culling will be inverted when rendering odd number layers of mirrors.
+
+## Cross Portal Entity Rendering
+If an entity is intersecting with portal, to render this entity correctly, it will render the entity twice. The entity will be rendered both outside of portal and inside portal with plane culling. Minecraft uses deferred entity rendering which firstly collects all triangles and then render all of them. This cannot handle the entity rendering that has a special culling plane. So it will firstly render all collected triangles and then use a separate draw call to render the culled entity.
+
+# Breaking Hack
 Vanilla assumes that only the chunks near player will be loaded so ClientChunkManager
 use a fixed size 2d array to store chunks.
 I change it into a map so the chunk storage is not limited to the area near player.
@@ -71,7 +77,7 @@ This mod will create faked client world when it's firstly used.
 When ticking remote world or processing remote world packet, it will switch the world field of
 MinecraftClient and then switch back.
 
-# Chunk loading
+# Chunk Loading
 
 In server side, it will send redirected packet to players to synchronize world information.
 If the packet is not redirected, a chunk data packet of nether may be recognized as overworld chunk data in client.
