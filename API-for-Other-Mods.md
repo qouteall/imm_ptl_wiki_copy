@@ -12,9 +12,17 @@ If you created one portal entity, you can add a new portal to complete the bi-wa
 
 You can also create breakable portals using [BlockPortalShape](https://github.com/qouteall/ImmersivePortalsMod/blob/1.15/src/main/java/com/qouteall/immersive_portals/portal/nether_portal/BlockPortalShape.java) by `NetherPortalGeneration#generateBreakablePortalEntities`. It's needed to create a new subclass of BreakablePortalEntity. Check [NetherPortalEntity](https://github.com/qouteall/ImmersivePortalsMod/blob/1.15/src/main/java/com/qouteall/immersive_portals/portal/nether_portal/NetherPortalEntity.java). Breakable portal has placeholder blocks to fill the portal area. If the placeholder block updates, nearby breakable portals will be notified to check portal integrity.
 
-## Using CurseMaven for dependency
+## Add Dependency
+```
+repositories{
+	maven { url 'https://jitpack.io' }
+}
+dependencies {
+	modImplementation 'com.github.qouteall:ImmersivePortalsMod:0.28-1.15-1'
+}
+```
 
-(This method is not compatible with gradle 6 https://github.com/Wyn-Price/CurseMaven/issues/10 You need to downgrade gradle to 5.6.3 by editing gradle/wrapper/gradle-wrapper.properties)
+## [Deprecated] ~~Using CurseMaven for Dependency~~
 
 Use [CurseMaven](https://github.com/Wyn-Price/CurseMaven) to automatically get the mod from [CurseForge](https://www.curseforge.com/minecraft/mc-mods/immersive-portals-mod).
 
