@@ -42,7 +42,7 @@ Use [CurseMaven](https://github.com/Wyn-Price/CurseMaven) to automatically get t
 
 ### Using Gradle 6
 
-If you, for whatever reason, decided to upgrade your Gradle version from 5 to 6, CurseMaven may not work. In that case you should use Jitpack. Add this to your repositories block:
+If you, for whatever reason, decided to upgrade your Gradle version from 5 to 6, CurseMaven may not work. In that case you can use Jitpack. Add this to your repositories block:
 
 ```
 	maven { url 'https://jitpack.io' }
