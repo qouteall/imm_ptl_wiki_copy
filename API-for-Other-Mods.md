@@ -14,6 +14,8 @@ You can also create breakable portals using [BlockPortalShape](https://github.co
 
 ### How to depend on Immersive Portals
 
+**Note for Gradle 6 users: CurseMaven doesn't support Gradle 6, but you can still build your mod against Immersive Portals. Check out "Using Gradle 6" below for an alternative solution.**
+
 Use [CurseMaven](https://github.com/Wyn-Price/CurseMaven) to automatically get the mod from [CurseForge](https://www.curseforge.com/minecraft/mc-mods/immersive-portals-mod).
 
 1. In your `plugins` block at the top of build.gradle add this at the end:
