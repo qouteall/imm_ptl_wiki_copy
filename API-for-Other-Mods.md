@@ -2,6 +2,8 @@
 
 Check [this](https://github.com/qouteall/ImmersivePortalsMod/wiki/Portal-Customization) to have an idea about how this mod's portal is stored and organized.
 
+Every portal entity is one-way and one-faced. A two-way portal contains 2 portal entities. A two-way two-faced portal contains 4 portal entities.
+
 You can create a [Portal](https://github.com/qouteall/ImmersivePortalsMod/blob/1.15/src/main/java/com/qouteall/immersive_portals/portal/Portal.java)
 entity, initialize its data and then add it into the world.
 `axisW` and `axisH` should be perpendicular. These two vectors defines the facing of the portal.
