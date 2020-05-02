@@ -57,4 +57,4 @@ Then you can depend on the mod like so:
 ```
 	modImplementation 'com.github.qouteall:ImmersivePortalsMod:0.28-1.15-1'
 ```
-Check https://jitpack.io/#qouteall/ImmersivePortalsMod/0.28-1.15-2
+Check https://jitpack.io/#qouteall/ImmersivePortalsMod
