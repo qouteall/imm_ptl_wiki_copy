@@ -1,6 +1,8 @@
 This mod provides a new block called "Portal Helper". Use this block to create two identical frames, light it using flint and steel, a two-way portal (4 portal entities) will be generated. You cannot generate a cross-dimension portal or a portal that links to far places using the portal helper. To achieve that you need to use commands to edit the portal.
 
 ### Simple Examples
+Make a new (square) portal without having to build a frame: `/portal make_portal 1 1 minecraft:overworld shift 5`
+
 Make a nether portal entity unbreakable: `/portal set_portal_nbt {unbreakable:1b}`
 
 Change the portal's destination: `/portal set_portal_destination minecraft:the_end 0 70 0`
@@ -25,6 +27,24 @@ Make a portal have a rotation transformation: `/portal set_portal_rotation 0 1 0
 Global portals don't exist as entities in the world, they are global. All other portals, including nether portals, end portals, mirrors, exist as entities in the world.
 
 A portal entity is one-way and one-faced. A normal nether portal consists of 2 portal entities in the overworld and 2 portal entities in the nether. The end portal is one-way and one-faced. An end portal only consists of one portal entity.
+
+### Making a portal entity
+
+You can use the Portal Helper block in 1.15.2+, or the make_portal command.
+
+To use the Portal Helper, make a frame like you would with obsidian and light it with flint and steel. It will try to find an identical frame nearby in the same dimension, and if not generate a new one.
+
+You can also aim at a block and use `/portal make_portal <width> <height> <dim> <toX> <toY> <toZ>` or `/portal make_portal <width> <height> <dim> shift <dist>`.
+
+The first one creates a new portal coming off of the side of the block you're pointing at. The specified height is always pointing away from the surface and the width is always the other way, and the portal will point towards you. The dim and x,y,z arguments act just like set_portal_destination.
+
+The second one does the same with creation but sets the destination (in the specified dimension) to be <dist> blocks in front of the portal. This is useful if you don't have coordinates in mind immediately. And once you're able to shift around the portal destination, it could be a useful visual tool.
+
+Again the two variants are:
+- `/portal make_portal <width> <height> <dim> <toX> <toY> <toZ>`
+- `/portal make_portal <width> <height> <dim> shift <dist>`
+
+shift is the literal text "shift".
 
 ### Portal-targeted Commands
 These commands can only be invoked by a player. When invoking these commands you should point to a portal entity.
