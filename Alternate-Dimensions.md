@@ -14,6 +14,10 @@ You can use a bed to record spawn point in alternate dimensions.
 ## Details of alternate4 dimension
 Alternate4 dimension is very chaotic. For every 4x4 chunks region in this dimension, the world generation follows a randomly generated math expression. The terrain exists from y=0 to y=128.
 
+![](https://i.ibb.co/LzGZMqJ/2020-05-06-22-08-07.png)
+![](https://i.ibb.co/sP8rJT7/2020-05-06-22-06-22.png)
+![](https://i.ibb.co/Z8rmJjj/2020-05-06-22-10-02.png)
+
 Different region types use different ways to turn math expression into terrain.
 | Region Type|Trait| Possibility Weight   |
 | ----------- | ---------- | ---------- |
@@ -30,9 +34,13 @@ The biome distribution of alternate4 is also chaos. Every biome has the same dis
 
 Vanilla structures generate more frequently in alternate4.
 
+### Sponge Dungeon
 There are some "sponge dungeons" in alternate4. Sponge dungeons generate more frequently in lower places.
 A sponge dungeon consists of a sponge platform, a spawner and a shulker box containing treasure.
-The spawner is usually shielded by obsidian.
+
+![](https://i.ibb.co/cDCYPYk/2020-05-06-22-13-56.png)
+
+The spawner is usually shielded by obsidian, sometimes by sponge or clay.
 The spawner spawns randomly stacked vanilla mobs including oversized slime.
 The treasure is unique. You may get a full box of useless items. You may also get some rare things that cannot be acquired in normal survival such as a level 5 protection enchantment book.
 This is my attempt of making alternate4 an adventurous dimension.
