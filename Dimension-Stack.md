@@ -8,3 +8,5 @@ If the dimension stack is enabled, the bedrock blocks in the world will be repla
 And it will generate vertical connecting portals to connect the dimensions.
 
 ![](https://cdn.discordapp.com/attachments/671895772265971712/688997283836067881/stack.png)
+
+If you want to use dimension stack in a server, you need to first create the dimension stack world on client and then copy the world to the server.
