@@ -13,6 +13,9 @@ Turning down the max portal layer can save your FPS.
 
 ![](https://i.ibb.co/MCLrYZt/Untitled4.png)
 
+### Lag Attack Proof
+When FPS drops because of rendering too many portals, it will enter "lag attack proof" mode and only render one layer of portals and only render near portals which helps you recover from the lag. If that's enabled then you will not be lag-attacked by a mirror room.
+
 ### Actively Load Remote Chunks
 The chunks near the player are directly loaded.
 The chunks that are only visible through the portal are remote chunks.
@@ -34,3 +37,8 @@ If the nether in shaders is too red and too dark, but you want to use shaders fo
 ![](https://i.ibb.co/4tFy6w8/2020-03-31-15-07-25.png)
 
 If this option is changed in-game, to apply the changes you need to log out and turn off shader and turn on again.
+
+### Customized Portal Generation
+For example, use `miencraft:overworld,1,immersive_portals:alternate4,8,minecraft:lapis_block`
+ then you can use flint and steel to light a portal using lapis block as frame pointing to alternate4 dimension in overworld or revers.
+The space ration is 1:8, one block in overworld corresponds to 8 blocks in alternate4 dimension.
