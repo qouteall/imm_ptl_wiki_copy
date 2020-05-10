@@ -11,6 +11,13 @@ You can use them to connect with the overworld.
 You can use a bed to record spawn point in alternate dimensions.
 (Sleeping in nether biome can still lead to an explosion.)
 
+## How to access alternate dimensions
+In normal survival there are two ways to access alternate dimensions.
+1. Use dimension stack
+2. [Configure a special portal generation](https://github.com/qouteall/ImmersivePortalsMod/wiki/Config-Options)
+
+If you have command access then you can directly create a portal to alternate dimensions or use `/portal tpme` command
+
 ## Details of alternate4 dimension
 Alternate4 dimension is very chaotic. For every 4x4 chunks region in this dimension, the world generation follows a randomly generated math expression. The terrain exists from y=0 to y=128.
 
