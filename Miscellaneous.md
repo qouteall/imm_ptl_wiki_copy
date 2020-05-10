@@ -1,8 +1,11 @@
-### `/portal tpme` Command
-`/portal tpme <dimension> <x> <y> <z>`
+### Helper Commands
+#### `/portal tpme <dimension> <x> <y> <z>`
 Use this command to teleport yourself across dimensions without loading screen. Can only be invoked by player.
 
-### `/portal goback` Command
+#### `/portal tp <entity> <dimension> <x> <y> <z>`
+Teleport entities across dimensions.
+
+#### `/portal goback`
 Sometimes you went into a one-way portal and want to come back, but you forgot the coordinate where you come in. Use this command to come back.
 
 ### Hand Reach Tweak
