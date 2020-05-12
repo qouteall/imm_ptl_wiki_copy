@@ -1,3 +1,5 @@
+[Home](https://github.com/qouteall/ImmersivePortalsMod/wiki)
+
 [Portals](https://github.com/qouteall/ImmersivePortalsMod/wiki/Portals)
 
 [Portal Customization](https://github.com/qouteall/ImmersivePortalsMod/wiki/Portal-Customization)
