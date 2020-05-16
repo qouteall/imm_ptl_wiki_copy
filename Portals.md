@@ -57,4 +57,28 @@ For example
 
 `/portal connect_ceil immersive_portals:alternate4 immersive_portals:alternate4`
 
+### Performance Impact of Portals
+
+#### Client Performance
+If a portal is hidden then it will not be rendered and it won't affect FPS. The more portal you are seeing, the lower FPS you will get. In average cases rendering a portal drops FPS by 30%.
+
+The memory consumption will be higher because it loads more chunks through portals.
+
+Turn graphics option from "fancy" to "fast" then it will render fewer chunks through portal and improve FPS.
+[see](https://github.com/qouteall/ImmersivePortalsMod/wiki/Config-Options)
+
+#### Server Performance
+If a player is close to a portal, then the chunks on the other side will be loaded and ticked.
+The chunk loading radius of a portal is determined by the player's distance to the portal.
+|Player distance to portal|Portal chunk loading radius|
+|-|-|
+|0 ~ 5|`serverLoadingDistance`|
+|5 ~ 15|`(serverLoadingDistance * 2) / 3`|
+|15 ~ 48|`serverLoadingDistance / 3`|
+|> 48|`0`|
+
+Global portals are different. The global portal's loading distance is `serverLoadingDistance - (playerDistanceToPortal / 16)`
+
+To improve server performance you can disable ticking in remote chunks and enable load fewer chunks.
+[see](https://github.com/qouteall/ImmersivePortalsMod/wiki/Config-Options)
 
