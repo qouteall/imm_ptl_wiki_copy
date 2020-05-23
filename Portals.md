@@ -4,11 +4,15 @@ A nether portal can have a non-rectangular shape and can be horizontal.
 
 The max portal area is 400.
 
-When you use flint and steel to light an obsidian frame, it will load chunks on the other side and then search for an existing obsidian frame with identical shape. If it finds one, it will link with that existing obsidian frame. Otherwise, a new obsidian frame will be generated. The searching range can be configured.
+After installing this mod, all existing nether portals will not change.
+
+When you use flint and steel to light an obsidian frame, it will load chunks on the other side and then search for an existing obsidian frame with identical shape. If it finds one, it will link with that existing obsidian frame. Otherwise, a new obsidian frame will be generated. The searching range can be configured. The obsidian frame filled with vanilla portal block cannot be linked.
 
 If the obsidian frame is broken, then the nether portal will break.
 
 ## End Portals
+After installing this mod, existing end portals will not be changed.
+
 All end portals will point to (0 120 0) in the end dimension. When a player jumps into an end portal, the player will get slow falling effect for 6 seconds except when wearing elytra.
 
 ## Mirrors
