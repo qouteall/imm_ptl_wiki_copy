@@ -6,9 +6,11 @@ The max portal area is 400.
 
 After installing this mod, all existing nether portals will not change.
 
-When you use flint and steel to light an obsidian frame, it will load chunks on the other side and then search for an existing obsidian frame with identical shape. If it finds one, it will link with that existing obsidian frame. Otherwise, a new obsidian frame will be generated. The searching range can be configured. The obsidian frame filled with vanilla portal block cannot be linked.
+When you use flint and steel to light an obsidian frame, it will load chunks on the other side and then search for an existing obsidian frame with identical shape. If it finds one, it will link with that existing obsidian frame. Otherwise, a new obsidian frame will be generated. The searching range can be configured. The obsidian frame filled with vanilla portal block cannot be linked. It will not link to a vanilla nether portal.
 
 If the obsidian frame is broken, then the nether portal will break.
+
+**NOTE**: Two vanilla nether portals with different size or direction can be linked together. But Immersive Portals requires the obsidian frames to have the same shape and direction to link.
 
 ## End Portals
 After installing this mod, existing end portals will not be changed.
@@ -33,7 +35,7 @@ The world wrapping portal works normally in very large areas.
 
 After setting up the border portals, some artifacts may manifest.
 Use command `/portal fill_border_with_barrier` to fill the outer border layer with barrier blocks. Then the artifacts will vanish.
-(NOTE This operation cannot be undone. You should backup the world before trying this.)
+(**NOTE** This operation cannot be undone. You should backup the world before trying this.)
 
 ### Vertical Dimension Connecting Portal
 The vertical dimension connecting portals connects two dimensions vertically.
