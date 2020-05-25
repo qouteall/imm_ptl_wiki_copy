@@ -47,7 +47,7 @@ Without advanced frustum culling:
 ## Front Culling
 
 When rendering portal content, everything in front of the portal 
- plane will be culled pixel-wise.
+ plane will be culled. This mod uses `glClipPlane` to cull it (which normally uses internal geometry shader to cull).
 
 These pixels will block the portal view if not being culled
 ![](https://i.ibb.co/4Yf48sq/2020-03-06-22-00-16.png)
@@ -87,7 +87,11 @@ This mod will delay the unloading of chunks to avoid frequently load/unload chun
 
 # Seamless teleportation
 Teleportation on client side happens before rendering (not during ticking).
-Teleportation happens when the camera cross the portal (not after the player entity crossing the portal).
+Teleportation happens when the camera crosses the portal (not after the player entity crossing the portal).
+
+Teleportation is iterative. Normally the player at most teleports one time in a frame. But when the player crosses the world wrapping corner the teleportation may happen twice.
+
+![](https://media.discordapp.net/attachments/671895772265971712/713993419093049374/unknown.png)
 
 Client will teleport first and then the server receives the teleport request and do teleportation on server.
 But when the player is not teleporting frequently, client will accept sync message from server.
