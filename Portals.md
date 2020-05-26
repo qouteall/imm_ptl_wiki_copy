@@ -17,8 +17,12 @@ After installing this mod, existing end portals will not be changed.
 
 All end portals will point to (0 120 0) in the end dimension. When a player jumps into an end portal, the player will get slow falling effect for 6 seconds except when wearing elytra.
 
+![](https://i.ibb.co/C08FFJn/2020-05-26-21-55-16.png)
+
 ## Mirrors
-Use flint and steel to right-click on a glass wall creates a mirror. Currently, mirrors can only be in a rectangular shape. Mirrors can be horizontal. Mirror breaks when the glass wall is broken.
+Use flint and steel to right-click on a glass wall creates a mirror. Currently, mirrors can only be in a rectangular shape. Mirrors can be horizontal. Mirrors can be created on a stained glass wall or glass pane wall. Mirror breaks when the glass wall is broken.
+
+![](https://i.ibb.co/Jr0fdfv/2020-05-26-21-58-45.png)
 
 ## Global Portals
 Global portals cannot be created in normal survival. They can only be created or removed by commands.
