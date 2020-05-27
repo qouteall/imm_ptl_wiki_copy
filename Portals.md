@@ -67,7 +67,7 @@ With this, you will return to the overworld when dropping into the void in end.
 This connection is one-way. If you want to make it bi-way, use
 `/portal global connect_ceil minecraft:overworld minecraft:the_end`
 Then you can see the end above overworld.
-Use `/portal connection_remove_floor <dimension>` `/portal connection_remove_ceil <dimension>` to remove a connecting portal.
+Use `/portal global connection_remove_floor <dimension>` `/portal global connection_remove_ceil <dimension>` to remove a connecting portal.
 
 #### Using Vertical Connection to Break Height Limit
 By connecting a dimension above the overworld, you increase the overworld's height limit from 256 to 512.
