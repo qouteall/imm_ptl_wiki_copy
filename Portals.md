@@ -37,6 +37,10 @@ Use command `/portal border_remove` to remove the world wrapping portal.
 
 The world wrapping portal works normally in very large areas.
 
+![](https://i.ibb.co/Bnt0Gqc/2020-05-26-22-04-06.png)
+
+![](https://i.ibb.co/jrXPhqV/2020-05-26-22-03-59.png)
+
 After setting up the border portals, some artifacts may manifest.
 Use command `/portal fill_border_with_barrier` to fill the outer border layer with barrier blocks. Then the artifacts will vanish.
 (**NOTE** This operation cannot be undone. You should backup the world before trying this.)
@@ -47,6 +51,9 @@ The vertical dimension connecting portals connects two dimensions vertically.
 Example:
 `/portal connect_floor minecraft:the_end minecraft:overworld`
 With this, you will return to the overworld when dropping into the void in end.
+
+![](https://i.ibb.co/kgKw9KG/2019-10-24-22-54-05.png)
+
 This connection is one-way. If you want to make it bi-way, use
 `/portal connect_ceil minecraft:overworld minecraft:the_end`
 Then you can see the end above overworld.
