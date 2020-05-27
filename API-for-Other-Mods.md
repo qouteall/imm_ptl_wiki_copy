@@ -40,7 +40,7 @@ Use [CurseMaven](https://github.com/Wyn-Price/CurseMaven) to automatically get t
    	modImplementation "curse.maven:immersive-portals-mod:2936532"
    ```
 
-   `curse.maven` tells it to use the CurseMaven plugin, `immersive-portals-mod` is the mod id on Curse, and `2936532` is the file id.
+   `curse.maven` tells it to use the CurseMaven plugin, `immersive-portals-mod` is the mod id on Curse, and `2936532` is the file id. You can use `modCompileOnly` for optional dependency.
 
 4. Rerun gradle sync from your IDE and you should be able to access `Portal` class from `com.qouteall.immersive_portals.portal`. Or any other class in this mod.
 
