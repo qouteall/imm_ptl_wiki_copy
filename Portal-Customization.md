@@ -28,17 +28,7 @@ Global portals don't exist as entities in the world, they are global. All other 
 
 A portal entity is one-way and one-faced. A normal nether portal consists of 2 portal entities in the overworld and 2 portal entities in the nether. The end portal is one-way and one-faced. An end portal only consists of one portal entity.
 
-### Making a portal entity
 
-You can aim at a block and use `/portal make_portal <width> <height> <dim> <toX> <toY> <toZ>` or `/portal make_portal <width> <height> <dim> shift <dist>`.
-
-The first one creates a new portal coming off of the side of the block you're pointing at. The specified height is always pointing away from the surface and the width is always the other way, and the portal will point towards you. The dim and x,y,z arguments act just like set_portal_destination.
-
-The second one does the same with creation but sets the destination (in the specified dimension) to be <dist> blocks in front of the portal. This is useful if you don't have coordinates in mind immediately. And once you're able to shift around the portal destination, it could be a useful visual tool.
-
-Again the two variants are:
-- `/portal make_portal <width> <height> <dim> <toX> <toY> <toZ>`
-- `/portal make_portal <width> <height> <dim> shift <dist>`
 
 ### Portal-targeted Commands
 These commands can only be invoked by a player. When invoking these commands you should point to a portal entity.
@@ -108,3 +98,19 @@ By using `/portal set_portal_specific_accessor` command you can make a portal on
 But if two portals overlap then the portal targeted commands cannot select the portal entity accurately. You can manage that using `/portal multidest` command. Managing it using command blocks is also possible.
 
 (Portal targeted commands can still be used on the portal that's invisible to you)
+
+### Helper Commands for Creating Portals
+
+You can aim at a block and use `/portal make_portal <width> <height> <dim> <toX> <toY> <toZ>` or `/portal make_portal <width> <height> <dim> shift <dist>`.
+
+The first one creates a new portal coming off of the side of the block you're pointing at. The specified height is always pointing away from the surface and the width is always the other way, and the portal will point towards you. The dim and x,y,z arguments act just like set_portal_destination.
+
+The second one does the same with creation but sets the destination (in the specified dimension) to be <dist> blocks in front of the portal. This is useful if you don't have coordinates in mind immediately. And once you're able to shift around the portal destination, it could be a useful visual tool.
+
+Again the two variants are:
+- `/portal make_portal <width> <height> <dim> <toX> <toY> <toZ>`
+- `/portal make_portal <width> <height> <dim> shift <dist>`
+
+
+You can create a small wrapping zone by `/portal create_small_inward_wrapping <x1> <y1> <z1> <x2> <y2> <z2>` `/portal create_small_outward_wrapping <x1> <y1> <z1> <x2> <y2> <z2>`
+These commands create normal portals instead of global portals. These wrapping portals can be modified by portal-targeted commands. Global portal commands do not affect them.
