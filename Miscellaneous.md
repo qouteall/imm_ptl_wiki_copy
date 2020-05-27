@@ -17,3 +17,8 @@ This mod adds a status effect `immersive_portals:longer_reach`.
 You can use `/effect give @p immersive_portals:longer_reach` to increase a player's hand reach.
 
 This mod also adds the potion of longer reach which can be found in the treasure of sponge dungeons in the alternate4 dimension.
+
+### Shader Compatibility
+Compatible with most OptiFine shaders. Incompatible with path tracing shaders.
+
+You need to turn off TAA (Temporal Anti Aliasing) and Motion Blur in the shader's option.
