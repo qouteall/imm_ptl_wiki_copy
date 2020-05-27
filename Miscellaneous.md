@@ -1,11 +1,14 @@
 ### Helper Commands
 #### `/portal tpme <dimension> <x> <y> <z>`
+
 Use this command to teleport yourself across dimensions without loading screen. Can only be invoked by players.
 
 #### `/portal tp <entity> <dimension> <x> <y> <z>`
+
 Teleport entities across dimensions.
 
 #### `/portal goback`
+
 Sometimes you went into a one-way portal and want to come back, but you forgot the coordinate where you come in. Use this command to come back.
 
 ### Hand Reach Tweak
@@ -18,7 +21,10 @@ You can use `/effect give @p immersive_portals:longer_reach` to increase a playe
 
 This mod also adds the potion of longer reach which can be found in the treasure of sponge dungeons in the alternate4 dimension.
 
-### Shader Compatibility
-Compatible with most OptiFine shaders. Incompatible with path tracing shaders.
+### OptiFine Compatibility
+You need to disable smooth world and render regions if you install OptiFine.
+
+
+This mod is compatible with most OptiFine shaders. Incompatible with path tracing shaders.
 
 You need to turn off TAA (Temporal Anti Aliasing) and Motion Blur in the shader's option.
