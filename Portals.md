@@ -29,33 +29,43 @@ Global portals cannot be created in normal survival. They can only be created or
 
 ### World Wrapping Portal
 
-The world wrapping portal wraps finite space and "repeat" it "infinitely". When you go to the right side then you appear on the left side. It is an invisible boundary.
+There are two types of world wrapping, inward and outward.
 
-Use command `/portal border_set <x1> <z1> <x2> <z2>` to set world wrapping portal.
-
-Use command `/portal border_remove` to remove the world wrapping portal.
-
-The world wrapping portal works normally in very large areas.
+The inward world wrapping wraps a finite space and "repeat" it "infinitely". When you cross the right side then you appear on the left side. It is an invisible boundary.
 
 ![](https://i.ibb.co/Bnt0Gqc/2020-05-26-22-04-06.png)
 
 ![](https://i.ibb.co/jrXPhqV/2020-05-26-22-03-59.png)
 
-After setting up the border portals, some artifacts may manifest.
-Use command `/portal fill_border_with_barrier` to fill the outer border layer with barrier blocks. Then the artifacts will vanish.
+Use command `/portal global create_inward_wrapping <x1> <z1> <x2> <z2>` to create an inward wrapping zone.
+
+The outward world wrapping isolates an area out of space. When you want to go into it from left, you will appear on the right.
+
+![](https://i.ibb.co/9g72926/2020-05-26-22-04-50.png)
+
+![](https://i.ibb.co/1RL3wr4/2020-05-26-22-05-05.png)
+
+Use command `/portal global create_outward_wrapping <x1> <z1> <x2> <z2>` to create an outward wrapping zone.
+
+To remove a wrapping zone, using `/portal global remove_wrapping_zone` can remove the wrapping zone that you are in.
+If you want to remove an outward wrapping zone that you cannot enter, you can use `/portal global view_wrapping_zones` and know the wrapping zone's id, then you can use `/portal global remove_wrapping_zone <id>`.
+
+
+After setting up the wrapping portals, you may see z-fighting or missing block faces on the edge.
+Use command `/portal global clear_wrapping_border` to clear all blocks in the outer border.
 (**NOTE** This operation cannot be undone. You should backup the world before trying this.)
 
 ### Vertical Dimension Connecting Portal
 The vertical dimension connecting portals connects two dimensions vertically.
 
 Example:
-`/portal connect_floor minecraft:the_end minecraft:overworld`
+`/portal global connect_floor minecraft:the_end minecraft:overworld`
 With this, you will return to the overworld when dropping into the void in end.
 
 ![](https://i.ibb.co/kgKw9KG/2019-10-24-22-54-05.png)
 
 This connection is one-way. If you want to make it bi-way, use
-`/portal connect_ceil minecraft:overworld minecraft:the_end`
+`/portal global connect_ceil minecraft:overworld minecraft:the_end`
 Then you can see the end above overworld.
 Use `/portal connection_remove_floor <dimension>` `/portal connection_remove_ceil <dimension>` to remove a connecting portal.
 
@@ -70,9 +80,9 @@ Entity AI does not work cross-portal.
 
 #### Vertical World Wrapping
 For example
-`/portal connect_floor immersive_portals:alternate4 immersive_portals:alternate4`
+`/portal global connect_floor immersive_portals:alternate4 immersive_portals:alternate4`
 
-`/portal connect_ceil immersive_portals:alternate4 immersive_portals:alternate4`
+`/portal global connect_ceil immersive_portals:alternate4 immersive_portals:alternate4`
 
 ### Performance Impact of Portals
 
