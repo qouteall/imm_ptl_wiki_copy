@@ -42,3 +42,5 @@ If this option is changed in-game, to apply the changes you need to log out and 
 For example, use `minecraft:overworld,1,immersive_portals:alternate4,8,minecraft:lapis_block`
  then you can use flint and steel to light a portal using lapis block as frame pointing to alternate4 dimension in overworld or reverse.
 The space ration is 1:8, one block in overworld corresponds to 8 blocks in alternate4 dimension.
+
+(If you are on Forge, use `\n` to separate different configs.)
