@@ -99,6 +99,11 @@ But if two portals overlap then the portal targeted commands cannot select the p
 
 (Portal targeted commands can still be used on the portal that's invisible to you)
 
+### Common Questions
+
+#### How to connect two portals?
+It's not recommended to "connect" two existing portals. The recommended way is to make one portal, control its position and destination, then complete bi way portal.
+
 ### Helper Commands for Creating Portals
 
 You can aim at a block and use `/portal make_portal <width> <height> <dim> <toX> <toY> <toZ>` or `/portal make_portal <width> <height> <dim> shift <dist>`.
