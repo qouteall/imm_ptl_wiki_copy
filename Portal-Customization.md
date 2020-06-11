@@ -1,19 +1,17 @@
-This mod provides a new block called "Portal Helper". Use this block to create two identical frames, light it using flint and steel, a two-way portal (4 portal entities) will be generated. You cannot generate a cross-dimension portal or a portal that links to far places using the portal helper. To achieve that you need to use commands to edit the portal.
+This mod provides a new block called "Portal Helper".
+You can build two identical frames using that block and use flint and steel to light one. Then a new two-way two-faced portal will be generated.
+![](https://i.ibb.co/FXfD6Fq/2020-06-11-16-58-26.png)
 
-### Simple Examples
+The portal helper cannot generate a cross-dimension portal or a portal that links to far places using the portal helper. To achieve that you need to use commands to edit the portal.
+
+### Command Examples
 Make a new (square) portal without having to build a frame: `/portal make_portal 1 1 minecraft:overworld shift 5` (shift 5 means that the destination is 5 blocks ahead of the position of the portal)
 
-Make a nether portal entity unbreakable: `/portal set_portal_nbt {unbreakable:1b}`
+Change the portal entity's destination: `/portal set_portal_destination minecraft:the_end 0 70 0`
 
-Change the portal's destination: `/portal set_portal_destination minecraft:the_end 0 70 0`
+Move the portal entity forward 0.5 blocks: `/portal move_portal 0.5`
 
-Make the portal not able to teleport. Turn it into a video surveillance: `/portal set_portal_nbt {teleportable:0b}`
-
-Change the shape of the portal: `/portal set_portal_nbt {specialShape:[0d,0d,0d,1d,1d,0d]}`
-
-Move the portal forward 0.5 blocks: `/portal move_portal 0.5`
-
-Delete a portal: `/portal delete_portal`
+Delete a portal entity: `/portal delete_portal`
 
 Make two-way or two-faced portal become one-way and one-faced: `/portal remove_connected_portals` (**It's recommended to use this before changing portal position, destination or rotation**)
 
@@ -21,9 +19,15 @@ Turn a one-way portal to two-way portal: `/portal complete_bi_way_portal`
 
 Turn a one-way portal to two-way two-faced portal: `/portal complete_bi_way_bi_faced_portal`
 
-Make a portal have a rotation transformation, rotate the world "inside" the portal: `/portal set_portal_rotation 0 1 0 45` (0 1 0 means the Y-axis. It means rotating around the Y-axis for 45 degrees)
+Make a portal entity have a rotating transformation, rotate the world "inside" the portal: `/portal set_portal_rotation 0 1 0 45` (0 1 0 means the Y-axis. It means rotating around the Y-axis for 45 degrees)
 
-Rotate the portal itself (does not rotate the world "inside" the portal): `/portal set_portal_rotation 1 0 0 30` (rotates around X-axis for 30 degrees)
+Rotate the portal entity itself (does not rotate the world "inside" the portal): `/portal set_portal_rotation 1 0 0 30` (rotates around X-axis for 30 degrees)
+
+Change the shape of the portal entity: `/portal set_portal_nbt {specialShape:[0d,0d,0d,1d,1d,0d]}`
+
+Make the portal entity not able to teleport. Turn it into a video surveillance: `/portal set_portal_nbt {teleportable:0b}`
+
+Make a nether portal entity unbreakable: `/portal set_portal_nbt {unbreakable:1b}`
 
 ### Portal Entities
 Global portals don't exist as entities in the world, they are global. All other portals, including nether portals, end portals, mirrors, exist as entities in the world.
