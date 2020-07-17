@@ -159,11 +159,11 @@ The custom portal gen json should be located in `data/imm_ptl/custom_portal_gene
 ### The Codec of Custom Portal Generation
 * `schema_version` String. Must be `imm_ptl:v1`.
 * `from` List of dimension ids. The dimensions that this generation can perform in.
-* `to` Dimension id. The destination dimension's id. A special case: if it's `imm_ptl:the_same_dimension`, the destination dimension will be the same as the from dimension.
+* `to` Dimension id. The destination dimension's id. A special case: if it's `imm_ptl:the_same_dimension`, the destination dimension will be the same as the from dimension. If the destination dimension does not exist, this generation will be disabled. The destination dimension can be set to a datapack-added dimension or mod-added dimension and only enables when that datapack or mod is present.
 * `space_ratio_from` Integer (1 if missing). This side dimension's space ratio.
 * `space_ratio_to` Integer (1 if missing). The other side dimension's space ratio. Together with the above defines the space mapping. For example, 8 blocks' length in overworld corresponds to 1 block's length in the nether. The overworld's space ratio is 8 and the nether's space ration is 1.
-* `reversible` Boolean (true if missing). If true, the reverse version of this generation will also be added. If you configured a portal from overworld to nether with reversible false, then the portal can only be activated in the overworld. If it's true then the portal can also be activated in the nether.
-* `post_invoke_commands` String list. The commands that will be invoked after the portals generated. The command invoker will be the portal entities. Every generated portal will invoke these commands.
+* `reversible` Boolean (true if missing). If true, the reverse version of this generation will also be loaded. If you configured a portal from overworld to nether with reversible false, then the portal can only be activated in the overworld. If it's true then the portal can also be activated in the nether.
+* `post_invoke_commands` String list. Optional. The commands that will be invoked after the portals generated. The command invoker will be the portal entities. Every generated portal will invoke these commands.
 * `form` Custom portal generation form. Described below.
 * `trigger` Custom portal generation trigger. Described below.
 
@@ -185,7 +185,9 @@ Similar to the above but the frame block can be constituted by several different
 * `generate_frame_if_not_found` Boolean.
 
 #### `type` : `imm_ptl:flipping_floor_square`
-The portal must be horizontal and the shape must be a square. The generated portal will be one-sided and has a rotating transformation of 180 degress around the X axis. The "world inside portal" is flipped. And the generated portal will have motion affinity 0.1, which means that the player will be accelerated when touching the portal.
+The portal must be horizontal and the shape must be a square. The generated portal will be one-sided and has a rotating transformation of 180 degress around the X axis. The "world inside portal" is flipped. And the generated portal will have motion affinity 0.1, which means that the player will be accelerated when touching the portal. Unlike the other forms, the blocks above the frame and the blocks below the area can also be speficied.
+
+Upon activation, it will directly search for new portal placement without loading chunks and searching for existing frame. The generated frame will occupy ground blocks.
 
 * `length` Integer. The side length of the square.
 * `frame_block` Block tag or block id. Specifies the portal frame block.
