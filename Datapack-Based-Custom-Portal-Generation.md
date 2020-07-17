@@ -185,7 +185,7 @@ Similar to the above but the frame block can be constituted by several different
 * `generate_frame_if_not_found` Boolean.
 
 #### `type` : `imm_ptl:flipping_floor_square`
-The portal must be horizontal and the shape must be a square. The generated portal will be one-sided and has a rotating transformation of 180 degress around the X axis. The "world inside portal" is flipped. And the generated portal will have motion affinity 0.1, which means that the player will be accelerated when touching the portal. Unlike the other forms, the blocks above the frame and the blocks below the area can also be speficied.
+The portal must be horizontal and the shape must be a square. The generated portal will be one-faced and has a rotating transformation of 180 degress around the X axis. The "world inside portal" is flipped. And the generated portal will have motion affinity 0.1, which means that the player will be accelerated when touching the portal. Unlike the other forms, the blocks above the frame and the blocks below the area can also be speficied.
 
 Upon activation, it will directly search for new portal placement without loading chunks and searching for existing frame. The generated frame will occupy ground blocks.
 
@@ -198,8 +198,9 @@ Upon activation, it will directly search for new portal placement without loadin
 ### The Codec of Custom Portal Generation Trigger
 Specifies when and where should the portal generates.
 #### `type` : `imm_ptl:use_item`
-Activates when the player right-clicks using an item. This does not consume the item.
+Activates when the player right-clicks using an item.
 * `item` Item id.
+* `consume` Boolean. If true, the item will be consumed if the generation performed.
 #### `type` : `imm_ptl:throw_item`
 Activates once every 19 ticks for every thrown item. After activation one item will be consumed.
 * `item` Item id.
