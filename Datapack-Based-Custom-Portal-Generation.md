@@ -6,7 +6,7 @@ Configure custom portal generations using json files in a datapack.
 
 [What are datapacks and how to install them](https://minecraft.gamepedia.com/Data_Pack)
 
-## Example
+## Examples
 
 [Download the example datapack](https://github.com/qouteall/ImmersivePortalsMod/raw/1.16/example_custom_portal_gen.zip)
 
@@ -190,6 +190,14 @@ The portal must be horizontal and the shape must be a square. The generated port
 * `length` Integer. The side length of the square.
 * `frame_block` Block tag or block id. Specifies the portal frame block.
 * `area_block` Block tag or block id. Specifies the portal area block.
-* `up_frame_block` Optional block tag or block id. Specifies the blocks on the top of the frame blocks.
-* `bottom_block` Optional block tag or block id. Specifies the blocks below the area blocks.
+* `up_frame_block` Block tag or block id. Optional. Specifies the blocks on the top of the frame blocks.
+* `bottom_block` Block tag or block id. Optional. Specifies the blocks below the area blocks.
 
+### The Codec of Custom Portal Generation Trigger
+Specifies when and where should the portal generates.
+#### `type` : `imm_ptl:use_item`
+Activates when the player right-clicks using an item.
+* `item` Item id.
+#### `type` : `imm_ptl:throw_item`
+Activates once every 19 ticks for every thrown item.
+* `item` Item id.
