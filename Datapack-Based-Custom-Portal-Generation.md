@@ -160,12 +160,36 @@ The custom portal gen json should be located in `data/imm_ptl/custom_portal_gene
 * `schema_version` String. Must be `imm_ptl:v1`.
 * `from` List of dimension ids. The dimensions that this generation can perform in.
 * `to` Dimension id. The destination dimension's id. A special case: if it's `imm_ptl:the_same_dimension`, the destination dimension will be the same as the from dimension.
-* `space_ratio_from` Integer (1 as default). This side dimension's space ratio.
-* `space_ratio_to` Integer (1 as default). The other side dimension's space ratio. Together with the above defines the space mapping. For example, 8 blocks' length in overworld corresponds to 1 block's length in the nether. The overworld's space ratio is 8 and the nether's space ration is 1.
-* `reversible` Boolean (true as default). If true, the reverse version of this generation will also be added. If you configured a portal from overworld to nether with reversible false, then the portal can only be activated in the overworld. If it's true then the portal can also be activated in the nether.
+* `space_ratio_from` Integer (1 if missing). This side dimension's space ratio.
+* `space_ratio_to` Integer (1 if missing). The other side dimension's space ratio. Together with the above defines the space mapping. For example, 8 blocks' length in overworld corresponds to 1 block's length in the nether. The overworld's space ratio is 8 and the nether's space ration is 1.
+* `reversible` Boolean (true if missing). If true, the reverse version of this generation will also be added. If you configured a portal from overworld to nether with reversible false, then the portal can only be activated in the overworld. If it's true then the portal can also be activated in the nether.
+* `post_invoke_commands` String list. The commands that will be invoked after the portals generated. The command invoker will be the portal entities. Every generated portal will invoke these commands.
 * `form` Custom portal generation form. Described below.
 * `trigger` Custom portal generation trigger. Described below.
 
 ### The Codec of Custom Portal Generation Form
- 
- 
+#### `type` : `imm_ptl:classical`
+The classical form. Similar to nether portal, it can be in any shape and can be horizontal. The frame can only be constituted by one type of block. However, this side's frame block can be different to the other side's frame block.
+Upon activation, it will firstly check whether the other side's terrain is generated. If the other side's terrain is generated, it will load surrounding chunks and then search for the existing portal frame. If an existing frame is found, the portal will link to it.
+
+* `from_frame_block` Block id. This side's frame block.
+* `area_block` Block id. The portal frame content's block. (The activation spot's block will not be checked. If the area block is air and you trigger witl flint and steel, the activation spot's block will be fire block. If the area is all air blocks except this fire block the portal still can generate)
+* `to_frame_block` Block id. The other side's frame block.
+* `generate_frame_if_not_found` Boolean. If true, when the existing frame is not found, it will search for new portal placement nearby and generate the new portal frame. The frame block can be duplicated by generating the portal. If false, it will cancel generation if the existing frame is not found and the frame block cannot be duplicated.
+
+#### `type` : `imm_ptl:heterogeneous`
+Similar to the above but the frame block can be constituted by several different types of blocks. The block collection is specified by a [block tag](https://minecraft.gamepedia.com/Tag). When generating a new frame, it clones this side's frame.
+
+* `area_block` Block tag or block id. Specifies the portal area block.
+* `frame_block` Block tag or block id. Specifies the portal frame block.
+* `generate_frame_if_not_found` Boolean.
+
+#### `type` : `imm_ptl:flipping_floor_square`
+The portal must be horizontal and the shape must be a square. The generated portal will be one-sided and has a rotation of 180 degress around the X axis. The "world inside portal" is flipped. And the generated portal will have motion affinity 0.1, which means that the player will be accelerated when touching the portal.
+
+* `length` Integer. The side length of the square.
+* `frame_block` Block tag or block id. Specifies the portal frame block.
+* `area_block` Block tag or block id. Specifies the portal area block.
+* `up_frame_block` Optional block tag or block id. Specifies the blocks on the top of the frame blocks.
+* `bottom_block` Optional block tag or block id. Specifies the blocks below the area blocks.
+
