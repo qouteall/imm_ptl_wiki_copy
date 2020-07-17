@@ -2,7 +2,7 @@
 
 This feature is 1.16 only.
 
-Configure custom portal generations using json files in a datapack.
+Configure custom portal generation mechanics using json files in a datapack.
 
 [What are datapacks and how to install them](https://minecraft.gamepedia.com/Data_Pack)
 
@@ -178,14 +178,14 @@ Upon activation, it will firstly check whether the other side's terrain is gener
 * `generate_frame_if_not_found` Boolean. If true, when the existing frame is not found, it will search for new portal placement nearby and generate the new portal frame. The frame block can be duplicated by generating the portal. If false, it will cancel generation if the existing frame is not found and the frame block cannot be duplicated.
 
 #### `type` : `imm_ptl:heterogeneous`
-Similar to the above but the frame block can be constituted by several different types of blocks. The block collection is specified by a [block tag](https://minecraft.gamepedia.com/Tag). When generating a new frame, it clones this side's frame.
+Similar to the above but the frame block can be constituted by several different types of blocks. The block collection is specified by a [block tag](https://minecraft.gamepedia.com/Tag). When generating a new frame, the block pattern of this side's frame will be cloned.
 
 * `area_block` Block tag or block id. Specifies the portal area block.
 * `frame_block` Block tag or block id. Specifies the portal frame block.
 * `generate_frame_if_not_found` Boolean.
 
 #### `type` : `imm_ptl:flipping_floor_square`
-The portal must be horizontal and the shape must be a square. The generated portal will be one-sided and has a rotation of 180 degress around the X axis. The "world inside portal" is flipped. And the generated portal will have motion affinity 0.1, which means that the player will be accelerated when touching the portal.
+The portal must be horizontal and the shape must be a square. The generated portal will be one-sided and has a rotating transformation of 180 degress around the X axis. The "world inside portal" is flipped. And the generated portal will have motion affinity 0.1, which means that the player will be accelerated when touching the portal.
 
 * `length` Integer. The side length of the square.
 * `frame_block` Block tag or block id. Specifies the portal frame block.
@@ -196,8 +196,8 @@ The portal must be horizontal and the shape must be a square. The generated port
 ### The Codec of Custom Portal Generation Trigger
 Specifies when and where should the portal generates.
 #### `type` : `imm_ptl:use_item`
-Activates when the player right-clicks using an item.
+Activates when the player right-clicks using an item. This does not consume the item.
 * `item` Item id.
 #### `type` : `imm_ptl:throw_item`
-Activates once every 19 ticks for every thrown item.
+Activates once every 19 ticks for every thrown item. After activation one item will be consumed.
 * `item` Item id.
