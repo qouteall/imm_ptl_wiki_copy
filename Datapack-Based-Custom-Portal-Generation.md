@@ -10,153 +10,64 @@ Configure custom portal generation mechanics using json files in a datapack.
 
 [Download the example datapack](https://github.com/qouteall/ImmersivePortalsMod/raw/1.16/example_custom_portal_gen.zip)
 
-#### The glowstone portal that's activated using a water bucket from overworld to alternate2 dimension.
-Similar to the aether portal.
+The example datapack has
+
+#### `wood_portal.json` From overworld to alternate5. The frame can be in any type of wood planks. Activated using a compass.
 ```
 {
   "schema_version": "imm_ptl:v1",
-  "from": [
-    "minecraft:overworld"
-  ],
-  "to": "immersive_portals:alternate2",
+  "from": ["minecraft:overworld"], "to": "immersive_portals:alternate5",
   "form": {
-    "type": "imm_ptl:classical",
-    "from_frame_block": "minecraft:glowstone",
-    "area_block": "minecraft:air",
-    "to_frame_block": "minecraft:glowstone",
-    "generate_frame_if_not_found": true
+    "type": "imm_ptl:heterogeneous", "frame_block": "minecraft:planks",
+    "area_block": "minecraft:air", "generate_frame_if_not_found": true
   },
-  "trigger": {
-    "type": "imm_ptl:use_item",
-    "item": "minecraft:water_bucket"
-  }
+  "trigger": { "type": "imm_ptl:use_item","item": "minecraft:compass" }
 }
 ```
-#### A floor flipping portal to alternate1. Activated by throwing diamond to a 2x2 water pool surrounded by dirt with flowers on top.
-Similar to the twilight forest portal. It will summon a lightning bolt after creating the portal.
+#### `portal_helper_like.json` A diamond portal that links the the nearby same-shaped portal in the same dimension. Similar to portal helper but breakable.
 ```
 {
   "schema_version": "imm_ptl:v1",
-  "from": [
-    "minecraft:overworld"
-  ],
-  "to": "immersive_portals:alternate1",
-  "form": {
-    "type": "imm_ptl:flipping_floor_square",
-    "length": 2,
-    "frame_block": "minecraft:bamboo_plantable_on",
-    "area_block": "minecraft:water",
-    "up_frame_block": "minecraft:small_flowers",
-    "bottom_block": "minecraft:bamboo_plantable_on"
-  },
-  "trigger": {
-    "type": "imm_ptl:throw_item",
-    "item": "minecraft:diamond"
-  },
-  "post_invoke_commands": [
-    "/summon minecraft:lightning_bolt ~ ~ ~"
-  ]
-}
-```
-#### From overworld to alternate4. The overworld side frame is lapis block, but the other side's frame is redstone block.
-And for this portal one block in overworld corresponds to 8 blocks in alternate4.
-```
-{
-  "schema_version": "imm_ptl:v1",
-  "from": [
-    "minecraft:overworld"
-  ],
-  "to": "immersive_portals:alternate4",
-  "space_ratio_from": 1,
-  "space_ratio_to": 8,
-  "form": {
-    "type": "imm_ptl:classical",
-    "from_frame_block": "minecraft:lapis_block",
-    "area_block": "minecraft:air",
-    "to_frame_block": "minecraft:redstone_block",
-    "generate_frame_if_not_found": true
-  },
-  "trigger": {
-    "type": "imm_ptl:use_item",
-    "item": "minecraft:flint_and_steel"
-  }
-}
-```
-#### Similar to portal helper but using diamond block as frame and breakable.
-```
-{
-  "schema_version": "imm_ptl:v1",
-  "from": [
-    "minecraft:overworld",
-    "minecraft:the_nether",
-    "minecraft:the_end"
-  ],
+  "from": ["minecraft:overworld", "minecraft:the_nether", "minecraft:the_end"],
   "to": "imm_ptl:the_same_dimension",
   "reversible": false,
   "form": {
     "type": "imm_ptl:classical",
-    "from_frame_block": "minecraft:diamond_block",
-    "area_block": "minecraft:air",
-    "to_frame_block": "minecraft:diamond_block",
-    "generate_frame_if_not_found": false
+    "from_frame_block": "minecraft:diamond_block", "area_block": "minecraft:air",
+    "to_frame_block": "minecraft:diamond_block", "generate_frame_if_not_found": false
   },
-  "trigger": {
-    "type": "imm_ptl:use_item",
-    "item": "minecraft:flint_and_steel"
-  }
+  "trigger": { "type": "imm_ptl:use_item", "item": "minecraft:flint_and_steel"}
 }
 ```
-#### From overworld to alternate5. The frame can be in any type of wood planks. Activated using a compass.
+#### `special_nether_portal` A new type of nether portal. Throw an nether quarts into a 3x3 lava pool surrounded by soul soil blocks. Can only be created in overworld
 ```
 {
   "schema_version": "imm_ptl:v1",
-  "from": [
-    "minecraft:overworld"
-  ],
-  "to": "immersive_portals:alternate5",
-  "form": {
-    "type": "imm_ptl:heterogeneous",
-    "frame_block": "minecraft:planks",
-    "area_block": "minecraft:air",
-    "generate_frame_if_not_found": true
-  },
-  "trigger": {
-    "type": "imm_ptl:use_item",
-    "item": "minecraft:compass"
-  }
-}
-```
-#### A new type of nether portal. Throw an netherite into a 3x3 lava pool surrounded by soul soil blocks. Can only be created in overworld
-```
-{
-  "schema_version": "imm_ptl:v1",
-  "from": [
-    "minecraft:overworld"
-  ],
-  "to": "minecraft:the_nether",
+  "from": ["minecraft:overworld"],  "to": "minecraft:the_nether",
   "reversible": false,
   "form": {
     "type": "imm_ptl:flipping_floor_square",
-    "length": 3,
-    "frame_block": "minecraft:soul_soil",
-    "area_block": "minecraft:lava"
+    "length": 3, "frame_block": "minecraft:soul_soil", "area_block": "minecraft:lava"
   },
-  "trigger": {
-    "type": "imm_ptl:throw_item",
-    "item": "minecraft:netherite_ingot"
-  }
+  "trigger": { "type": "imm_ptl:throw_item", "item": "minecraft:quartz"}
 }
 ```
+#### `aether_like.json` The glowstone portal that's activated using a water bucket from overworld to alternate2 dimension. Similar to the aether's.
+
+#### `twilight_forest_like.json` A floor flipping portal to alternate1. Activated by throwing diamond to a 2x2 water pool surrounded by dirt with flowers on top. Similar to the twilight forest portal. It will summon a lightning bolt after creating the portal.
+
+#### `lapis_redstone_portal.json` From overworld to alternate4. The overworld side frame is lapis block, but the other side's frame is redstone block. And for this portal one block in overworld corresponds to 8 blocks in alternate4.
 
 ## Details Explained
 
-The datapack-based custom portal generation system allows configuring special portal generation mechanics. The portal generation can be triggered by using an item or throwing an item into some position. It can be configured to only apply to one dimension, and specify the portal's destination dimension. The space ration can be configured to determine where the destination should be. A list of commands can be specified to be invoked after portal creation. There are different portal forms each with different kinds of portal and different destination selection mechanics.
+The datapack-based custom portal generation system allows configuring special portal generation mechanics. The portal generation can be triggered by 
+the player using an item or throwing an item. It can be configured to only generate in one dimension, and goes to another dimension. The space ration can be configured to determine where the destination should be. A list of commands can be specified to be invoked after portal creation. There are different portal forms each with different kinds of portal and different destination selection mechanics.
 
 All the generated portals will be `immersive_portals:general_breakable_portal`. They will generate with placeholder blocks filling the area. And they will break if the frame is broken. (Placeholder blocks have illumination)
 
 The custom portal gen json should be located in `data/imm_ptl/custom_portal_generation/<namespace>`. The json file name does not matter.
 
-### The Codec of Custom Portal Generation
+### The Format of Custom Portal Generation
 * `schema_version` String. Must be `imm_ptl:v1`.
 * `from` List of dimension ids. The dimensions that this generation can perform in.
 * `to` Dimension id. The destination dimension's id. A special case: if it's `imm_ptl:the_same_dimension`, the destination dimension will be the same as the from dimension. If the destination dimension does not exist, this generation will be disabled. The destination dimension can be set to a datapack-added dimension or mod-added dimension and only enables when that datapack or mod is present.
@@ -167,7 +78,7 @@ The custom portal gen json should be located in `data/imm_ptl/custom_portal_gene
 * `form` Custom portal generation form. Described below.
 * `trigger` Custom portal generation trigger. Described below.
 
-### The Codec of Custom Portal Generation Form
+### The Format of Custom Portal Generation Form
 #### `type` : `imm_ptl:classical`
 The classical form. Similar to nether portal, it can be in any shape and can be horizontal. The frame can only be constituted by one type of block. However, this side's frame block can be different to the other side's frame block.
 Upon activation, it will firstly check whether the other side's terrain is generated. If the other side's terrain is generated, it will load surrounding chunks and then search for the existing portal frame. If an existing frame is found, the portal will link to it.
@@ -187,7 +98,7 @@ Similar to the above but the frame block can be constituted by several different
 #### `type` : `imm_ptl:flipping_floor_square`
 The portal must be horizontal and the shape must be a square. The generated portal will be one-faced and has a rotating transformation of 180 degress around the X axis. The "world inside portal" is flipped. And the generated portal will have motion affinity 0.1, which means that the player will be accelerated when touching the portal. Unlike the other forms, the blocks above the frame and the blocks below the area can also be speficied.
 
-Upon activation, it will directly search for new portal placement without loading chunks and searching for existing frame. The generated frame will occupy ground blocks.
+Upon activation, it will directly search for new portal placement without loading chunks and searching for existing frame. The generated portal will occupy ground blocks.
 
 * `length` Integer. The side length of the square.
 * `frame_block` Block tag or block id. Specifies the portal frame block.
@@ -195,12 +106,12 @@ Upon activation, it will directly search for new portal placement without loadin
 * `up_frame_block` Block tag or block id. Optional. Specifies the blocks on the top of the frame blocks.
 * `bottom_block` Block tag or block id. Optional. Specifies the blocks below the area blocks.
 
-### The Codec of Custom Portal Generation Trigger
+### The Format of Custom Portal Generation Trigger
 Specifies when and where should the portal generates.
 #### `type` : `imm_ptl:use_item`
 Activates when the player right-clicks using an item.
 * `item` Item id.
 * `consume` Boolean. If true, the item will be consumed if the generation performed.
 #### `type` : `imm_ptl:throw_item`
-Activates once every 19 ticks for every thrown item. After activation one item will be consumed.
+Checks every tick for the item entity that cannot be instantly picked up. (When a player throws one item it cannot be instantly picked up because the item entity has pick-up delay.) If an item is not thrown within 2 seconds, it will have no pick-up delay and cannot trigger the generation. The item can survive in lava for 1 ticks, so throwing an non-fire-proof item into lava could still trigger the generation.
 * `item` Item id.
