@@ -4,6 +4,8 @@
 
 [Portal Customization](https://github.com/qouteall/ImmersivePortalsMod/wiki/Portal-Customization)
 
+[Datapack Based Custom Portal Generation](https://github.com/qouteall/ImmersivePortalsMod/wiki/Datapack-Based-Custom-Portal-Generation)
+
 [Alternate Dimensions](https://github.com/qouteall/ImmersivePortalsMod/wiki/Alternate-Dimensions)
 
 [Dimension Stack](https://github.com/qouteall/ImmersivePortalsMod/wiki/Dimension-Stack)
