@@ -1,3 +1,5 @@
+The alternate dimension feature is not yet re-implemented in the 1.16 version.
+
 This mod provides 5 alternate dimensions. Their sky is similar to the overworld.
 You can use them to connect with the overworld.
 |Dimension id|Description|
@@ -50,4 +52,4 @@ A sponge dungeon consists of a sponge platform, a spawner and a shulker box cont
 The spawner is usually shielded by obsidian, sometimes by sponge or clay.
 The spawner spawns randomly stacked vanilla mobs including oversized slime.
 The treasure is unique. You may get a full box of useless items. You may also get some rare things that cannot be acquired in normal survival such as a level 5 protection enchantment book.
-This is my attempt of making alternate4 an adventurous dimension.
+This is an attempt of making alternate4 an adventurous dimension.
