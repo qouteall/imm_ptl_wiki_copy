@@ -12,6 +12,7 @@ Teleport entities across dimensions.
 Sometimes you went into a one-way portal and want to come back, but you forgot the coordinate where you come in. Use this command to come back.
 
 ### Hand Reach Tweak
+(1.16 Forge version does not have this feature)
 Creative players can break and place blocks in a longer range. This aims to make building easier.
 
 It can be disabled in the config.
