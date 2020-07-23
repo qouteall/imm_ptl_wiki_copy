@@ -12,9 +12,13 @@ If `specialShape` is null then the portal is rectangular. [GeometryPortalShape](
 
 If you created one portal entity, you can add a new portal to complete the bi-way portal or bi-faced portal.[PortalManipulation](https://github.com/qouteall/ImmersivePortalsMod/blob/1.15/src/main/java/com/qouteall/immersive_portals/portal/PortalManipulation.java)
 
-You can also create breakable portals using [BlockPortalShape](https://github.com/qouteall/ImmersivePortalsMod/blob/1.15/src/main/java/com/qouteall/immersive_portals/portal/nether_portal/BlockPortalShape.java) by `NetherPortalGeneration#generateBreakablePortalEntities`. It's needed to create a new subclass of BreakablePortalEntity. Check [NetherPortalEntity](https://github.com/qouteall/ImmersivePortalsMod/blob/1.15/src/main/java/com/qouteall/immersive_portals/portal/nether_portal/NetherPortalEntity.java). Breakable portal has placeholder blocks to fill the portal area. If the placeholder block updates, nearby breakable portals will be notified to check portal integrity.
+You can also create breakable portals using [BlockPortalShape](https://github.com/qouteall/ImmersivePortalsMod/blob/1.15/src/main/java/com/qouteall/immersive_portals/portal/nether_portal/BlockPortalShape.java) by `NetherPortalGeneration#generateBreakablePortalEntities`. You can use a `GeneralBreakablePortalEntity`. Breakable portal has placeholder blocks to fill the portal area. If the placeholder block updates, nearby breakable portals will be notified to check portal integrity.
+
+This mod's code is mostly undocumented. If you have any question, ask the author.
 
 ### How to depend on Immersive Portals
+
+#### Using CurseMaven
 
 **Note for Gradle 6 users: CurseMaven doesn't support Gradle 6, but you can still build your mod against Immersive Portals. Check out "Using Gradle 6" below for an alternative solution.**
 
@@ -44,7 +48,7 @@ Use [CurseMaven](https://github.com/Wyn-Price/CurseMaven) to automatically get t
 
 4. Rerun gradle sync from your IDE and you should be able to access `Portal` class from `com.qouteall.immersive_portals.portal`. Or any other class in this mod.
 
-### Using Gradle 6
+#### Using Jitpack
 
 If you, for whatever reason, decided to upgrade your Gradle version from 5 to 6, CurseMaven may not work. In that case you can use Jitpack. Add this to your repositories block:
 
