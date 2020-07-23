@@ -1,3 +1,4 @@
+
 You can see the "Dimension Stack" button when creating a new world.
 
 ![](https://cdn.discordapp.com/attachments/671895772265971712/689750594562293934/unknown.png)
@@ -10,3 +11,5 @@ And it will generate vertical connecting portals to connect the dimensions.
 ![](https://cdn.discordapp.com/attachments/671895772265971712/688997283836067881/stack.png)
 
 If you want to use dimension stack in a server, you need to first create the dimension stack world on client and then copy the world to the server.
+
+Dimension stack can greatly degrade performance. You can shrink the loading distance when using dimension stack.
