@@ -1,7 +1,4 @@
 
-### Vanilla graphic option
-If your FPS is low, turn graphic option from "fancy" to "fast", then it will render fewer sections in portal thus increasing FPS.
-
 ### Max Portal Layer
 Specifies the maximum portal-in-portal rendering layer.
 
@@ -28,7 +25,9 @@ This can reduce server lag.
 ### Load Fewer Chunks
 Load fewer chunks from portals. Reduce server lag.
 
-### Customized Portal Generation
+### ~~Customized Portal Generation~~
+This feature is replaced by the new [datapack-based custom portal generation system](https://github.com/qouteall/ImmersivePortalsMod/wiki/Datapack-Based-Custom-Portal-Generation) in 1.16.
+
 For example, use `minecraft:overworld,1,immersive_portals:alternate4,8,minecraft:lapis_block`
  then you can use flint and steel to light a portal using lapis block as frame pointing to alternate4 dimension in overworld or reverse.
 The space ration is 1:8, one block in overworld corresponds to 8 blocks in alternate4 dimension.
