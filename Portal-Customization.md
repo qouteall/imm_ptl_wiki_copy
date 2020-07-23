@@ -96,9 +96,7 @@ After editing the portal shape you should also change width,height,cullableXStar
 If you don't change these accordingly some sections may not be rendered due to advanced frustum culling.
 
 ### Commands for Command Blocks
-`/portal cb_set_portal_destination` `/portal cb_complete_bi_way_portal` `/portal cb_complete_bi_faced_portal` `/portal cb_complete_bi_way_bi_faced_portal` `/portal cb_remove_connected_portals` `/portal cb_set_portal_specific_accessor`
-
-Using command blocks (or a datapack) to make a mobile tardis is possible.
+`/portal cb_set_portal_destination <portal> <dimension> <x> <y> <z>` `/portal cb_complete_bi_way_portal <portal>` `/portal cb_complete_bi_faced_portal <portal>` `/portal cb_complete_bi_way_bi_faced_portal <portal>` `/portal cb_remove_connected_portals <portal>` `/portal cb_set_portal_specific_accessor <portal> [player]` `/portal cb_make_portal <width> <height> <fromEntity> <toEntity>`
 
 ### Creating the Portal that Points to Different Destinations for Different Players
 By using `/portal set_portal_specific_accessor` command you can make a portal only accessible for one player. By putting two different portal entities that are specific for two different players into the same place, you can create a portal that points to different destinations for different players.
