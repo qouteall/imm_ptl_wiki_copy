@@ -14,13 +14,31 @@ If you created one portal entity, you can add a new portal to complete the bi-wa
 
 You can also create breakable portals using [BlockPortalShape](https://github.com/qouteall/ImmersivePortalsMod/blob/1.15/src/main/java/com/qouteall/immersive_portals/portal/nether_portal/BlockPortalShape.java) by `NetherPortalGeneration#generateBreakablePortalEntities`. You can use a `GeneralBreakablePortalEntity`. Breakable portal has placeholder blocks to fill the portal area. If the placeholder block updates, nearby breakable portals will be notified to check portal integrity.
 
-This mod's code is mostly undocumented. If you have any question, ask the author.
+This mod's code is mostly undocumented. If you have any questions, ask the author.
 
-### How to depend on Immersive Portals
+### Configure dependency
+
+#### Using Jitpack
+
+Add this into `repositories`
+```
+	maven { url 'https://jitpack.io' }
+```
+
+Add this into `dependencies`
+
+```
+	modImplementation 'com.github.qouteall:ImmersivePortalsMod:0.28-1.15-1'
+```
+Check https://jitpack.io/#qouteall/ImmersivePortalsMod
+
+If you want to configure an optional dependency, change `modImplementation` to `modCompileOnly`.
+
+If jitpack is broken, you can fork this mod on GitHub and use your fork. Or you can use CurseMaven.
 
 #### Using CurseMaven
 
-**Note for Gradle 6 users: CurseMaven doesn't support Gradle 6, but you can still build your mod against Immersive Portals. Check out "Using Gradle 6" below for an alternative solution.**
+**Note for Gradle 6 users: CurseMaven doesn't support Gradle 6**
 
 Use [CurseMaven](https://github.com/Wyn-Price/CurseMaven) to automatically get the mod from [CurseForge](https://www.curseforge.com/minecraft/mc-mods/immersive-portals-mod).
 
@@ -48,17 +66,4 @@ Use [CurseMaven](https://github.com/Wyn-Price/CurseMaven) to automatically get t
 
 4. Rerun gradle sync from your IDE and you should be able to access `Portal` class from `com.qouteall.immersive_portals.portal`. Or any other class in this mod.
 
-#### Using Jitpack
 
-If you, for whatever reason, decided to upgrade your Gradle version from 5 to 6, CurseMaven may not work. In that case you can use Jitpack. Add this to your repositories block:
-
-```
-	maven { url 'https://jitpack.io' }
-```
-
-Then you can depend on the mod like so:
-
-```
-	modImplementation 'com.github.qouteall:ImmersivePortalsMod:0.28-1.15-1'
-```
-Check https://jitpack.io/#qouteall/ImmersivePortalsMod
