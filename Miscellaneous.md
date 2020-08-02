@@ -13,14 +13,11 @@ Sometimes you went into a one-way portal and want to come back, but you forgot t
 
 ### Hand Reach Tweak
 (1.16 Forge version does not have this feature)
+This feature is disabled in config by default.
+
 Creative players can break and place blocks in a longer range. This aims to make building easier.
 
-It can be disabled in the config.
-
-This mod adds a status effect `immersive_portals:longer_reach`.
-You can use `/effect give @p immersive_portals:longer_reach` to increase a player's hand reach.
-
-This mod also adds the potion of longer reach which can be found in the treasure of sponge dungeons in the alternate4 dimension.
+When reach entity attributes mod or pehkui mod is present, it will be automatically disabled because of Mixin conflicts.
 
 ### OptiFine Compatibility
 You need to disable smooth world and render regions if you install OptiFine.
