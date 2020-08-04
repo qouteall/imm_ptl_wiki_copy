@@ -78,7 +78,7 @@ The example datapack has
   "post_invoke_commands": [ "/summon minecraft:lightning_bolt ~ ~ ~" ]
 }
 ```
-#### `lapis_redstone_portal.json` From overworld to alternate4. The overworld side frame is lapis block, but the other side's frame is redstone block. And for this portal one block in overworld corresponds to 8 blocks in alternate4.
+#### `lapis_redstone_portal.json` From overworld to alternate4. The overworld side frame is lapis block, but the other side's frame is redstone block. And for this portal, one block in the overworld corresponds to 8 blocks in alternate4.
 ```
 {
   "schema_version": "imm_ptl:v1",
@@ -128,13 +128,15 @@ Similar to the above but the frame block can be constituted by several different
 * `frame_block` Block tag or block id. Specifies the portal frame block.
 * `generate_frame_if_not_found` Boolean.
 
+Using datapack-provided tags is a little bit weird. For example, you have `data/minecraft/tags/blocks/namespace/mytag.json` then the tag is `minecraft:namespace/mytag`
+
 #### `type` : `imm_ptl:flipping_floor_square`
-The portal must be horizontal and the shape must be a square. The generated portal will be one-faced and has a rotating transformation of 180 degrees around the X axis. The "world inside portal" is flipped. And the generated portal will have motion affinity 0.1, which means that the player will be accelerated when touching the portal. Unlike the other forms, the blocks above the frame and the blocks below the area can also be specified.
+The portal must be horizontal and the shape must be a square. The generated portal will be one-faced and has a rotating transformation of 180 degrees around the X-axis. The "world inside portal" is flipped. And the generated portal will have motion affinity 0.1, which means that the player will be accelerated when touching the portal. Unlike the other forms, the blocks above the frame and the blocks below the area can also be specified.
 
 Upon activation, it will directly search for new portal placement without loading chunks and searching for the existing frame. The generated portal will occupy ground blocks.
 
 * `length` Integer. The side length of the square.
-* `frame_block` Block tag or block id. Specifies the portal frame block.
+* `frame_block` Block tag or block id. Specifies the portal frame blocks.
 * `area_block` Block tag or block id. Specifies the portal area block.
 * `up_frame_block` Block tag or block id. Optional. Specifies the blocks on the top of the frame blocks.
 * `bottom_block` Block tag or block id. Optional. Specifies the blocks below the area blocks.
