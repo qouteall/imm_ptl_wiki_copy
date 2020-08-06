@@ -24,7 +24,7 @@ After crossing a portal with rotation transformation, the player's camera may be
 
 Using datapack custom portal generation. There is a form `imm_ptl:scaling_square`.
 
-Using commands. Command `/portal set_portal_scale <scale>` sets a portal's scale transformation.
+Using commands. Command `/portal set_portal_scale <scale>` sets a portal's scale transformation. Command `/portal create_scaled_box_view` [creates a scaled wrapping box](https://github.com/qouteall/ImmersivePortalsMod/wiki/Portal-Customization#create-a-scaled-wrapping-zone).
 
 ### Teleportation
 The portal has a property `teleportationChangesScale`. If it's false, the entities that go through the portal will have the scale remain unchanged.
