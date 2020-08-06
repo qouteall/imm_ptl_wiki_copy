@@ -37,7 +37,7 @@ A portal entity is one-way and one-faced. A normal nether portal consists of 2 p
 Normally if you want to edit a portal, it's recommended to firstly use `/portal remove_connected_portals` then the four portal entities become one portal entity. Then this portal is one way now, you can edit its destination, rotation without messing up. Then you can make this portal two-way and two-faced by `/portal complete_bi_way_bi_faced_portal`. If you edit the portal before using `/portal remove_connected_portals`, the portal entities on the other side and the other face won't be edited.
 
 ### Portal-targeted Commands
-These commands can only be invoked by a player. When invoking these commands you should point to a portal entity.
+For the portal-targeted commands, if the command invoker is a player, it targets on the portal that the player is looking at. If the command invoker is a portal entity, it will apply to itself.
 |Command|Functionality|
 |-|-|
 |`/portal set_portal_nbt <nbt>`|Set a porta's nbt data|
@@ -97,7 +97,10 @@ After editing the portal shape you should also change width,height,cullableXStar
 If you don't change these accordingly some sections may not be rendered due to advanced frustum culling.
 
 ### Commands for Command Blocks
-`/portal cb_set_portal_destination <portal> <dimension> <x> <y> <z>` `/portal cb_complete_bi_way_portal <portal>` `/portal cb_complete_bi_faced_portal <portal>` `/portal cb_complete_bi_way_bi_faced_portal <portal>` `/portal cb_remove_connected_portals <portal>` `/portal cb_set_portal_specific_accessor <portal> [player]` `/portal cb_make_portal <width> <height> <fromEntity> <toEntity>`
+`/portal cb_make_portal <width> <height> <fromEntity> <toEntity>` creates a portal entity goes from fromEntity to toEntity. The orientation is determined by fromEntity's orientation.
+
+These commands are deprecated.
+`/portal cb_set_portal_destination <portal> <dimension> <x> <y> <z>` `/portal cb_complete_bi_way_portal <portal>` `/portal cb_complete_bi_faced_portal <portal>` `/portal cb_complete_bi_way_bi_faced_portal <portal>` `/portal cb_remove_connected_portals <portal>` `/portal cb_set_portal_specific_accessor <portal> [player]` 
 
 ### Creating the Portal that Points to Different Destinations for Different Players
 By using `/portal set_portal_specific_accessor` command you can make a portal only accessible for one player. By putting two different portal entities that are specific for two different players into the same place, you can create a portal that points to different destinations for different players.
