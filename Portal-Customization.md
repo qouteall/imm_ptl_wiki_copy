@@ -79,6 +79,8 @@ Tags for `immersive_portals:portal` `immersive_portals:nether_portal_new` `immer
 |rotationA,rotationB,<br>rotationC,rotationD|A quaternion that defines the portal's rotating transformation. Optional|
 |motionAffinity|If it's positive, then players colliding with portal will be accelerated in the portal's facing direction. If it's negative, the player will be decellerated when moving fast|
 |specificPlayerId|The UUID of the specific player that can access this portal. Optional|
+|scale|The scale transformation|
+|teleportChangesScale|Whether the teleportation changes entity scale if the portal has a scale transformation|
 
 Tags for `immersive_portals:nether_portal_new`
 |Tag|Description|
@@ -116,16 +118,24 @@ It's not recommended to "connect" two existing portals. The recommended way is t
 
 ### Helper Commands for Creating Portals
 
+#### Straightly Create a Portal
 You can aim at a block and use `/portal make_portal <width> <height> <dim> <toX> <toY> <toZ>` or `/portal make_portal <width> <height> <dim> shift <dist>`.
 
 The first one creates a new portal coming off of the side of the block you're pointing at. The specified height is always pointing away from the surface and the width is always the other way, and the portal will point towards you. The dim and x,y,z arguments act just like set_portal_destination.
 
 The second one does the same with creation but sets the destination (in the specified dimension) to be <dist> blocks in front of the portal. This is useful if you don't have coordinates in mind immediately. And once you're able to shift around the portal destination, it could be a useful visual tool.
 
-Again the two variants are:
+The two variants are:
 - `/portal make_portal <width> <height> <dim> <toX> <toY> <toZ>`
 - `/portal make_portal <width> <height> <dim> shift <dist>`
 
-
+#### Create a Small Wrapping Zone
 You can create a small wrapping zone by `/portal create_small_inward_wrapping <x1> <y1> <z1> <x2> <y2> <z2>` `/portal create_small_outward_wrapping <x1> <y1> <z1> <x2> <y2> <z2>`
 These commands create normal portals instead of global portals. These wrapping portals can be modified by portal-targeted commands. Global portal commands do not affect them.
+
+#### Create a Scaled Wrapping Zone
+You can create a scaled wrapping by `/portal create_scaled_box_view <x1> <y1> <z1> <x2> <y2> <z2> <scale> <placeTargetEntity> <isBiWay>`.
+The wrapping zone is a box area. It will create 6 portals with scale transformation that points from the box around placeTargetEntity to the wrapping zone box. If you want to make a small box view of a big area, the scale should be bigger than 1. If isBiWay is true, it will generate the reverse portals for every portal. Then it will totally generate 12 portals totally.
+
+![](https://i.ibb.co/FxWQvjV/2020-08-06-13-15-23.png)
+
