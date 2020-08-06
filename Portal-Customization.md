@@ -49,15 +49,16 @@ These commands can only be invoked by a player. When invoking these commands you
 |`/portal complete_bi_faced_portal`|Create a new portal entity to make the portal two-faced|
 |`/portal complete_bi_way_bi_faced_portal`|Create new portal entities to make the portal two-way and two-faced|
 |`/portal remove_connected_portals`|Remove portal entities to make the portal one-way and one-faced|
-|`/portal set_portal_rotation <axisX> <axisY> <axisZ> <angleDegrees>`|Set the portal's rotating transformation.<br>The rotation transformation is defined by a rotating axis vector and the angle in degrees.<br>When the axis is pointing on you positive angle corresponds rotating counterclockwise|
+|`/portal set_portal_rotation <axisX> <axisY> <axisZ> <angleDegrees>`|Set the portal's rotation transformation.<br>The rotation transformation is defined by a rotating axis vector and the angle in degrees.<br>When the axis is pointing on you positive angle corresponds rotating counterclockwise|
 |`/portal rotate_portal_body <axisX> <axisY> <axisZ> <angleDegrees>`|Rotate the portal.<br>This command does not change the portal's rotating transformation|
-|`/portal rotate_portal_rotation  <axisX> <axisY> <axisZ> <angleDegrees>`|Change the portal's rotating transformation by applying an additional rotation to the original rotation|
+|`/portal rotate_portal_rotation  <axisX> <axisY> <axisZ> <angleDegrees>`|Change the portal's rotation transformation by applying an additional rotation to the original rotation|
 |`/portal move_portal <distance>`|Move the portal along the direcction that you are looking at|
 |`/portal move_portal_destination <distance>`|Move the portal's destination along the direction that you are looking at|
 |`/portal set_portal_specific_accessor <player>`|Make the portal entity only accessible by one player|
 |`/portal set_portal_specific_accessor `|Make the portal entity accessible to all players|
 |`/portal multidest <player> <dimension> <x> <y> <z> <isBiFaced> <isBiWay>`|Set the portal destination for only one player (see below)|
 |`/portal multidest <player>`|Remove the player-specific portal from the portal clutter (see below)|
+|`/portal set_portal_scale <scale>`|Set the portal's scale transformation.|
 
 NOTE: Before using command `/portal set_portal_rotation`, `/portal move_portal` or `/portal set_portal_rotation` you should use `/portal remove_connected_portals` first or there will be unwanted portals remain.
 
