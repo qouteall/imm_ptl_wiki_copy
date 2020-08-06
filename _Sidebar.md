@@ -2,6 +2,8 @@
 
 [Portals](https://github.com/qouteall/ImmersivePortalsMod/wiki/Portals)
 
+[Spatial Transformation](https://github.com/qouteall/ImmersivePortalsMod/wiki/Spatial-Transformation)
+
 [Portal Customization](https://github.com/qouteall/ImmersivePortalsMod/wiki/Portal-Customization)
 
 [Datapack Based Custom Portal Generation](https://github.com/qouteall/ImmersivePortalsMod/wiki/Datapack-Based-Custom-Portal-Generation)
