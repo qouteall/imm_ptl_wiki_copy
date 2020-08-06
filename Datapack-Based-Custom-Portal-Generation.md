@@ -141,6 +141,16 @@ Upon activation, it will directly search for new portal placement without loadin
 * `up_frame_block` Block tag or block id. Optional. Specifies the blocks on the top of the frame blocks.
 * `bottom_block` Block tag or block id. Optional. Specifies the blocks below the area blocks.
 
+#### `type` : `imm_ptl:scaling_square`
+The portal can be horizontal or vertical. But the shape must be a square. This side shape's side length can be different to the other side shapes'. The created portal will have a scaling transformation that adapts to the shape scale difference.
+
+* `from_length` Integer. This side frame's side length.
+* `to_length` Integer. Other side frame's side length.
+* `from_frame_block` Block id. This side's frame block.
+* `area_block` Block id. The portal frame content's block.
+* `to_frame_block` Block id. The other side's frame block.
+* `generate_frame_if_not_found` Boolean.
+
 ### The Format of Custom Portal Generation Trigger
 Specifies when and where should the portal generates.
 #### `type` : `imm_ptl:use_item`
