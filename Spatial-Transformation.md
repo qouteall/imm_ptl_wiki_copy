@@ -31,3 +31,9 @@ The portal has a property `teleportationChangesScale`. If it's false, the entiti
 If it's true and [Pehkui mod](https://www.curseforge.com/minecraft/mc-mods/pehkui) is installed, teleportation will change the entity's scale.
 
 If Pehkui mod is missing or you are using the Forge version, teleportation won't change the entity scale.
+
+## Mirror Transformation
+
+[Mirrors](https://github.com/qouteall/ImmersivePortalsMod/wiki/Portals#mirrors).
+
+You cannot teleport into a mirror.
