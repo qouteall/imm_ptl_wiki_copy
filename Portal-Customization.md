@@ -135,7 +135,7 @@ These commands create normal portals instead of global portals. These wrapping p
 
 #### Create a Scaled Wrapping Zone
 You can create a scaled wrapping by `/portal create_scaled_box_view <x1> <y1> <z1> <x2> <y2> <z2> <scale> <placeTargetEntity> <isBiWay>`.
-The wrapping zone is a box area. It will create 6 portals with scale transformation that points from the box around placeTargetEntity to the wrapping zone box. If you want to make a small box view of a big area, the scale should be bigger than 1. If isBiWay is true, it will generate the reverse portals for every portal. Then it will totally generate 12 portals totally.
+The wrapping zone is a box area. It will create 6 portals with scale transformation that points from the box around placeTargetEntity to the wrapping zone box. The generated portal won't change the entity scale upon teleportation. If you want to make a small box view of a big area, the scale should be bigger than 1. If isBiWay is true, it will generate the reverse portals for every portal. Then it will totally generate 12 portals totally.
 
 ![](https://i.ibb.co/FxWQvjV/2020-08-06-13-15-23.png)
 
