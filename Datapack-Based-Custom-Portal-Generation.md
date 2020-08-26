@@ -151,6 +151,13 @@ The portal can be horizontal or vertical. But the shape must be a square. This s
 * `to_frame_block` Block id. The other side's frame block.
 * `generate_frame_if_not_found` Boolean.
 
+#### `type` : `imm_ptl:flipping_floor_square_new`
+Similar to `imm_ptl:flipping_floor_square` it generates floor portal with a flipping rotation transformation. But this does not require hardcoding the square side length. And this searches for the existing frame on the other side before generating the new frame.
+
+* `area_block` Block tag or block id. Specifies the portal area block.
+* `frame_block` Block tag or block id. Specifies the portal frame block.
+* `generate_frame_if_not_found` Boolean.
+
 ### The Format of Custom Portal Generation Trigger
 Specifies when and where should the portal generates.
 #### `type` : `imm_ptl:use_item`
@@ -160,3 +167,5 @@ Activates when the player right-clicks using an item.
 #### `type` : `imm_ptl:throw_item`
 Checks every tick for the item entity that cannot be instantly picked up. (When a player throws one item it cannot be instantly picked up because the item entity has pick-up delay.) If an item is not thrown within 2 seconds, it will have no pick-up delay and cannot trigger the generation. The item can survive in lava for 1 tick, so throwing a non-fire-proof item into lava could still trigger the generation.
 * `item` Item id.
+#### `type` : `conventional_dimension_change`
+It will be triggered when the player experiences conventional dimension travel (with loading screen), for example going through a vanilla nether portal. This is useful for converting other mod's portal.
