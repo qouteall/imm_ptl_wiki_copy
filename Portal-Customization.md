@@ -50,8 +50,11 @@ For the portal-targeted commands, if the command invoker is a player, it targets
 |`/portal complete_bi_way_bi_faced_portal`|Create new portal entities to make the portal two-way and two-faced|
 |`/portal remove_connected_portals`|Remove portal entities to make the portal one-way and one-faced|
 |`/portal set_portal_rotation <axisX> <axisY> <axisZ> <angleDegrees>`|Set the portal's rotation transformation.<br>The rotation transformation is defined by a rotating axis vector and the angle in degrees.<br>When the axis is pointing on you positive angle corresponds rotating counterclockwise|
+|`/portal set_portal_rotation_along <axis> <angleDegrees>`|Similar to the above but use `x` `y` `z` to represent the axis vector|
 |`/portal rotate_portal_body <axisX> <axisY> <axisZ> <angleDegrees>`|Rotate the portal.<br>This command does not change the portal's rotating transformation|
+|`/portal rotate_portal_body_along <axis> <angleDegrees>`|...|
 |`/portal rotate_portal_rotation  <axisX> <axisY> <axisZ> <angleDegrees>`|Change the portal's rotation transformation by applying an additional rotation to the original rotation|
+|`/portal rotate_portal_rotation_along <axis> <angleDegrees>`|...|
 |`/portal move_portal <distance>`|Move the portal along the direcction that you are looking at|
 |`/portal move_portal_destination <distance>`|Move the portal's destination along the direction that you are looking at|
 |`/portal set_portal_specific_accessor <player>`|Make the portal entity only accessible by one player|
@@ -59,6 +62,7 @@ For the portal-targeted commands, if the command invoker is a player, it targets
 |`/portal multidest <player> <dimension> <x> <y> <z> <isBiFaced> <isBiWay>`|Set the portal destination for only one player (see below)|
 |`/portal multidest <player>`|Remove the player-specific portal from the portal clutter (see below)|
 |`/portal set_portal_scale <scale>`|Set the portal's scale transformation.|
+|`/portal eradicate_portal_clutter`|Completely remove a bi-way portal (4 portal entities). Equivalent to `/portal remove_connected_portals` and then `/portal delete_portal`|
 
 NOTE: Before using command `/portal set_portal_rotation`, `/portal move_portal` or `/portal set_portal_rotation` you should use `/portal remove_connected_portals` first or there will be unwanted portals remain.
 
@@ -137,5 +141,6 @@ These commands create normal portals instead of global portals. These wrapping p
 You can create a scaled wrapping by `/portal create_scaled_box_view <x1> <y1> <z1> <x2> <y2> <z2> <scale> <placeTargetEntity> <isBiWay>`.
 The wrapping zone is a box area. It will create 6 portals with scale transformation that points from the box around placeTargetEntity to the wrapping zone box. The generated portal won't change the entity scale upon teleportation. If you want to make a small box view of a big area, the scale should be bigger than 1. If isBiWay is true, it will generate the reverse portals for every portal. Then it will totally generate 12 portals totally.
 
-![](https://i.ibb.co/FxWQvjV/2020-08-06-13-15-23.png)
+The command invoker dimension is the dimension of the view box. For example, if you want to create a box viewing the end island, use `/execute in minecraft:the_end run portal create_scaled_box_view -100 0 -100 100 128 100 20 @p true`
 
+![](https://i.ibb.co/yhXHYHm/2020-08-26-21-18-54.png)
