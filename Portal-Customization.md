@@ -21,7 +21,7 @@ Turn a one-way portal to two-way two-faced portal: `/portal complete_bi_way_bi_f
 
 Make a portal entity have a rotating transformation, rotate the world "inside" the portal: `/portal set_portal_rotation 0 1 0 45` (0 1 0 means the Y-axis. It means rotating around the Y-axis for 45 degrees)
 
-Rotate the portal entity itself (does not rotate the world "inside" the portal): `/portal set_portal_rotation 1 0 0 30` (rotates around X-axis for 30 degrees)
+Rotate the portal entity itself (does not rotate the world "inside" the portal): `/portal rotate_portal_body 1 0 0 30` (rotates around X-axis for 30 degrees)
 
 Change the shape of the portal entity: `/portal set_portal_nbt {specialShape:[0d,0d,0d,1d,1d,0d]}`
 
