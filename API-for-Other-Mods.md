@@ -1,42 +1,54 @@
-### Creating a Portal Entity
+### Mod Structure
+This mod (Fabric version)'s mod id is `immersive_portals`. It has 3 mods jar-in-jar.
+* Immersive Portals Core (modid:`imm_ptl_core`)
+* Cloth Config
+* Mod Menu
 
-Check [this](https://github.com/qouteall/ImmersivePortalsMod/wiki/Portal-Customization) to have an idea about how this mod's portal is stored and organized.
+The Immersive Portals Core contains the core portal functionality:
+* Recursive portal rendering (Rendering context management, transformation management, OpenGL state management)
+* Client multi-world loading and ticking
+* Remote chunk loading
+* Remote chunk/entity networking synchronization
+* Dimension transition without loading screen and multidimensional player position mutual synchronization
+* Global portal management
+* Cross portal block interaction
+* Datapack-based custom portal generation (and general breakable portal)
+* Integration with OptiFine, Sodium (my fork), Pehkui, (Requiem)
+The Core registers portal entity types and portal placeholder block.
+The Core (hopefully) does not change existing vanilla behavior.
 
-Every portal entity is one-way and one-faced. A two-way portal contains 2 portal entities. A two-way two-faced portal contains 4 portal entities.
+The mod Immersive Portals has:
+* Enhanced nether portals
+* Enhanced end portal
+* Alternate dimensions
+* Dimension Stack
 
-You can create a [Portal](https://github.com/qouteall/ImmersivePortalsMod/blob/1.15/src/main/java/com/qouteall/immersive_portals/portal/Portal.java)
-entity, initialize its data and then add it into the world.
-`axisW` and `axisH` should be perpendicular. These two vectors defines the facing of the portal.
+Cloth Config and Mod Menu are used for providing the config GUI.
 
-If `specialShape` is null then the portal is rectangular. [GeometryPortalShape](https://github.com/qouteall/ImmersivePortalsMod/blob/1.15/src/main/java/com/qouteall/immersive_portals/portal/GeometryPortalShape.java) is a set of 2D triangles. This 2D coordinate's x axis is `axisW`, y axis is `axisH`.
-
-If you created one portal entity, you can add a new portal to complete the bi-way portal or bi-faced portal.[PortalManipulation](https://github.com/qouteall/ImmersivePortalsMod/blob/1.15/src/main/java/com/qouteall/immersive_portals/portal/PortalManipulation.java)
-
-You can also create breakable portals using [BlockPortalShape](https://github.com/qouteall/ImmersivePortalsMod/blob/1.15/src/main/java/com/qouteall/immersive_portals/portal/nether_portal/BlockPortalShape.java) by `NetherPortalGeneration#generateBreakablePortalEntities`. You can use a `GeneralBreakablePortalEntity`. Breakable portal has placeholder blocks to fill the portal area. If the placeholder block updates, nearby breakable portals will be notified to check portal integrity.
-
-This mod's code is mostly undocumented. If you have any questions, ask the author.
-
-### Configure dependency
-
-#### Using Jitpack
+### Configure Dependency
+#### If you want to use Immersive Portals Core and have it as a jar-in-jar
 
 Add this into `repositories`
 ```
 	maven { url 'https://jitpack.io' }
 ```
-
 Add this into `dependencies`
 
 ```
-	modImplementation 'com.github.qouteall:ImmersivePortalsMod:0.28-1.15-1'
+	modImplementation  'com.github.qouteall.ImmersivePortalsMod:imm_ptl_core:1.16-SNAPSHOT'
+        include 'com.github.qouteall.ImmersivePortalsMod:imm_ptl_core:1.16-SNAPSHOT'
 ```
-Check https://jitpack.io/#qouteall/ImmersivePortalsMod
+See https://jitpack.io/#qouteall/ImmersivePortalsMod
+(You can change `1.16-SNAPSHOT` to a release tag. If Jitpack doesn't work, try to fork this repo and use your own repo)
 
-If you want to configure an optional dependency, change `modImplementation` to `modCompileOnly`.
+#### If you want to have an optional dependency of Immersive Portals (some functionality only enables with IP installed)
+```
+	modCompileOnly 'com.github.qouteall.ImmersivePortalsMod:imm_ptl_core:1.16-SNAPSHOT'
+```
 
-If jitpack is broken, you can fork this mod on GitHub and use your fork. Or you can use CurseMaven.
 
-#### Using CurseMaven
+
+#### Use CurseMaven for Dependency (If Jitpack really doesn't work)
 
 **Note for Gradle 6 users: CurseMaven doesn't support Gradle 6**
 
