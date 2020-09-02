@@ -9,8 +9,8 @@ This mod adopts the first method.
 (It also has the "compatibility" rendering mode which uses the second method but does not support portal-in-portal rendering)
 
 Portal rendering takes place after all solid triangle rendering and before translucent triangle rendering.
-It will firstly render the portals nearby camera by the order of distance to the camera.
-When rendering a portal, it will use occlusion query to determine whether a portal is visible.
+It will first render the portals nearby camera by the order of distance to the camera.
+When rendering a portal, if the portal passes rough frustum culling, the view area will be rendered under an occlusion query to determine whether a portal is visible.
 If the portal is visible, clear the depth of portal view area, 
 and then switch the rendering context and render the world again.
 And it will render inner portals recursively.
@@ -21,7 +21,9 @@ So the stencil value corresponds to the portal layer.
 
 When rendering the portal view area, if the camera is very close to the portal,
 the pixels that are too close to the camera are culled during rasterization.
-To avoid this I additionally render a small pyramid-shaped hood around the camera in this case.
+So the view area will be rendered with `GL_DEPTH_CLAMP` enabled.
+
+Because the portal rendering is recursive, all rendering related context should be switched upon rendering, stored on the stack, and then recover after the portal rendering finishes.
 
 ### Advanced Frustum Culling
 When rendering portals, it will do advanced frustum culling to improve performance.
@@ -87,20 +89,20 @@ Teleportation is iterative. Normally the player at most teleports one time in a 
 
 ![](https://media.discordapp.net/attachments/671895772265971712/713993419093049374/unknown.png)
 
-Client will teleport first and then the server receives the teleport request and do teleportation on server.
-But when the player is not teleporting frequently, client will accept sync message from server.
+The client will teleport first and then the server receives the teleport request and do teleportation on the server.
+But when the player is not teleporting frequently, the client will accept a sync message from the server.
 
 ## Collision
-When an entity is halfway in portal then its collision will be specially treated.
+When an entity is halfway in the portal then its collision will be specially treated.
 It will cut the entity's collision into two pieces, one outside portal and one inside portal.
-It firstly do collision test for outer part and then
- switch the entity to the portal destination position and do collision test for inner part.
+It firstly does collision test for the outer part and then
+ switch the entity to the portal destination position and do collision test for the inner part.
 
 The plane for cutting the collision box is not the portal plane.
-It is the portal plane moved by the reverse of moving attempt vector.
+It is the portal plane moved by the reverse of the moving attempt vector.
  
 ## Global Portals
 World wrapping portals and vertical dimension connecting portals are very big.
-They are not entities in world like small portals.
-They are stored in per dimension global portal storage.
+They are not entities in the world like small portals.
+They are stored in per-dimension global portal storage.
 
