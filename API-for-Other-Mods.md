@@ -40,7 +40,7 @@ Add this into `dependencies`
         include 'com.github.qouteall.ImmersivePortalsMod:imm_ptl_core:1.16-SNAPSHOT'
 ```
 See https://jitpack.io/#qouteall/ImmersivePortalsMod
-(You can change `1.16-SNAPSHOT` to a release tag. If Jitpack doesn't work, try to fork this repo and use your own repo)
+(You can change `1.16-SNAPSHOT` to a release tag. If Jitpack doesn't work, try to fork this repo and use the forked repo)
 
 #### If you want to have an optional dependency of Immersive Portals (some functionality only enables with IP installed)
 ```
@@ -56,6 +56,7 @@ They exist as entities in the world. They cannot be very big.
 They are also portal entities but not added to the world.
 
 A portal have these properties
+* The world in which the entity is.
 * The entity position. The center of the portal
 * axisW and axisH vector. Defines the orientation of the portal. These two vectors have to be perpendicular.
 * width, height. The area of the portal.
@@ -77,7 +78,7 @@ Every portal entity is one-faced and one-way. There are some helper functions: `
 
 This mod is mostly undocumented. If you have any question ask qouteall.
 
-##### [Appendix] Use CurseMaven for Dependency (If Jitpack really doesn't work)
+### [Appendix] Use CurseMaven for Dependency (If Jitpack really doesn't work)
 
 **Note for Gradle 6 users: CurseMaven doesn't support Gradle 6**
 
