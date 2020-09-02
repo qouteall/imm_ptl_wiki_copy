@@ -46,9 +46,10 @@ See https://jitpack.io/#qouteall/ImmersivePortalsMod
 	modCompileOnly 'com.github.qouteall.ImmersivePortalsMod:imm_ptl_core:1.16-SNAPSHOT'
 ```
 
+### API Briefly Explained
+Being worked on.
 
-
-#### Use CurseMaven for Dependency (If Jitpack really doesn't work)
+##### [Appendix] Use CurseMaven for Dependency (If Jitpack really doesn't work)
 
 **Note for Gradle 6 users: CurseMaven doesn't support Gradle 6**
 
@@ -62,11 +63,7 @@ Use [CurseMaven](https://github.com/Wyn-Price/CurseMaven) to automatically get t
 
    This will add CurseMaven as a plugin and allow you to use curse.maven in your dependencies.
 
-2. Go to the [files tab on CurseForge](https://www.curseforge.com/minecraft/mc-mods/immersive-portals-mod/files) and pick the version you want. Click the purple download button. Look in your address bar and you will see something like:
-
-   `https://www.curseforge.com/minecraft/mc-mods/immersive-portals-mod/files/2936532`
-
-   The long number at the end is the version you want. In this case it's `2936532`. You can close the tab now because you don't need to download the file to your computer, CurseMaven will do it for you. But remember to copy the number and put it somewhere.
+2. Go to the [files tab on CurseForge](https://www.curseforge.com/minecraft/mc-mods/immersive-portals-mod/files) and pick the version you want. Click the purple download button. Look in your address bar and you will see something like:`https://www.curseforge.com/minecraft/mc-mods/immersive-portals-mod/files/2936532`The long number at the end is the version you want. In this case it's `2936532`. You can close the tab now because you don't need to download the file to your computer, CurseMaven will do it for you. But remember to copy the number and put it somewhere.
 
 3. In your `dependencies` block in build.gradle put:
 
