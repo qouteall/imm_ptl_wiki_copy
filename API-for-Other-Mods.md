@@ -4,8 +4,8 @@ This mod (Fabric version)'s mod id is `immersive_portals`. It has 3 mods jar-in-
 * Cloth Config
 * Mod Menu
 
-The Immersive Portals Core contains the core portal functionality:
-* Recursive portal rendering (Rendering context management, transformation management, OpenGL state management)
+The Immersive Portals Core contains [the core portal functionality](https://github.com/qouteall/ImmersivePortalsMod/wiki/Implementation-Details):
+* Recursive portal rendering (Rendering context management, transformation management, OpenGL state and framebuffer management)
 * Client multi-world loading and ticking
 * Remote chunk loading
 * Remote chunk/entity networking synchronization
@@ -22,7 +22,8 @@ The mod Immersive Portals has:
 * Enhanced nether portals
 * Enhanced end portal
 * Alternate dimensions
-* Dimension Stack
+* Dimension stack
+* Extended reach in creative mode
 
 Cloth Config and Mod Menu are used for providing the config GUI.
 
