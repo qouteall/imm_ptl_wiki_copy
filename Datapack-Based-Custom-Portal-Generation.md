@@ -128,7 +128,7 @@ Similar to the above but the frame block can be constituted by several different
 * `frame_block` Block tag or block id. Specifies the portal frame block.
 * `generate_frame_if_not_found` Boolean.
 
-Using datapack-provided tags is a little bit weird. For example, you have `data/minecraft/tags/blocks/namespace/mytag.json` then the tag is `minecraft:namespace/mytag`
+About custom block tags: if you have `data/minecraft/tags/blocks/namespace/mytag.json` then the tag is `minecraft:namespace/mytag`
 
 #### `type` : `imm_ptl:flipping_floor_square`
 The portal must be horizontal and the shape must be a square. The generated portal will be one-faced and has a rotating transformation of 180 degrees around the X-axis. The "world inside portal" is flipped. And the generated portal will have motion affinity 0.1, which means that the player will be accelerated when touching the portal. Unlike the other forms, the blocks above the frame and the blocks below the area can also be specified.
@@ -156,6 +156,16 @@ Similar to `imm_ptl:flipping_floor_square` it generates floor portal with a flip
 
 * `area_block` Block tag or block id. Specifies the portal area block.
 * `frame_block` Block tag or block id. Specifies the portal frame block.
+* `generate_frame_if_not_found` Boolean.
+
+#### `type` : `imm_ptl:try_hard_to_match`
+It diligently tries to match with the scaled and rotated portal frame. The classical nether portal can only link to the frame that has the exact size and orientation. But this portal generation can link to the shape with different scale and rotation as long as the topology shape matches. It can create the portal with rotation transformation and scale transformation. Unlike `imm_ptl:flipping_floor_square` and `imm_ptl:scaling_square`, the rotation and scale do not need to be hard-coded and the shape can be not square.
+
+The maximum area side length is 20.
+
+* `from_frame_block` Block id. This side's frame block.
+* `area_block` Block id. The portal frame content's block.
+* `to_frame_block` Block id. The other side's frame block.
 * `generate_frame_if_not_found` Boolean.
 
 ### The Format of Custom Portal Generation Trigger
