@@ -58,3 +58,34 @@ Turning this off increases server performance.
 Defines the maximum loading radius of indirect chunk loading through portals. Turning it down means that fewer chunks will be loaded when a player approaches a portal thus increase server performance.
 
 
+## Other Client-Side Configurations
+### Compatibility Render Mode
+If it's enabled, the portal rendering algorithm that avoids using the stencil buffer will be used and portal-in-portal cannot be rendered. If you see portals through walls with OptiFine shaders enabled then you should enable this option.
+
+### Render Yourself in Portal
+...
+
+### Pure Mirror
+If enabled, the glass texture on mirrors will not be rendered.
+
+### Cross Portal Entity Rendering
+If disabled, the entities that are touching a portal will look clipped. However, sometimes cross portal entity rendering may cause rendering issues.
+
+### Check GL Error
+Used for debugging.
+
+## Other Server-Side Configurations
+### Enable Alternate Dimensions
+...
+
+### Longer Reach in Creative
+...
+
+### Teleportation Debug
+Used for debugging.
+
+### Portal Searching Range
+The range that the existing portal frame is being searched in when lighting a portal.
+
+
+
