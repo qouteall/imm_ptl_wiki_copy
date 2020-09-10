@@ -1,9 +1,9 @@
 
 ## Client-Side Performance Configurations
 When you are nearby a portal, the FPS may drop due to these reasons:
-* Rendering a portal decreases FPS. If the portal is invisible in the view (for example hidden by a wall) then it won't be rendered. Rendering a portal is roughly equivalent to rendering the whole world inside the portal again.
-* Client lighting updates create lag spikes. Some remote light updates happen upon chunk data retrieval and some light updates happen upon portal rendering.
-* More chunk mesh rebuild costs computational resources. This mod tries not to build any remote chunk in the render thread during portal rendering. But rebuilding the chunks that are viewed through portals sometimes still costs performance.
+* Portal rendering. If the portal is invisible in the view (for example hidden by a wall) then it won't be rendered. Rendering a portal is roughly equivalent to rendering the whole world inside the portal again.
+* Client lighting updates. Some remote light updates happen upon chunk data retrieval and some light updates happen upon portal rendering. The light updates may cause lag spikes.
+* More chunk mesh rebuild. This mod tries not to build any remote chunk in the render thread during portal rendering. But rebuilding the chunks that are viewed through portals sometimes still costs performance.
 * More frequent GC due to loading more chunks. Approaching a portal loads more chunks and entities which consumes more RAM and may increase GC frequency thus creating more lag spikes.
 
 ### Max Portal Layer
