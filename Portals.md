@@ -15,9 +15,19 @@ If the obsidian frame is broken, then the nether portal will break.
 ## End Portals
 After installing this mod, existing end portals will not be changed.
 
-All end portals will point to (0 120 0) in the end dimension. When a player jumps into an end portal, the player will get slow falling effect for 6 seconds except when wearing elytra.
+This mod has 4 end portal types: `normal`, `toObsidianPlatform`, `scaledView`, `vanilla`.
+
+The normal type of end portal points to (0 120 0) in the end dimension. When a player jumps into an end portal, the player will get slow falling effect for 6 seconds except when wearing elytra.
 
 ![](https://i.ibb.co/C08FFJn/2020-05-26-21-55-16.png)
+
+The `toObsidianPlatform` type points to the obsidian platform.
+
+The `scaledView` type end portal shows an overlook of the entire end island. It consists of 6 portals with scale transformation (and another 6 client-only portals on the end dimension).
+
+![](https://i.ibb.co/hmRS3KH/2020-09-15-21-13-34.png)
+
+This type of end portal is laggier.
 
 ## Mirrors
 Use flint and steel to right-click on a glass wall creates a mirror. Currently, mirrors can only be in a rectangular shape. Mirrors can be horizontal. Mirrors can be created on a stained glass wall or glass pane wall. Mirror breaks when the glass wall is broken.
