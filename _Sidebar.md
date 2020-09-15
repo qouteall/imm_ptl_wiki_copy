@@ -16,6 +16,4 @@
 
 [Config Options](https://github.com/qouteall/ImmersivePortalsMod/wiki/Config-Options)
 
-[Implementation Details](https://github.com/qouteall/ImmersivePortalsMod/wiki/Implementation-Details)
-
 [API for Other Mods](https://github.com/qouteall/ImmersivePortalsMod/wiki/API-for-Other-Mods)
