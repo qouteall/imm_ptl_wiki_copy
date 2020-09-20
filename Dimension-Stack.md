@@ -1,9 +1,9 @@
 
 You can see the "Dimension Stack" button when creating a new world.
 
-![](https://cdn.discordapp.com/attachments/671895772265971712/689750594562293934/unknown.png)
+![](https://i.ibb.co/LPNBZ0v/2020-09-20-21-03-15.png)
 
-![](https://cdn.discordapp.com/attachments/671895772265971712/689750671284895757/unknown.png)
+![](https://i.ibb.co/QC5L77B/2020-09-20-21-03-21.png)
 
 If the dimension stack is enabled, the bedrock blocks in the world will be replaced by obsidian.
 And it will generate vertical connecting portals to connect the dimensions.
