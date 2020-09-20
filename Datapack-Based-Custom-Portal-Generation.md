@@ -1,6 +1,4 @@
 
-This feature is 1.16 only.
-
 Configure custom portal generation mechanics using JSON files in a datapack.
 
 [What are datapacks and how to install them](https://minecraft.gamepedia.com/Data_Pack)
@@ -94,18 +92,18 @@ The example datapack has
 ```
 ## Details Explained
 
-The datapack-based custom portal generation system allows configuring special portal generation mechanics. The portal generation can be triggered by the player using an item or throwing an item. It can be configured to only generate in one dimension and goes to another dimension. The space ration can be configured to determine where the destination should be. A list of commands can be specified to be invoked after portal creation. There are different portal forms each with different kinds of portals and different destination selection mechanics.
+The datapack-based custom portal generation system allows configuring special portal generation mechanics. The portal generation can be triggered by the player using an item or throwing an item. It can be configured to only generate in one dimension and goes to another dimension. The space ratio can be configured to determine where the destination should be. A list of commands can be specified to be invoked after portal creation. There are different portal forms each with different kinds of portals and different destination selection mechanics.
 
 All the generated portals will be `immersive_portals:general_breakable_portal`. They will be generated with placeholder blocks filling the area. And they will break if the frame is broken. (Placeholder blocks have illumination)
 
-The generated portal's portalTag will be the identifier of the generation.
+The generated portal's `portalTag` will be the identifier of the generation.
 
-The custom portal gen json should be located in `data/<namespace>/custom_portal_generation/`.
+The custom portal generation json should be located in `data/<namespace>/custom_portal_generation/`.
 
 ### The Format of Custom Portal Generation
 * `schema_version` String. Must be `imm_ptl:v1`.
-* `from` List of dimension ids. The dimensions that this generation can perform in. A special case: if it is `imm_ptl:any_dimension` then the generation can perform in any dimension.
-* `to` Dimension id. The destination dimension's id. A special case: if it's `imm_ptl:the_same_dimension`, the destination dimension will be the same as the from dimension. If the destination dimension does not exist, this generation will be disabled. The destination dimension can be set to a datapack-added dimension or mod-added dimension and only enables when that datapack or mod is present.
+* `from` List of dimension ids. The dimensions that this generation can perform in. A special case: if it is `["imm_ptl:any_dimension"]` then the generation can perform in any dimension.
+* `to` Dimension id. The destination dimension's id. A special case: if it's `imm_ptl:the_same_dimension`, the destination dimension will be the same as the from dimension. If the destination dimension does not exist, this generation will be disabled. The destination dimension can be set to a datapack-added dimension or a mod-added dimension and only enables when that datapack or mod is present.
 * `space_ratio_from` Integer (1 if missing). This side dimension's space ratio.
 * `space_ratio_to` Integer (1 if missing). The other side dimension's space ratio. Together with the above defines the space mapping. For example, 8 blocks' length in overworld corresponds to 1 block's length in the nether. The overworld's space ratio is 8 and the nether's space ration is 1.
 * `reversible` Boolean (true if missing). If true, the reverse version of this generation will also be loaded. If you configured a portal from overworld to nether with reversible false, then the portal can only be activated in the overworld. If it's true then the portal can also be activated in the nether. If there are multiple from dimensions, the first one will be selected for the destination of the reverse generation.
@@ -116,7 +114,7 @@ The custom portal gen json should be located in `data/<namespace>/custom_portal_
 ### The Format of Custom Portal Generation Form
 #### `type` : `imm_ptl:classical`
 The classical form. Similar to the nether portal, it can be in any shape and can be horizontal. The frame can only be constituted by one type of block. However, this side's frame block can be different from the other side's frame block.
-Upon activation, it will firstly check whether the other side's terrain is generated. If the other side's terrain is generated, it will load surrounding chunks and then search for the existing portal frame. If an existing frame is found, the portal will link to it.
+Upon activation, it will first check whether the other side's terrain is generated. If the other side's terrain is generated, it will load surrounding chunks and then search for the existing portal frame. If an existing frame is found, the portal will link to it.
 
 * `from_frame_block` Block id. This side's frame block.
 * `area_block` Block id. The portal frame content's block. (The activation spot's block will not be checked. If the area block is air and you trigger witl flint and steel, the activation spot's block will be fire block. If the area is all air blocks except this fire block the portal still can generate)
@@ -129,8 +127,6 @@ Similar to the above but the frame block can be constituted by several different
 * `area_block` Block tag or block id. Specifies the portal area block.
 * `frame_block` Block tag or block id. Specifies the portal frame block.
 * `generate_frame_if_not_found` Boolean.
-
-About custom block tags: if you have `data/minecraft/tags/blocks/namespace/mytag.json` then the tag is `minecraft:namespace/mytag`
 
 #### `type` : `imm_ptl:flipping_floor_square`
 The portal must be horizontal and the shape must be a square. The generated portal will be one-faced and has a rotating transformation of 180 degrees around the X-axis. The "world inside portal" is flipped. And the generated portal will have motion affinity 0.1, which means that the player will be accelerated when touching the portal. Unlike the other forms, the blocks above the frame and the blocks below the area can also be specified.
