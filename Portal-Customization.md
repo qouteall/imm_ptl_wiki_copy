@@ -8,7 +8,7 @@ You can build two identical frames using that block and use flint and steel to l
 
 ![](https://i.ibb.co/D8kLnDf/2020-09-15-21-23-39.png)
 
-
+Unlike nether portals, the generated portal won't break when the frame breaks. And no portal placeholder block is filled. After generating the portal a block of the portal helper frame will be removed so that other portal helper frames won't link to it.
 
 The portal helper cannot generate a cross-dimension portal or a portal that links to far places using the portal helper. To achieve that you need to use commands to edit the portal.
 
@@ -27,9 +27,9 @@ Turn a one-way portal to two-way portal: `/portal complete_bi_way_portal`
 
 Turn a one-way portal to two-way two-faced portal: `/portal complete_bi_way_bi_faced_portal`
 
-Make a portal entity have a rotating transformation, rotate the world "inside" the portal: `/portal set_portal_rotation 0 1 0 45` (0 1 0 means the Y-axis. It means rotating around the Y-axis for 45 degrees)
+Make a portal entity have a rotating transformation, rotate the world "inside" the portal: `/portal set_portal_rotation 0 1 0 45` (0 1 0 means the Y-axis. It means rotating around the Y-axis for 45 degrees). It's equivalent to `/portal set_portal_rotation_along y 45`
 
-Rotate the portal entity itself (does not rotate the world "inside" the portal): `/portal rotate_portal_body 1 0 0 30` (rotates around X-axis for 30 degrees)
+Rotate the portal entity itself (does not rotate the world "inside" the portal): `/portal rotate_portal_body 1 0 0 30` (rotates around X-axis for 30 degrees). Equivalent to `/portal rotate_portal_body_along x 30`
 
 Change the shape of the portal entity: `/portal set_portal_nbt {specialShape:[0d,0d,0d,1d,1d,0d]}`
 
@@ -116,7 +116,7 @@ If you don't change these accordingly some sections may not be rendered due to a
 ### Commands for Command Blocks
 `/portal cb_make_portal <width> <height> <fromEntity> <toEntity>` creates a portal entity goes from fromEntity to toEntity. The orientation is determined by fromEntity's orientation.
 
-These commands are deprecated.
+These commands are deprecated. They may be removed in the future.
 `/portal cb_set_portal_destination <portal> <dimension> <x> <y> <z>` `/portal cb_complete_bi_way_portal <portal>` `/portal cb_complete_bi_faced_portal <portal>` `/portal cb_complete_bi_way_bi_faced_portal <portal>` `/portal cb_remove_connected_portals <portal>` `/portal cb_set_portal_specific_accessor <portal> [player]` 
 
 ### Creating the Portal that Points to Different Destinations for Different Players
