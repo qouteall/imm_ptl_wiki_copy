@@ -10,6 +10,14 @@ And it will generate vertical connecting portals to connect the dimensions.
 
 ![](https://cdn.discordapp.com/attachments/671895772265971712/688997283836067881/stack.png)
 
-If you want to use dimension stack in a server, you need to first create the dimension stack world on client and then copy the world to the server.
+If you want to use dimension stack in a server, you need to first create the dimension stack world on the client and then copy the world to the server.
 
 Dimension stack can greatly degrade performance. You can shrink the loading distance when using dimension stack.
+
+### How to disable dimension stack after the world has been created
+Disable the ipDimensionStack gamerule so that the bedrock won't be generated as obsidian (but existing generated chunks remain the same).
+`/gamerule ipDimensionStack false`
+
+Then use `/portal global remove_connection_ceil <dimension>` `/portal global remove_connection_floor <dimension>` to remove the vertical connecting portals. [See](https://github.com/qouteall/ImmersivePortalsMod/wiki/Portals#vertical-dimension-connecting-portal)
+
+Vice versa for enabling dimension stack after the world has been created.
