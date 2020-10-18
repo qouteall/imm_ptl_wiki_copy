@@ -70,21 +70,15 @@ Example:
 `/portal global connect_floor minecraft:the_end minecraft:overworld`
 With this, you will return to the overworld when dropping into the void in end.
 
-![](https://i.ibb.co/kgKw9KG/2019-10-24-22-54-05.png)
+![](https://i.ibb.co/JvDMZtj/2020-10-18-22-15-38.png)
 
 This connection is one-way. If you want to make it bi-way, use
 `/portal global connect_ceil minecraft:overworld minecraft:the_end`
 Then you can see the end above overworld.
 Use `/portal global connection_remove_floor <dimension>` `/portal global connection_remove_ceil <dimension>` to remove a connecting portal.
 
-#### Using Vertical Connection to Break Height Limit
-By connecting a dimension above the overworld, you increase the overworld's height limit from 256 to 512.
-
-The connection portal does not really connect them. It's just an illusion. 
-Cross-portal collision is not perfect but it works in simple cases.
-Cross-portal entity rendering has problems.
-Redstone or fluid cannot work across the portal.
-Entity AI does not work cross-portal.
+#### Using Vertical Connection to Break the Height Limit
+By connecting a dimension above the overworld, you increase the overworld's height limit from 256 to 512. It does not really increase the height limit. It just uses portals to "connect" the dimensions. It won't be as perfect as cubic chunks. (Redstone, fluid, lighting, and entity AI does not work through portals)
 
 #### Vertical World Wrapping
 For example
