@@ -1,12 +1,15 @@
+(A full set of APIs for other mods to use haven't been fully implemented. It's being worked on.)
+
 ### Mod Structure
 This mod (Fabric version)'s mod id is `immersive_portals`. It has 3 mods jar-in-jar.
 * Immersive Portals Core (modid:`imm_ptl_core`)
 * Cloth Config
 * Mod Menu
+(Cloth Config and Mod Menu are used for providing the config GUI)
 
 The Immersive Portals Core contains [the core portal functionality](https://github.com/qouteall/ImmersivePortalsMod/wiki/Implementation-Details):
 * Recursive portal rendering (Rendering context management, transformation management, OpenGL state and framebuffer management)
-* Client multi-world loading and ticking
+* Client multi-world loading
 * Remote chunk loading
 * Remote chunk/entity networking synchronization
 * Dimension transition without loading screen and multidimensional player position mutual synchronization
@@ -24,8 +27,6 @@ The mod Immersive Portals has:
 * Alternate dimensions
 * Dimension stack
 * Extended reach in creative mode
-
-Cloth Config and Mod Menu are used for providing the config GUI.
 
 ### Configure Dependency
 #### If you want to use Immersive Portals Core and have it as a jar-in-jar
@@ -54,9 +55,9 @@ There are two kinds of portals:
 * Portal Entities in World
 They exist as entities in the world. They cannot be very big.
 * Global Portals
-They are also portal entities but not added to the world.
+They are also portal entities but not added to the world. They can be very big.
 
-A portal have these properties
+A portal has these properties
 * The world in which the entity is.
 * The entity position. The center of the portal
 * axisW and axisH vector. Defines the orientation of the portal. These two vectors have to be perpendicular.
@@ -77,32 +78,4 @@ To add a portal entity, create the portal entity object, change the properties, 
 
 Every portal entity is one-faced and one-way. There are some helper functions: `PortalManipulation.createReversePortal` `PortalManipulation.createFlippedPortal`.
 
-This mod is mostly undocumented. If you have any question ask qouteall.
-
-### [Appendix] Use CurseMaven for Dependency (If Jitpack really doesn't work)
-
-**Note for Gradle 6 users: CurseMaven doesn't support Gradle 6**
-
-Use [CurseMaven](https://github.com/Wyn-Price/CurseMaven) to automatically get the mod from [CurseForge](https://www.curseforge.com/minecraft/mc-mods/immersive-portals-mod).
-
-1. In your `plugins` block at the top of build.gradle add this at the end:
-
-   ```
-   	id "com.wynprice.cursemaven" version "2.1.1"
-   ```
-
-   This will add CurseMaven as a plugin and allow you to use curse.maven in your dependencies.
-
-2. Go to the [files tab on CurseForge](https://www.curseforge.com/minecraft/mc-mods/immersive-portals-mod/files) and pick the version you want. Click the purple download button. Look in your address bar and you will see something like:`https://www.curseforge.com/minecraft/mc-mods/immersive-portals-mod/files/2936532`The long number at the end is the version you want. In this case it's `2936532`. You can close the tab now because you don't need to download the file to your computer, CurseMaven will do it for you. But remember to copy the number and put it somewhere.
-
-3. In your `dependencies` block in build.gradle put:
-
-   ```
-   	modImplementation "curse.maven:immersive-portals-mod:2936532"
-   ```
-
-   `curse.maven` tells it to use the CurseMaven plugin, `immersive-portals-mod` is the mod id on Curse, and `2936532` is the file id. You can use `modCompileOnly` for optional dependency.
-
-4. Rerun gradle sync from your IDE and you should be able to access `Portal` class from `com.qouteall.immersive_portals.portal`. Or any other class in this mod.
-
-
+The appropriate API of this mod is still being worked on. Most code is not documented. If you have any questions ask qouteall.
