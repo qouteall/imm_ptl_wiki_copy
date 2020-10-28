@@ -35,7 +35,7 @@ Change the shape of the portal entity: `/portal set_portal_nbt {specialShape:[0d
 
 Make the portal entity not able to teleport. Turn it into a video surveillance: `/portal set_portal_nbt {teleportable:0b}`
 
-Make a nether portal entity unbreakable: `/portal set_portal_nbt {unbreakable:1b}`
+Make a nether portal entity unbreakable: `/portal set_portal_nbt {unbreakable:1b}` (**Normally if you edit a nether portal then it will detect that the nether portal entities are not properly linked and then remove the portal. It's recommended to use this command for 4 portal entities before editing nether portal**)
 
 ### Portal Entities
 Global portals don't exist as entities in the world, they are global. All other portals, including nether portals, end portals, mirrors, exist as entities in the world.
