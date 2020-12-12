@@ -77,10 +77,10 @@ Used for debugging.
 ## Other Server-Side Configurations
 
 ### Nether Portal Mode
-![See](https://github.com/qouteall/ImmersivePortalsMod/wiki/Portals#nether-portals)
+[See](https://github.com/qouteall/ImmersivePortalsMod/wiki/Portals#nether-portals)
 
 ### End Portal Mode
-![See](https://github.com/qouteall/ImmersivePortalsMod/wiki/Portals#end-portals)
+[See](https://github.com/qouteall/ImmersivePortalsMod/wiki/Portals#end-portals)
 
 ### Enable Alternate Dimensions
 If disabled, the alternate dimensions won't be loaded. (All portals pointing to alternate dimensions will vanish.)
