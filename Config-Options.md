@@ -63,7 +63,7 @@ Defines the maximum loading radius of indirect chunk loading through portals. Tu
 If it's enabled, the portal rendering algorithm that avoids using the stencil buffer will be used and portal-in-portal cannot be rendered. If you see portals through walls with OptiFine shaders enabled then you should enable this option.
 
 ### Render Yourself in Portal
-...
+If disabled, you cannot see yourself in portals. But other players will still be rendered.
 
 ### Pure Mirror
 If enabled, the glass texture on mirrors will not be rendered.
@@ -75,17 +75,22 @@ If disabled, the entities that are touching a portal will look clipped. However,
 Used for debugging.
 
 ## Other Server-Side Configurations
+
+### Nether Portal Mode
+![See](https://github.com/qouteall/ImmersivePortalsMod/wiki/Portals#nether-portals)
+
+### End Portal Mode
+![See](https://github.com/qouteall/ImmersivePortalsMod/wiki/Portals#end-portals)
+
 ### Enable Alternate Dimensions
-...
+If disabled, the alternate dimensions won't be loaded. (All portals pointing to alternate dimensions will vanish.)
 
 ### Longer Reach in Creative
-...
+[See](https://github.com/qouteall/ImmersivePortalsMod/wiki/Miscellaneous#hand-reach-tweak)
 
 ### Teleportation Debug
 Used for debugging.
 
 ### Portal Searching Range
-The range that the existing portal frame is being searched in when lighting a portal.
-
-
+The range that the existing portal frame is being searched in when lighting a nether portal (or datapack custom portal).
 
