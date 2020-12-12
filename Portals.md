@@ -4,22 +4,43 @@ After installing this mod, all existing nether portals will not change.
 
 A nether portal can have a non-rectangular shape and can be horizontal.
 
-This mod has 3 nether portal modes: `normal`, `adaptive` and `vanilla`.
 
-When you use flint and steel to light an obsidian frame, it will load chunks on the other side and then search for an existing obsidian frame with identical shape. If it finds one, it will link with that existing obsidian frame. Otherwise, a new obsidian frame will be generated. The searching range can be configured. The obsidian frame filled with vanilla portal block cannot be linked. It will not link to a vanilla nether portal.
+
+When you use flint and steel to light an obsidian frame, it will load chunks on the other side and then search for an existing obsidian frame that it can link to. If it finds one, it will link with that existing obsidian frame. Otherwise, a new obsidian frame will be generated.
+
+It will not link to a vanilla nether portal.
 
 In the `normal` mode it can only link to the obsidian shape with the exact shape and orientation. In `adaptive` mode it can link to the scaled and rotated obsidian frame.
+
+The maximum nether portal side length is 20.
+
+This mod has 3 nether portal modes: `normal`, `adaptive` and `vanilla`. The nether portal mode controls the new portal generation.
+
+### Mode : `normal`
+It can only link to the obsidian frame that has the exact same shape and orientation.
+
+### Mode : 'adaptive'
+It can link to the obsidian frame that has a compatible shape. This does not require the linked shape to be exactly the same. It can link to the rotated and scaled obsidian frame. And the generated portal will have the corresponding rotation and scale transformations.
+
+### Mode : 'vanilla'
+Does not change vanilla nether portal functionality.
 
 ## End Portals
 After installing this mod, existing end portals will not be changed.
 
 This mod has 4 end portal types: `normal`, `toObsidianPlatform`, `scaledView`, `vanilla`.
 
+### Mode : `normal`
+
 The normal type of end portal points to (0 120 0) in the end dimension. When a player jumps into an end portal, the player will get slow falling effect for 6 seconds except when wearing elytra.
 
 ![](https://i.ibb.co/C08FFJn/2020-05-26-21-55-16.png)
 
-The `toObsidianPlatform` type points to the obsidian platform.
+### Mode : `toObsidianPlatform`
+
+Points to the obsidian platform.
+
+### Mode : `scaledView`
 
 The `scaledView` type end portal shows an overlook of the entire end island. It consists of 6 portals with scale transformation (and another 6 client-only portals on the end dimension).
 
@@ -27,13 +48,16 @@ The `scaledView` type end portal shows an overlook of the entire end island. It 
 
 This type of end portal is laggier.
 
+### Mode : `vanilla`
+Does not change vanilla end portal functionality.
+
 ## Mirrors
 Use flint and steel to right-click on a glass wall creates a mirror. Currently, mirrors can only be in a rectangular shape. Mirrors can be horizontal. Mirrors can be created on a stained glass wall or glass pane wall. Mirror breaks when the glass wall is broken.
 
 ![](https://i.ibb.co/Jr0fdfv/2020-05-26-21-58-45.png)
 
 ## Global Portals
-Global portals cannot be created in normal survival. They can only be created or removed by commands.
+Global portals can be very big.
 
 ### World Wrapping Portal
 
