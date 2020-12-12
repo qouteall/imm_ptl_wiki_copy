@@ -19,10 +19,10 @@ This mod has 3 nether portal modes: `normal`, `adaptive` and `vanilla`. The neth
 ### Mode : `normal`
 It can only link to the obsidian frame that has the exact same shape and orientation.
 
-### Mode : 'adaptive'
+### Mode : `adaptive`
 It can link to the obsidian frame that has a compatible shape. This does not require the linked shape to be exactly the same. It can link to the rotated and scaled obsidian frame. And the generated portal will have the corresponding rotation and scale transformations.
 
-### Mode : 'vanilla'
+### Mode : `vanilla`
 Does not change vanilla nether portal functionality.
 
 ## End Portals
@@ -71,7 +71,7 @@ The inward world wrapping wraps a finite space and "repeat" it "infinitely". Whe
 
 Use command `/portal global create_inward_wrapping <x1> <z1> <x2> <z2>` to create an inward wrapping zone.
 
-The outward world wrapping isolates an area out of space. When you want to go into it from left, you will appear on the right.
+The outward world wrapping isolates an area out of space. When you want to go into it from the left, you will appear on the right.
 
 ![](https://i.ibb.co/9g72926/2020-05-26-22-04-50.png)
 
