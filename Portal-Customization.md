@@ -34,6 +34,8 @@ If it's used for a bi-way bi-faced portal, in the 4 portal entities the portal e
 
 Command `/portal complete_bi_way_portal` will create the "reverse" version of the portal entity thus make the portal bi-way. The command `/portal complete_bi_faced_portal` completes the portal to be bi-faced, and the command `/portal complete_bi_way_bi_faced_portal` completes the portal to be bi-way bi-faced.
 
+Command `/portal eradicate_portal_clutter` removes the whole portal. If used to a bi-way bi-faced portal, all 4 portal entities will be removed.
+
 If you want to edit a bi-way bi-faced portal, 4 portal entities need to be edited. It's recommended to firstly use `/portal remove_connected_portals` to make only one portal entity remain. Then you can move the portal or change its space transformation without leaving unwanted portal entities. Then you can make this portal two-way and two-faced by `/portal complete_bi_way_bi_faced_portal`. If you edit the portal before using `/portal remove_connected_portals`, the portal entities on the other side and the other face won't be edited.
 
 ### Portal-Targeted Commands
