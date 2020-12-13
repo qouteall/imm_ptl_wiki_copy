@@ -56,9 +56,24 @@ To create a mirror, use flint and steel to right-click on a glass wall. Mirrors 
 ![](https://i.ibb.co/Jr0fdfv/2020-05-26-21-58-45.png)
 
 ## Global Portals
-Global portals can be very big.
 
-### World Wrapping Portal
+A portal can be in two different states: normal portal and global portal.
+
+A normal portal is a normal entity. It's loaded when its chunk is loaded. A normal portal cannot be very big. If a normal portal is very big, when you are far from its center, the portal is unloaded.
+
+The global portals are always loaded. They can be very big.
+
+The global portals can be managed by commands.
+
+### Convert a Portal Between Normal Portal and Global Portal
+
+By using the command `/portal global convert_global_portal_to_normal_portal`, the global portal that you are pointing to will be converted into a normal portal. To use this command you must not be far away from the portal center.
+
+Use command `/portal global convert_normal_portal_to_global_portal` to convert the normal portal that you are pointing to into a global portal.
+
+### Global Portal Management Commands
+
+#### World Wrapping Portal
 
 There are two types of world wrapping, inward and outward.
 
@@ -86,7 +101,7 @@ After setting up the wrapping portals, you may see z-fighting or missing block f
 Use command `/portal global clear_wrapping_border` to clear all blocks in the outer border.
 (**NOTE** This operation cannot be undone. You should backup the world before trying this.)
 
-### Vertical Dimension Connecting Portal
+#### Vertical Dimension Connecting Portal
 The vertical dimension connecting portals connects two dimensions vertically.
 
 Example:
@@ -100,12 +115,20 @@ This connection is one-way. If you want to make it bi-way, use
 Then you can see the end above overworld.
 Use `/portal global connection_remove_floor <dimension>` `/portal global connection_remove_ceil <dimension>` to remove a connecting portal.
 
-#### Using Vertical Connection to Break the Height Limit
+##### Using Vertical Connection to Break the Height Limit
 By connecting a dimension above the overworld, you increase the overworld's height limit from 256 to 512. It does not really increase the height limit. It just uses portals to "connect" the dimensions. It won't be as perfect as cubic chunks. (Redstone, fluid, lighting, and entity AI does not work through portals)
 
-#### Vertical World Wrapping
+##### Vertical World Wrapping
 For example
 `/portal global connect_floor immersive_portals:alternate4 immersive_portals:alternate4`
 
 `/portal global connect_ceil immersive_portals:alternate4 immersive_portals:alternate4`
 
+## How Does a Portal Interact with the Minecraft World
+
+* Chunk loading. If a player comes near a portal, the other side chunks will be loaded and synchronized to the client.
+* Rendering. If the portal is visible in the view, it will be rendered.
+* Teleportation. If an entity crosses the portal, it will be teleported (if it can).
+* Collision. If an entity touches a portal, this mod will handle its cross-portal collision.
+* Cross Portal Entity Rendering. If an entity touches a portal, this mod will try to both render the entity inside and outside the portal so that the entity does not look clipped.
+* Cross Portal Block Interaction. The player can place and break blocks through the portal.
