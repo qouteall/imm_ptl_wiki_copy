@@ -132,6 +132,21 @@ Remove the player-specific portal from the portal clutter.
 #### `/portal set_portal_custom_name <name>`
 Set a portal's custom name.
 
+## Direct Portal Creation Commands
+Can be used by OPs and creative mode players.
+
+#### `/portal make_portal <width> <height> <dim> <toX> <toY> <toZ>`
+Create a new portal coming off of the side of the block you're pointing at. The specified height is always pointing away from the surface and the width is always the other way, and the portal will point towards you.
+
+#### `/portal make_portal <width> <height> <dim> shift <distance>`
+Create a portal whiches destination is `distance` blocks in front of the portal.
+
+#### `/portal create_small_inward_wrapping <x1> <y1> <z1> <x2> <y2> <z2>`
+Create a small inward wrapping zone. The generated portals are normal portals.
+
+#### `/portal create_small_outward_wrapping <x1> <y1> <z1> <x2> <y2> <z2>`
+Similar to the above but the wrapping zone is outward.
+
 ## Miscellaneous Commands
 
 #### `/portal cb_make_portal <width> <height> <fromEntity> <toEntity>`
