@@ -132,3 +132,9 @@ For example
 * Collision. If an entity touches a portal, this mod will handle its cross-portal collision.
 * Cross Portal Entity Rendering. If an entity touches a portal, this mod will try to both render the entity inside and outside the portal so that the entity does not look clipped.
 * Cross Portal Block Interaction. The player can place and break blocks through the portal.
+
+## Breakable Portals
+Nether portals and custom datapack generated portals are breakable portals. The breakable portals are paired with their block structure. The block structure is a frame on a plane with portal placeholder blocks filled inside. Portal placeholder block is a type of transparent block without collision and has glowstone-level illumination.
+
+The breakable portals break when the frame or placeholder blocks break. If the breakable portal is incorrectly paired, it will also break.
+Every breakable portal is linked to its reverse portal. When a portal breaks, its reverse portal will also break. When the portal breaks, the placeholder blocks will vanish.
