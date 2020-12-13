@@ -58,7 +58,7 @@ Move the portal's destination along the direction that you are looking at.
 ### Manage the Portal
 
 #### `/portal set_portal_nbt <nbt>`
-Set a portal's NBT data.
+Set a portal's NBT data. [Portal NBT Data Format](https://github.com/qouteall/ImmersivePortalsMod/wiki/Portal-NBT-Data-Format)
 
 #### `/portal view_portal_data`
 View a portal's NBT data.
@@ -69,16 +69,18 @@ Remove a portal.
 #### `/portal move_portal <distance>`
 Move the portal along the direction that you are looking at.
 
-### About the Bi-way and Bi-face feature
+### Portal Clutter Management
+
+[See](https://github.com/qouteall/ImmersivePortalsMod/wiki/Portal-Customization#1-nether-portal--4-portal-entities)
 
 #### `/portal complete_bi_way_portal`
-Create a new portal entity to make the portal bi-way.
+Create a new portal entity to make the portal bi-way. Removes duplicated portals.
 
 #### `/portal complete_bi_faced_portal`
-Create a new portal entity to make the portal bi-faced.
+Create a new portal entity to make the portal bi-faced. Removes duplicated portals.
 
 #### `/portal complete_bi_way_bi_faced_portal`
-Create new portal entities to make the portal bi-way and bi-faced.
+Create new portal entities to make the portal bi-way and bi-faced. Removes duplicated portals.
 
 #### `/portal remove_connected_portals`
 Remove portal entities to make the portal one-way and one-faced.
