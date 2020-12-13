@@ -36,10 +36,13 @@ Remove the floor connection portal in that dimension. This command only removes 
 #### `/portal global connection_remove_ceil <dimension>`
 Remove the floor connection portal in that dimension. This command only removes one portal instance.
 
+
 ## Portal Targeted Commands
 Not only the ones with OP permission, but any creative mode players can also use the portal targeted commands.
 
 The portal targeted commands all targets to one portal entity. If the command invoker is a player, it targets the portal that the player is looking at. If the command invoker is a portal entity, the command will target that portal entity.
+
+These commands don't work with global portals.
 
 ### Change the Portal's Destination
 
@@ -129,14 +132,21 @@ Remove the player-specific portal from the portal clutter.
 #### `/portal set_portal_custom_name <name>`
 Set a portal's custom name.
 
-#### Miscellaneous Commands
+## Miscellaneous Commands
 
-#### ``
-#### ``
-#### ``
-#### ``
-#### ``
-#### ``
+#### `/portal cb_make_portal <width> <height> <fromEntity> <toEntity>`
+Create a portal entity that goes from `fromEntity` to `toEntity`. The orientation is determined by `fromEntity` 's orientation.
 
+#### `/portal tpme <dimension> <x> <y> <z>`
+Teleport you across dimensions without any loading screen. Can only be invoked by players.
 
-#### Deprecated Commands
+#### `/portal tp <entity> <dimension> <x> <y> <z>`
+Teleport entities across dimensions.
+
+#### `/portal goback`
+Sometimes you went into a one-way portal and want to come back, but you forgot the coordinate where you come in. Use this command to come back.
+
+## Deprecated Commands
+These commands are deprecated. They will be removed in 1.17.
+
+`/portal cb_set_portal_destination <portal> <dimension> <x> <y> <z>` `/portal cb_complete_bi_way_portal <portal>` `/portal cb_complete_bi_faced_portal <portal>` `/portal cb_complete_bi_way_bi_faced_portal <portal>` `/portal cb_remove_connected_portals <portal>` `/portal cb_set_portal_specific_accessor <portal> [player]` 
