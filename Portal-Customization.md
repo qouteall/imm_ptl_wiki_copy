@@ -61,6 +61,8 @@ There are some portal-targeted commands for managing portals. You need to point 
 
 - Make the portal entity not able to teleport. Turn it into a "video surveillance": `/portal set_portal_nbt {teleportable:0b}`
 
+- Make the portal round-shaped `/portal make_portal_round`
+
 [See All Portal-Targeted Commands](https://github.com/qouteall/ImmersivePortalsMod/wiki/Commands-Reference#portal-targeted-commands)
 
 [Portal NBT Data Format](https://github.com/qouteall/ImmersivePortalsMod/wiki/Portal-NBT-Data-Format)
