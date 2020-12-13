@@ -37,6 +37,7 @@ The normal type of end portal points to (0 120 0) in the end dimension. When a p
 ### Mode : `toObsidianPlatform`
 
 Points to the obsidian platform.
+![](https://i.ibb.co/MsJRGtX/2020-12-13-17-45-49.png)
 
 ### Mode : `scaledView`
 
@@ -50,7 +51,7 @@ This type of end portal is laggier.
 Does not change vanilla end portal functionality.
 
 ## Mirrors
-Use flint and steel to right-click on a glass wall creates a mirror. Currently, mirrors can only be in a rectangular shape. Mirrors can be horizontal. Mirrors can be created on a stained glass wall or glass pane wall. Mirror breaks when the glass wall is broken.
+To create a mirror, use flint and steel to right-click on a glass wall. Mirrors can only be in rectangular shapes. Mirrors can be horizontal. Mirrors can be created on a stained glass wall or glass pane wall. Mirrors vanish when the glass wall is broken.
 
 ![](https://i.ibb.co/Jr0fdfv/2020-05-26-21-58-45.png)
 
