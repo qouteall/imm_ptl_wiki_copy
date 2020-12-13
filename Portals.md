@@ -4,13 +4,11 @@ After installing this mod, all existing nether portals will not change.
 
 A nether portal can have a non-rectangular shape and can be horizontal.
 
+![](https://i.ibb.co/KGqRqfZ/2020-12-13-16-49-25.png)
 
-
-When you use flint and steel to light an obsidian frame, it will load chunks on the other side and then search for an existing obsidian frame that it can link to. If it finds one, it will link with that existing obsidian frame. Otherwise, a new obsidian frame will be generated.
+When you use flint and steel to light an obsidian frame, it will load chunks on the other side and then search for an existing obsidian frame that it can link to. If no linkable obsidian frame is found, a new obsidian frame will be generated.
 
 It will not link to a vanilla nether portal.
-
-In the `normal` mode it can only link to the obsidian shape with the exact shape and orientation. In `adaptive` mode it can link to the scaled and rotated obsidian frame.
 
 The maximum nether portal side length is 20.
 
