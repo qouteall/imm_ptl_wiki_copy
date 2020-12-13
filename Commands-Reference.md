@@ -132,6 +132,9 @@ Remove the player-specific portal from the portal clutter.
 #### `/portal set_portal_custom_name <name>`
 Set a portal's custom name.
 
+#### `/portal make_portal_round`
+Make the portal shape to be round.
+
 ## Direct Portal Creation Commands
 Can be used by OPs and creative mode players.
 
