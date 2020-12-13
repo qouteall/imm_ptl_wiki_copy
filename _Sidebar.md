@@ -16,4 +16,8 @@
 
 [Config Options](https://github.com/qouteall/ImmersivePortalsMod/wiki/Config-Options)
 
+[Commands Reference](https://github.com/qouteall/ImmersivePortalsMod/wiki/Commands-Reference)
+
+[Portal NBT Data Format](https://github.com/qouteall/ImmersivePortalsMod/wiki/Portal-NBT-Data-Format)
+
 [API for Other Mods](https://github.com/qouteall/ImmersivePortalsMod/wiki/API-for-Other-Mods)
