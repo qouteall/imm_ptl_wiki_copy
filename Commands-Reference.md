@@ -1,13 +1,13 @@
 A list of all commands of Immersive Portals mod.
 
-#### Global Portal Commands
+## Global Portal Commands
 The global portal commands require OP permission.
 
-##### '/portal global convert_global_portal_to_normal_portal'
-Can only be used by a player. Converts the global portal that you are pointing to into a normal portal. Requires the player to be near the portal center.
+#### `/portal global convert_global_portal_to_normal_portal`
+Can only be used by a player. Converts the global portal instance that you are pointing to into a normal portal. Requires the player to be near the portal center.
 
 #### `/portal global convert_normal_portal_to_global_portal`
-Can only be used by a player. Converts the normal portal that you are pointing to into a global portal.
+Can only be used by a player. Converts the normal portal entity that you are pointing to into a global portal.
 
 #### `/portal global create_inward_wrapping <x1> <z1> <x2> <z2>`
 Create an inward wrapping zone. The created portals are global portals. The two XZ coordinates define the wrapping area. The generated portals go from y level 0 to y level 256.
@@ -16,7 +16,7 @@ Create an inward wrapping zone. The created portals are global portals. The two 
 Similar to the above but creates an outward wrapping zone.
 
 #### `/portal global remove_wrapping_zone`
-Removes the global portal wrapping zone that you are in. This does not work for the wrapping zone constituted by normal portals.
+Remove the global portal wrapping zone that you are in. This does not work for the wrapping zone constituted by normal portals.
 
 #### `/portal global view_wrapping_zones`
 View the wrapping zones in the current dimension and know their ids.
@@ -25,35 +25,118 @@ View the wrapping zones in the current dimension and know their ids.
 Remove a global portal wrapping zone by its id.
 
 #### `/portal global connect_floor <dimensionA> <dimensionB>`
-Creates a portal that connects `dimensionA` 's floor with `dimensionB` 's top. It only generates one one-way global portal.
+Creates a portal that connects `dimensionA` 's floor with `dimensionB` 's top. It only generates one one-way global portal instance.
 
 #### `/portal global connect_ceil <dimensionA> <dimensionB>`
-Creates a portal that connects `dimensionA` 's ceiling with `dimensionB` 's bottom. It only generates one one-way global portal.
+Creates a portal that connects `dimensionA` 's ceiling with `dimensionB` 's bottom. It only generates one one-way global portal instance.
 
 #### `/portal global connection_remove_floor <dimension>`
-Remove the floor connection portal in that dimension. This command only removes one portal.
+Remove the floor connection portal in that dimension. This command only removes one portal instance.
 
 #### `/portal global connection_remove_ceil <dimension>`
-Remove the floor connection portal in that dimension. This command only removes one portal.
+Remove the floor connection portal in that dimension. This command only removes one portal instance.
 
-#### Portal Targeted Commands
-Not only the ones with OP permission, but any creative mode players can also use the portal targeted commands to edit portals.
+## Portal Targeted Commands
+Not only the ones with OP permission, but any creative mode players can also use the portal targeted commands.
 
-#### ``
-#### ``
-#### ``
-#### ``
-#### ``
-#### ``
-#### ``
-#### ``
-#### ``
-#### ``
-#### ``
-#### ``
+The portal targeted commands all targets to one portal entity. If the command invoker is a player, it targets the portal that the player is looking at. If the command invoker is a portal entity, the command will target that portal entity.
+
+### Change the Portal's Destination
+
+#### `/portal set_portal_destination <dimenision> <x> <y> <z>`
+Change a portal entity's destination to a specific dimension and a specific position.
+
+#### `/portal set_portal_destination_to <entity>`
+Set the portal destination to an entity's position.
+
+#### `/portal move_portal_destination <distance>`
+Move the portal's destination along the direction that you are looking at.
+
+### Manage the Portal
+
+#### `/portal set_portal_nbt <nbt>`
+Set a portal's NBT data.
+
+#### `/portal view_portal_data`
+View a portal's NBT data.
+
+#### `/portal delete_portal`
+Remove a portal.
+
+#### `/portal move_portal <distance>`
+Move the portal along the direction that you are looking at.
+
+### About the Bi-way and Bi-face feature
+
+#### `/portal complete_bi_way_portal`
+Create a new portal entity to make the portal bi-way.
+
+#### `/portal complete_bi_faced_portal`
+Create a new portal entity to make the portal bi-faced.
+
+#### `/portal complete_bi_way_bi_faced_portal`
+Create new portal entities to make the portal bi-way and bi-faced.
+
+#### `/portal remove_connected_portals`
+Remove portal entities to make the portal one-way and one-faced.
+
+#### `/portal eradicate_portal_clutter`
+Completely remove a bi-way portal (4 portal entities). Equivalent to `/portal remove_connected_portals` and then `/portal delete_portal`
+
+### Rotation
+
+#### `/portal set_portal_rotation <axisX> <axisY> <axisZ> <angleDegrees>`
+Set the portal's rotation transformation.
+The rotation transformation is defined by a rotating axis vector and the angle in degrees.
+When the axis is pointing on you, a positive angle corresponds to rotating counterclockwise.
+
+#### `/portal set_portal_rotation_along <axis> <angleDegrees>`
+Similar to the above but use `x`, `y` or `z` to represent the axis vector
+
+#### `/portal rotate_portal_body <axisX> <axisY> <axisZ> <angleDegrees>`
+Rotate the portal. This command does not change the portal's rotating transformation.
+
+#### `/portal rotate_portal_body_along <axis> <angleDegrees>`
+Similar to the above.
+
+#### `/portal rotate_portal_rotation <axisX> <axisY> <axisZ> <angleDegrees>`
+Change the portal's rotation transformation by applying an additional rotation to the original rotation.
+
+#### `/portal rotate_portal_rotation_along <axis> <angleDegrees>`
+Similar to the above.
+
+### Scale
+
+#### `/portal set_portal_scale <scale>`
+Set the portal's scale transformation.
+
+### Player-specific Property
+
+#### `/portal set_portal_specific_accessor <player>`
+Make the portal entity only accessible by one player.
+
+#### `/portal set_portal_specific_accessor`
+Make the portal entity accessible to all players.
+
+#### `/portal multidest <player> <dimension> <x> <y> <z> <isBiFaced> <isBiWay>`
+Set the portal destination for only one player.
+
+#### `/portal multidest <player>`
+Remove the player-specific portal from the portal clutter.
+
+### Other
+
+#### `/portal set_portal_custom_name <name>`
+Set a portal's custom name.
 
 #### Miscellaneous Commands
 
+#### ``
+#### ``
+#### ``
+#### ``
+#### ``
+#### ``
 
 
 #### Deprecated Commands
