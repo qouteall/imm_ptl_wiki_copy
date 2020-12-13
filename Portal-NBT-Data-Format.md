@@ -1,4 +1,4 @@
-### Tags for `immersive_portals:portal` `immersive_portals:nether_portal_new` `immersive_portals:end_portal` `immersive_portals:mirror` `immersive_portals:breakable_mirror` `immersive_portals:global_tracked_portal`  `immersive_portals:border_portal` `immersive_portals:end_floor_portal`
+#### Tags for `immersive_portals:portal` `immersive_portals:nether_portal_new` `immersive_portals:end_portal` `immersive_portals:mirror` `immersive_portals:breakable_mirror` `immersive_portals:global_tracked_portal`  `immersive_portals:border_portal` `immersive_portals:end_floor_portal`
 |Tag|Description|
 |-|-|
 |`width` `height`|The portal area length along axisW and axisH|
@@ -19,14 +19,14 @@
 After editing the portal shape you should also change width,height,cullableXStart,cullableXEnd,cullableYStart,cullableYEnd.
 If you don't change these accordingly some sections may not be rendered due to advanced frustum culling.
 
-### Tags for `immersive_portals:nether_portal_new`
+#### Tags for `immersive_portals:nether_portal_new`
 |Tag|Description|
 |-|-|
 |`unbreakable`|If set to true then the portal entity will remain if obsidian frame breaks|
 |`netherPortalShape`|Nether portal shape data for determining whether the portal frame brakes|
 |`reversePortalId`|The UUID of the reverse portal|
 
-### Tags for `immersive_portals:breakable_mirror`
+#### Tags for `immersive_portals:breakable_mirror`
 |Tag|Description|
 |-|-|
 |`unbreakable`|If set to true then the mirror will remain if the glass wall is destroied|
