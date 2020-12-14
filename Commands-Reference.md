@@ -40,7 +40,7 @@ Remove the floor connection portal in that dimension. This command only removes 
 ## Portal Targeted Commands
 Not only the ones with OP permission, but any creative mode players can also use the portal targeted commands.
 
-The portal targeted commands all targets to one portal entity. If the command invoker is a player, it targets the portal that the player is looking at. If the command invoker is a portal entity, the command will target that portal entity.
+The portal targeted commands all targets to one portal entity. If the command sender is a player, it targets the portal that the player is looking at. If the command sender is a portal entity, the command will target that portal entity.
 
 These commands don't work with global portals.
 
@@ -155,7 +155,7 @@ Similar to the above but the wrapping zone is outward.
 #### `/portal create_scaled_box_view <x1> <y1> <z1> <x2> <y2> <z2> <scale> <placeTargetEntity> <isBiWay> [teleportChangesScale]`
 Create a scaled box wrapping zone. It will create 6 portals with scale transformation that points from the box around `placeTargetEntity` to the wrapping zone box. If you want to make a small box view of a big area, the scale should be bigger than 1. If `isBiWay` is true, it will generate the reverse portals for every portal. `teleportChangesScale` determines whether the generated portal changes the teleporting entity's scale.
 
-The command invoker dimension is the dimension of the view box. For example, if you want to create a box viewing the end island, use `/execute in minecraft:the_end run portal create_scaled_box_view -100 0 -100 100 128 100 20 @p true`
+The command sender dimension is the dimension of the view box. For example, if you want to create a box viewing the end island, use `/execute in minecraft:the_end run portal create_scaled_box_view -100 0 -100 100 128 100 20 @p true`
 
 ![](https://i.ibb.co/yhXHYHm/2020-08-26-21-18-54.png)
 
