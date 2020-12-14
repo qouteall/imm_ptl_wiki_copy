@@ -4,15 +4,17 @@
 ## Portal Helper Block
 
 This mod provides a new block called "Portal Helper".
-You can build two identical frames using that block and use flint and steel to light one. Then a new two-way two-faced portal will be generated. It can link to the frame with a scaled and rotated shape.
+You can build two frames using that block and use flint and steel to light one. Then a new two-way two-faced portal will be generated. The portal's rotation and scale transformation will adapt to the shape difference.
 
-![](https://i.ibb.co/TYPsj12/2020-09-15-21-23-18.png)
+![](https://i.ibb.co/wRzvJB9/2020-12-14-22-28-18.png)
 
-![](https://i.ibb.co/D8kLnDf/2020-09-15-21-23-39.png)
+![](https://i.ibb.co/pP0znwJ/2020-12-14-22-28-39.png)
+
+If no linkable frame is found, it will generate a new frame nearby.
 
 Unlike nether portals, the generated portal won't break when the frame breaks. To remove the portal, you need to use the command `/portal delete_portal` or `/portal eradicate_portal_clutter` (See below).
 
-And no portal placeholder block is filled. After generating the portal a block of the portal helper frame will be removed so that other portal helper frames won't link to it.
+After generating the portal a block of the portal helper frame will be removed so that other portal helper frames won't link to it.
 
 The portal helper cannot generate a cross-dimension portal or a portal that links to far places using the portal helper. To achieve that you need to use commands to edit the portal.
 
