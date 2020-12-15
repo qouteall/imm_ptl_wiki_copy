@@ -26,7 +26,7 @@ Does not change vanilla nether portal functionality.
 ## End Portals
 After installing this mod, existing end portals will not be changed.
 
-This mod has 4 end portal types: `normal`, `toObsidianPlatform`, `scaledView`, `vanilla`.
+This mod has 4 end portal types: `normal`, `toObsidianPlatform`, `scaledView`, and `vanilla`.
 
 ### Mode : `normal`
 
@@ -50,16 +50,21 @@ This type of end portal is laggier.
 ### Mode : `vanilla`
 Does not change vanilla end portal functionality.
 
+### How to Remove an End Portal in Creative Mode
+Use command `/portal delete_portal`.
+
 ## Mirrors
-To create a mirror, use flint and steel to right-click on a glass wall. Mirrors can only be in rectangular shapes. Mirrors can be horizontal. Mirrors can be created on a stained glass wall or glass pane wall. Mirrors vanish when the glass wall is broken.
+To create a mirror, use flint and steel to right-click on a glass wall.
+
+Mirrors can only be in rectangular shapes. Mirrors can be horizontal. Mirrors can be created on a stained glass wall or glass pane wall. Mirrors vanish when the glass wall is broken.
 
 ![](https://i.ibb.co/Jr0fdfv/2020-05-26-21-58-45.png)
 
 ## Global Portals
 
-A portal can be in two different states: normal portal and global portal.
+A portal can be either a normal portal or a global portal.
 
-A normal portal is a normal entity. It's loaded when its chunk is loaded. A normal portal cannot be very big. If a normal portal is very big, when you are far from its center, the portal is unloaded.
+A normal portal is a normal entity. It's loaded when its chunk is loaded. A normal portal cannot be very big. If a normal portal is very big, when you are far from its center, the portal will be unloaded.
 
 The global portals are always loaded. They can be very big.
 
@@ -67,7 +72,7 @@ The global portals can be managed by commands.
 
 ### Convert a Portal Between Normal Portal and Global Portal
 
-By using the command `/portal global convert_global_portal_to_normal_portal`, the global portal that you are pointing to will be converted into a normal portal. To use this command you must not be far away from the portal center.
+By using the command `/portal global convert_global_portal_to_normal_portal`, the global portal that you are pointing to will be converted into a normal portal. You must not be far away from the portal center or the portal may spawn in a unloaded chunk.
 
 Use command `/portal global convert_normal_portal_to_global_portal` to convert the normal portal that you are pointing to into a global portal.
 
@@ -94,6 +99,7 @@ The outward world wrapping isolates an area out of space. When you want to go in
 Use command `/portal global create_outward_wrapping <x1> <z1> <x2> <z2>` to create an outward wrapping zone.
 
 To remove a wrapping zone, using `/portal global remove_wrapping_zone` can remove the wrapping zone that you are in.
+
 If you want to remove an outward wrapping zone that you cannot enter, you can use `/portal global view_wrapping_zones` and know the wrapping zone's id, then you can use `/portal global remove_wrapping_zone <id>`.
 
 
@@ -116,7 +122,7 @@ Then you can see the end above overworld.
 Use `/portal global connection_remove_floor <dimension>` `/portal global connection_remove_ceil <dimension>` to remove a connecting portal.
 
 ##### Using Vertical Connection to Break the Height Limit
-By connecting a dimension above the overworld, you increase the overworld's height limit from 256 to 512. It does not really increase the height limit. It just uses portals to "connect" the dimensions. It won't be as perfect as cubic chunks. (Redstone, fluid, lighting, and entity AI does not work through portals)
+By connecting a dimension above the overworld, you increase the overworld's height limit from 256 to 512. It does not really increase the height limit. It just uses portals to "connect" the dimensions. It won't be as perfect as Cubic Chunks. (Redstone, fluid, lighting, and entity AI does not work through portals)
 
 ##### Vertical World Wrapping
 For example
@@ -127,14 +133,16 @@ For example
 ## How Does a Portal Interact with the Minecraft World
 
 * Chunk loading. If a player comes near a portal, the other side chunks will be loaded and synchronized to the client.
-* Rendering. If the portal is visible in the view, it will be rendered.
+* Rendering. If the portal is visible, it will be rendered.
 * Teleportation. If an entity crosses the portal, it will be teleported (if it can).
 * Collision. If an entity touches a portal, this mod will handle its cross-portal collision.
 * Cross Portal Entity Rendering. If an entity touches a portal, this mod will try to both render the entity inside and outside the portal so that the entity does not look clipped.
 * Cross Portal Block Interaction. The player can place and break blocks through the portal.
 
 ## Breakable Portals
-Nether portals and custom datapack generated portals are breakable portals. The breakable portals are paired with their block structure. The block structure is a frame on a plane with portal placeholder blocks filled inside. Portal placeholder block is a type of transparent block without collision and has glowstone-level illumination.
+Nether portals and custom datapack generated portals are breakable portals.
 
-The breakable portals break when the frame or placeholder blocks break. If the breakable portal is incorrectly paired, it will also break.
-Every breakable portal is linked to its reverse portal. When a portal breaks, its reverse portal will also break. When the portal breaks, the placeholder blocks will vanish.
+The breakable portal entities are bound with their block structure. The block structure is a flat portal frame with portal placeholder blocks filled inside. Portal placeholder block is a type of transparent block without collision and has glowstone-level illumination.
+
+The breakable portals break when the block structure is not complete (The corner blocks are not being checked). 
+Every breakable portal is linked to its reverse portal. When a portal breaks, the placeholder blocks will vanish, and its reverse portal entity will also break. If the breakable portal entities are incorrectly paired, it will also break.
