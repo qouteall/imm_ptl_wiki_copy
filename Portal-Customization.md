@@ -120,3 +120,6 @@ But if two portals overlap then the portal targeted commands cannot select the p
 ### How to connect two portals?
 It's not recommended to "connect" two existing portals. The recommended way is to make one portal entity, control its position and destination, then complete bi way portal. Use `/portal remove_connected_portals` first, then edit the portal, then `/portal complete_bi_way_portal`.
 
+## Other Utility Commands
+
+You can use command `/portal tpme <dimension> <x> <y> <z>` to teleport yourself across dimensions without loading screen. If you accidentally go through a one-way portal and want to come back, you can use `/portal goback`
