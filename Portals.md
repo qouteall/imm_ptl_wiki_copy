@@ -12,13 +12,13 @@ It will not link to a vanilla nether portal.
 
 The maximum nether portal side length is 20.
 
-This mod has 3 nether portal modes: `normal`, `adaptive` and `vanilla`. The nether portal mode controls the new portal generation.
+This mod has 3 nether portal modes: `normal`, `adaptive` and `vanilla`.
 
 ### Mode : `normal`
 It can only link to the obsidian frame that has the exact same shape and orientation.
 
 ### Mode : `adaptive`
-It can link to the obsidian frame that has a compatible shape. This does not require the linked shape to be exactly the same. It can link to the rotated and scaled obsidian frame. And the generated portal will have the corresponding rotation and scale transformations.
+It can link to the obsidian frame that has a compatible shape. It can link to the rotated and scaled obsidian frame. And the generated portal will have the corresponding rotation and scale transformations.
 
 ### Mode : `vanilla`
 Does not change vanilla nether portal functionality.
