@@ -12,12 +12,12 @@
 
 [Dimension Stack](https://github.com/qouteall/ImmersivePortalsMod/wiki/Dimension-Stack)
 
-[Miscellaneous](https://github.com/qouteall/ImmersivePortalsMod/wiki/Miscellaneous)
-
 [Config Options](https://github.com/qouteall/ImmersivePortalsMod/wiki/Config-Options)
 
 [Commands Reference](https://github.com/qouteall/ImmersivePortalsMod/wiki/Commands-Reference)
 
 [Portal NBT Data Format](https://github.com/qouteall/ImmersivePortalsMod/wiki/Portal-NBT-Data-Format)
+
+[Miscellaneous](https://github.com/qouteall/ImmersivePortalsMod/wiki/Miscellaneous)
 
 [API for Other Mods](https://github.com/qouteall/ImmersivePortalsMod/wiki/API-for-Other-Mods)
