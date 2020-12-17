@@ -9,6 +9,7 @@ You can use them to connect with the overworld.
 |immersive_portals:alternate4| Same as alternate3|
 |immersive_portals:alternate5| Void|
 
+Alternte dimensions can be disabled.
 
 ## How to Access Alternate Dimensions
 In normal survival there are two ways to access alternate dimensions.
