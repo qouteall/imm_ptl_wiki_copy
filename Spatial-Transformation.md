@@ -8,9 +8,17 @@ This mod's teleportation is eye-based. It means that the teleportation applies t
 
 ### Create a Portal with Rotation Transformation
 
-Using [datapack custom portal generation](https://github.com/qouteall/ImmersivePortalsMod/wiki/Datapack-Based-Custom-Portal-Generation), there is a form `imm_ptl:flipping_floor_square`.
+#### In Survival Mode
 
-Using [commands](https://github.com/qouteall/ImmersivePortalsMod/wiki/Portal-Customization). Command `/portal set_portal_rotation <axisX> <axisY> <axisZ> <angleDegrees>` can set a portal's rotation transformation. The rotating axis is a vector (axisX, axisY, axisZ). Command `/portal rotate_portal_rotation <axisX> <axisY> <axisZ> <angleDegrees>` will apply a new rotation transformation to the portal's existing rotation transformation.
+- Enable `adaptive` mode [nether portal](https://github.com/qouteall/ImmersivePortalsMod/wiki/Portals#nether-portals). It allows linking the frames with different orientations.
+
+- Using [datapack custom portal generation](https://github.com/qouteall/ImmersivePortalsMod/wiki/Datapack-Based-Custom-Portal-Generation). The form `imm_ptl:flipping_floor_square`, and `imm_ptl:try_hard_to_match` can generate portals with rotation transformation.
+
+#### In Creative Mode
+
+- Using [portal helper](https://github.com/qouteall/ImmersivePortalsMod/wiki/Portal-Customization#portal-helper-block) to create portals.
+
+- Using [commands](https://github.com/qouteall/ImmersivePortalsMod/wiki/Portal-Customization). Command `/portal set_portal_rotation <axisX> <axisY> <axisZ> <angleDegrees>` can set a portal's rotation transformation. The rotating axis is a vector (axisX, axisY, axisZ).
 
 ### Teleportation
 
@@ -22,9 +30,19 @@ After crossing a portal with rotation transformation, the player's camera may be
 
 ### Create a Portal with Scale Transformation
 
-Using datapack custom portal generation. There is a form `imm_ptl:scaling_square`.
+#### In Survival Mode
 
-Using commands. Command `/portal set_portal_scale <scale>` sets a portal's scale transformation. Command `/portal create_scaled_box_view` [creates a scaled wrapping box](https://github.com/qouteall/ImmersivePortalsMod/wiki/Portal-Customization#create-a-scaled-wrapping-zone).
+- Enable `adaptive` mode [nether portal](https://github.com/qouteall/ImmersivePortalsMod/wiki/Portals#nether-portals). It allows linking the frames with different scale.
+
+- Enable `scaledView` mode of [end portal](https://github.com/qouteall/ImmersivePortalsMod/wiki/Portals#end-portals).
+
+- Using [datapack custom portal generation](https://github.com/qouteall/ImmersivePortalsMod/wiki/Datapack-Based-Custom-Portal-Generation). The form `imm_ptl:scaling_square`, and `imm_ptl:try_hard_to_match` can generate portals with scale transformation.
+
+#### In Creative Mode
+
+- Using [portal helper](https://github.com/qouteall/ImmersivePortalsMod/wiki/Portal-Customization#portal-helper-block) to create portals.
+
+- Using commands. Command `/portal set_portal_scale <scale>` sets a portal's scale transformation. Command `/portal create_scaled_box_view` [creates a scaled wrapping box](https://github.com/qouteall/ImmersivePortalsMod/wiki/Portal-Customization#create-a-scaled-wrapping-zone).
 
 ### Teleportation
 The portal has a property `teleportationChangesScale`. If it's false, the entities that go through the portal will have the scale remain unchanged.
@@ -36,4 +54,5 @@ If Pehkui mod is missing or you are using the Forge version, teleportation won't
 
 [Mirrors](https://github.com/qouteall/ImmersivePortalsMod/wiki/Portals#mirrors).
 
-You cannot teleport into a mirror.
+### Teleportation
+Mirrors do not allow teleportation.
