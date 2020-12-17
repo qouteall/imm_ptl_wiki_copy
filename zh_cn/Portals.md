@@ -1,148 +1,141 @@
 
-## Nether Portals
-After installing this mod, all existing nether portals will not change.
+## 地狱传送门
+安装模组后，原版传送门不会自动变化。
 
-A nether portal can have a non-rectangular shape and can be horizontal.
+地狱传送门可以不必是方的，可以是水平的。
 
 ![](https://i.ibb.co/KGqRqfZ/2020-12-13-16-49-25.png)
 
-When you use flint and steel to light an obsidian frame, it will load chunks on the other side and then search for an existing obsidian frame that it can link to. If no linkable obsidian frame is found, a new obsidian frame will be generated.
+在开启地狱传送门的时候，会首先尝试连接到对面的可以连接的传送门黑曜石框架。如果找不到现有的可以连接的框架，则会新生成传送门黑曜石框架。不会连接到原版地狱传送门。
 
-It will not link to a vanilla nether portal.
+最大传送门边长为20。
 
-The maximum nether portal side length is 20.
+地狱传送门有三种模式: `normal`, `adaptive`, `vanilla`
 
-This mod has 3 nether portal modes: `normal`, `adaptive` and `vanilla`.
+### `normal` （普通）
+只能连接到相同方向、完全相同形状的传送门框架。
 
-### Mode : `normal`
-It can only link to the obsidian frame that has the exact same shape and orientation.
+### `adaptive` （适应）
+能连接到可以通过旋转、缩放变换来适应的形状的传送门框架。
 
-### Mode : `adaptive`
-It can link to the obsidian frame that has a compatible shape. It can link to the rotated and scaled obsidian frame. And the generated portal will have the corresponding rotation and scale transformations.
-
-### Mode : `vanilla`
-Does not change vanilla nether portal functionality.
+### `vanilla` （原版）
+不改变原版地狱门生成机制。
 
 ## End Portals
-After installing this mod, existing end portals will not be changed.
 
-This mod has 4 end portal types: `normal`, `toObsidianPlatform`, `scaledView`, and `vanilla`.
+末地传送门有四种模式： `normal`, `toObsidianPlatform`, `scaledView`, `vanilla`
 
-### Mode : `normal`
+### `normal` （普通）
 
-The normal type of end portal points to (0 120 0) in the end dimension. When a player jumps into an end portal, the player will get slow falling effect for 6 seconds except when wearing elytra.
+这个模式的末地传送门指向末地的坐标 (0 120 0) 处。玩家跳入末地传送门时，获得缓慢下落效果。装备鞘翅时没有缓慢下落效果。
 
 ![](https://i.ibb.co/C08FFJn/2020-05-26-21-55-16.png)
 
-### Mode : `toObsidianPlatform`
+### `toObsidianPlatform` （指向黑曜石平台）
 
-Points to the obsidian platform.
+指向黑曜石平台处。
 ![](https://i.ibb.co/MsJRGtX/2020-12-13-17-45-49.png)
 
-### Mode : `scaledView`
+### `scaledView` （缩放）
 
-The `scaledView` type end portal shows an overlook of the entire end island. It consists of 6 portals with scale transformation (and another 6 client-only portals on the end dimension).
+展示缩放的末地岛。
+（传送门共包括6个传送门实体，同时还有6个仅客户端存在的反向传送门实体。）
 
 ![](https://i.ibb.co/hmRS3KH/2020-09-15-21-13-34.png)
 
-This type of end portal is laggier.
+这种末地传送门对性能有更高要求。
 
-### Mode : `vanilla`
-Does not change vanilla end portal functionality.
+### `vanilla` （原版）
+不改变原版末地传送门生成。
 
-### How to Remove an End Portal in Creative Mode
-Use command `/portal delete_portal`.
+### 创造模式下如何移除末地传送门
+使用命令 `/portal delete_portal`
 
-## Mirrors
-To create a mirror, use flint and steel to right-click on a glass wall.
-
-Mirrors can only be in rectangular shapes. Mirrors can be horizontal. Mirrors can be created on a stained glass wall or glass pane wall. Mirrors vanish when the glass wall is broken.
+## 镜子
+使用打火石对玻璃右键即可产生镜子，玻璃板或有色玻璃也可以。镜子可以是水平的。
 
 ![](https://i.ibb.co/Jr0fdfv/2020-05-26-21-58-45.png)
 
-## Global Portals
+## 全局传送门
 
-A portal can be either a normal portal or a global portal.
+一个传送门可以是处于普通传送门的状态也可以处于全局传送门的状态。
 
-A normal portal is a normal entity. It's loaded when its chunk is loaded. A normal portal cannot be very big. If a normal portal is very big, when you are far from its center, the portal will be unloaded.
+普通传送门是普通实体，当其所在区块被卸载，该传送门也会被卸载。普通传送门不能很大。全局传送门始终被加载，可以很大。
 
-The global portals are always loaded. They can be very big.
+全局传送门主要通过命令来管理。
 
-The global portals can be managed by commands.
+### 在普通传送门与全局传送门之间转换
 
-### Convert a Portal Between Normal Portal and Global Portal
+通过命令 `/portal global convert_global_portal_to_normal_portal`你所指向的全局传送门会变成普通传送门。使用这个命令要求你不能离传送门中心点太远，否则转换后的普通传送门将在未加载区块中。
 
-By using the command `/portal global convert_global_portal_to_normal_portal`, the global portal that you are pointing to will be converted into a normal portal. You must not be far away from the portal center or the portal may spawn in a unloaded chunk.
+通过命令 `/portal global convert_normal_portal_to_global_portal` 来将普通传送门变为全局传送门。
 
-Use command `/portal global convert_normal_portal_to_global_portal` to convert the normal portal that you are pointing to into a global portal.
+### 全局传送门命令
 
-### Global Portal Management Commands
+#### 空间自折叠
 
-#### World Wrapping Portal
+空间自折叠有内向与外向两种。
 
-There are two types of world wrapping, inward and outward.
-
-The inward world wrapping wraps a finite space and "repeat" it "infinitely". When you cross the right side then you appear on the left side. It is an invisible boundary.
+内向空间自折叠将一片空间“无限重复”。当你从右侧离开时，会出现在左侧。
 
 ![](https://i.ibb.co/Bnt0Gqc/2020-05-26-22-04-06.png)
 
 ![](https://i.ibb.co/jrXPhqV/2020-05-26-22-03-59.png)
 
-Use command `/portal global create_inward_wrapping <x1> <z1> <x2> <z2>` to create an inward wrapping zone.
+命令 `/portal global create_inward_wrapping <x1> <z1> <x2> <z2>` 可创建一个内向自折叠。区域可以很大，因为生成的是全局传送门。
 
-The outward world wrapping isolates an area out of space. When you want to go into it from the left, you will appear on the right.
+外向空间自折叠将一片空间“剔除”。如果你想通过左侧进入这片空间，会从右边出现。
 
 ![](https://i.ibb.co/9g72926/2020-05-26-22-04-50.png)
 
 ![](https://i.ibb.co/1RL3wr4/2020-05-26-22-05-05.png)
 
-Use command `/portal global create_outward_wrapping <x1> <z1> <x2> <z2>` to create an outward wrapping zone.
+命令 `/portal global create_outward_wrapping <x1> <z1> <x2> <z2>` 可创建一个外向自折叠。
 
-To remove a wrapping zone, using `/portal global remove_wrapping_zone` can remove the wrapping zone that you are in.
+命令 `/portal global remove_wrapping_zone` 移除你现在所处的空间折叠。
 
-If you want to remove an outward wrapping zone that you cannot enter, you can use `/portal global view_wrapping_zones` and know the wrapping zone's id, then you can use `/portal global remove_wrapping_zone <id>`.
+若要移除无法进入的外向空间折叠，先通过 `/portal global view_wrapping_zones` 直到这个空间折叠区域的编号，然后使用对应编号移除 `/portal global remove_wrapping_zone <id>`.
 
+在创建空间自折叠传送门后，可能会看到渲染错误（z-fighting或方块面缺失）。这是因为生成的传送门与外部边界面方块重叠。
+使用 `/portal global clear_wrapping_border` 可将外部边界方块全部移除。
+(**注意** 这一操作是不可撤销的，建议在此之前备份存档)
 
-After setting up the wrapping portals, you may see z-fighting or missing block faces on the edge.
-Use command `/portal global clear_wrapping_border` to clear all blocks in the outer border.
-(**NOTE** This operation cannot be undone. You should backup the world before trying this.)
+#### 位面纵向连接
+通过传送门将两个位面纵向连接起来。
 
-#### Vertical Dimension Connecting Portal
-The vertical dimension connecting portals connects two dimensions vertically.
-
-Example:
+例如：
 `/portal global connect_floor minecraft:the_end minecraft:overworld`
-With this, you will return to the overworld when dropping into the void in end.
+末地掉入虚空后回到主世界
 
 ![](https://i.ibb.co/JvDMZtj/2020-10-18-22-15-38.png)
 
-This connection is one-way. If you want to make it bi-way, use
+该命令一次只创建一个单向传送门。若想让主世界与末地的连接为双向，用
 `/portal global connect_ceil minecraft:overworld minecraft:the_end`
-Then you can see the end above overworld.
-Use `/portal global connection_remove_floor <dimension>` `/portal global connection_remove_ceil <dimension>` to remove a connecting portal.
+然后在主世界的天空上可以看见末地。
 
-##### Using Vertical Connection to Break the Height Limit
-By connecting a dimension above the overworld, you increase the overworld's height limit from 256 to 512. It does not really increase the height limit. It just uses portals to "connect" the dimensions. It won't be as perfect as Cubic Chunks. (Redstone, fluid, lighting, and entity AI does not work through portals)
+使用 `/portal global connection_remove_floor <dimension>` `/portal global connection_remove_ceil <dimension>` 来移除纵向连接传送门。
 
-##### Vertical World Wrapping
-For example
+##### 纵向连接两个位面与扩展建筑高度限制
+将主世界上面间接一个位面，建筑高度就由256扩展到512。纵向连接并非真正地扩展高度，只是用传送门将两者连接起来。红石、液体流动、光照传播、AI无法跨传送门工作。
+
+##### 纵向空间自折叠
+例如
 `/portal global connect_floor immersive_portals:alternate4 immersive_portals:alternate4`
 
 `/portal global connect_ceil immersive_portals:alternate4 immersive_portals:alternate4`
 
-## How Does a Portal Interact with the Minecraft World
+## 一个传送门对MC世界有什么影响
 
-* Chunk loading. If a player comes near a portal, the other side chunks will be loaded and synchronized to the client.
-* Rendering. If the portal is visible, it will be rendered.
-* Teleportation. If an entity crosses the portal, it will be teleported (if it can).
-* Collision. If an entity touches a portal, this mod will handle its cross-portal collision.
-* Cross Portal Entity Rendering. If an entity touches a portal, this mod will try to both render the entity inside and outside the portal so that the entity does not look clipped.
-* Cross Portal Block Interaction. The player can place and break blocks through the portal.
+* 区块加载。当一个玩家靠近一个传送门时，传送门对面的区块将会被加载，同时世界的变化会被送到客户端。
+* 渲染。如果一个传送门是可见的，会渲染该传送门。
+* 传送。一个实体跨过传送门后，将会被传送。（Boss实体等不可传送实体无法被传送）
+* 物理碰撞。如果一个实体碰到了传送门，将会有跨传送门碰撞计算。
+* 跨传送门实体渲染。若一个实体碰到了传送门，那么在传送门外和传送门内都会渲染该实体一遍，让实体完整渲染。
+* 可以跨传送门方块破坏放置方块。
 
-## Breakable Portals
-Nether portals and custom datapack generated portals are breakable portals.
+## 可拆除传送门
+地狱传送门与数据包自定义传送门都是可拆除传送门。
 
-The breakable portal entities are bound with their block structure. The block structure is a flat portal frame with portal placeholder blocks filled inside. Portal placeholder block is a type of transparent block without collision and has glowstone-level illumination.
+可拆除传送门与其传送门方块结构相对应，传送门方块结构是由一个平面上的传送门框架与框架内部的占位方块组成。占位方块是一种透明、无碰撞箱的方块且有像萤石一样的光照。
 
-The breakable portals break when the block structure is not complete (The corner blocks are not being checked). 
-Every breakable portal is linked to its reverse portal. When a portal breaks, the placeholder blocks will vanish, and its reverse portal entity will also break. If the breakable portal entities are incorrectly paired, it will also break.
+在方块结构被破坏后，可拆除传送门将消失，传送门占位方块也会消失。每个可拆除传送门实体都与其逆向传送门实体相对应，破坏时其逆向传送门实体也会消失。如果可破坏传送门连接异常，会自动消失。
