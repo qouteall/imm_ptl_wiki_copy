@@ -1,157 +1,125 @@
 
-### Portal Helper Block
+
+
+## Portal Helper Block
 
 This mod provides a new block called "Portal Helper".
-You can build two identical frames using that block and use flint and steel to light one. Then a new two-way two-faced portal will be generated. It can link to the frame with a scaled and rotated shape.
+You can build two frames using that block and use flint and steel to light one. Then a new two-way two-faced portal will be generated. The portal's rotation and scale transformation will adapt to the shape difference.
 
-![](https://i.ibb.co/TYPsj12/2020-09-15-21-23-18.png)
+![](https://i.ibb.co/wRzvJB9/2020-12-14-22-28-18.png)
 
-![](https://i.ibb.co/D8kLnDf/2020-09-15-21-23-39.png)
+![](https://i.ibb.co/pP0znwJ/2020-12-14-22-28-39.png)
 
-Unlike nether portals, the generated portal won't break when the frame breaks. And no portal placeholder block is filled. After generating the portal a block of the portal helper frame will be removed so that other portal helper frames won't link to it.
+If no linkable frame is found, it will generate a new frame nearby.
+
+Unlike nether portals, the generated portal won't break when the frame breaks. To remove the portal, you need to use the command `/portal delete_portal` or `/portal eradicate_portal_clutter` (See below).
+
+After generating the portal a block of the portal helper frame will be removed so that other portal helper frames won't link to it.
 
 The portal helper cannot generate a cross-dimension portal or a portal that links to far places using the portal helper. To achieve that you need to use commands to edit the portal.
 
-### Command Examples
-Make a new (square) portal without having to build a frame: `/portal make_portal 1 1 minecraft:overworld shift 5` (shift 5 means that the destination is 5 blocks ahead of the position of the portal)
+## Manage Portals Using Commands
 
-Change the portal entity's destination: `/portal set_portal_destination minecraft:the_end 0 70 0`
+[Description of All Commands](https://github.com/qouteall/ImmersivePortalsMod/wiki/Commands-Reference)
 
-Move the portal entity forward 0.5 blocks: `/portal move_portal 0.5`
+### 1 Nether Portal = 4 Portal Entities
+Before going further there is a very **IMPORTANT** concept to figure out.
 
-Delete a portal entity: `/portal delete_portal`
+**Every portal entity is one-faced and one-way. A normal nether portal is bi-faced and bi-way, it consists of 2 portal entities in the overworld and 2 portal entities in the nether, 4 portal entities in total.** The two portal entities in the overworld have the same origin position and destination, but these two portal entities are facing opposite directions.
 
-Make two-way or two-faced portal become one-way and one-faced: `/portal remove_connected_portals` (**It's recommended to use this before changing portal position, destination or rotation**)
+The concept of "portal entity" is different from "portal". But sometimes to express directly "portal entity" is referred to as "portal". Sometimes the 4 portal entities that constitute a portal are called "portal clutter". A single one-way one-faced global portal is sometimes called a "global portal instance".
 
-Turn a one-way portal to two-way portal: `/portal complete_bi_way_portal`
+Command `/portal delete_portal` will only remove one portal entity.
 
-Turn a one-way portal to two-way two-faced portal: `/portal complete_bi_way_bi_faced_portal`
+Using the command `/portal remove_connected_portals` to a portal will make the portal one-way and one-faced.
+If it's used for a bi-way bi-faced portal, in the 4 portal entities the portal entity that is facing you will remain and the other 3 portal entities will be removed.
 
-Make a portal entity have a rotating transformation, rotate the world "inside" the portal: `/portal set_portal_rotation 0 1 0 45` (0 1 0 means the Y-axis. It means rotating around the Y-axis for 45 degrees). It's equivalent to `/portal set_portal_rotation_along y 45`
+Command `/portal complete_bi_way_portal` will create the "reverse" version of the portal entity thus make the portal bi-way. The command `/portal complete_bi_faced_portal` completes the portal to be bi-faced, and the command `/portal complete_bi_way_bi_faced_portal` completes the portal to be bi-way bi-faced.
 
-Rotate the portal entity itself (does not rotate the world "inside" the portal): `/portal rotate_portal_body 1 0 0 30` (rotates around X-axis for 30 degrees). Equivalent to `/portal rotate_portal_body_along x 30`
+Command `/portal eradicate_portal_clutter` removes the whole portal. If used to a bi-way bi-faced portal, all 4 portal entities will be removed.
 
-Change the shape of the portal entity: `/portal set_portal_nbt {specialShape:[0d,0d,0d,1d,1d,0d]}`
+If you want to edit a bi-way bi-faced portal, 4 portal entities need to be edited. It's recommended to firstly use `/portal remove_connected_portals` to make only one portal entity remain. Then you can move the portal or change its space transformation without leaving unwanted portal entities. Then you can make this portal two-way and two-faced by `/portal complete_bi_way_bi_faced_portal`. If you edit the portal before using `/portal remove_connected_portals`, the portal entities on the other side and the other face won't be edited.
 
-Make the portal entity not able to teleport. Turn it into a video surveillance: `/portal set_portal_nbt {teleportable:0b}`
+### Portal-Targeted Commands
 
-Make a nether portal entity unbreakable: `/portal set_portal_nbt {unbreakable:1b}` (**Normally if you edit a nether portal then it will detect that the nether portal entities are not properly linked and then remove the portal. It's recommended to use this command for 4 portal entities before editing nether portal**)
+There are some portal-targeted commands for managing portals. You need to point to a portal when using these commands.
 
-### Portal Entities
-Global portals don't exist as entities in the world, they are global. All other portals, including nether portals, end portals, mirrors, exist as entities in the world.
+**The portal-targeted commands all target only one portal entity that you are pointing to.**
 
-A portal entity is one-way and one-faced. A normal nether portal consists of 2 portal entities in the overworld and 2 portal entities in the nether. The end portal is one-way and one-faced. An end portal only consists of one portal entity.
 
-Normally if you want to edit a portal, it's recommended to firstly use `/portal remove_connected_portals` then the four portal entities become one portal entity. Then this portal is one way now, you can edit its destination, rotation without messing up. Then you can make this portal two-way and two-faced by `/portal complete_bi_way_bi_faced_portal`. If you edit the portal before using `/portal remove_connected_portals`, the portal entities on the other side and the other face won't be edited.
+#### Examples
 
-### Portal-targeted Commands
-For the portal-targeted commands, if the command invoker is a player, it targets on the portal that the player is looking at. If the command invoker is a portal entity, it will apply to itself.
-|Command|Functionality|
-|-|-|
-|`/portal set_portal_nbt <nbt>`|Set a porta's nbt data|
-|`/portal set_portal_destination <dimenision> <x> <y> <z>`|Change a portal's destination|
-|`/portal set_portal_custom_name <name>`|Set a portal's custom name|
-|`/portal view_portal_data`|View a portal's nbt data|
-|`/portal delete_portal`|Remove a portal|
-|`/portal complete_bi_way_portal`|Create a new portal entity to make the portal two-way|
-|`/portal complete_bi_faced_portal`|Create a new portal entity to make the portal two-faced|
-|`/portal complete_bi_way_bi_faced_portal`|Create new portal entities to make the portal two-way and two-faced|
-|`/portal remove_connected_portals`|Remove portal entities to make the portal one-way and one-faced|
-|`/portal set_portal_rotation <axisX> <axisY> <axisZ> <angleDegrees>`|Set the portal's rotation transformation.<br>The rotation transformation is defined by a rotating axis vector and the angle in degrees.<br>When the axis is pointing on you positive angle corresponds rotating counterclockwise|
-|`/portal set_portal_rotation_along <axis> <angleDegrees>`|Similar to the above but use `x` `y` `z` to represent the axis vector|
-|`/portal rotate_portal_body <axisX> <axisY> <axisZ> <angleDegrees>`|Rotate the portal.<br>This command does not change the portal's rotating transformation|
-|`/portal rotate_portal_body_along <axis> <angleDegrees>`|...|
-|`/portal rotate_portal_rotation  <axisX> <axisY> <axisZ> <angleDegrees>`|Change the portal's rotation transformation by applying an additional rotation to the original rotation|
-|`/portal rotate_portal_rotation_along <axis> <angleDegrees>`|...|
-|`/portal move_portal <distance>`|Move the portal along the direcction that you are looking at|
-|`/portal move_portal_destination <distance>`|Move the portal's destination along the direction that you are looking at|
-|`/portal set_portal_specific_accessor <player>`|Make the portal entity only accessible by one player|
-|`/portal set_portal_specific_accessor `|Make the portal entity accessible to all players|
-|`/portal multidest <player> <dimension> <x> <y> <z> <isBiFaced> <isBiWay>`|Set the portal destination for only one player (see below)|
-|`/portal multidest <player>`|Remove the player-specific portal from the portal clutter (see below)|
-|`/portal set_portal_scale <scale>`|Set the portal's scale transformation|
-|`/portal eradicate_portal_clutter`|Completely remove a bi-way portal (4 portal entities). Equivalent to `/portal remove_connected_portals` and then `/portal delete_portal`|
-|`/portal set_portal_destination_to <entity>`|Set the portal's destination to an entity's position|
+- Change the portal entity's destination: `/portal set_portal_destination minecraft:the_end 0 70 0`
 
-NOTE: Before using command `/portal set_portal_rotation`, `/portal move_portal` or `/portal set_portal_rotation` you should use `/portal remove_connected_portals` first or there will be unwanted portals remain.
+- Delete a portal entity: `/portal delete_portal`
 
-Portal-targeted commands don't work with global portals.
+- Make a portal entity have a rotating transformation, rotate the world "inside" the portal: `/portal set_portal_rotation 0 1 0 45` (0 1 0 means the Y-axis. It means rotating around the Y-axis for 45 degrees). It's equivalent to `/portal set_portal_rotation_along y 45`
 
-### Portal Nbt Tags
-Tags for `immersive_portals:portal` `immersive_portals:nether_portal_new` `immersive_portals:end_portal` `immersive_portals:mirror` `immersive_portals:breakable_mirror` `immersive_portals:global_tracked_portal`  `immersive_portals:border_portal` `immersive_portals:end_floor_portal`
-|Tag|Description|
-|-|-|
-|width,height|The portal area length along axisW and axisH|
-|axisWX,axisWY,axisWZ,<br>axisHX,axisHY,axisHZ|axisW and axisH an unit vectors which define the facing of the portal|
-|dimensionTo|Raw id of the destination dimension(0 for overworld, -1 for nether, 1 for end)|
-|destinationX,<br>destinationY,<br>destinationZ|Portal destination|
-|specialShape|Optional. Every 2 numbers represent a 2d point(x axis is axisW and y axis is AxisH). Every 3 points represent a triangle|
-|teleportable|If set to false then you cannot teleport through but can still see through|
-|cullableXStart,cullableXEnd,<br>cullableYStart,cullableYEnd|For frustum culling|
-|loadFewerChunks|(deprecated)|
-|rotationA,rotationB,<br>rotationC,rotationD|A quaternion that defines the portal's rotating transformation. Optional|
-|motionAffinity|If it's positive, then players colliding with portal will be accelerated in the portal's facing direction. If it's negative, the player will be decellerated when moving fast|
-|specificPlayerId|The UUID of the specific player that can access this portal. Optional|
-|scale|The scale transformation|
-|teleportChangesScale|Whether the teleportation changes entity scale if the portal has a scale transformation|
-|adjustPositionAfterTeleport|If true, the player will be moved up if the player is inside the ground after teleportation|
-|portalTag|If a portal is generated by a datapack custom portal generation, the portal tag will the generation's id|
+- Rotate the portal entity itself (does not rotate the world "inside" the portal): `/portal rotate_portal_body 1 0 0 30` (rotates around X-axis for 30 degrees). Equivalent to `/portal rotate_portal_body_along x 30`
 
-Tags for `immersive_portals:nether_portal_new`
-|Tag|Description|
-|-|-|
-|unbreakable|If set to true then the portal entity will remain if obsidian frame breaks|
-|netherPortalShape|Nether portal shape data for determining whether the portal frame brakes|
-|reversePortalId|The UUID of the reverse portal|
+- Change the portal entity's scale transformation: `/portal set_portal_scale 5`
 
-Tags for `immersive_portals:breakable_mirror`
-|Tag|Description|
-|-|-|
-|unbreakable|If set to true then the mirror will remain if the glass wall is destroied|
-|boxXL,boxYL,boxZL,<br>boxXH,boxYH,boxZH|Glass wall area|
+- Move the portal entity forward 0.5 blocks: `/portal move_portal 0.5`
 
-After editing the portal shape you should also change width,height,cullableXStart,cullableXEnd,cullableYStart,cullableYEnd.
-If you don't change these accordingly some sections may not be rendered due to advanced frustum culling.
+- Make the portal entity not able to teleport. Turn it into a "video surveillance": `/portal set_portal_nbt {teleportable:0b}`
 
-### Commands for Command Blocks
-`/portal cb_make_portal <width> <height> <fromEntity> <toEntity>` creates a portal entity goes from fromEntity to toEntity. The orientation is determined by fromEntity's orientation.
+- Make the portal round-shaped `/portal make_portal_round`
 
-These commands are deprecated. They may be removed in the future.
-`/portal cb_set_portal_destination <portal> <dimension> <x> <y> <z>` `/portal cb_complete_bi_way_portal <portal>` `/portal cb_complete_bi_faced_portal <portal>` `/portal cb_complete_bi_way_bi_faced_portal <portal>` `/portal cb_remove_connected_portals <portal>` `/portal cb_set_portal_specific_accessor <portal> [player]` 
+[See All Portal-Targeted Commands](https://github.com/qouteall/ImmersivePortalsMod/wiki/Commands-Reference#portal-targeted-commands)
 
-### Creating the Portal that Points to Different Destinations for Different Players
+[Portal NBT Data Format](https://github.com/qouteall/ImmersivePortalsMod/wiki/Portal-NBT-Data-Format)
+
+#### Editing Existing Breakable Portals
+
+"Breakable Portals" refers to nether portals and the custom datapack generated portals. These portals will break when the frame breaks. 
+
+You can use `/portal set_portal_nbt {unbreakable:1b}` to make the portal entity unbreakable. To make the whole portal unbreakable, you need to use that command for 4 portal entities.
+
+This mod periodically checks whether a breakable portal is properly linked. If it's not properly linked, the portal will automatically break.
+
+It's recommended to edit the portals generated by the portal helper. If you want to edit a breakable portal, make sure that the portal is unbreakable.
+
+#### Edit Portals Using Command Blocks and Functions
+All portal targeted commands can be used by non-player command executors. If the command sender is a portal entity, the command will target that portal entity. For example `/execute as @e[type=immersive_portals:portal] run portal set_portal_destination minecraft:the_end 0 80 0`
+
+## Directly Create Portals
+
+Directly create a new square portal entity: 
+- `/portal make_portal 1 1 minecraft:the_end 0 80 0` Create a portal with width 1 height 1 pointing to the end
+- `/portal make_portal 1 1 minecraft:overworld shift 5` Create a portal whiches the destination is 5 blocks ahead of the position of the portal
+
+### Create a Small Wrapping Zone
+You can create a small wrapping zone by `/portal create_small_inward_wrapping <x1> <y1> <z1> <x2> <y2> <z2>` `/portal create_small_outward_wrapping <x1> <y1> <z1> <x2> <y2> <z2>`
+These commands create normal portals instead of global portals. These wrapping portals can be modified by portal-targeted commands. Global portal commands do not affect them.
+
+### Create a Scaled Wrapping Zone
+You can create a scaled wrapping by `/portal create_scaled_box_view <x1> <y1> <z1> <x2> <y2> <z2> <scale> <placeTargetEntity> <isBiWay> [teleportChangesScale]`.
+The wrapping zone is a box area. It will create 6 portals with scale transformation that points from the box around placeTargetEntity to the wrapping zone box. The argument teleportChangesScale is false by default. If you want to make a small box view of a big area, the scale should be bigger than 1. If `isBiWay` is true, it will generate the reverse portals for every portal. Then it will generate 12 portals totally.
+
+The command sender's dimension is the dimension of the view box. For example, if you want to create a box viewing the end island, use `/execute in minecraft:the_end run portal create_scaled_box_view -100 0 -100 100 128 100 20 @p true`
+
+![](https://i.ibb.co/yhXHYHm/2020-08-26-21-18-54.png)
+
+## Edit the Portal's Shape
+Editing the portal shape by editing its NBT is technical.
+
+[Portal NBT Data Format](https://github.com/qouteall/ImmersivePortalsMod/wiki/Portal-NBT-Data-Format)
+
+You can edit the portal shape by editing the NBT tag of `width`, `height`, and `specialShape`. `specialShape` is a number list, every 2 numbers represent a 2D point and every 3 points represent a triangle. But after editing the shape, artifacts may appear. Some sections in the portal are not rendered, some sections behind the portal are not rendered. This is due to this mod's frustum culling rendering optimization. To fix the artifact, you need to assure that every triangle in `specialShape` does not exceed the rectangle area defined by `width` and `height`. And the rectangle area defined by `cullableXStart`, `cullableXEnd`, `cullableYStart`, and `cullableYEnd` does not exceed the portal shape.
+
+
+## Create the Portal that Points to Different Destinations for Different Players
 By using `/portal set_portal_specific_accessor` command you can make a portal only accessible for one player. By putting two different portal entities that are specific for two different players into the same place, you can create a portal that points to different destinations for different players.
 
 But if two portals overlap then the portal targeted commands cannot select the portal entity accurately. You can manage that using `/portal multidest` command. Managing it using command blocks is also possible.
 
-(Portal targeted commands can still be used on the portal that's invisible to you)
+(Portal targeted commands can still be used on the portal that's not accessible to you)
 
-### Common Questions
+## Common Questions
 
-#### How to connect two portals?
+### How to connect two portals?
 It's not recommended to "connect" two existing portals. The recommended way is to make one portal entity, control its position and destination, then complete bi way portal. Use `/portal remove_connected_portals` first, then edit the portal, then `/portal complete_bi_way_portal`.
 
-### Helper Commands for Creating Portals
+## Other Utility Commands
 
-#### Straightly Create a Portal
-You can aim at a block and use `/portal make_portal <width> <height> <dim> <toX> <toY> <toZ>` or `/portal make_portal <width> <height> <dim> shift <dist>`.
-
-The first one creates a new portal coming off of the side of the block you're pointing at. The specified height is always pointing away from the surface and the width is always the other way, and the portal will point towards you. The dim and x,y,z arguments act just like set_portal_destination.
-
-The second one does the same with creation but sets the destination (in the specified dimension) to be <dist> blocks in front of the portal. This is useful if you don't have coordinates in mind immediately. And once you're able to shift around the portal destination, it could be a useful visual tool.
-
-The two variants are:
-- `/portal make_portal <width> <height> <dim> <toX> <toY> <toZ>`
-- `/portal make_portal <width> <height> <dim> shift <dist>`
-
-#### Create a Small Wrapping Zone
-You can create a small wrapping zone by `/portal create_small_inward_wrapping <x1> <y1> <z1> <x2> <y2> <z2>` `/portal create_small_outward_wrapping <x1> <y1> <z1> <x2> <y2> <z2>`
-These commands create normal portals instead of global portals. These wrapping portals can be modified by portal-targeted commands. Global portal commands do not affect them.
-
-#### Create a Scaled Wrapping Zone
-You can create a scaled wrapping by `/portal create_scaled_box_view <x1> <y1> <z1> <x2> <y2> <z2> <scale> <placeTargetEntity> <isBiWay> [teleportChangesScale]`.
-The wrapping zone is a box area. It will create 6 portals with scale transformation that points from the box around placeTargetEntity to the wrapping zone box. The argument teleportChangesScale is false by default. If you want to make a small box view of a big area, the scale should be bigger than 1. If isBiWay is true, it will generate the reverse portals for every portal. Then it will totally generate 12 portals totally.
-
-The command invoker dimension is the dimension of the view box. For example, if you want to create a box viewing the end island, use `/execute in minecraft:the_end run portal create_scaled_box_view -100 0 -100 100 128 100 20 @p true`
-
-![](https://i.ibb.co/yhXHYHm/2020-08-26-21-18-54.png)
+You can use command `/portal tpme <dimension> <x> <y> <z>` to teleport yourself across dimensions without loading screen. If you accidentally go through a one-way portal and want to come back, you can use `/portal goback`
