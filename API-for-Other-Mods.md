@@ -1,4 +1,6 @@
-(A full set of APIs for other mods to use haven't been fully implemented. It's being worked on.)
+A full set of APIs for other mods to use hasn't been fully implemented. It's being worked on.
+
+This mod will have a big name/package rearrangement in the 1.17 update.
 
 ### Mod Structure
 This mod (Fabric version)'s mod id is `immersive_portals`. It has 3 mods jar-in-jar.
