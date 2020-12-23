@@ -38,15 +38,19 @@ Add this into `repositories`
 Add this into `dependencies`
 
 ```
-	modImplementation  'com.github.qouteall.ImmersivePortalsMod:imm_ptl_core:1.16-SNAPSHOT'
-        include 'com.github.qouteall.ImmersivePortalsMod:imm_ptl_core:1.16-SNAPSHOT'
+modImplementation ('com.github.qouteall.ImmersivePortalsMod:imm_ptl_core:1.16-SNAPSHOT'){
+exclude 'fabric-api'
+}
+include 'com.github.qouteall.ImmersivePortalsMod:imm_ptl_core:1.16-SNAPSHOT'
 ```
 See https://jitpack.io/#qouteall/ImmersivePortalsMod
 (You can change `1.16-SNAPSHOT` to a release tag. If Jitpack doesn't work, try to fork this repo and use the forked repo)
 
 #### If you want to have an optional dependency of Immersive Portals (some functionality only enables with IP installed)
 ```
-	modCompileOnly 'com.github.qouteall.ImmersivePortalsMod:imm_ptl_core:1.16-SNAPSHOT'
+modCompileOnly ('com.github.qouteall.ImmersivePortalsMod:imm_ptl_core:1.16-SNAPSHOT'){
+exclude 'fabric-api'
+}
 ```
 
 ### API Briefly Explained
