@@ -32,7 +32,7 @@ NBT tag: `destinationX` `destinationY` `destinationZ`
 #### Rotation Transformation
 Optional. A quaternion that defines the portal's rotation transformation.
 
-NBT tag: `rotationA` `rotationB` <br> `rotationC` `rotationD`
+NBT tag: `rotationA` `rotationB` `rotationC` `rotationD`
 
 #### Scale Transformation
 A number that defines the portal's scale transformation.
