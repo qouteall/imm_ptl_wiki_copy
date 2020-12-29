@@ -58,7 +58,7 @@ Move the portal's destination along the direction that you are looking at.
 ### Manage the Portal
 
 #### `/portal set_portal_nbt <nbt>`
-Set a portal's NBT data. [Portal NBT Data Format](https://github.com/qouteall/ImmersivePortalsMod/wiki/Portal-NBT-Data-Format)
+Set a portal's NBT data. [Portal NBT Data Format](https://github.com/qouteall/ImmersivePortalsMod/wiki/Portal-Attributes)
 
 #### `/portal view_portal_data`
 View a portal's NBT data.
