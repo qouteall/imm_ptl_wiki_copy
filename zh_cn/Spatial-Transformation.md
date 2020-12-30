@@ -1,3 +1,5 @@
+(即将翻译)
+
 A portal stitches the existent space with a transformed space. It can have translation transformation, rotating transformation, scale transformation, and mirror transformation. Normal nether portals only have translation transformation. Here introduce the other transformations.
 
 This mod's teleportation is eye-based. It means that the teleportation applies the transformation to the player's eye position. This makes the teleportation visually seamless. However, this doesn't guarantee that the player will be in empty space after teleporting.

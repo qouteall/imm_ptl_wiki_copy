@@ -1,5 +1,5 @@
 
-## 地狱传送门
+## 地狱传送门{#nether portals}
 安装模组后，原版传送门不会自动变化。
 
 地狱传送门可以不必是方的，可以是水平的。
@@ -12,31 +12,31 @@
 
 地狱传送门有三种模式: `normal`, `adaptive`, `vanilla`
 
-### `normal` （普通）
+### `normal` （普通）{#normal}
 只能连接到相同方向、完全相同形状的传送门框架。
 
-### `adaptive` （适应）
+### `adaptive` （适应）{#adaptive}
 能连接到可以通过旋转、缩放变换来适应的形状的传送门框架。
 
-### `vanilla` （原版）
+### `vanilla` （原版）{#vanilla}
 不改变原版地狱门生成机制。
 
-## End Portals
+## 末地传送门{#end-portals}
 
 末地传送门有四种模式： `normal`, `toObsidianPlatform`, `scaledView`, `vanilla`
 
-### `normal` （普通）
+### `normal` （普通）{#normal}
 
 这个模式的末地传送门指向末地的坐标 (0 120 0) 处。玩家跳入末地传送门时，获得缓慢下落效果。装备鞘翅时没有缓慢下落效果。
 
 ![](https://i.ibb.co/C08FFJn/2020-05-26-21-55-16.png)
 
-### `toObsidianPlatform` （指向黑曜石平台）
+### `toObsidianPlatform` （指向黑曜石平台）{#toObsidianPlatform}
 
 指向黑曜石平台处。
 ![](https://i.ibb.co/MsJRGtX/2020-12-13-17-45-49.png)
 
-### `scaledView` （缩放）
+### `scaledView` （缩放）{#scaledView}
 
 展示缩放的末地岛。
 （传送门共包括6个传送门实体，同时还有6个仅客户端存在的反向传送门实体。）
@@ -45,18 +45,18 @@
 
 这种末地传送门对性能有更高要求。
 
-### `vanilla` （原版）
+### `vanilla` （原版）{#vanilla}
 不改变原版末地传送门生成。
 
-### 创造模式下如何移除末地传送门
+### 创造模式下如何移除末地传送门 {#How to Remove an End Portal in Creative Mode}
 使用命令 `/portal delete_portal`
 
-## 镜子
+## 镜子 {#mirrors}
 使用打火石对玻璃右键即可产生镜子，玻璃板或有色玻璃也可以。镜子可以是水平的。
 
 ![](https://i.ibb.co/Jr0fdfv/2020-05-26-21-58-45.png)
 
-## 全局传送门
+## 全局传送门 {#global portals}
 
 一个传送门可以是处于普通传送门的状态也可以处于全局传送门的状态。
 
@@ -64,15 +64,15 @@
 
 全局传送门主要通过命令来管理。
 
-### 在普通传送门与全局传送门之间转换
+### 在普通传送门与全局传送门之间转换 {#Convert a Portal Between Normal Portal and Global Portal}
 
 通过命令 `/portal global convert_global_portal_to_normal_portal`你所指向的全局传送门会变成普通传送门。使用这个命令要求你不能离传送门中心点太远，否则转换后的普通传送门将在未加载区块中。
 
 通过命令 `/portal global convert_normal_portal_to_global_portal` 来将普通传送门变为全局传送门。
 
-### 全局传送门命令
+### 全局传送门命令 {#Global Portal Management Commands}
 
-#### 空间自折叠
+#### 空间自折叠 {#World Wrapping Portal}
 
 空间自折叠有内向与外向两种。
 
@@ -100,7 +100,7 @@
 使用 `/portal global clear_wrapping_border` 可将外部边界方块全部移除。
 (**注意** 这一操作是不可撤销的，建议在此之前备份存档)
 
-#### 位面纵向连接
+#### 位面纵向连接 {#Vertical Dimension Connecting Portal}
 通过传送门将两个位面纵向连接起来。
 
 例如：
@@ -115,16 +115,16 @@
 
 使用 `/portal global connection_remove_floor <dimension>` `/portal global connection_remove_ceil <dimension>` 来移除纵向连接传送门。
 
-##### 纵向连接两个位面与扩展建筑高度限制
+##### 纵向连接两个位面与扩展建筑高度限制 {#Using Vertical Connection to Break the Height Limit}
 将主世界上面间接一个位面，建筑高度就由256扩展到512。纵向连接并非真正地扩展高度，只是用传送门将两者连接起来。红石、液体流动、光照传播、AI无法跨传送门工作。
 
-##### 纵向空间自折叠
+##### 纵向空间自折叠 {#Vertical World Wrapping}
 例如
 `/portal global connect_floor immersive_portals:alternate4 immersive_portals:alternate4`
 
 `/portal global connect_ceil immersive_portals:alternate4 immersive_portals:alternate4`
 
-## 一个传送门对MC世界有什么影响
+## 一个传送门对MC世界有什么影响 {#How Does a Portal Interact with the Minecraft World}
 
 * 区块加载。当一个玩家靠近一个传送门时，传送门对面的区块将会被加载，同时世界的变化会被送到客户端。
 * 渲染。如果一个传送门是可见的，会渲染该传送门。
@@ -133,7 +133,7 @@
 * 跨传送门实体渲染。若一个实体碰到了传送门，那么在传送门外和传送门内都会渲染该实体一遍，让实体完整渲染。
 * 可以跨传送门方块破坏放置方块。
 
-## 可拆除传送门
+## 可拆除传送门 {#Breakable Portals}
 地狱传送门与数据包自定义传送门都是可拆除传送门。
 
 可拆除传送门与其传送门方块结构相对应，传送门方块结构是由一个平面上的传送门框架与框架内部的占位方块组成。占位方块是一种透明、无碰撞箱的方块且有像萤石一样的光照。

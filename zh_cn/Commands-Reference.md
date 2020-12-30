@@ -1,3 +1,5 @@
+(即将翻译)
+
 A list of all commands of Immersive Portals mod.
 
 ## Global Portal Commands

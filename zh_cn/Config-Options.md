@@ -1,3 +1,4 @@
+(即将翻译)
 
 ## Client-Side Performance Configurations
 When you are nearby a portal, the FPS may drop due to these reasons:

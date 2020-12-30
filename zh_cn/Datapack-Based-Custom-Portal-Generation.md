@@ -1,3 +1,4 @@
+(即将翻译)
 
 Configure custom portal generation mechanics using JSON files in a datapack.
 

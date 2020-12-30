@@ -1,3 +1,5 @@
+(即将翻译)
+
 These are the attributes that a portal has.
 
 ### Shape Attributes

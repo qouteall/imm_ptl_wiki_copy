@@ -1,3 +1,4 @@
+(即将翻译)
 
 You can see the "Dimension Stack" button when creating a new world.
 

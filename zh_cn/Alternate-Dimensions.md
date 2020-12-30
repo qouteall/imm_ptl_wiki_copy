@@ -1,3 +1,4 @@
+(即将翻译)
 
 This mod provides 5 alternate dimensions. Their sky is similar to the overworld.
 You can use them to connect with the overworld.
