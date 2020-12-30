@@ -91,6 +91,7 @@ NBT tag: `cullableXStart` `cullableXEnd` `cullableYStart` `cullableYEnd`
 
 #### Motion Affinity
 If it's positive, then players colliding with the portal will be accelerated in the portal's facing direction. If it's negative, the player will be decelerated when moving fast.
+
 NBT tag: `motionAffinity`
 
 ### Breakable Portal Attributes
