@@ -16,6 +16,6 @@
 
 [命令](https://github.com/qouteall/ImmersivePortalsMod/wiki/Commands-Reference)
 
-[传送门的NBT数据格式](https://github.com/qouteall/ImmersivePortalsMod/wiki/Portal-NBT-Data-Format)
+[传送门属性](https://github.com/qouteall/ImmersivePortalsMod/wiki/Portal-Attributes)
 
 [其它](https://github.com/qouteall/ImmersivePortalsMod/wiki/Miscellaneous)
