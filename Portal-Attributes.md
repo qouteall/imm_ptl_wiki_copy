@@ -51,6 +51,16 @@ If true, the player will be moved up if the player is inside the ground after te
 
 NBT tag: `adjustPositionAfterTeleport`
 
+#### Whether to Have Cross Portal Collision
+
+If an entity touches a portal, its collision will be specially handled, which includes:
+* The outer collision. Things behind the portal cannot collide with that entity.
+* The inner collision. Things "inside" the portal can collide with that entity.
+
+This attribute defines whether the inner collision is being handled.
+
+NBT tag: `hasCrossPortalCollision`
+
 ### Accessibility Attributes
 
 #### Teleportable
