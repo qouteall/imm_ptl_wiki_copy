@@ -69,6 +69,9 @@ Remove a portal.
 #### `/portal move_portal <distance>`
 Move the portal along the direction that you are looking at.
 
+#### `/portal set_portal_position <dimension> <x> <y> <z>`
+Change the portal's position.
+
 ### Portal Clutter Management
 
 [See](https://github.com/qouteall/ImmersivePortalsMod/wiki/Portal-Customization#1-nether-portal--4-portal-entities)

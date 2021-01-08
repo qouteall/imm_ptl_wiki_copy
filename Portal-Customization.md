@@ -63,7 +63,9 @@ There are some portal-targeted commands for managing portals. You need to point 
 
 - Make the portal entity not able to teleport. Turn it into a "video surveillance": `/portal set_portal_nbt {teleportable:0b}`
 
-- Make the portal round-shaped `/portal make_portal_round`
+- Make the portal round-shaped: `/portal make_portal_round`
+
+- Make the portal to damage the entities that cross this portal: `/portal set_portal_nbt {commandsOnTeleported:["/effect give @s minecraft:instant_damage 1"]}`
 
 [See All Portal-Targeted Commands](https://github.com/qouteall/ImmersivePortalsMod/wiki/Commands-Reference#portal-targeted-commands)
 
@@ -105,7 +107,12 @@ Editing the portal shape by editing its NBT is technical.
 
 [Portal Attributes](https://github.com/qouteall/ImmersivePortalsMod/wiki/Portal-Attributes)
 
-You can edit the portal shape by editing the NBT tag of `width`, `height`, and `specialShape`. `specialShape` is a number list, every 2 numbers represent a 2D point and every 3 points represent a triangle. But after editing the shape, artifacts may appear. Some sections in the portal are not rendered, some sections behind the portal are not rendered. This is due to this mod's frustum culling rendering optimization. To fix the artifact, you need to assure that every triangle in `specialShape` does not exceed the rectangle area defined by `width` and `height`. And the rectangle area defined by `cullableXStart`, `cullableXEnd`, `cullableYStart`, and `cullableYEnd` does not exceed the portal shape.
+You can edit the portal shape by editing the NBT tag of `width`, `height`, and `specialShape`.
+
+
+If the NBT tag `specialShape` is present, the shape will be determined by `specialShape`, otherwise `width` and `height`.
+
+`specialShape` is a number list, every 2 numbers represent a 2D point and every 3 points represent a triangle. But after editing the shape, artifacts may appear. Some sections in the portal are not rendered, some sections behind the portal are not rendered. This is due to this mod's frustum culling rendering optimization. To fix the artifact, you need to assure that every triangle in `specialShape` does not exceed the rectangle area defined by `width` and `height`. And the rectangle area defined by `cullableXStart`, `cullableXEnd`, `cullableYStart`, and `cullableYEnd` does not exceed the portal shape.
 
 
 ## Create the Portal that Points to Different Destinations for Different Players

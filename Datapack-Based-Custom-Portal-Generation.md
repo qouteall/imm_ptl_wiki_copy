@@ -90,6 +90,17 @@ The example datapack has
   "trigger": { "type": "imm_ptl:use_item", "item": "minecraft:flint_and_steel" }
 }
 ```
+
+#### `convert_vanilla_nether_portal.json` Convent vanilla nether portals into see-through portals (if the shapes are compatible)
+```
+{
+  "schema_version": "imm_ptl:v1",
+  "from": ["minecraft:overworld"],"to": "minecraft:the_nether",
+  "form": {"type": "imm_ptl:convert_conventional_portal","portal_block": "minecraft:nether_portal"},
+  "trigger": {"type": "imm_ptl:conventional_dimension_change"}
+}
+```
+
 ## Details Explained
 
 The datapack-based custom portal generation system allows configuring special portal generation mechanics. The portal generation can be triggered by the player using an item or throwing an item. It can be configured to only generate in one dimension and goes to another dimension. The space ratio can be configured to determine where the destination should be. A list of commands can be specified to be invoked after portal creation. There are different portal forms each with different kinds of portals and different destination selection mechanics.
@@ -166,6 +177,13 @@ The maximum area side length is 20.
 * `to_frame_block` Block id. The other side's frame block.
 * `generate_frame_if_not_found` Boolean.
 
+#### `type` : `imm_ptl:convert_conventional_portal`
+This can only be used with triggerer `imm_ptl:convert_conventional_portal`. When a player goes through a conventional portal and experience a dimension travel with loading screen, this can be used to convert that conventional portal into a see-through portal.
+
+If the conventional portal is horizontal, it will generate a one-faced bi-way portal with a flipping rotation transformation. Otherwise, it behaves the same as `imm_ptl:try_hard_to_match`.
+
+* `portal_block` Block id or block tag. The conventional portal's block.
+
 ### The Format of Custom Portal Generation Trigger
 Specifies when and where should the portal generates.
 #### `type` : `imm_ptl:use_item`
@@ -175,5 +193,5 @@ Activates when the player right-clicks using an item.
 #### `type` : `imm_ptl:throw_item`
 Checks every tick for the item entity that cannot be instantly picked up. (When a player throws one item it cannot be instantly picked up because the item entity has pick-up delay.) If an item is not thrown within 2 seconds, it will have no pick-up delay and cannot trigger the generation. The item can survive in lava for 1 tick, so throwing a non-fire-proof item into lava could still trigger the generation.
 * `item` Item id.
-#### `type` : `conventional_dimension_change`
+#### `type` : `imm_ptl:conventional_dimension_change`
 It will be triggered when the player experiences conventional dimension travel (with loading screen), for example going through a vanilla nether portal. This is useful for converting other mod's portal.

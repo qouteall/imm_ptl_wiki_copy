@@ -1,5 +1,8 @@
 These are the attributes that a portal has.
 
+You can edit them by `/portal set_portal_nbt` command.
+[Portal Customization](https://github.com/qouteall/ImmersivePortalsMod/wiki/Portal-Customization)
+
 ### Shape Attributes
 
 #### Orientation Axis
@@ -60,6 +63,13 @@ If an entity touches a portal, its collision will be specially handled, which in
 This attribute defines whether the inner collision is being handled.
 
 NBT tag: `hasCrossPortalCollision`
+
+#### Commands to Invoke After Teleporting
+
+Optional. You can specify a list of commands to be invoked for entities that teleport through this portal.
+The command sender will be the entity that teleported.
+
+NBT tag: `commandsOnTeleported`
 
 ### Accessibility Attributes
 
