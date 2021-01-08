@@ -114,7 +114,7 @@ If it's positive, then players colliding with the portal will be accelerated in 
 
 NBT tag: `motionAffinity`
 
-### Breakable Portal Attributes
+## Breakable Portal Attributes
 
 Only exists for [breakable portals](https://github.com/qouteall/ImmersivePortalsMod/wiki/Portals#breakable-portals).
 
