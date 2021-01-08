@@ -118,8 +118,19 @@ NBT tag: `motionAffinity`
 
 Only exists for [breakable portals](https://github.com/qouteall/ImmersivePortalsMod/wiki/Portals#breakable-portals).
 
-#### unbreakable
+#### Unbreakability
 If true, the portal won't break if the frame structure is broken.
 
 NBT tag: `unbreakable`
 
+### Overlay Attributes
+
+#### Overlay Block State
+Optional. It's the portal overlay block's block state.
+
+NBT tag: `overlayBlockState`
+
+#### Overlay Opacity
+Overlay's opacity. Between 0 and 1.
+
+NBT tag: `overlayOpacity`

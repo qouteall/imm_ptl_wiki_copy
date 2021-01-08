@@ -85,6 +85,15 @@ Used for debugging.
 ### Enable Alternate Dimensions
 If disabled, the alternate dimensions won't be loaded. (All portals pointing to alternate dimensions will vanish.)
 
+### Enable Nether Portal Overlay
+If enabled, the newly generated nether portals will have vanilla nether portal texture overlay (with opacity 0.5).
+
+Won't affect existing nether portals.
+
+![](https://i.ibb.co/PGgkwFc/2021-01-06-21-39-35.png)
+
+Horizontal nether portals won't have this overlay because the vanilla nether portal block does not have the horizontal variant.
+
 ### Longer Reach in Creative
 [See](https://github.com/qouteall/ImmersivePortalsMod/wiki/Miscellaneous#hand-reach-tweak)
 
