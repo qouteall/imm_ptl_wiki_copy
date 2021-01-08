@@ -134,7 +134,7 @@ For example
 ## How Does a Portal Interact with the Minecraft World
 
 * Chunk loading. If a player comes near a portal, the other side chunks will be loaded and synchronized to the client.
-* Rendering. If the portal is visible, it will be rendered.
+* Rendering. If the portal is visible, it will be rendered. In the third person view mode, the camera view can cross the portal.
 * Teleportation. If an entity crosses the portal, it will be teleported (except when the entity cannot teleport for example boss entities).
 * Collision. If an entity touches a portal, this mod will handle its cross-portal collision.
 * Cross Portal Entity Rendering. If an entity touches a portal, this mod will try to both render the entity inside and outside the portal so that the entity does not look clipped.

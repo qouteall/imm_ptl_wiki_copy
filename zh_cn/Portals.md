@@ -127,7 +127,7 @@
 ## 一个传送门对MC世界有什么影响 {#How Does a Portal Interact with the Minecraft World}
 
 * 区块加载。当一个玩家靠近一个传送门时，传送门对面的区块将会被加载，同时世界的变化会被送到客户端。
-* 渲染。如果一个传送门是可见的，会渲染该传送门。
+* Rendering. If the portal is visible, it will be rendered. In the third person view mode, the camera view can cross the portal.
 * 传送。一个实体跨过传送门后，将会被传送。（Boss实体等不可传送实体无法被传送）
 * 物理碰撞。如果一个实体碰到了传送门，将会有跨传送门碰撞计算。
 * 跨传送门实体渲染。若一个实体碰到了传送门，那么在传送门外和传送门内都会渲染该实体一遍，让实体完整渲染。
