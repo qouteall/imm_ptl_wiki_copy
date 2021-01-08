@@ -4,7 +4,7 @@
 
 地狱传送门可以不必是方的，可以是水平的。
 
-![](https://i.ibb.co/KGqRqfZ/2020-12-13-16-49-25.png)
+![](https://qouteall.fun/imm_ptl_wiki_copy/assets/2020-12-13-16-49-25.png)
 
 在开启地狱传送门的时候，会首先尝试连接到对面的可以连接的传送门黑曜石框架。如果找不到现有的可以连接的框架，则会新生成传送门黑曜石框架。不会连接到原版地狱传送门。
 
@@ -29,19 +29,19 @@
 
 这个模式的末地传送门指向末地的坐标 (0 120 0) 处。玩家跳入末地传送门时，获得缓慢下落效果。装备鞘翅时没有缓慢下落效果。
 
-![](https://i.ibb.co/C08FFJn/2020-05-26-21-55-16.png)
+![](https://qouteall.fun/imm_ptl_wiki_copy/assets/2020-05-26-21-55-16.png)
 
 ### `toObsidianPlatform` （指向黑曜石平台）{#toObsidianPlatform}
 
 指向黑曜石平台处。
-![](https://i.ibb.co/MsJRGtX/2020-12-13-17-45-49.png)
+![](https://qouteall.fun/imm_ptl_wiki_copy/assets/2020-12-13-17-45-49.png)
 
 ### `scaledView` （缩放）{#scaledView}
 
 展示缩放的末地岛。
 （传送门共包括6个传送门实体，同时还有6个仅客户端存在的反向传送门实体。）
 
-![](https://i.ibb.co/hmRS3KH/2020-09-15-21-13-34.png)
+![](https://qouteall.fun/imm_ptl_wiki_copy/assets/2020-09-15-21-13-34.png)
 
 这种末地传送门对性能有更高要求。
 
@@ -54,7 +54,7 @@
 ## 镜子 {#mirrors}
 使用打火石对玻璃右键即可产生镜子，玻璃板或有色玻璃也可以。镜子可以是水平的。
 
-![](https://i.ibb.co/Jr0fdfv/2020-05-26-21-58-45.png)
+![](https://qouteall.fun/imm_ptl_wiki_copy/assets/2020-05-26-21-58-45.png)
 
 ## 全局传送门 {#global portals}
 
@@ -78,17 +78,17 @@
 
 内向空间自折叠将一片空间“无限重复”。当你从右侧离开时，会出现在左侧。
 
-![](https://i.ibb.co/Bnt0Gqc/2020-05-26-22-04-06.png)
+![](https://qouteall.fun/imm_ptl_wiki_copy/assets/2020-05-26-22-04-06.png)
 
-![](https://i.ibb.co/jrXPhqV/2020-05-26-22-03-59.png)
+![](https://qouteall.fun/imm_ptl_wiki_copy/assets/2020-05-26-22-03-59.png)
 
 命令 `/portal global create_inward_wrapping <x1> <z1> <x2> <z2>` 可创建一个内向自折叠。区域可以很大，因为生成的是全局传送门。
 
 外向空间自折叠将一片空间“剔除”。如果你想通过左侧进入这片空间，会从右边出现。
 
-![](https://i.ibb.co/9g72926/2020-05-26-22-04-50.png)
+![](https://qouteall.fun/imm_ptl_wiki_copy/assets/2020-05-26-22-04-50.png)
 
-![](https://i.ibb.co/1RL3wr4/2020-05-26-22-05-05.png)
+![](https://qouteall.fun/imm_ptl_wiki_copy/assets/2020-05-26-22-05-05.png)
 
 命令 `/portal global create_outward_wrapping <x1> <z1> <x2> <z2>` 可创建一个外向自折叠。
 
@@ -107,7 +107,7 @@
 `/portal global connect_floor minecraft:the_end minecraft:overworld`
 末地掉入虚空后回到主世界
 
-![](https://i.ibb.co/JvDMZtj/2020-10-18-22-15-38.png)
+![](https://qouteall.fun/imm_ptl_wiki_copy/assets/2020-10-18-22-15-38.png)
 
 该命令一次只创建一个单向传送门。若想让主世界与末地的连接为双向，用
 `/portal global connect_ceil minecraft:overworld minecraft:the_end`
