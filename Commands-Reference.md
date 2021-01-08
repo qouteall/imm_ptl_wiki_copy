@@ -160,7 +160,7 @@ Create a scaled box wrapping zone. It will create 6 portals with scale transform
 
 The command sender dimension is the dimension of the view box. For example, if you want to create a box viewing the end island, use `/execute in minecraft:the_end run portal create_scaled_box_view -100 0 -100 100 128 100 20 @p true`
 
-![](https://i.ibb.co/yhXHYHm/2020-08-26-21-18-54.png)
+![](./assets/2020-08-26-21-18-54.png)
 
 ## Miscellaneous Commands
 
