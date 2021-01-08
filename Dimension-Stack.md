@@ -1,14 +1,14 @@
 
 You can see the "Dimension Stack" button when creating a new world.
 
-![](./assets/2020-09-20-21-03-15.png)
+![](https://qouteall.fun/imm_ptl_wiki_copy/assets/2020-09-20-21-03-15.png)
 
-![](./assets/2020-11-29-10-49-54.png)
+![](https://qouteall.fun/imm_ptl_wiki_copy/assets/2020-11-29-10-49-54.png)
 
 If the dimension stack is enabled, the bedrock blocks in the world will be replaced by obsidian.
 And it will generate vertical connecting portals to connect the dimensions.
 
-![](./assets/2020-10-18-21-55-30.png)
+![](https://qouteall.fun/imm_ptl_wiki_copy/assets/2020-10-18-21-55-30.png)
 
 If you want to use dimension stack in a server, you need to first create the dimension stack world on the client and then copy the world to the server.
 
@@ -17,7 +17,7 @@ Dimension stack can greatly degrade performance. You can shrink the loading dist
 ### Dimension Stack Options
 #### Respect Space Ratio
 This option is disabled by default. If disabled, the scale between overworld and nether is the same. If enabled, the connection portal between overworld and the nether will have scale transformation.
-![](./assets/2020-11-29-10-57-12.png)
+![](https://qouteall.fun/imm_ptl_wiki_copy/assets/2020-11-29-10-57-12.png)
 
 The space ratio is determined by the dimension type.
 
