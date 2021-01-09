@@ -40,9 +40,7 @@ Add this into `repositories`
 Add this into `dependencies`
 
 ```
-modImplementation ('com.github.qouteall.ImmersivePortalsMod:imm_ptl_core:1.16-SNAPSHOT'){
-exclude 'fabric-api'
-}
+modImplementation ('com.github.qouteall.ImmersivePortalsMod:imm_ptl_core:v0.60-1.16')
 include 'com.github.qouteall.ImmersivePortalsMod:imm_ptl_core:1.16-SNAPSHOT'
 ```
 See https://jitpack.io/#qouteall/ImmersivePortalsMod
@@ -50,9 +48,7 @@ See https://jitpack.io/#qouteall/ImmersivePortalsMod
 
 #### If you want to have an optional dependency of Immersive Portals (some functionality only enables with IP installed)
 ```
-modCompileOnly ('com.github.qouteall.ImmersivePortalsMod:imm_ptl_core:1.16-SNAPSHOT'){
-exclude 'fabric-api'
-}
+modCompileOnly ('com.github.qouteall.ImmersivePortalsMod:imm_ptl_core:v0.60-1.16')
 ```
 
 ### API Briefly Explained

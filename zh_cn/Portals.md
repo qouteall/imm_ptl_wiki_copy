@@ -12,31 +12,31 @@
 
 地狱传送门有三种模式: `normal`, `adaptive`, `vanilla`
 
-### `normal` （普通）{#normal}
+### `normal` （普通）{#mode--normal}
 只能连接到相同方向、完全相同形状的传送门框架。
 
-### `adaptive` （适应）{#adaptive}
+### `adaptive` （适应）{#mode--adaptive}
 能连接到可以通过旋转、缩放变换来适应的形状的传送门框架。
 
-### `vanilla` （原版）{#vanilla}
+### `vanilla` （原版）{#mode--vanilla}
 不改变原版地狱门生成机制。
 
 ## 末地传送门{#end-portals}
 
 末地传送门有四种模式： `normal`, `toObsidianPlatform`, `scaledView`, `vanilla`
 
-### `normal` （普通）{#normal}
+### `normal` （普通）{#mode--normal}
 
 这个模式的末地传送门指向末地的坐标 (0 120 0) 处。玩家跳入末地传送门时，获得缓慢下落效果。装备鞘翅时没有缓慢下落效果。
 
 ![](https://qouteall.fun/imm_ptl_wiki_copy/assets/2020-05-26-21-55-16.png)
 
-### `toObsidianPlatform` （指向黑曜石平台）{#toObsidianPlatform}
+### `toObsidianPlatform` （指向黑曜石平台）{#mode--toObsidianPlatform}
 
 指向黑曜石平台处。
 ![](https://qouteall.fun/imm_ptl_wiki_copy/assets/2020-12-13-17-45-49.png)
 
-### `scaledView` （缩放）{#scaledView}
+### `scaledView` （缩放）{#mode--scaledView}
 
 展示缩放的末地岛。
 （传送门共包括6个传送门实体，同时还有6个仅客户端存在的反向传送门实体。）
@@ -45,7 +45,7 @@
 
 这种末地传送门对性能有更高要求。
 
-### `vanilla` （原版）{#vanilla}
+### `vanilla` （原版）{#mode--vanilla}
 不改变原版末地传送门生成。
 
 ### 创造模式下如何移除末地传送门 {#How to Remove an End Portal in Creative Mode}

@@ -38,12 +38,14 @@ The chunks that are only visible through the portal are remotely (indirectly) lo
 The chunk loading radius of a portal is determined by the player's distance to the portal.
 |Player distance to portal|Portal chunk loading radius|
 |-|-|
-|0 ~ 5|`serverLoadingDistance`|
-|5 ~ 15|`(serverLoadingDistance * 2) / 3`|
-|15 ~ 48|`serverLoadingDistance / 3`|
-|> 48|`0`|
+|0 ~ 5|The same as the server loading distance|
+|5 ~ 15|Two thirds of the server loading distance|
+|15 ~ 48|One third of the server loading distance|
+|> 48|0|
 
 Global portals are different. The global portal's loading distance is `serverLoadingDistance - (playerDistanceToPortal / 16)`
+
+Not only the portals that near the player load chunks, a chunk-loading portal can make its nearby portal (within 16 blocks) to also become chunk loading portals. The indirect chunk loading radius is one fourth of the server loading distance.
 
 Reducing the extra chunks loaded can increase server performance.
 
@@ -57,6 +59,7 @@ Turning this off increases server performance.
 ### Indirect Loading Radius Cap
 Defines the maximum loading radius of indirect chunk loading through portals. Turning it down means that fewer chunks will be loaded when a player approaches a portal thus increase server performance.
 
+The chunk loading radius of global portals won't be affected by this option.
 
 ## Other Client-Side Configurations
 ### Compatibility Render Mode

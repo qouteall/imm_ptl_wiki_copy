@@ -4,7 +4,7 @@ This mod's teleportation is eye-based. It means that the teleportation applies t
 
 ## Rotation Transformation
 
-![](https://i.ibb.co/LRGr8pK/2020-08-06-12-18-32.png)
+![](https://qouteall.fun/imm_ptl_wiki_copy/assets/2020-08-06-12-18-32.png)
 
 ### Create a Portal with Rotation Transformation
 
@@ -26,7 +26,7 @@ After crossing a portal with rotation transformation, the player's camera may be
 
 ## Scale Transformation
 
-![](https://i.ibb.co/T0xLjnP/2020-08-06-12-34-27.png)
+![](https://qouteall.fun/imm_ptl_wiki_copy/assets/2020-08-06-12-34-27.png)
 
 ### Create a Portal with Scale Transformation
 
