@@ -138,6 +138,11 @@ Overlay's opacity. Between 0 and 1.
 
 NBT tag: `overlayOpacity`
 
+#### Overlay Offset
+The overlay offset along the portal's facing direction.
+
+NBT tag: `overlayOffset`
+
 ### Command Examples
 
 * Make the portal fuse-view `/portal set_portal_nbt {fuseView:true}`
