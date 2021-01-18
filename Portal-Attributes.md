@@ -67,7 +67,7 @@ NBT tag: `hasCrossPortalCollision`
 #### Commands to Invoke After Teleporting
 
 Optional. You can specify a list of commands to be invoked for entities that teleport through this portal.
-The command sender will be the entity that teleported.
+The command sender will be the entity that teleported. The commands will be invoked with OP permission.
 
 NBT tag: `commandsOnTeleported`
 
