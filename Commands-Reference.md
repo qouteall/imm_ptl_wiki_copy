@@ -162,10 +162,19 @@ The command sender dimension is the dimension of the view box. For example, if y
 
 ![](https://qouteall.fun/imm_ptl_wiki_copy/assets/2020-08-26-21-18-54.png)
 
-## Miscellaneous Commands
+#### `/portal create_scaled_box_view_optimized <x1> <y1> <z1> <x2> <y2> <z2> <scale> <placeTargetEntity>`
+Similar to the above but the created scale box has better rendering performance.
+
+The outer portals will have "fuse view" enabled and "rendering mergable" enabled.
+The inner portals will have "rendering mergable" enabled.
+The portals will have "teleport changes scale" disabled.
+
+This command requires that the scale box area is either aligned to chunk border (Press F3+G to see the chunk border) or does not have anything around that area (for example, a skyland). Because the merged portal rendering does not handle the front clipping well, if this requirement is not meet, the things outside the box may appear in view.
 
 #### `/portal cb_make_portal <width> <height> <fromEntity> <toEntity>`
 Create a portal entity that goes from `fromEntity` to `toEntity`. The orientation is determined by `fromEntity` 's orientation.
+
+## Miscellaneous Commands
 
 #### `/portal tpme <dimension> <x> <y> <z>`
 Teleport you across dimensions without any loading screen. Can only be invoked by players.

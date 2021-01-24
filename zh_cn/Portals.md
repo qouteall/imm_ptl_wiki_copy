@@ -21,6 +21,11 @@
 ### `vanilla` （原版）{#mode--vanilla}
 不改变原版地狱门生成机制。
 
+### `disabled` （禁用）{#mode--disabled}
+禁用地狱门生成。
+
+该模式仅控制新地狱传送门生成，不控制已有的地狱传送门。
+
 ## 末地传送门{#end-portals}
 
 末地传送门有四种模式： `normal`, `toObsidianPlatform`, `scaledView`, `vanilla`
@@ -39,7 +44,7 @@
 ### `scaledView` （缩放）{#mode--scaledView}
 
 展示缩放的末地岛。
-（传送门共包括6个传送门实体，同时还有6个仅客户端存在的反向传送门实体。）
+（共包括6个传送门实体。）
 
 ![](https://qouteall.fun/imm_ptl_wiki_copy/assets/2020-09-15-21-13-34.png)
 
@@ -127,11 +132,12 @@
 ## 一个传送门对MC世界有什么影响 {#How Does a Portal Interact with the Minecraft World}
 
 * 区块加载。当一个玩家靠近一个传送门时，传送门对面的区块将会被加载，同时世界的变化会被送到客户端。
-* Rendering. If the portal is visible, it will be rendered. In the third person view mode, the camera view can cross the portal.
+* 渲染。若一个传送门是可见的，则它会被渲染。第三人称视角可以跨传送门。
 * 传送。一个实体跨过传送门后，将会被传送。（Boss实体等不可传送实体无法被传送）
 * 物理碰撞。如果一个实体碰到了传送门，将会有跨传送门碰撞计算。
 * 跨传送门实体渲染。若一个实体碰到了传送门，那么在传送门外和传送门内都会渲染该实体一遍，让实体完整渲染。
 * 可以跨传送门方块破坏放置方块。
+* 可以跨传送门听到声音。
 
 ## 可拆除传送门 {#Breakable Portals}
 地狱传送门与数据包自定义传送门都是可拆除传送门。

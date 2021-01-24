@@ -8,9 +8,7 @@ A nether portal can have a non-rectangular shape and can be horizontal.
 
 When you use flint and steel to light an obsidian frame, it will search for an existing obsidian frame that it can link to. If no linkable obsidian frame is found, a new obsidian frame will be generated.
 
-It will not link to a vanilla nether portal.
-
-The maximum nether portal side length is 20.
+It will not link to a vanilla nether portal. The maximum nether portal side length is 20.
 
 This mod has 3 nether portal modes: `normal`, `adaptive` and `vanilla`.
 
@@ -22,6 +20,11 @@ It can link to the frame that can be compatible with rotation and scale transfor
 
 ### Mode : `vanilla`
 Does not change vanilla nether portal functionality.
+
+### Mode : `disabled`
+Nether portal functionality disabled.
+
+The nether portal mode only controls new nether portal generation and does not change existing nether portals.
 
 ## End Portals
 
@@ -40,7 +43,7 @@ Points to the obsidian platform.
 
 ### Mode : `scaledView`
 
-The `scaledView` type end portal shows an overlook of the entire end island. It consists of 6 portals with scale transformation (and another 6 client-only portals on the end dimension).
+The `scaledView` type end portal shows an overlook of the entire end island. It consists of 6 portals with scale transformation and "fuse view" enabled.
 
 ![](https://qouteall.fun/imm_ptl_wiki_copy/assets/2020-09-15-21-13-34.png)
 
@@ -136,9 +139,10 @@ For example
 * Chunk loading. If a player comes near a portal, the other side chunks will be loaded and synchronized to the client.
 * Rendering. If the portal is visible, it will be rendered. In the third person view mode, the camera view can cross the portal.
 * Teleportation. If an entity crosses the portal, it will be teleported (except when the entity cannot teleport for example boss entities).
-* Collision. If an entity touches a portal, this mod will handle its cross-portal collision.
+* Cross Portal Collision. If an entity touches a portal, this mod will handle its cross-portal collision.
 * Cross Portal Entity Rendering. If an entity touches a portal, this mod will try to both render the entity inside and outside the portal so that the entity does not look clipped.
 * Cross Portal Block Interaction. The player can place and break blocks through the portal.
+* Hear Sounds through Portals.
 
 ## Breakable Portals
 Nether portals and custom datapack generated portals are breakable portals.
