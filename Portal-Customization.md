@@ -22,14 +22,14 @@ The portal helper cannot link to a frame that's far away or in another dimension
 
 ### 1 Nether Portal = 4 Portal Entities
 
-**Every portal entity is one-faced and one-way portal. A normal nether portal is bi-faced and bi-way, it consists of 2 portal entities in the overworld and 2 portal entities in the nether, 4 portal entities in total.**
+**Every portal entity is a one-faced and one-way portal. A normal nether portal is bi-faced and bi-way, it consists of 2 portal entities in the overworld and 2 portal entities in the nether, 4 portal entities in total.**
 
 Command `/portal delete_portal` will only remove one portal entity.
 
-Using the command `/portal remove_connected_portals` to a portal will make the portal one-way and one-faced.
-If it's used for a bi-way bi-faced portal, in the 4 portal entities the portal entity that you are targeting will remain and the other 3 portal entities will be removed.
+Command `/portal remove_connected_portals` makes the portal one-way and one-faced.
+If it's used for a bi-way bi-faced portal, the portal entity that you are targeting will remain and the other 3 portal entities will be removed.
 
-Command `/portal complete_bi_way_portal` will create the "reverse" version of the portal entity thus make the portal bi-way. The command `/portal complete_bi_faced_portal` completes the portal to be bi-faced, and the command `/portal complete_bi_way_bi_faced_portal` completes the portal to be bi-way bi-faced.
+Command `/portal complete_bi_way_portal` will create the "reverse" version of the portal entity thus make the portal bi-way. Command `/portal complete_bi_way_bi_faced_portal` creates 3 portals to make the portal bi-way bi-faced.
 
 Command `/portal eradicate_portal_clutter` removes the whole portal. If used to a bi-way bi-faced portal, all 4 portal entities will be removed.
 
@@ -53,7 +53,7 @@ There are some portal-targeted commands for managing portals. You need to point 
 
 - Move the portal entity forward 0.5 blocks: `/portal move_portal 0.5`
 
-- Make the portal entity not able to teleport. Turn it into a "video surveillance": `/portal set_portal_nbt {teleportable:0b}`
+- Make the portal entity not able to transfer entities, turning it into a "video surveillance": `/portal set_portal_nbt {teleportable:0b}`
 
 - Make the portal round-shaped: `/portal make_portal_round`
 
@@ -76,10 +76,11 @@ Directly create a new square portal entity:
 
 ### Create a Small Wrapping Zone
 You can create a small wrapping zone by `/portal create_small_inward_wrapping <x1> <y1> <z1> <x2> <y2> <z2>` `/portal create_small_outward_wrapping <x1> <y1> <z1> <x2> <y2> <z2>`
+
 These commands create normal portals instead of global portals. Global portal wrapping zone commands (such as `/portal global remove_wrapping_zone`) does not affect them.
 
 ### Create a Scaled Wrapping Zone
-You can create a scaled wrapping by `/portal create_scaled_box_view <x1> <y1> <z1> <x2> <y2> <z2> <scale> <placeTargetEntity> <isBiWay> [teleportChangesScale]`.
+You can create a scaled wrapping by `/portal create_scaled_box_view <x1> <y1> <z1> <x2> <y2> <z2> <scale> <placeTargetEntity> <isBiWay> [teleportChangesScale]`
 
 For example, if you want to create a box viewing the end island, use `/execute in minecraft:the_end run portal create_scaled_box_view -100 0 -100 100 128 100 20 @p true`
 

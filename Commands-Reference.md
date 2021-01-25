@@ -58,13 +58,13 @@ Move the portal's destination along the direction that you are looking at.
 ### Manage the Portal
 
 #### `/portal set_portal_nbt <nbt>`
-Set a portal's NBT data. [Portal NBT Data Format](https://github.com/qouteall/ImmersivePortalsMod/wiki/Portal-Attributes)
+Set the portal's NBT data. [Portal NBT Data Format](https://github.com/qouteall/ImmersivePortalsMod/wiki/Portal-Attributes)
 
 #### `/portal view_portal_data`
-View a portal's NBT data.
+View the portal's NBT data.
 
 #### `/portal delete_portal`
-Remove a portal.
+Remove the portal.
 
 #### `/portal move_portal <distance>`
 Move the portal along the direction that you are looking at.
@@ -77,13 +77,13 @@ Change the portal's position.
 [See](https://github.com/qouteall/ImmersivePortalsMod/wiki/Portal-Customization#1-nether-portal--4-portal-entities)
 
 #### `/portal complete_bi_way_portal`
-Create a new portal entity to make the portal bi-way. Removes duplicated portals.
+Create a new portal entity to make the portal bi-way. Duplicated portals will be removed.
 
 #### `/portal complete_bi_faced_portal`
-Create a new portal entity to make the portal bi-faced. Removes duplicated portals.
+Create a new portal entity to make the portal bi-faced. Duplicated portals will be removed.
 
 #### `/portal complete_bi_way_bi_faced_portal`
-Create new portal entities to make the portal bi-way and bi-faced. Removes duplicated portals.
+Create new portal entities to make the portal bi-way and bi-faced. Duplicated portals will be removed.
 
 #### `/portal remove_connected_portals`
 Remove portal entities to make the portal one-way and one-faced.
@@ -96,7 +96,7 @@ Completely remove a bi-way portal (4 portal entities). Equivalent to `/portal re
 #### `/portal set_portal_rotation <axisX> <axisY> <axisZ> <angleDegrees>`
 Set the portal's rotation transformation.
 The rotation transformation is defined by a rotating axis vector and the angle in degrees.
-When the axis is pointing on you, a positive angle corresponds to rotating counterclockwise.
+When the axis is pointing on you, a positive angle corresponds to rotating counter-clockwise.
 
 #### `/portal set_portal_rotation_along <axis> <angleDegrees>`
 Similar to the above but use `x`, `y` or `z` to represent the axis vector
@@ -127,7 +127,7 @@ Make the portal entity only accessible by one player.
 Make the portal entity accessible to all players.
 
 #### `/portal multidest <player> <dimension> <x> <y> <z> <isBiFaced> <isBiWay>`
-Set the portal destination for only one player.
+This command modifies the portal clutter. It firstly removes the portals that are specific to the `player` and then adds new portals that specific to the `player` and point to the specified dimension and position. `isBiFaced` and `isBiWay` respectively controls whether the generated portal is bi-faced and bi-way.
 
 #### `/portal multidest <player>`
 Remove the player-specific portal from the portal clutter.
@@ -135,10 +135,10 @@ Remove the player-specific portal from the portal clutter.
 ### Other
 
 #### `/portal set_portal_custom_name <name>`
-Set a portal's custom name.
+Set a portal entity's custom name. The custom name can be used for selecting the portal entity.
 
 #### `/portal make_portal_round`
-Make the portal shape to be round.
+Make the portal entity's shape to be an ellipse. If the portal's width equals height, the shape will be round.
 
 ## Direct Portal Creation Commands
 Can be used by OPs and creative mode players.
@@ -172,7 +172,7 @@ The portals will have "teleport changes scale" disabled.
 This command requires that the scale box area is either aligned to chunk border (Press F3+G to see the chunk border) or does not have anything around that area (for example, a skyland). Because the merged portal rendering does not handle the front clipping well, if this requirement is not meet, the things outside the box may appear in view.
 
 #### `/portal cb_make_portal <width> <height> <fromEntity> <toEntity>`
-Create a portal entity that goes from `fromEntity` to `toEntity`. The orientation is determined by `fromEntity` 's orientation.
+Create a portal entity that goes from `fromEntity` to `toEntity`. The portal's orientation is determined by `fromEntity` 's orientation.
 
 ## Miscellaneous Commands
 
