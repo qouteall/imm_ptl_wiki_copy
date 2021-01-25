@@ -143,7 +143,7 @@ The overlay offset along the portal's facing direction.
 
 NBT tag: `overlayOffset`
 
-### Command Examples
+## Command Examples
 
 * Make the portal fuse-view `/portal set_portal_nbt {fuseView:true}`
 
@@ -155,7 +155,7 @@ NBT tag: `overlayOffset`
 
 * Give the portal a triangular shape `/portal set_portal_nbt {width:2,height:2,specialShape:[-1.0d,0.0d,1.0d,0.0d,0d,1.0d],cullableXStart:0,cullableXEnd:0,cullableYStart:0,cullableYEnd:0}`
 
-#### About Portal Shape Editing
+### About Portal Shape Editing
 
 You can edit the portal shape by editing the NBT tag of `width`, `height`, and `specialShape`.
 
