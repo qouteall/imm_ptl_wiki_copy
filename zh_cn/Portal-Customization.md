@@ -55,7 +55,7 @@
 
 - 将传送门实体向前移动0.5距离 `/portal move_portal 0.5`
 
-- 让传送门实体无法对其他实体进行传送传送，使其变成“视频监控” `/portal set_portal_nbt {teleportable:0b}`
+- 让传送门实体无法对其他实体进行传送传送，使其变成“视频监控” `/portal set_portal_nbt {teleportable:false}`
 
 - 让传送门变成圆形 `/portal make_portal_round`
 
@@ -78,12 +78,13 @@
 
 ### 创建小型空间自折叠区域{#Create a Small Wrapping Zone}
 创建小型空间自折叠传送门： `/portal create_small_inward_wrapping <x1> <y1> <z1> <x2> <y2> <z2>` `/portal create_small_outward_wrapping <x1> <y1> <z1> <x2> <y2> <z2>`
+
 这两个命令创建的是普通传送门，不是全局传送门。针对全局传送门的命令 (例如 `/portal global remove_wrapping_zone`) 不会影响这些普通传送门。
 
 ### 创建缩放盒{#Create a Scaled Wrapping Zone}
 通过该命令创建缩放盒 `/portal create_scaled_box_view <x1> <y1> <z1> <x2> <y2> <z2> <scale> <placeTargetEntity> <isBiWay> [teleportChangesScale]`.
 
-For example, if you want to create a box viewing the end island, use `/execute in minecraft:the_end run portal create_scaled_box_view -100 0 -100 100 128 100 20 @p true`
+例如说，如果要创建缩放末地岛的缩放盒，使用命令 `/execute in minecraft:the_end run portal create_scaled_box_view -100 0 -100 100 128 100 20 @p true`
 
 ![](https://i.ibb.co/yhXHYHm/2020-08-26-21-18-54.png)
 

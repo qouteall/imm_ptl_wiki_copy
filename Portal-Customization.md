@@ -53,7 +53,7 @@ There are some portal-targeted commands for managing portals. You need to point 
 
 - Move the portal entity forward 0.5 blocks: `/portal move_portal 0.5`
 
-- Make the portal entity not able to transfer entities, turning it into a "video surveillance": `/portal set_portal_nbt {teleportable:0b}`
+- Make the portal entity not able to transfer entities, turning it into a "video surveillance": `/portal set_portal_nbt {teleportable:false}`
 
 - Make the portal round-shaped: `/portal make_portal_round`
 

@@ -118,7 +118,7 @@ The custom portal generation json should be located in `data/<namespace>/custom_
 * `space_ratio_from` Integer (1 if missing). This side dimension's space ratio.
 * `space_ratio_to` Integer (1 if missing). The other side dimension's space ratio. Together with the above defines the space mapping. For example, 8 blocks' length in overworld corresponds to 1 block's length in the nether. The overworld's space ratio is 8 and the nether's space ration is 1.
 * `reversible` Boolean (true if missing). If true, the reverse version of this generation will also be loaded. If you configured a portal from overworld to nether with reversible false, then the portal can only be activated in the overworld. If it's true then the portal can also be activated in the nether. If there are multiple from dimensions, the first one will be selected for the destination of the reverse generation.
-* `post_invoke_commands` String list. Optional. The commands that will be invoked after the portals generated. The command invoker will be the portal entities. Every generated portal will invoke these commands. For example if you want the generated portal to be non-teleportable, put `"/portal set_portal_nbt {teleportable:0b}"` into this.
+* `post_invoke_commands` String list. Optional. The commands that will be invoked after the portals generated. The command invoker will be the portal entities. Every generated portal will invoke these commands. For example if you want the generated portal to be non-teleportable, put `"/portal set_portal_nbt {teleportable:false}"` into this.
 * `form` Custom portal generation form. Described below.
 * `trigger` Custom portal generation trigger. Described below.
 
