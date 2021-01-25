@@ -5,3 +5,5 @@
 CurseForge: https://www.curseforge.com/minecraft/mc-mods/immersive-portals-mod
 
 Discord server: https://discord.gg/BZxgURK
+
+(可在 https://github.com/qouteall/imm_ptl_wiki_copy 开PR)

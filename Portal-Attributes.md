@@ -154,3 +154,11 @@ NBT tag: `overlayOffset`
 * Give the portal a diamond block overlay `/portal set_portal_nbt {overlayBlockState:{Name:"minecraft:diamond_block"},overlayOpacity:0.6,overlayOffset:-0.3}`
 
 * Give the portal a triangular shape `/portal set_portal_nbt {width:2,height:2,specialShape:[-1.0d,0.0d,1.0d,0.0d,0d,1.0d],cullableXStart:0,cullableXEnd:0,cullableYStart:0,cullableYEnd:0}`
+
+#### About Portal Shape Editing
+
+You can edit the portal shape by editing the NBT tag of `width`, `height`, and `specialShape`.
+
+If the NBT tag `specialShape` is present, the shape will be determined by `specialShape`, otherwise `width` and `height`.
+
+`specialShape` is a number list, every 2 numbers represent a 2D point and every 3 points represent a triangle. But after editing the shape, artifacts may appear. Some sections in the portal are not rendered, some sections behind the portal are not rendered. This is due to this mod's frustum culling rendering optimization. To fix the artifact, you need to assure that every triangle in `specialShape` does not exceed the rectangle area defined by `width` and `height`. And the rectangle area defined by `cullableXStart`, `cullableXEnd`, `cullableYStart`, and `cullableYEnd` does not exceed the portal shape.

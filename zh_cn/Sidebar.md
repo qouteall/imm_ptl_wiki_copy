@@ -19,3 +19,5 @@
 [传送门属性](https://github.com/qouteall/ImmersivePortalsMod/wiki/Portal-Attributes)
 
 [其它](https://github.com/qouteall/ImmersivePortalsMod/wiki/Miscellaneous)
+
+[API](https://github.com/qouteall/ImmersivePortalsMod/wiki/API-for-Other-Mods)
