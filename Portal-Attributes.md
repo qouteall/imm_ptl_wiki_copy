@@ -50,7 +50,7 @@ Whether the teleportation changes entity scale if the portal has a scale transfo
 NBT tag: `teleportChangesScale`
 
 #### Whether to Adjust The Entity's Position After Teleporting
-If true, the player will be moved up if the player is inside the ground after teleportation
+If true, the player will be moved up if the player is inside the ground after teleportation.
 
 NBT tag: `adjustPositionAfterTeleport`
 

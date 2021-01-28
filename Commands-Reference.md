@@ -185,6 +185,9 @@ Teleport entities across dimensions.
 #### `/portal goback`
 Sometimes you went into a one-way portal and want to come back, but you forgot the coordinate where you come in. Use this command to come back.
 
+#### `/portal debug gui_portal <dimension> <x> <y> <z>`
+Load the chunks near that region and open the debug gui portal.
+
 ## Deprecated Commands
 These commands are deprecated. They will be removed in 1.17.
 
