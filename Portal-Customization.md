@@ -16,6 +16,10 @@ Unlike nether portals, the generated portal won't break when the frame breaks. T
 
 The portal helper cannot link to a frame that's far away or in another dimension. However, you can use commands to edit the portal and set the portal destination to any position in any dimension.
 
+### How to Use Similar Functionality in Survival Mode
+
+Portal helper generates unbreakable portals and is intended to be used in creative mode. To use similar functionality in survivial mode, you can configure a similar [custom datapack portal generation](https://github.com/qouteall/ImmersivePortalsMod/wiki/Datapack-Based-Custom-Portal-Generation#portal_helper_likejson-a-diamond-portal-that-links-to-the-nearby-same-shaped-portal-in-the-same-dimension-similar-to-portal-helper-but-breakable). It generates breakable portals, and the frame block can be specified as any block.
+
 ## Manage Portals Using Commands
 
 [Description of All Commands](https://github.com/qouteall/ImmersivePortalsMod/wiki/Commands-Reference)

@@ -16,6 +16,10 @@
 
 传送门框架方块无法连接到很远地方的框架，也无法连接到其他位面的框架。然而，通过命令来编辑传送门可以让传送门指向任意位面的任意位置。
 
+### 如何在生存模式中使用类似的功能 {#How to Use Similar Functionality in Survival Mode}
+
+该传送门框架方块适用于创造模式，产生的是生存模式不可破坏的传送门。通过定义[数据包自定义传送门生成](https://github.com/qouteall/ImmersivePortalsMod/wiki/Datapack-Based-Custom-Portal-Generation#portal_helper_likejson-a-diamond-portal-that-links-to-the-nearby-same-shaped-portal-in-the-same-dimension-similar-to-portal-helper-but-breakable) 可以在生存模式中使用类似的传送门生成功能，其生成的传送门是生存模式可破坏的，而且框架可以设定为任何一种方块。
+
 ## 用命令控制传送门{#Manage Portals Using Commands}
 
 [本模组所有命令](https://github.com/qouteall/ImmersivePortalsMod/wiki/Commands-Reference)
