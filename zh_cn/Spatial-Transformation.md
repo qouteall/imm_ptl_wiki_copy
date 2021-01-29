@@ -2,8 +2,6 @@
 
 本模组的传送是基于"眼部位置"的。一个实体通过传送门时，会计算实体的眼部位置通过传送门空间变换后的位置，并以此确定实体放置的位置。
 
-This mod's teleportation is eye-based. If an entity goes through a portal, it will calculate the entity's eye position transformed by the portal and then place the entity by the transformed eye position.
-
 ## 旋转变换{#Rotation Transformation}
 
 ![](https://qouteall.fun/imm_ptl_wiki_copy/assets/2020-08-06-12-18-32.png)
