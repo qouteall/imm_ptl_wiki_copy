@@ -1,6 +1,6 @@
-A portal stitches the existent space with a transformed space. It can have translation transformation, rotating transformation, scale transformation, and mirror transformation.
+A portal is a window linking to a transformed space. The spacial transformation can be translation, rotation, scale and mirroring.
 
-This mod's teleportation is eye-based. The teleportation applies the transformation to the player's eye position. This makes the teleportation visually seamless. However, this doesn't guarantee that the player will be in empty space after teleporting.
+This mod's teleportation is eye-based. If an entity goes through a portal, it will calculate the entity's eye position transformed by the portal and then place the entity by the transformed eye position. 
 
 ## Rotation Transformation
 
