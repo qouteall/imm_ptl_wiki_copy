@@ -7,10 +7,20 @@ Creative players can break and place blocks in a longer range. This aims to make
 When reach entity attributes mod or Pehkui mod is present, it will be automatically disabled because of Mixin conflicts.
 
 ### OptiFine Compatibility
-You need to disable smooth world and render regions if you install OptiFine.
+You need to disable smooth world if you install OptiFine.
 
 This mod is compatible with most OptiFine shaders. Incompatible with path tracing shaders. (The "Fuse View" feature does not work with shaders. The transparent objects in front of the portal can't be normally rendered.)
 
 You need to turn off TAA (Temporal Anti Aliasing) and Motion Blur in the shader's option.
 
 The recommended shader is BSL shader.
+
+Currently, OptiFine G6 is compatible with this mod in 1.16.4 Fabric.
+
+### Sodium Compatibility
+
+This mod is not compatible with the official Sodium. However, there is a fork of Sodium that is compatible with this mod: https://github.com/qouteall/sodium-fabric/releases
+
+### Canvas Compatibility
+
+Incompatible.
