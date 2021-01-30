@@ -19,3 +19,13 @@ Firstly create the dimension stack world on client and then copy to server.
 
 You can use [datapack](https://github.com/qouteall/ImmersivePortalsMod/wiki/Datapack-Based-Custom-Portal-Generation#convert_vanilla_nether_portaljson-convent-vanilla-nether-portals-into-see-through-portals-if-the-shapes-are-compatible) to make it convert other mod's portals into see-through portals.
 
+##### Will the portal impact performance?
+
+Yes. (Especially with dimension stack and scaled-view-type end portal.)
+
+If you experience lag, you can
+* Turn down render distance.
+* Enable "reduced portal rendering".
+* Disable "actively load remote chunks".
+
+See also: [Config Options](https://github.com/qouteall/ImmersivePortalsMod/wiki/Config-Options)
