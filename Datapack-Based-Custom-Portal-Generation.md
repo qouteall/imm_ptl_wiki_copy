@@ -180,7 +180,11 @@ The maximum area side length is 20.
 #### `type` : `imm_ptl:convert_conventional_portal`
 This can only be used with triggerer `imm_ptl:conventional_dimension_change`. When a player goes through a conventional portal and experience a dimension travel with loading screen, this can be used to convert that conventional portal into a see-through portal.
 
+**It converts the portal after the player goes through it once. It does not convert the portal after creation.**
+
 If the conventional portal is horizontal, it will generate a one-faced bi-way portal with a flipping rotation transformation. Otherwise, it behaves the same as `imm_ptl:try_hard_to_match`.
+
+For this form, the space ratio does not matter.
 
 * `portal_block` Block id or block tag. The conventional portal's block.
 

@@ -3,7 +3,7 @@ These are the attributes that a portal has.
 You can edit them by `/portal set_portal_nbt` command.
 [Portal Customization](https://github.com/qouteall/ImmersivePortalsMod/wiki/Portal-Customization)
 
-### Shape Attributes
+### Body Attributes
 
 #### Orientation Axis
 Two unit vectors that are perpendicular to each other. These two vectors define the orientation of the portal.
@@ -147,7 +147,7 @@ NBT tag: `overlayOffset`
 
 * Make the portal fuse-view `/portal set_portal_nbt {fuseView:true}`
 
-* Adjust the width and height for a square portal: `/portal set_portal_nbt {width:100,height:100,specialShape:{}}`
+* Adjust the width and height for a square portal: `/portal set_portal_nbt {width:100,height:100,specialShape:[]`
 
 * Make the portal to damage the entities that cross this portal: `/portal set_portal_nbt {commandsOnTeleported:["/effect give @s minecraft:instant_damage 1"]}`
 
@@ -161,4 +161,4 @@ You can edit the portal shape by editing the NBT tag of `width`, `height`, and `
 
 If the NBT tag `specialShape` is present, the shape will be determined by `specialShape`, otherwise `width` and `height`.
 
-`specialShape` is a number list, every 2 numbers represent a 2D point and every 3 points represent a triangle. But after editing the shape, artifacts may appear. Some sections in the portal are not rendered, some sections behind the portal are not rendered. This is due to this mod's frustum culling rendering optimization. To fix the artifact, you need to assure that every triangle in `specialShape` does not exceed the rectangle area defined by `width` and `height`. And the rectangle area defined by `cullableXStart`, `cullableXEnd`, `cullableYStart`, and `cullableYEnd` does not exceed the portal shape.
+`specialShape` is a number list, every 2 numbers represent a 2D point and every 3 points represent a triangle. After editing the shape, artifacts may appear. Some terrain sections in the portal are not rendered, some terrain sections behind the portal are not rendered. This is due to this mod's frustum culling rendering optimization. To fix the artifact, you need to assure that every triangle in `specialShape` does not exceed the rectangle area defined by `width` and `height`. And the rectangle area defined by `cullableXStart`, `cullableXEnd`, `cullableYStart`, and `cullableYEnd` does not exceed the portal shape.
