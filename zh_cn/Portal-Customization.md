@@ -6,9 +6,9 @@
 本模组提供创造模式专用的传送门建造辅助方块(Portal Helper)。用该方块建造两个传送门框架，并用打火石点燃即可产生双面双向的传送门。
 传送门的旋转与缩放变换会自动适应框架形状。
 
-![](https://qouteall.fun/imm_ptl_wiki_copy/assets/2020-12-14-22-28-18.png)
+![](https://qouteall-1.oss-ap-northeast-1.aliyuncs.com/2020-12-14-22-28-18.png)
 
-![](https://qouteall.fun/imm_ptl_wiki_copy/assets/2020-12-14-22-28-39.png)
+![](https://qouteall-1.oss-ap-northeast-1.aliyuncs.com/2020-12-14-22-28-39.png)
 
 若找不到可以适配的框架，它会在附近生成新的框架。
 
