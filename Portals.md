@@ -4,7 +4,7 @@ After installing this mod, all existing nether portals will not change.
 
 A nether portal can have a non-rectangular shape and can be horizontal.
 
-![](https://qouteall-1.oss-ap-northeast-1.aliyuncs.com/2020-12-13-16-49-25.png)
+![](https://qouteall-1.oss-accelerate-overseas.aliyuncs.com/2020-12-13-16-49-25.png)
 
 When you use flint and steel to light an obsidian frame, it will search for an existing obsidian frame that it can link to. If no linkable obsidian frame is found, a new obsidian frame will be generated.
 
@@ -34,18 +34,18 @@ This mod has 4 end portal types: `normal`, `toObsidianPlatform`, `scaledView`, a
 
 The normal type of end portal points to (0 120 0) in the end dimension. When a player jumps into an end portal, the player will get slow falling effect for 6 seconds except when wearing elytra.
 
-![](https://qouteall-1.oss-ap-northeast-1.aliyuncs.com/2020-05-26-21-55-16.png)
+![](https://qouteall-1.oss-accelerate-overseas.aliyuncs.com/2020-05-26-21-55-16.png)
 
 ### Mode : `toObsidianPlatform`
 
 Points to the obsidian platform.
-![](https://qouteall-1.oss-ap-northeast-1.aliyuncs.com/2020-12-13-17-45-49.png)
+![](https://qouteall-1.oss-accelerate-overseas.aliyuncs.com/2020-12-13-17-45-49.png)
 
 ### Mode : `scaledView`
 
 The `scaledView` type end portal shows an overlook of the entire end island. It consists of 6 portals with scale transformation and "fuse view" enabled.
 
-![](https://qouteall-1.oss-ap-northeast-1.aliyuncs.com/2020-09-15-21-13-34.png)
+![](https://qouteall-1.oss-accelerate-overseas.aliyuncs.com/2020-09-15-21-13-34.png)
 
 This type of end portal is laggier.
 
@@ -60,7 +60,7 @@ To create a mirror, use flint and steel to right-click on a glass wall.
 
 Mirrors can only be in rectangular shapes. Mirrors can be horizontal. Mirrors can be created on a stained glass wall or glass pane wall. Mirrors vanish when the glass wall is broken.
 
-![](https://qouteall-1.oss-ap-northeast-1.aliyuncs.com/2020-05-26-21-58-45.png)
+![](https://qouteall-1.oss-accelerate-overseas.aliyuncs.com/2020-05-26-21-58-45.png)
 
 ## Global Portals
 
@@ -86,18 +86,18 @@ There are two types of world wrapping, inward and outward.
 
 The inward world wrapping wraps a finite space and "repeat" it "infinitely". When you cross the right side then you appear on the left side. It is an invisible boundary.
 
-![](https://qouteall-1.oss-ap-northeast-1.aliyuncs.com/2020-05-26-22-04-06.png)
+![](https://qouteall-1.oss-accelerate-overseas.aliyuncs.com/2020-05-26-22-04-06.png)
 
-![](https://qouteall-1.oss-ap-northeast-1.aliyuncs.com/2020-05-26-22-03-59.png)
+![](https://qouteall-1.oss-accelerate-overseas.aliyuncs.com/2020-05-26-22-03-59.png)
 
 Use command `/portal global create_inward_wrapping <x1> <z1> <x2> <z2>` to create an inward wrapping zone.
 The zone can be very big because it generates global portals.
 
 The outward world wrapping isolates an area out of space. When you want to go into it from the left, you will appear on the right.
 
-![](https://qouteall-1.oss-ap-northeast-1.aliyuncs.com/2020-05-26-22-04-50.png)
+![](https://qouteall-1.oss-accelerate-overseas.aliyuncs.com/2020-05-26-22-04-50.png)
 
-![](https://qouteall-1.oss-ap-northeast-1.aliyuncs.com/2020-05-26-22-05-05.png)
+![](https://qouteall-1.oss-accelerate-overseas.aliyuncs.com/2020-05-26-22-05-05.png)
 
 Use command `/portal global create_outward_wrapping <x1> <z1> <x2> <z2>` to create an outward wrapping zone.
 
@@ -117,7 +117,7 @@ Example:
 `/portal global connect_floor minecraft:the_end minecraft:overworld`
 With this, you will return to the overworld when dropping into the void in end.
 
-![](https://qouteall-1.oss-ap-northeast-1.aliyuncs.com/2020-10-18-22-15-38.png)
+![](https://qouteall-1.oss-accelerate-overseas.aliyuncs.com/2020-10-18-22-15-38.png)
 
 This connection is one-way. If you want to make it bi-way, use
 `/portal global connect_ceil minecraft:overworld minecraft:the_end`
