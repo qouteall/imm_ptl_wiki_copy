@@ -89,6 +89,9 @@
 通过该命令创建缩放盒 `/portal create_scaled_box_view <x1> <y1> <z1> <x2> <y2> <z2> <scale> <placeTargetEntity> <isBiWay> [teleportChangesScale]`.
 
 例如说，如果要创建缩放末地岛的缩放盒，使用命令 `/execute in minecraft:the_end run portal create_scaled_box_view -100 0 -100 100 128 100 20 @p true`
+(`-100 0 -100 100 128 100` 指末地位面的内部盒区域, `20` 指缩放比例, 外部盒将会被放置在`@p`的位置)
+
+![](https://qouteall-1.oss-accelerate-overseas.aliyuncs.com/2020-08-26-21-18-54.png)
 
 ![](https://i.ibb.co/yhXHYHm/2020-08-26-21-18-54.png)
 

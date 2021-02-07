@@ -87,8 +87,9 @@ These commands create normal portals instead of global portals. Global portal wr
 You can create a scaled wrapping by `/portal create_scaled_box_view <x1> <y1> <z1> <x2> <y2> <z2> <scale> <placeTargetEntity> <isBiWay> [teleportChangesScale]`
 
 For example, if you want to create a box viewing the end island, use `/execute in minecraft:the_end run portal create_scaled_box_view -100 0 -100 100 128 100 20 @p true`
+(`-100 0 -100 100 128 100` is the inner box on the end dimension, `20` is the scale, the outer box will be palced on `@p` 's position)
 
-![](https://i.ibb.co/yhXHYHm/2020-08-26-21-18-54.png)
+![](https://qouteall-1.oss-accelerate-overseas.aliyuncs.com/2020-08-26-21-18-54.png)
 
 ## Create the Portal that Points to Different Destinations for Different Players
 By using `/portal set_portal_specific_accessor` command you can make a portal entity only accessible for one player. By putting two different portal entities that are specific for two different players into the same place, you can create a portal that points to different destinations for different players.
