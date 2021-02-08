@@ -110,7 +110,7 @@ NBT tag: `specificPlayerId`
 
 若为true，则传送门渲染不会渲染天空背景，同时保留传送门视域中的深度值，使传送门内部的景色与外部融合。
 
-![](https://qouteall-1.oss-accelerate-overseas.aliyuncs.com/2020-12-19-14-06-20.png)
+![](https://qouteall-1.oss-ap-northeast-1.aliyuncs.com/2020-12-19-14-06-20.png)
 
 NBT tag: `fuseView`
 
