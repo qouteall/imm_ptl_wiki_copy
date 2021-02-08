@@ -6,9 +6,9 @@
 This mod provides a new block called "Portal Helper".
 You can build two frames using that block and use flint and steel to light one. Then a new two-way two-faced portal will be generated. The portal's rotation and scale transformation will adapt to the shape difference.
 
-![](https://qouteall-1.oss-accelerate-overseas.aliyuncs.com/2020-12-14-22-28-18.png)
+![](https://i.ibb.co/wRzvJB9/2020-12-14-22-28-18.png)
 
-![](https://qouteall-1.oss-accelerate-overseas.aliyuncs.com/2020-12-14-22-28-39.png)
+![](https://i.ibb.co/pP0znwJ/2020-12-14-22-28-39.png)
 
 If no linkable frame is found, it will generate a new frame nearby.
 
