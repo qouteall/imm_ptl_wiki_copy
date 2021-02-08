@@ -19,7 +19,7 @@ Turning down the max portal layer can save your FPS.
 
 If it's 0, you can see the portal view area but the world inside the portal won't be rendered.
 
-![](https://media.discordapp.net/attachments/671895772265971712/748076779641634896/2020-08-26_15.09.41.png?width=1174&height=612)
+![](https://i.ibb.co/XVMXDt9/2020-08-26-15-09-41.png)
 
 ### Lag Attack Proof
 When FPS drops because of rendering too many portals, it will enter "lag attack proof" mode and only render one layer of portals and only render near portals which helps you recover from the lag. If that's enabled then you will not be lag-attacked by a mirror room.
