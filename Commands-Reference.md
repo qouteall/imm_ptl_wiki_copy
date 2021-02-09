@@ -135,7 +135,7 @@ Remove the player-specific portal from the portal clutter.
 ### Other
 
 #### `/portal set_portal_custom_name <name>`
-Set a portal entity's custom name. The custom name can be used for selecting the portal entity.
+Set a portal entity's custom name. The custom name can be used for selecting the portal entity (for example @e[name="xxx"]).
 
 #### `/portal make_portal_round`
 Make the portal entity's shape to be an ellipse. If the portal's width equals height, the shape will be round.
