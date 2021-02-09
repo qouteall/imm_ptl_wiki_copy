@@ -1,10 +1,3 @@
-### Hand Reach Tweak
-(The Forge version does not have this feature)
-This feature is disabled in config by default.
-
-Creative players can break and place blocks in a longer range. This aims to make building easier.
-
-When reach entity attributes mod or Pehkui mod is present, it will be automatically disabled because of Mixin conflicts.
 
 ### OptiFine Compatibility
 You need to disable smooth world if you install OptiFine.
