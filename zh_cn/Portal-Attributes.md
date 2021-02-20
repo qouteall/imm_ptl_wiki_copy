@@ -168,7 +168,7 @@ NBT tag: `overlayOffset`
 
 * 启用融合渲染 `/portal set_portal_nbt {fuseView:true}`
 
-* 改变方形传送门的宽度和高度: `/portal set_portal_nbt {width:100,height:100,specialShape:[]`
+* 改变方形传送门的宽度和高度: `/portal set_portal_nbt {width:100,height:100,specialShape:[]}`
 
 * 让通过传送门的实体受到伤害: `/portal set_portal_nbt {commandsOnTeleported:["/effect give @s minecraft:instant_damage 1"]}`
 

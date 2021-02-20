@@ -147,7 +147,7 @@ NBT tag: `overlayOffset`
 
 * Make the portal fuse-view `/portal set_portal_nbt {fuseView:true}`
 
-* Adjust the width and height for a square portal: `/portal set_portal_nbt {width:100,height:100,specialShape:[]`
+* Adjust the width and height for a square portal: `/portal set_portal_nbt {width:100,height:100,specialShape:[]}`
 
 * Make the portal to damage the entities that cross this portal: `/portal set_portal_nbt {commandsOnTeleported:["/effect give @s minecraft:instant_damage 1"]}`
 
