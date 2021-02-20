@@ -104,8 +104,7 @@ Won't affect existing nether portals.
 
 Horizontal nether portals won't have this overlay because the vanilla nether portal block does not have the horizontal variant.
 
-### Longer Reach in Creative
-[See also](https://github.com/qouteall/ImmersivePortalsMod/wiki/Miscellaneous#hand-reach-tweak)
+https://github.com/qouteall/ImmersivePortalsMod/wiki/Miscellaneous#hand-reach-tweak)
 
 ### Teleportation Debug
 Used for debugging.
