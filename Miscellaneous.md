@@ -8,8 +8,6 @@ You need to turn off TAA (Temporal Anti Aliasing) and Motion Blur in the shader'
 
 The recommended shader is BSL shader.
 
-Currently, OptiFine G6 is compatible with this mod in 1.16.4 Fabric.
-
 ### Sodium Compatibility
 
 This mod is not compatible with the official Sodium. However, there is a fork of Sodium that is compatible with this mod: https://github.com/qouteall/sodium-fabric/releases
