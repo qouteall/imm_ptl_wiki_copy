@@ -1,12 +1,21 @@
+## How to Access the Config
+
+In Fabric version, you can access the config GUI via the mod menu (this mod has mod menu bundled in). The config file is `/config/immersive_portals_fabric.json` . In Forge version, the config file is `/config/immersive_portals-client.toml` and `/config/immersive_portals-common.toml` .
 
 ## Client-Side Performance Configurations
+
 When you are nearby a portal, the FPS may drop due to these reasons:
 * Portal rendering. If the portal is invisible in the view (for example hidden by a wall) then it won't be rendered. Rendering a portal is roughly equivalent to rendering the whole world inside the portal again.
 * Client lighting updates. Some remote light updates happen upon chunk data retrieval and some light updates happen upon portal rendering. The light updates may cause lag spikes.
 * More chunk mesh rebuild. This mod tries not to build any remote chunk in the render thread during portal rendering. But rebuilding the chunks that are viewed through portals sometimes still costs performance.
 * More frequent GC due to loading more chunks. Approaching a portal loads more chunks and entities which consumes more RAM and may increase GC frequency thus creating more lag spikes.
 
+### Reduced Portal Rendering
+
+If enabled, fewer chunks will be rendered inside the portal thus increase the FPS. And the faraway portals won't be rendered.
+
 ### Max Portal Layer
+
 Specifies the maximum portal-in-portal rendering layer.
 
 When rendering infinite mirror room or world wrapping portals, the FPS may go very low because it renders too many portals in portals.
@@ -24,9 +33,6 @@ If it's 0, you can see the portal view area but the world inside the portal won'
 ### Lag Attack Proof
 When FPS drops because of rendering too many portals, it will enter "lag attack proof" mode and only render one layer of portals and only render near portals which helps you recover from the lag. If that's enabled then you will not be lag-attacked by a mirror room.
 
-### Reduced Portal Rendering
-If enabled, fewer chunks will be rendered inside the portal thus increase the FPS. And the faraway portals won't be rendered.
-
 ### Portal Render Limit
 The maximum amount of portals that can be rendered in one frame.
 
@@ -36,6 +42,7 @@ If a player is close to a portal, then the chunks on the other side will be load
 The chunks near the player are directly loaded.
 The chunks that are only visible through the portal are remotely (indirectly) loaded chunks.
 The chunk loading radius of a portal is determined by the player's distance to the portal.
+
 |Player distance to portal|Portal chunk loading radius|
 |-|-|
 |0 ~ 5|The same as the server loading distance|
@@ -59,7 +66,7 @@ Turning this off increases server performance.
 ### Indirect Loading Radius Cap
 Defines the maximum loading radius of indirect chunk loading through portals. Turning it down means that fewer chunks will be loaded when a player approaches a portal thus increase server performance.
 
-The chunk loading radius of global portals won't be affected by this option.
+The loading radius cap of global portals is twice this value.
 
 ## Other Client-Side Configurations
 ### Compatibility Render Mode
@@ -80,10 +87,10 @@ Used for debugging.
 ## Other Server-Side Configurations
 
 ### Nether Portal Mode
-[See](https://github.com/qouteall/ImmersivePortalsMod/wiki/Portals#nether-portals)
+[See also](https://github.com/qouteall/ImmersivePortalsMod/wiki/Portals#nether-portals)
 
 ### End Portal Mode
-[See](https://github.com/qouteall/ImmersivePortalsMod/wiki/Portals#end-portals)
+[See also](https://github.com/qouteall/ImmersivePortalsMod/wiki/Portals#end-portals)
 
 ### Enable Alternate Dimensions
 If disabled, the alternate dimensions won't be loaded. (All portals pointing to alternate dimensions will vanish.)
@@ -98,7 +105,7 @@ Won't affect existing nether portals.
 Horizontal nether portals won't have this overlay because the vanilla nether portal block does not have the horizontal variant.
 
 ### Longer Reach in Creative
-[See](https://github.com/qouteall/ImmersivePortalsMod/wiki/Miscellaneous#hand-reach-tweak)
+[See also](https://github.com/qouteall/ImmersivePortalsMod/wiki/Miscellaneous#hand-reach-tweak)
 
 ### Teleportation Debug
 Used for debugging.

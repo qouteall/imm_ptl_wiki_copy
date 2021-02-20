@@ -1,4 +1,4 @@
-A full set of APIs for other mods to use hasn't been fully implemented. It's being worked on.
+**A full set of APIs for other mods to use hasn't been fully implemented. It's being worked on. This document is not yet completed.**
 
 This mod will have a big name/package rearrangement in the 1.17 update.
 

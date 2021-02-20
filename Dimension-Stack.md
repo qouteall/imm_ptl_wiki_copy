@@ -1,37 +1,74 @@
+Use [vertical connecting portals](https://github.com/qouteall/ImmersivePortalsMod/wiki/Portals#vertical-dimension-connecting-portal) to "stack" the dimensions.
+
+
+
+![](https://i.ibb.co/Xzjbq7H/2020-10-18-21-55-30.png)
+
+
+
+![](https://i.ibb.co/ZxL4KqK/2021-02-07-20-25-21.png)
+
+
+
+
 
 You can see the "Dimension Stack" button when creating a new world.
 
 ![](https://i.ibb.co/LPNBZ0v/2020-09-20-21-03-15.png)
 
-![](https://i.ibb.co/xYm0nHb/2020-11-29-10-49-54.png)
 
-If the dimension stack is enabled, the bedrock blocks in the world will be replaced by obsidian.
-And it will generate vertical connecting portals to connect the dimensions.
 
-![](https://i.ibb.co/Xzjbq7H/2020-10-18-21-55-30.png)
+![](https://i.ibb.co/p0wbZxJ/2021-02-09-17-21-21.png)
 
-If you want to use dimension stack in a server, you need to first create the dimension stack world on the client and then copy the world to the server.
+
+
+### Dimension Stack Options
+
+By clicking "Edit" you can edit the selected dimension entry's options:
+
+#### Scale
+
+This controls the generated portals' scale transformation. The generated connecting portal won't change the crossing entity's scale.
+
+If you want that one block in nether corresponds to 8 blocks in overworld, set the overworld's scale to 8.
+
+![](https://i.ibb.co/dpgd3wQ/2020-11-29-10-57-12.png)
+
+It's recommended to either **(1)** set the scale between overworld and nether to be 8 or **(2)** set the nether portal mode to be `disabled`. Because dimension stack does not interfere with how nether portals work. If dimension stack allows player to travel between overworld and nether with 1 by 1 space ratio, then the player could dig down into nether, create nether portal, go to overworld, then dig down to nether, travelling in exponential rate and easily reach the world border.
+
+#### Flipped
+
+Controls the portals' rotating transformation. If enabled, makes the dimension looks "flipped". Does not change the gravity direction in that dimension. If a flipped dimension connects to a un-flipped dimension, the connecting portal will have a 180 degrees rotation transformation along X axis.
+
+![](https://i.ibb.co/ypsWynH/2021-02-09-19-17-29.png)
+
+#### Horizontal Rotation
+
+Controls the portals' rotating transformation. Make the dimension looks rotated along Y axis.
+
+![](https://i.ibb.co/tpFrr4Q/2021-02-09-19-26-49.png)
+
+---
+
+#### Loop
+
+If enabled, the bottom dimension will connect to the top dimension, creating the vertical world wrapping.
+
+
+
+### Common Questions
+
+#### How to enable dimension stack on server?
+
+Firstly create the world on client and then copy the world to the server.
 
 Dimension stack can greatly degrade performance. You can shrink the loading distance and adjust [Performace Configurations](https://github.com/qouteall/ImmersivePortalsMod/wiki/Config-Options) when using dimension stack.
 
-### Dimension Stack Options
-#### Respect Space Ratio
-This option is disabled by default. If disabled, the scale between overworld and nether is the same. If enabled, the connection portal between overworld and the nether will have scale transformation.
-![](https://i.ibb.co/dpgd3wQ/2020-11-29-10-57-12.png)
+#### How to disable dimension stack after the world has been created
 
-The space ratio is determined by the dimension type.
+There is the game rule `ipDimensionStack` that controls whether bedrock is replaced by obsidian. If you want to disable the bedrock replacement,  use command`/gamerule ipDimensionStack false` . Existing generated chunks remain the same.
 
-Note that dimension stack does not interfere with how nether portals work. With the non-respect-space-ratio dimension stack, the player can travel between overworld and nether with 1 by 1 space ratio but nether portal linking respects the 1 by 8 space ratio. Player could dig down into nether, create nether portal, go to overworld, then dig down to nether, travelling in exponential rate and easily reach the world border.
-
-#### Loop
-Connects the bottom dimension with the top dimension, creating a vertical world wrapping.
-
-### How to disable dimension stack after the world has been created
-Disable the ipDimensionStack gamerule so that the bedrock won't be generated as obsidian (but existing generated chunks remain the same).
-`/gamerule ipDimensionStack false`
-
-Then use `/portal global remove_connection_ceil <dimension>` `/portal global remove_connection_floor <dimension>` to remove the vertical connecting portals. [See](https://github.com/qouteall/ImmersivePortalsMod/wiki/Portals#vertical-dimension-connecting-portal)
+The game rule only controls the bedrock generation. It does not interfere with global portals. To remove the global portals, use `/portal global remove_connection_ceil <dimension>` `/portal global remove_connection_floor <dimension>`. [See also](https://github.com/qouteall/ImmersivePortalsMod/wiki/Portals#vertical-dimension-connecting-portal)
 
 Vice versa for enabling dimension stack after the world has been created.
 
-The `ipDimensionStack` game rule only controls the bedrock generation. It does not interfere with global portals.

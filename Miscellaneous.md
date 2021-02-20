@@ -14,6 +14,8 @@ Currently, OptiFine G6 is compatible with this mod in 1.16.4 Fabric.
 
 This mod is not compatible with the official Sodium. However, there is a fork of Sodium that is compatible with this mod: https://github.com/qouteall/sodium-fabric/releases
 
+The "optimized scale box" does not work with sodium.
+
 ### Canvas Compatibility
 
 Incompatible.
