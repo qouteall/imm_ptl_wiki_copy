@@ -186,6 +186,44 @@ Teleport entities across dimensions.
 #### `/portal goback`
 Sometimes you went into a one-way portal and want to come back, but you forgot the coordinate where you come in. Use this command to come back.
 
+## Debug Commands
+
+Can be used by creative mode players or permission 2 ones.
+
+#### `/portal debug gui_portal <dimension> <x> <y> <z>`
+Load the chunks near the specific position and display a GUI portal for the player.
+Used for testing GUI portal functionality.
+
+For example, `/portal debug gui_portal minecraft:the_end 0 80 0`
+
+![](https://qouteall-1.oss-accelerate-overseas.aliyuncs.com/2021-02-05_15.15.05.png)
+
+Press ESC to quit.
+
+
+####  `/portal debug isometric_enable <viewHeight>`
+
+Enable the experimental isometric view for the player. `viewHeight` is the corresponding length of the screen height.
+
+For example, `/portal debug isometric_enable 100`
+
+![](https://qouteall-1.oss-accelerate-overseas.aliyuncs.com/2021-02-05_15.25.05.png)
+
+
+
+Isometric view is implemented by replacing the projection matrix with the orthogonal projection matrix. Isometric view equivalents the camera being in an infinitely far place.
+
+#### `/portal debug isometric_enable`
+
+Quit the isometric view for the player.
+
+#### `/portal debug align`
+
+Align the player position by 0.5, set the yaw to be 45 degrees and set the pitch to be 30 degrees. Can be used for taking isometric screenshots.
+
+
+
+
 ## Deprecated Commands
 These commands are deprecated. They will be removed in 1.17.
 
