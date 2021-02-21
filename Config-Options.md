@@ -112,3 +112,11 @@ Used for debugging.
 ### Portal Searching Range
 The range that the existing portal frame is being searched in when lighting a nether portal (or datapack custom portal).
 
+### Ease Creative Permission
+
+If disabled, the creative mode players that does not have level 2 permission cannot use any `/portal` command.
+
+### Ease Command Stick Permission
+
+If enabled, all players can use command sticks. If disabled, only the creative mode player and the ones with level 2 permission can use.
+

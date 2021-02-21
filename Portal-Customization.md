@@ -72,6 +72,9 @@ Note: these portal targeted commands only affect one portal entity. To edit a bi
 #### Edit Portals Using Command Blocks and Functions
 All portal targeted commands can be used by non-player command executors. If the command sender is a portal entity, the command will target that portal entity. For example `/execute as @e[type=immersive_portals:portal] run portal set_portal_destination minecraft:the_end 0 80 0`
 
+### Command Stick
+You can see the command sticks in the creative mode inventory's miscellaneous tab. Using a command stick to right-click can invoke a specific command.
+
 ## Directly Create Portals
 
 Directly create a new square portal entity: 
