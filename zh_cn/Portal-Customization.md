@@ -74,6 +74,9 @@
 #### 用命令方块或函数编辑传送门{#Edit Portals Using Command Blocks and Functions}
 针对传送门的命令可以由命令方块等执行。若命令发起者为一个传送门实体，那么该命令就会针对哪个传送门实体。例如： `/execute as @e[type=immersive_portals:portal] run portal set_portal_destination minecraft:the_end 0 80 0`
 
+### 命令杖(Command Stick){#Command Stick}
+在创造模式物品的杂项中有命令杖。使用时右键即可运行其指定的命令。
+
 ## 用命令直接创建传送门{#Directly Create Portals}
 
 直接创建一个方形传送门实体:
