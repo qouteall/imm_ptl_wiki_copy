@@ -34,10 +34,10 @@ PortalAPI.addChunkLoaderForPlayer(
     new ChunkLoader(
         new DimensionalChunkPos(
             World.OVERWORLD,
-            100,//x
-            100//z
+            100,//chunk x
+            100//chunk z
         ),
-        3//radius
+        3//radius(chunks)
     )
 );
 ```
@@ -46,10 +46,10 @@ Remove the chunk loader when you want to unload.
 
 ### Networking Utility (Remote Procedure Call)
 
-Fabric provides the networking API. But adding a new type of packet requires  (1) Write packet serialization/deserialization code (2) Write the packet handling code,which requires sending the task to the client/server thread to execute it (3) Give it an identifier and register it. The networking utility makes it easier
+Fabric provides the networking API. But adding a new type of packet requires  (1) Write packet serialization/deserialization code (2) Write the packet handling code,which requires sending the task to the client/server thread to execute it (3) Give it an identifier and register it. This networking utility makes it easier.
 
 
-Example, if you want the server to send a packet to ask the client to invoke this method:
+Example: if you want the server to send a packet to ask the client to invoke this method (on the render thread):
 
 ```
 public class AAARemoteCallableBBB{
@@ -67,7 +67,7 @@ McRemoteProcedureCall.tellClientToInvoke(
 );
 ```
 
-If you want the client to send a packet to ask the server to invoke this method:
+If you want the client to send a packet to ask the server to invoke this method (on the server thread):
 
 ```
 public class AAARemoteCallableBBB{
@@ -90,7 +90,7 @@ The supported argument types are
 
 * The types that Gson can directly serialize/deserialize,
      including `int`,`double`,`boolean`,`long`,`String`,`int[]`,`Map<String,String>`,Enums
-* `Identifier`,`RegistryKey<World>`,`RegistryKey<Biome>`,`BlockPos`,`Vec3d`,`UUID`,`Block`,`Item`,`BlockState`,`ItemStack`,`CompoundTag`,`Text`
+* `Identifier`, `RegistryKey<World>`, `RegistryKey<Biome>`, `BlockPos`, `Vec3d`, `UUID`, `Block`, `Item`, `BlockState`, `ItemStack`, `CompoundTag`, `Text`
 
 Using unsupported argument types will cause serialization/deserialization issues.
 
