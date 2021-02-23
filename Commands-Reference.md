@@ -220,7 +220,7 @@ Quit the isometric view for the player.
 
 Align the player position by 0.5, set the yaw to be 45 degrees and set the pitch to be 30 degrees. Can be used for taking isometric screenshots.
 
-#### `/portal debug create_command_stick`
+#### `/portal debug create_command_stick <command>` 
 
 Creates a command stick . For example `/portal debug create_command_stick "/say hi"`
 

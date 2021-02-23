@@ -1,15 +1,116 @@
-**A full set of APIs for other mods to use hasn't been fully implemented. It's being worked on. This document is not yet completed.**
+**The API is still being worked on.**
 
 This mod will have a big name/package rearrangement in the 1.17 update.
 
+### Create a Portal
+
+Example:
+
+```
+Portal portal = Portal.entityType.create(serverWorld);
+portal.setOriginPos(new Vec3d(0, 70, 0));
+portal.setDestinationDimension(World.NETHER);
+portal.setDestination(new Vec3d(100, 70, 100));
+portal.setOrientationAndSize(
+    new Vec3d(1, 0, 0),//axisW
+    new Vec3d(0, 1, 0),//axisH
+    4,//width
+    4//height
+);
+portal.world.spawnEntity(portal);
+```
+
+[Portal Attributes](https://github.com/qouteall/ImmersivePortalsMod/wiki/Portal-Attributes)
+
+### Chunk Loading API
+
+Vanilla has the force-load functionality but it only loads the chunk and does not synchronize the chunk to player client. This mod supports loading chunks and synchronize the chunk (blocks, entities, etc.) to the specific player.
+
+Example:
+
+```
+PortalAPI.addChunkLoaderForPlayer(
+    serverPlayerEntity,
+    new ChunkLoader(
+        new DimensionalChunkPos(
+            World.OVERWORLD,
+            100,//x
+            100//z
+        ),
+        3//radius
+    )
+);
+```
+
+Remove the chunk loader when you want to unload.
+
+### Networking Utility (Remote Procedure Call)
+
+Fabric provides the networking API. But adding a new type of packet requires  (1) Write packet serialization/deserialization code (2) Write the packet handling code,which requires sending the task to the client/server thread to execute it (3) Give it an identifier and register it. The networking utility makes it easier
+
+
+Example, if you want the server to send a packet to ask the client to invoke this method:
+
+```
+public class AAARemoteCallableBBB{
+    public static void clientMethod(int arg1, double arg2) {...}
+}
+```
+
+Do this
+
+```
+McRemoteProcedureCall.tellClientToInvoke(
+    player,
+    "path.to.the_class.AAARemoteCallableBBB.clientMethod",
+    3, 4.5
+);
+```
+
+If you want the client to send a packet to ask the server to invoke this method:
+
+```
+public class AAARemoteCallableBBB{
+    public static void serverMethod(ServerPlayerEntity player, Block arg1) {...}
+}
+```
+
+Do this
+
+```
+McRemoteProcedureCall.tellServerToInvoke(
+    "path.to.the_class.AAARemoteCallableBBB.serverMethod",
+    Blocks.STONE
+);
+```
+
+For security concerns, the class path must contain "RemoteCallable". For example, the class name can be "XXRemoteCallableYYY" or "RemoteCallables".
+
+The supported argument types are
+
+* The types that Gson can directly serialize/deserialize,
+     including `int`,`double`,`boolean`,`long`,`String`,`int[]`,`Map<String,String>`,Enums
+* `Identifier`,`RegistryKey<World>`,`RegistryKey<Biome>`,`BlockPos`,`Vec3d`,`UUID`,`Block`,`Item`,`BlockState`,`ItemStack`,`CompoundTag`,`Text`
+
+Using unsupported argument types will cause serialization/deserialization issues.
+
+### GUI Portal
+
+Use ` GuiPortalRendering.submitNextFrameRendering(worldRenderInfo, frameBuffer)` to ask it to render the world into the framebuffer in the next frame. The rendered dimension, position, camera transformation can be specified in the `WorldRenderInfo`
+
+[Example](https://github.com/qouteall/ImmersivePortalsMod/blob/1.16/imm_ptl_core/src/main/java/com/qouteall/immersive_portals/api/example/ExampleGuiPortalRendering.java)
+
 ### Mod Structure
+
 This mod (Fabric version)'s mod id is `immersive_portals`. It has 3 mods jar-in-jar.
+
 * Immersive Portals Core (modid:`imm_ptl_core`)
 * Cloth Config
 * Mod Menu
-(Cloth Config and Mod Menu are used for providing the config GUI)
+  (Cloth Config and Mod Menu are used for providing the config GUI)
 
 The Immersive Portals Core contains [the core portal functionality](https://github.com/qouteall/ImmersivePortalsMod/wiki/Implementation-Details):
+
 * Recursive portal rendering (Rendering context management, transformation management, OpenGL state and framebuffer management)
 * Client multi-world loading
 * Remote chunk loading
@@ -24,60 +125,27 @@ The Core registers portal entity types and portal placeholder block.
 The Core (hopefully) does not change existing vanilla behavior.
 
 The mod Immersive Portals has:
+
 * Enhanced nether portals
 * Enhanced end portal
 * Alternate dimensions
 * Dimension stack
-* Extended reach in creative mode
+* Command stick
 
 ### Configure Dependency
-#### If you want to use Immersive Portals Core and have it as a jar-in-jar
 
 Add this into `repositories`
+
 ```
 	maven { url 'https://jitpack.io' }
 ```
+
 Add this into `dependencies`
 
 ```
-modImplementation ('com.github.qouteall.ImmersivePortalsMod:imm_ptl_core:v0.60-1.16')
+modImplementation ('com.github.qouteall.ImmersivePortalsMod:imm_ptl_core:1.16-SNAPSHOT')
 include 'com.github.qouteall.ImmersivePortalsMod:imm_ptl_core:1.16-SNAPSHOT'
 ```
+
 See https://jitpack.io/#qouteall/ImmersivePortalsMod
-(You can change `1.16-SNAPSHOT` to a release tag. If Jitpack doesn't work, try to fork this repo and use the forked repo)
-
-#### If you want to have an optional dependency of Immersive Portals (some functionality only enables with IP installed)
-```
-modCompileOnly ('com.github.qouteall.ImmersivePortalsMod:imm_ptl_core:v0.60-1.16')
-```
-
-### API Briefly Explained
-
-There are two kinds of portals:
-* Portal Entities in World
-They exist as entities in the world. They cannot be very big.
-* Global Portals
-They are also portal entities but not added to the world. They can be very big.
-
-A portal has these properties
-* The world in which the entity is.
-* The entity position. The center of the portal
-* axisW and axisH vector. Defines the orientation of the portal. These two vectors have to be perpendicular.
-* width, height. The area of the portal.
-* dimensionTo. The destination dimension.
-* destination. The destination position.
-* rotation (optional). The rotation transformation.
-* scaling. The scaling transformation.
-* specialShape (optional). A list of triangles on the portal plane that defines the shape of the portal. If this is null then the portal is rectangular.
-* specificPlayerId (optional). If not null, only the player with this id can see and access this portal.
-* teleportable. Whether the portal can teleport entities.
-* cullableXStart, cullableXEnd, cullableYStart, cullableYEnd. Used for advanced frustum culling. These 4 numbers define a rectangular area on the portal plane. The portal shape must cover this area. All the chunk sections fully behind this area's projection from the camera will be culled to increase portal rendering performance. If these 4 numbers aren't configured correctly, the chunks behind the portal may be incorrectly culled. If you create an irregular shaped portal, you can set them to 0 so that the culling issue won't happen to this portal.
-* teleportChangesScale. If the portal has scale transformation, it defines whether the entity going through it should change the scale.
-* extension.motionAffinity. If positive, the player colliding with it will be accelerated. Vice versa.
-* extension.adjustPositionAfterTeleport. If true, when the player collides with the floor after teleporting through the portal, the player will be smoothly levitated to avoid falling into the floor.
-
-To add a portal entity, create the portal entity object, change the properties, add it into the world. Note that if you change a property on the server side, it doesn't automatically sync to the client side.
-
-Every portal entity is one-faced and one-way. There are some helper functions: `PortalManipulation.createReversePortal` `PortalManipulation.createFlippedPortal`.
-
-The appropriate API of this mod is still being worked on. Most code is not documented. If you have any questions ask qouteall.
+(You can change `1.16-SNAPSHOT` to a release tag.)
