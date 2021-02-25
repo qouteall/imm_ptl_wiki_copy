@@ -20,7 +20,13 @@ portal.setOrientationAndSize(
 portal.world.spawnEntity(portal);
 ```
 
+The portal can face any rotation, be anywhere, point to any position in any dimension.
+
 [Portal Attributes](https://github.com/qouteall/ImmersivePortalsMod/wiki/Portal-Attributes)
+
+![](https://i.ibb.co/2djwR8C/axis.png)
+
+If the portal attribute gets changed on the server side, call `reloadAndSyncToClient` to sync the changes to client.
 
 ### Chunk Loading API
 
@@ -42,7 +48,51 @@ PortalAPI.addChunkLoaderForPlayer(
 );
 ```
 
-Remove the chunk loader when you want to unload.
+Call `removeChunkLoaderForPlayer` when you want to unload.
+
+### Access Multiple Client Worlds
+
+This mod eliminates the limitation that only one dimension can be loaded on client at the same time. For example, if you want to get the nether world, use `ClientWorldLoader.getWorld(World.NETHER)` . The client world will be created when it's used at the first time.
+
+If the client experiences conventional dimension change (with loading screen) then all worlds will be deleted.
+
+### Dimension API
+
+In 1.16 most mods use datapack functionality to add new dimensions. However, using the datapack has these drawbacks:
+
+* It stores all dimension options into `level.dat`. Upon upgrading, DFU cannot recognize non-vanilla generator types and swallows the nether and the end. [See also](https://github.com/TelepathicGrunt/Bumblezone-Fabric/issues/20)
+* It requires the generator's seed to be hardcoded in the json file.
+* Upon entering a world, the game shows the warning screen.
+
+IP's dimension API overcomes these obstacles. To use the IP dimension API, you need to keep the dimension type json and delete the dimension json. Then do this during initialization:
+
+```
+IPDimensionAPI.onServerWorldInit.connect((generatorOptions, registryManager) -> {
+    SimpleRegistry<DimensionOptions> registry = generatorOptions.getDimensions();
+    long seed = generatorOptions.getSeed();
+    
+    // get the dimension type
+    DimensionType dimensionType = registryManager.get(Registry.DIMENSION_TYPE_KEY)
+        .get(new Identifier("namespace:dimension_type_id"));
+    Validate.notNull(dimensionType);
+    
+    // get the biome registry for initializing the biome source
+    MutableRegistry<Biome> biomeRegistry = registryManager.get(Registry.BIOME_KEY);
+    BiomeSource biomeSource = new CustomBiomeSource(seed, biomeRegistry);
+    
+    // directly register the dimension
+    Identifier dimensionId = new Identifier("namespace:dimension_id");
+    IPDimensionAPI.addDimension(
+        seed, registry, dimensionId, () -> dimensionType,
+        new CustomChunkGenerator(seed,biomeSource)
+    );
+    
+    // mark it non-persistent so it won't be saved into level.dat
+    IPDimensionAPI.markDimensionNonPersistent(dimensionId);
+});
+```
+
+(IP does not use Fabric's event system because it needs to work across Fabric and Forge. The `Signal` is similar to the event.)
 
 ### Networking Utility (Remote Procedure Call)
 
@@ -84,12 +134,12 @@ McRemoteProcedureCall.tellServerToInvoke(
 );
 ```
 
-For security concerns, the class path must contain "RemoteCallable". For example, the class name can be "XXRemoteCallableYYY" or "RemoteCallables".
+For security concerns, the static method's class path must contain "RemoteCallable". For example, the class name can be "XXRemoteCallableYYY" or "RemoteCallables".
 
 The supported argument types are
 
 * The types that Gson can directly serialize/deserialize,
-     including `int`,`double`,`boolean`,`long`,`String`,`int[]`,`Map<String,String>`,Enums
+     including `int`, `double`, `boolean`, `long`, `String`, `int[]`, `Map<String,String>`, Enums
 * `Identifier`, `RegistryKey<World>`, `RegistryKey<Biome>`, `BlockPos`, `Vec3d`, `UUID`, `Block`, `Item`, `BlockState`, `ItemStack`, `CompoundTag`, `Text`
 
 Using unsupported argument types will cause serialization/deserialization issues.
@@ -99,6 +149,8 @@ Using unsupported argument types will cause serialization/deserialization issues
 Use ` GuiPortalRendering.submitNextFrameRendering(worldRenderInfo, frameBuffer)` to ask it to render the world into the framebuffer in the next frame. The rendered dimension, position, camera transformation can be specified in the `WorldRenderInfo`
 
 [Example](https://github.com/qouteall/ImmersivePortalsMod/blob/1.16/imm_ptl_core/src/main/java/com/qouteall/immersive_portals/api/example/ExampleGuiPortalRendering.java)
+
+
 
 ### Mod Structure
 
@@ -119,7 +171,7 @@ The Immersive Portals Core contains [the core portal functionality](https://gith
 * Global portal management
 * Cross portal block interaction
 * Datapack-based custom portal generation (and general breakable portal)
-* Integration with OptiFine, Sodium (my fork), Pehkui, (Requiem)
+* Integration with OptiFine, Sodium (my fork), Pehkui
 
 The Core registers portal entity types and portal placeholder block.
 The Core (hopefully) does not change existing vanilla behavior.
@@ -137,7 +189,7 @@ The mod Immersive Portals has:
 Add this into `repositories`
 
 ```
-	maven { url 'https://jitpack.io' }
+maven { url 'https://jitpack.io' }
 ```
 
 Add this into `dependencies`

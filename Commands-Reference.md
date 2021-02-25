@@ -1,5 +1,3 @@
-A list of all commands of Immersive Portals mod.
-
 ## Global Portal Commands
 The global portal commands require level 2 permission.
 
@@ -74,7 +72,7 @@ Change the portal's position.
 
 ### Portal Clutter Management
 
-[See](https://github.com/qouteall/ImmersivePortalsMod/wiki/Portal-Customization#1-nether-portal--4-portal-entities)
+[See also](https://github.com/qouteall/ImmersivePortalsMod/wiki/Portal-Customization#1-nether-portal--4-portal-entities)
 
 #### `/portal complete_bi_way_portal`
 Create a new portal entity to make the portal bi-way. Duplicated portals will be removed.
@@ -143,14 +141,14 @@ Make the portal entity's shape to be an ellipse. If the portal's width equals he
 ## Direct Portal Creation Commands
 Can be used by OPs and creative mode players.
 
-#### `/portal make_portal <width> <height> <dim> <toX> <toY> <toZ>`
-Create a new portal coming off of the side of the block you're pointing at. The specified height is always pointing away from the surface and the width is always the other way, and the portal will point towards you.
+#### `/portal make_portal <width> <height> <dimension> <toX> <toY> <toZ>`
+Create a new portal coming off of the side of the block you're pointing at. The portal will face towards you.
 
-#### `/portal make_portal <width> <height> <dim> shift <distance>`
+#### `/portal make_portal <width> <height> <dimension> shift <distance>`
 Create a portal whiches destination is `distance` blocks in front of the portal.
 
 #### `/portal create_small_inward_wrapping <x1> <y1> <z1> <x2> <y2> <z2>`
-Create a small inward wrapping zone. The generated portals are normal portals.
+Create a small inward wrapping zone. The generated portals are normal portals. (The global portal commands does not affect them.)
 
 #### `/portal create_small_outward_wrapping <x1> <y1> <z1> <x2> <y2> <z2>`
 Similar to the above but the wrapping zone is outward.
@@ -159,7 +157,7 @@ Similar to the above but the wrapping zone is outward.
 Create a scaled box wrapping zone. `<x1> <y1> <z1> <x2> <y2> <z2>` defines the inner box area. `<placeTargetEntity>` defines the outer box position. If `isBiWay` is true, it will generate the reverse portals for every portal. `teleportChangesScale` defines the generated portal's `teleportChangesScale` attribute.
 
 The command sender dimension is the dimension of the view box. For example, if you want to create a box viewing the end island, use `/execute in minecraft:the_end run portal create_scaled_box_view -100 0 -100 100 128 100 20 @p true`
-(`-100 0 -100 100 128 100` is a box with radius 100 on the end dimension, `20` is the scale, the outer box will be palced on `@p` 's position)
+(`-100 0 -100 100 128 100` is a box with radius 100 on the end dimension, `20` is the scale, the outer box will be placed on `@p` 's position)
 
 
 ![](https://i.ibb.co/yhXHYHm/2020-08-26-21-18-54.png)
@@ -177,7 +175,10 @@ Create a portal entity that goes from `fromEntity` to `toEntity`. The portal's o
 
 ## Miscellaneous Commands
 
+Can be used by creative mode players or permission 2 ones.
+
 #### `/portal tpme <dimension> <x> <y> <z>`
+
 Teleport you across dimensions without any loading screen. Can only be invoked by players.
 
 #### `/portal tp <entity> <dimension> <x> <y> <z>`
@@ -230,3 +231,4 @@ This command requires level 2 permission.
 These commands are deprecated. They will be removed in 1.17.
 
 `/portal cb_set_portal_destination <portal> <dimension> <x> <y> <z>` `/portal cb_complete_bi_way_portal <portal>` `/portal cb_complete_bi_faced_portal <portal>` `/portal cb_complete_bi_way_bi_faced_portal <portal>` `/portal cb_remove_connected_portals <portal>` `/portal cb_set_portal_specific_accessor <portal> [player]` 
+
