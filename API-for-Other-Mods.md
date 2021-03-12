@@ -32,11 +32,11 @@ It's recommended to check [Portal Attributes](https://github.com/qouteall/Immers
 
 If the portal attribute gets changed on the server side after the portal has spawned, call `reloadAndSyncToClient` to sync the changes to client.
 
-To create the reverse portal entity, use `PortalAPI.createReversePortal` `PortalAPI.createFlippedPortal` . [How bi-way portals and bi-faced portals are organized](https://github.com/qouteall/ImmersivePortalsMod/wiki/Portal-Customization#1-nether-portal--4-portal-entities)
+To create the reverse/flipped portal entity, use `PortalAPI.createReversePortal` `PortalAPI.createFlippedPortal` . [How bi-way portals and bi-faced portals are organized](https://github.com/qouteall/ImmersivePortalsMod/wiki/Portal-Customization#1-nether-portal--4-portal-entities)
 
 #### About Rotations and Quaternions
 
-You can set the portal's rotating transformation by `setRotationTransformation()` . The rotation transformation is represented using quaternion. There is a vanilla quaternion class `net.minecraft.util.math.Quaternion` and IP's quaternion class `DQuaternion`. The vanilla quaternion uses float and is mutable. `DQuaternion` uses double and is immutable. The quaternions may cause confusion so there is a brief explanation of quaternions.
+You can set the portal's rotating transformation by `setRotationTransformation()` . The rotation transformation is represented using quaternion. There is a vanilla quaternion class `net.minecraft.util.math.Quaternion` and IP's quaternion class `DQuaternion`. The vanilla quaternion uses float and is mutable. `DQuaternion` uses double and is immutable.
 
 A quaternion is a rotating transformation. For example you can create a rotation along Y axis for 45 degrees by `DQuaternion.rotateByDegrees(new Vec3d(0,1,0),45).toMcQuaternion()` . 
 
@@ -83,7 +83,7 @@ If the client experiences conventional dimension change (with loading screen) th
 In 1.16 most mods use datapack functionality to add new dimensions. However, using the datapack has these drawbacks:
 
 * It stores all dimension options into `level.dat`. Upon upgrading, DFU cannot recognize non-vanilla generator types and swallows the nether and the end. [See also](https://github.com/TelepathicGrunt/Bumblezone-Fabric/issues/20)
-* It requires the generator's seed to be hardcoded in the json file.
+* It requires the generator's seed to be hardcoded.
 * Upon entering a world, the game shows the warning screen (worlds using experimental settings are not supported).
 
 IP's dimension API overcomes these obstacles. To use the IP dimension API, you need to keep the dimension type json and delete the dimension json. Then do this during initialization:
@@ -187,14 +187,16 @@ This mod (Fabric version)'s mod id is `immersive_portals`. It has 3 mods jar-in-
 
 The Immersive Portals Core contains [the core portal functionality](https://github.com/qouteall/ImmersivePortalsMod/wiki/Implementation-Details):
 
-* Recursive portal rendering (Rendering context management, transformation management, OpenGL state and framebuffer management)
+* Recursive portal rendering (Rendering context management, transformation management, OpenGL state and framebuffer management) and GUI portal rendering
 * Client multi-world loading
-* Remote chunk loading
+* Server-side remote chunk loading
 * Remote chunk/entity networking synchronization
-* Dimension transition without loading screen and multidimensional player position mutual synchronization
+* Client dimension transition without loading screen
+* Multidimensional player position mutual synchronization
 * Global portal management
 * Cross portal block interaction, cross portal sound
-* Changes in player position synchronization
+* Cross portal entity rendering
+* Cross portal collision handling
 * Datapack-based custom portal generation (and general breakable portal)
 * Integration with OptiFine, Sodium (my fork), Pehkui
 * Dimension API
@@ -228,3 +230,4 @@ include 'com.github.qouteall.ImmersivePortalsMod:imm_ptl_core:1.16-SNAPSHOT'
 
 See https://jitpack.io/#qouteall/ImmersivePortalsMod
 (You can change `1.16-SNAPSHOT` to a release tag.)
+
