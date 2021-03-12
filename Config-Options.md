@@ -93,7 +93,7 @@ Used for debugging.
 [See also](https://github.com/qouteall/ImmersivePortalsMod/wiki/Portals#end-portals)
 
 ### Enable Alternate Dimensions
-If disabled, the alternate dimensions won't be loaded. (All portals pointing to alternate dimensions will vanish.)
+If disabled, the alternate dimensions won't be loaded, and all portals pointing to alternate dimensions will vanish.
 
 ### Enable Nether Portal Overlay
 If enabled, the newly generated nether portals will have vanilla nether portal texture overlay (with opacity 0.5).
@@ -104,9 +104,14 @@ Won't affect existing nether portals.
 
 Horizontal nether portals won't have this overlay because the vanilla nether portal block does not have the horizontal variant.
 
-https://github.com/qouteall/ImmersivePortalsMod/wiki/Miscellaneous#hand-reach-tweak)
+### Scale Limit
+
+If the entity's scale is too small or too big after crossing the portal, its scale will be reset. (The scale is from [Pehkui](https://www.curseforge.com/minecraft/mc-mods/pehkui)) Having too big scale will lag the server's collision calculation. Having too small scale will make the entity nearly invisible. The scale limit only applies when one entity go through a portal.
+
+If this config value is `x`, the actual scale limit is `1/2x` to `x` .
 
 ### Teleportation Debug
+
 Used for debugging.
 
 ### Portal Searching Range

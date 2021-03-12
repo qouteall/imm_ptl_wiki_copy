@@ -23,16 +23,16 @@ View the wrapping zones in the current dimension and know their ids.
 Remove a global portal wrapping zone by its id.
 
 #### `/portal global connect_floor <dimensionA> <dimensionB>`
-Creates a portal that connects `dimensionA` 's floor with `dimensionB` 's top. It only generates one one-way global portal instance.
+Creates a global portal that connects `dimensionA` 's floor with `dimensionB` 's top. It only generates one one-way global portal instance.
 
 #### `/portal global connect_ceil <dimensionA> <dimensionB>`
-Creates a portal that connects `dimensionA` 's ceiling with `dimensionB` 's bottom. It only generates one one-way global portal instance.
+Creates a global portal that connects `dimensionA` 's ceiling with `dimensionB` 's bottom. It only generates one one-way global portal instance.
 
 #### `/portal global connection_remove_floor <dimension>`
-Remove the floor connection portal in that dimension. This command only removes one portal instance.
+Remove the floor connection portal in that dimension. This command only removes one global portal instance.
 
 #### `/portal global connection_remove_ceil <dimension>`
-Remove the floor connection portal in that dimension. This command only removes one portal instance.
+Remove the ceil connection portal in that dimension. This command only removes one global portal instance.
 
 
 ## Portal Targeted Commands

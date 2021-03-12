@@ -182,6 +182,8 @@ This can only be used with triggerer `imm_ptl:conventional_dimension_change`. Wh
 
 **It converts the portal after the player goes through it once. It does not convert the portal after creation.**
 
+It can only convert the conventional portal that have the same type of portal block on both sides and the shapes are compatible.
+
 If the conventional portal is horizontal, it will generate a one-faced bi-way portal with a flipping rotation transformation. Otherwise, it behaves the same as `imm_ptl:try_hard_to_match`.
 
 For this form, the space ratio does not matter.

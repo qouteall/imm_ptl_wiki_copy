@@ -10,7 +10,7 @@ When you use flint and steel to light an obsidian frame, it will search for an e
 
 It will not link to a vanilla nether portal. The maximum nether portal side length is 20.
 
-This mod has 3 nether portal modes: `normal`, `adaptive` and `vanilla`.
+This mod has 3 nether portal modes: `normal`, `adaptive` and `vanilla`. ([How to change nether portal mode](https://github.com/qouteall/ImmersivePortalsMod/wiki/Config-Options#how-to-access-the-config))
 
 ### Mode : `normal`
 It can only link to the obsidian frame that has the exact same shape and orientation.
