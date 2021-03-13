@@ -40,13 +40,15 @@ You can set the portal's rotating transformation by `setRotationTransformation()
 
 A quaternion is a rotating transformation. For example you can create a rotation along Y axis for 45 degrees by `DQuaternion.rotateByDegrees(new Vec3d(0,1,0),45).toMcQuaternion()` . 
 
-Normally you don't need to care about the four numbers in quaternion. You just need to know these: 
+About quaternions, you just need to know these: 
 
-* A quaternion can be seen as a unit 4D vector, or a point on a 4D unit sphere surface. If the 4D vector is not unit-length, the rotation will not function normally. 
-* Hamilton product combines two rotating transformations. The sequence matters.
+* A quaternion can be seen as a unit 4D vector. If the 4D vector is not unit-length, it will not be a valid rotation. 
+* Hamilton product combines two rotating transformations. `a.hamiltonProduct(b)` gives the rotation that firstly apply `b` and then `a` . The sequence matters.
 * Conjugate means getting the inverse rotation.
 * Having the 4 numbers negated does not change the corresponding rotation. 
 * The quaternion can be interpolated on the 4D sphere surface.
+
+Quaternion can not only represent a rotating process, it can also represent an orientation.  You can manipulate portal orientation by `PortalAPI.getPortalOrientationQuaternion` and `PortalAPI.setPortalOrientationQuaternion` .
 
 IP does not use Euler angle for rotation because Euler angle requires handling many edge cases and is more complex.
 
