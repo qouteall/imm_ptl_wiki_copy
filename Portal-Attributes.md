@@ -18,7 +18,7 @@ NBT tags: `width` `height`
 #### The Special Shape
 Optional. Consists of various 2d triangles.
 
-NBT tag: `specialShape` (It's a number list. Every 2 numbers represent a 2d point(x axis is axisW and y axis is AxisH). Every 3 points represent a triangle)
+NBT tag: `specialShape` (It's a number list. Every 2 numbers represent a 2d point(x axis is axisW and y axis is axisH). Every 3 points represent a triangle)
 
 ### Transformation Attributes
 
@@ -69,8 +69,8 @@ NBT tag: `hasCrossPortalCollision`
 Optional. You can specify a list of commands to be invoked for entities that teleport through this portal.
 The command sender will be the entity that teleported.
 
-The commands will be invoked with OP permission.
-Using command `/portal set_portal_nbt` command to change this requires OP permission.
+The commands will be invoked with level-2 permission.
+Using command `/portal set_portal_nbt` command to change this requires level-2 permission.
 
 NBT tag: `commandsOnTeleported`
 
@@ -121,7 +121,7 @@ NBT tag: `motionAffinity`
 
 Only exists for [breakable portals](https://github.com/qouteall/ImmersivePortalsMod/wiki/Portals#breakable-portals).
 
-#### Unbreakability
+#### Unbreakable
 If true, the portal won't break if the frame structure is broken.
 
 NBT tag: `unbreakable`

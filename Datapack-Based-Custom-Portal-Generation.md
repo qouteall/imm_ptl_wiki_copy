@@ -119,6 +119,7 @@ The custom portal generation json should be located in `data/<namespace>/custom_
 * `space_ratio_to` Integer (1 if missing). The other side dimension's space ratio. Together with the above defines the space mapping. For example, 8 blocks' length in overworld corresponds to 1 block's length in the nether. The overworld's space ratio is 8 and the nether's space ration is 1.
 * `reversible` Boolean (true if missing). If true, the reverse version of this generation will also be loaded. If you configured a portal from overworld to nether with reversible false, then the portal can only be activated in the overworld. If it's true then the portal can also be activated in the nether. If there are multiple from dimensions, the first one will be selected for the destination of the reverse generation.
 * `post_invoke_commands` String list. Optional. The commands that will be invoked after the portals generated. The command invoker will be the portal entities. Every generated portal will invoke these commands. For example if you want the generated portal to be non-teleportable, put `"/portal set_portal_nbt {teleportable:false}"` into this.
+* `commands_on_generated` A list of lists of strings. Optional. Unlike the above, can make different portal entities to invoke different commands.
 * `form` Custom portal generation form. Described below.
 * `trigger` Custom portal generation trigger. Described below.
 
@@ -178,7 +179,7 @@ The maximum area side length is 20.
 * `generate_frame_if_not_found` Boolean.
 
 #### `type` : `imm_ptl:convert_conventional_portal`
-This can only be used with triggerer `imm_ptl:conventional_dimension_change`. When a player goes through a conventional portal and experience a dimension travel with loading screen, this can be used to convert that conventional portal into a see-through portal.
+This can only be used with trigger `imm_ptl:conventional_dimension_change`. When a player goes through a conventional portal and experience a dimension travel with loading screen, this can be used to convert that conventional portal into a see-through portal.
 
 **It converts the portal after the player goes through it once. It does not convert the portal after creation.**
 
@@ -190,14 +191,49 @@ For this form, the space ratio does not matter.
 
 * `portal_block` Block id or block tag. The conventional portal's block.
 
+#### `type` : `imm_ptl:one_way`
+
+Creates one-way portal.
+
+* `frame_block` Block id or block tag. The frame block.
+* `area_block` Block id or block tag. The frame content block.
+* `bi_faced` Boolean. If true generates bi-faced portal.
+* `breakable` Boolean. Optional. If false, it will not generate the placeholder blocks and the portals will be unbreakable.
+
+The destination can be specified by command `/portal set_portal_destination` in `commands_on_generated`.
+
 ### The Format of Custom Portal Generation Trigger
 Specifies when and where should the portal generates.
 #### `type` : `imm_ptl:use_item`
 Activates when the player right-clicks using an item.
 * `item` Item id.
-* `consume` Boolean (false if missing). If true, the item will be consumed if the generation performed.
+* `consume` Boolean (false if missing). If true, the item will be consumed if the generation performed (except in creative mode).
 #### `type` : `imm_ptl:throw_item`
 Checks every tick for the item entity that cannot be instantly picked up. (When a player throws one item it cannot be instantly picked up because the item entity has pick-up delay.) If an item is not thrown within 2 seconds, it will have no pick-up delay and cannot trigger the generation. The item can survive in lava for 1 tick, so throwing a non-fire-proof item into lava could still trigger the generation.
 * `item` Item id.
 #### `type` : `imm_ptl:conventional_dimension_change`
 It will be triggered when the player experiences conventional dimension travel (with loading screen), for example going through a vanilla nether portal. This is useful for converting other mod's portal.
+
+
+
+## Other Examples
+
+One-way end portal using bedrock as frame.
+
+```
+{
+  "schema_version": "imm_ptl:v1",
+  "from": [ "minecraft:overworld" ], "to": "minecraft:the_end",
+  "form": {
+    "type": "imm_ptl:one_way", "frame_block": "minecraft:bedrock",
+    "area_block": "minecraft:air", "bi_faced": false
+  },
+  "trigger": { "type": "imm_ptl:use_item", "item": "minecraft:flint_and_steel"},
+  "commands_on_generated": [
+    [
+      "/portal set_portal_destination minecraft:the_end 0 80 0"
+    ]
+  ]
+}
+```
+

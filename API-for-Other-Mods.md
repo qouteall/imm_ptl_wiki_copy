@@ -76,7 +76,7 @@ Call `removeChunkLoaderForPlayer` when you want to unload.
 
 ### Access Multiple Client Worlds
 
-This mod eliminates the limitation that only one dimension can be loaded on client at the same time. For example, if you want to get the nether world, use `ClientWorldLoader.getWorld(World.NETHER)` . The client world will be created when it's used at the first time.
+This mod eliminates the limitation that only one dimension can be loaded on client at the same time. If you want to get the nether world, use `ClientWorldLoader.getWorld(World.NETHER)` . The client world will be created when it's used at the first time.
 
 If the client experiences conventional dimension change (with loading screen) then all worlds will be unloaded and recreated later.
 
@@ -226,7 +226,9 @@ maven { url 'https://jitpack.io' }
 Add this into `dependencies`
 
 ```
-modImplementation ('com.github.qouteall.ImmersivePortalsMod:imm_ptl_core:1.16-SNAPSHOT')
+modImplementation ('com.github.qouteall.ImmersivePortalsMod:imm_ptl_core:1.16-SNAPSHOT'){
+	exclude(group: "net.fabricmc.fabric-api")
+}
 include 'com.github.qouteall.ImmersivePortalsMod:imm_ptl_core:1.16-SNAPSHOT'
 ```
 

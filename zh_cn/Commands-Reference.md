@@ -111,7 +111,7 @@
 
 移除传送门实体，使传送门变为单向单面的。
 
-#### `/portal eradicate_portal_clutter`
+#### `/portal eradicate_portal_cluster`
 
 完全移除一个双向双面传送门（4个传送门实体）。等同于  `/portal remove_connected_portals` 和 `/portal delete_portal`
 
@@ -122,6 +122,8 @@
 设置传送门的旋转变换。
 
 旋转变换由旋转轴向量与旋转角度组成。当旋转轴朝向你时，正的旋转角度相当于逆时针旋转。
+
+不会旋转传送门本身。
 
 #### `/portal set_portal_rotation_along <axis> <angleDegrees>`
 
@@ -161,55 +163,55 @@
 
 #### `/portal multidest <player> <dimension> <x> <y> <z> <isBiFaced> <isBiWay>`
 
-This command modifies the portal clutter. It firstly removes the portals that are specific to the `player` and then adds new portals that specific to the `player` and point to the specified dimension and position. `isBiFaced` and `isBiWay` respectively controls whether the generated portal is bi-faced and bi-way.
+该命令可以影响传送门群。将传送门群中仅该玩家可见的传送门删除，并添加该玩家独有的新传送门，指向指定的位面与坐标。 `isBiFaced` `isBiWay` 分别控制传送门是否是双面的和双向的。
 
 #### `/portal multidest <player>`
 
-Remove the player-specific portal from the portal clutter.
+将传送门群中仅该玩家可见的传送门移除。
 
-### Other
+### 其他{# Other}
 
 #### `/portal set_portal_custom_name <name>`
 
-Set a portal entity's custom name. The custom name can be used for selecting the portal entity (for example @e[name="xxx"]).
+设置一个传送门的名称，可以用来选定传送门 (例如 @e[name="xxx"]).
 
 #### `/portal make_portal_round`
 
-Make the portal entity's shape to be an ellipse. If the portal's width equals height, the shape will be round.
+将传送门的形状变为椭圆。如果传送门的宽度与高度相同，则形状变为圆形。
 
-## Direct Portal Creation Commands
+## 直接创建传送门的命令{#Direct Portal Creation Commands}
 
-Can be used by OPs and creative mode players.
+创造模式玩家与op可以使用。
 
 #### `/portal make_portal <width> <height> <dimension> <toX> <toY> <toZ>`
 
-Create a new portal coming off of the side of the block you're pointing at. The portal will face towards you.
+在你指向的地方创建一个朝向你的传送门。
 
 #### `/portal make_portal <width> <height> <dimension> shift <distance>`
 
-Create a portal whiches destination is `distance` blocks in front of the portal.
+在你指向的地方创建一个传送门，其指向的位置是传送门 `distance` 方块前。
 
 #### `/portal create_small_inward_wrapping <x1> <y1> <z1> <x2> <y2> <z2>`
 
-Create a small inward wrapping zone. The generated portals are normal portals. (The global portal commands does not affect them.)
+创建小型内向空间自折叠。创建的传送门是普通传送门，全局传送门命令不影响。
 
 #### `/portal create_small_outward_wrapping <x1> <y1> <z1> <x2> <y2> <z2>`
 
-Similar to the above but the wrapping zone is outward.
+与上一个相似，但创建外向空间自折叠。
 
 #### `/portal create_scaled_box_view <x1> <y1> <z1> <x2> <y2> <z2> <scale> <placeTargetEntity> <isBiWay> [teleportChangesScale]`
 
-Create a scaled box wrapping zone. `<x1> <y1> <z1> <x2> <y2> <z2>` defines the inner box area. `<placeTargetEntity>` defines the outer box position. If `isBiWay` is true, it will generate the reverse portals for every portal. `teleportChangesScale` defines the generated portal's `teleportChangesScale` attribute.
+创建缩放盒。 `<x1> <y1> <z1> <x2> <y2> <z2>` 决定盒的位置与大小。 `<placeTargetEntity>` 决定外部盒的坐标。若 `isBiWay` 为true，将会对每一传送门生成逆向传送门。 `teleportChangesScale` 决定传送门的 `teleportChangesScale` 属性。
 
-The command sender dimension is the dimension of the view box. For example, if you want to create a box viewing the end island, use `/execute in minecraft:the_end run portal create_scaled_box_view -100 0 -100 100 128 100 20 @p true`
-(`-100 0 -100 100 128 100` is a box with radius 100 on the end dimension, `20` is the scale, the outer box will be placed on `@p` 's position)
+命令发起酒所在的位面将是缩放盒所在的位面。例如说，命令 `/execute in minecraft:the_end run portal create_scaled_box_view -100 0 -100 100 128 100 20 @p true` 可创建末地岛屿的缩放盒。
+(`-100 0 -100 100 128 100` 指末地中的盒区域, `20` 是缩放比例。外部盒将会被放置在 `@p` 的位置)
 
 
 ![](https://qouteall-1.oss-ap-northeast-1.aliyuncs.com/2020-08-26-21-18-54.png)
 
 #### `/portal create_scaled_box_view_optimized <x1> <y1> <z1> <x2> <y2> <z2> <scale> <placeTargetEntity>`
 
-Similar to the above but the created scale box has better rendering performance.
+与上一个相似但产生的缩放盒渲染性能更高。
 
 The outer portals will have "fuse view" enabled and "rendering mergable" enabled.
 The inner portals will have "rendering mergable" enabled.
@@ -221,9 +223,9 @@ This command requires that the scale box area is either aligned to chunk border 
 
 Create a portal entity that goes from `fromEntity` to `toEntity`. The portal's orientation is determined by `fromEntity` 's orientation.
 
-## Miscellaneous Commands
+## 其他命令{#Miscellaneous Commands}
 
-Can be used by creative mode players or permission 2 ones.
+创造模式玩家与op可以使用。
 
 #### `/portal tpme <dimension> <x> <y> <z>`
 

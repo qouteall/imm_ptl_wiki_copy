@@ -70,7 +70,7 @@ Move the portal along the direction that you are looking at.
 #### `/portal set_portal_position <dimension> <x> <y> <z>`
 Change the portal's position.
 
-### Portal Clutter Management
+### Portal Cluster Management
 
 [See also](https://github.com/qouteall/ImmersivePortalsMod/wiki/Portal-Customization#1-nether-portal--4-portal-entities)
 
@@ -86,15 +86,17 @@ Create new portal entities to make the portal bi-way and bi-faced. Duplicated po
 #### `/portal remove_connected_portals`
 Remove portal entities to make the portal one-way and one-faced.
 
-#### `/portal eradicate_portal_clutter`
+#### `/portal eradicate_portal_cluster`
 Completely remove a bi-way portal (4 portal entities). Equivalent to `/portal remove_connected_portals` and then `/portal delete_portal`
 
 ### Rotation
 
 #### `/portal set_portal_rotation <axisX> <axisY> <axisZ> <angleDegrees>`
 Set the portal's rotation transformation.
-The rotation transformation is defined by a rotating axis vector and the angle in degrees.
-When the axis is pointing on you, a positive angle corresponds to rotating counter-clockwise.
+
+The rotation transformation is defined by a rotating axis vector and the angle in degrees. When the axis is pointing on you, a positive angle corresponds to rotating counter-clockwise.
+
+Does not rotate the portal itself.
 
 #### `/portal set_portal_rotation_along <axis> <angleDegrees>`
 Similar to the above but use `x`, `y` or `z` to represent the axis vector
@@ -125,10 +127,10 @@ Make the portal entity only accessible by one player.
 Make the portal entity accessible to all players.
 
 #### `/portal multidest <player> <dimension> <x> <y> <z> <isBiFaced> <isBiWay>`
-This command modifies the portal clutter. It firstly removes the portals that are specific to the `player` and then adds new portals that specific to the `player` and point to the specified dimension and position. `isBiFaced` and `isBiWay` respectively controls whether the generated portal is bi-faced and bi-way.
+This command modifies the portal cluster. It firstly removes the portals that are specific to the `player` and then adds new portals that are specific to the `player` and point to the specified dimension and position. `isBiFaced` and `isBiWay` respectively controls whether the generated portal is bi-faced and bi-way.
 
 #### `/portal multidest <player>`
-Remove the player-specific portal from the portal clutter.
+Remove the player-specific portal from the portal cluster.
 
 ### Other
 
@@ -139,7 +141,7 @@ Set a portal entity's custom name. The custom name can be used for selecting the
 Make the portal entity's shape to be an ellipse. If the portal's width equals height, the shape will be round.
 
 ## Direct Portal Creation Commands
-Can be used by OPs and creative mode players.
+Can be used by level-2 permission ones and creative mode players.
 
 #### `/portal make_portal <width> <height> <dimension> <toX> <toY> <toZ>`
 Create a new portal coming off of the side of the block you're pointing at. The portal will face towards you.
@@ -175,7 +177,7 @@ Create a portal entity that goes from `fromEntity` to `toEntity`. The portal's o
 
 ## Miscellaneous Commands
 
-Can be used by creative mode players or permission 2 ones.
+Can be used by creative mode players and permission 2 ones.
 
 #### `/portal tpme <dimension> <x> <y> <z>`
 
@@ -189,7 +191,7 @@ Sometimes you went into a one-way portal and want to come back, but you forgot t
 
 ## Debug Commands
 
-Can be used by creative mode players or permission 2 ones.
+Can be used by creative mode players and permission 2 ones.
 
 #### `/portal debug gui_portal <dimension> <x> <y> <z>`
 Load the chunks near the specific position and display a GUI portal for the player.
