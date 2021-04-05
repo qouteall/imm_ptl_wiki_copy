@@ -30,3 +30,7 @@ Discord server: https://discord.gg/BZxgURK
 * 关闭 "完全加载仅传送门可视区块".
 
 参见[设置选项](https://github.com/qouteall/ImmersivePortalsMod/wiki/Config-Options)
+
+##### 怎样在生存模式中使用传送门辅助方块{#How to make portal helper craft-able in survival?}
+
+[参见](https://github.com/qouteall/ImmersivePortalsMod/wiki/Portal-Customization#how-to-use-similar-functionality-in-survival-mode)

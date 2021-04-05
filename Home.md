@@ -29,3 +29,7 @@ If you experience lag, you can
 * Disable "actively load remote chunks".
 
 See also: [Config Options](https://github.com/qouteall/ImmersivePortalsMod/wiki/Config-Options)
+
+##### How to make portal helper craft-able in survival?
+
+[Check this](https://github.com/qouteall/ImmersivePortalsMod/wiki/Portal-Customization#how-to-use-similar-functionality-in-survival-mode)
