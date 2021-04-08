@@ -96,7 +96,7 @@
 
 ![](https://qouteall-1.oss-ap-northeast-1.aliyuncs.com/2020-08-26-21-18-54.png)
 
-![](https://i.ibb.co/yhXHYHm/2020-08-26-21-18-54.png)
+
 
 ## 创建对不同玩家指向不同地点的传送门{#Create the Portal that Points to Different Destinations for Different Players}
 通过命令 `/portal set_portal_specific_accessor` 你可以让一个传送门实体仅针对一个玩家可见。若要创建一个针对不同玩家指向不同地点的传送门，可以将分别不同玩家可见的传送门重叠在一起。

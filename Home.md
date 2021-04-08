@@ -33,3 +33,17 @@ See also: [Config Options](https://github.com/qouteall/ImmersivePortalsMod/wiki/
 ##### How to make portal helper craft-able in survival?
 
 [Check this](https://github.com/qouteall/ImmersivePortalsMod/wiki/Portal-Customization#how-to-use-similar-functionality-in-survival-mode)
+
+#### How to install Immersive Portals Mod (Fabric version)
+
+Immersive Portals works on Minecraft Java Edition, and does not work on bedrock version.
+
+Firstly you need to install Fabric loader. (Check this https://fabricmc.net/wiki/install). Download the Fabric loader installer here: https://fabricmc.net/use/ . Then open the Fabric loader installer to install Fabric loader.
+
+After installing the Fabric loader, you need to download Fabric API (https://github.com/FabricMC/fabric/releases). Fabric API is a mod. Fabric API is not Fabric loader.
+
+And then [download Immersive Portals mod](https://qouteall.fun/immptl). You now get two jar files. Put these two jar files into `mods` folder. (You don't need to open these two jar files.) The `mods` folder is in the game directory. (If you are using the official launcher in Windows, the game directory is `C:\Users\username\AppData\Roaming\.minecraft` by default.) If `mods` folder does not exist, create it (launching MC with Fabric once will create the `mods` folder).
+
+Note that you need to download the corresponding mod jar for the corresponding Minecraft version. This mod's mod jar for MC 1.16.5 does not work in MC 1.15.2.
+
+It's recommended to use Pehkui mod with this mod. Pehkui provides entity scaling functionality. Pehkui: https://www.curseforge.com/minecraft/mc-mods/pehkui
