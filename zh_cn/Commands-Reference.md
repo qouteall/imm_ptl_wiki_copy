@@ -223,6 +223,10 @@ This command requires that the scale box area is either aligned to chunk border 
 
 Create a portal entity that goes from `fromEntity` to `toEntity`. The portal's orientation is determined by `fromEntity` 's orientation.
 
+#### `/portal create_connected_rooms roomSize <sizeX> <sizeY> <sizeZ> roomNumber <roomNumber>`
+
+Create some rooms near you and generate portals to connect these rooms. The rooms will be made by random blocks. For example `/portal create_connected_room roomSize 8 8 5 roomNumber 10`
+
 ## 其他命令{#Miscellaneous Commands}
 
 创造模式玩家与op可以使用。
@@ -266,7 +270,7 @@ For example, `/portal debug isometric_enable 100`
 
 Isometric view is implemented by replacing the projection matrix with the orthogonal projection matrix. Isometric view equivalents the camera being in an infinitely far place.
 
-#### `/portal debug isometric_enable`
+#### `/portal debug isometric_disable`
 
 Quit the isometric view for the player.
 

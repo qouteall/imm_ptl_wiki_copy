@@ -105,6 +105,12 @@ If true, when the portal touches another portal that has the same spacial transf
 
 NBT tag: `renderingMergable`
 
+#### Whether to Render Yourself
+
+If false, you cannot see yourself from the portal.
+
+NBT tag: `doRenderPlayer`
+
 #### Cullable Range
 For outer frustum culling.
 
