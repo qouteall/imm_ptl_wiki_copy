@@ -10,6 +10,10 @@
 
 只能由玩家使用。将玩家指向的普通传送门转换为全局传送门。
 
+#### `/portal global delete_global_portal `
+
+Delete the global portal that you are pointing to.
+
 #### `/portal global create_inward_wrapping <x1> <z1> <x2> <z2>`
 
 创建内向空间自折叠。生成的传送门为全局传送门。两个XZ坐标代表空间自折叠区域，传送门在纵向从y=0处覆盖到y=256处。

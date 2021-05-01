@@ -26,6 +26,8 @@ Portal helper generates unbreakable portals and is intended to be used in creati
 
 ### 1 Nether Portal = 4 Portal Entities
 
+**How does this mod distinguish between one-way portal, bi-way portal and bi-way bi-faced portal? There is no "bi-way" attribute. A bi-way portal is a combination of two one-way portals.**
+
 **Every portal entity is a one-faced and one-way portal. A normal nether portal is bi-faced and bi-way, it consists of 2 portal entities in the overworld and 2 portal entities in the nether, 4 portal entities in total.**
 
 Command `/portal delete_portal` will only remove one portal entity.

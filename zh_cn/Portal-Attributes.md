@@ -166,14 +166,11 @@ NBT tag: `overlayOffset`
 
 ## 命令示例{#Command Examples}
 
+* Make a portal that has scaling to not change the crossing entity's scale `/portal set_portal_nbt {teleportChangesScale:false}`
 * 启用融合渲染 `/portal set_portal_nbt {fuseView:true}`
-
 * 改变方形传送门的宽度和高度: `/portal set_portal_nbt {width:100,height:100,specialShape:[]}`
-
 * 让通过传送门的实体受到伤害: `/portal set_portal_nbt {commandsOnTeleported:["/effect give @s minecraft:instant_damage 1"]}`
-
 * 让传送门有钻石块的附加材质 `/portal set_portal_nbt {overlayBlockState:{Name:"minecraft:diamond_block"},overlayOpacity:0.6,overlayOffset:-0.3}`  (仅对可破坏传送门例如地狱传送门有效，对传送门辅助方块产生的传送门无效)
-
 * 将传送门形状变为三角形 `/portal set_portal_nbt {width:2,height:2,specialShape:[-1.0d,0.0d,1.0d,0.0d,0d,1.0d],cullableXStart:0,cullableXEnd:0,cullableYStart:0,cullableYEnd:0}`
 
 ### 关于编辑传送门的形状{#About Portal Shape Editing}
