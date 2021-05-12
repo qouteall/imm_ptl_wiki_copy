@@ -43,7 +43,7 @@ Discord server: https://discord.gg/BZxgURK
 
 安装完Fabric加载器后，需要安装Fabric API。 (https://github.com/FabricMC/fabric/releases) 。Fabric API是一个模组，不是Fabric加载器。
 
-然后下载 [本模组](https://qouteall.fun/immptl)。现在你得到了两个jar文件，讲这两个jar文件放入 `mods` 文件夹。 (不用打开这两个jar文件。) `mods` 文件夹在游戏目录中。 (如果你用Windows，且用官方启动器，游戏目录默认是 is `C:\Users\username\AppData\Roaming\.minecraft` ) 若 `mods` 文件夹不存在，创建该文件夹。 (安装Fabric后正常启动游戏就会自动创建  `mods` 文件夹)
+然后下载 [本模组](https://qouteall.fun/immptl)。现在你得到了两个jar文件，讲这两个jar文件放入 `mods` 文件夹。 (不用打开这两个jar文件。) `mods` 文件夹在游戏目录中。可以从启动器里打开游戏目录。若 `mods` 文件夹不存在，创建该文件夹。 (安装Fabric后正常启动游戏就会自动创建  `mods` 文件夹)
 
 注意，不同的Minecraft版本需要不同的模组版本。
 

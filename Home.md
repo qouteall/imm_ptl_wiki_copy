@@ -42,7 +42,7 @@ Firstly you need to install Fabric loader. (Check this https://fabricmc.net/wiki
 
 After installing the Fabric loader, you need to download Fabric API (https://github.com/FabricMC/fabric/releases). Fabric API is a mod. Fabric API is not Fabric loader.
 
-And then [download Immersive Portals mod](https://qouteall.fun/immptl). You now get two jar files. Put these two jar files into `mods` folder. (You don't need to open these two jar files.) The `mods` folder is in the game directory. (If you are using the official launcher on Windows, the game directory is `C:\Users\username\AppData\Roaming\.minecraft` by default.) If `mods` folder does not exist, create it. (launching MC with Fabric once will create the `mods` folder)
+And then [download Immersive Portals mod](https://qouteall.fun/immptl). You now get two jar files. Put these two jar files into `mods` folder. (You don't need to open these two jar files.) The `mods` folder is in the game directory. You can open the game directory from the launcher. If `mods` folder does not exist, create it. (launching MC with Fabric once will create the `mods` folder)
 
 Note that you need to download the corresponding mod jar for the corresponding Minecraft version.
 

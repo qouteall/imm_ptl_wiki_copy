@@ -166,6 +166,7 @@ NBT tag: `overlayOffset`
 
 ## 命令示例{#Command Examples}
 
+* Make a nether portal unbreakable `/portal set_portal_nbt {unbreakable:true}`
 * Make a portal that has scaling to not change the crossing entity's scale `/portal set_portal_nbt {teleportChangesScale:false}`
 * 启用融合渲染 `/portal set_portal_nbt {fuseView:true}`
 * 改变方形传送门的宽度和高度: `/portal set_portal_nbt {width:100,height:100,specialShape:[]}`

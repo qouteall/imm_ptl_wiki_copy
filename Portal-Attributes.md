@@ -151,6 +151,7 @@ NBT tag: `overlayOffset`
 
 ## Command Examples
 
+* Make a nether portal unbreakable `/portal set_portal_nbt {unbreakable:true}`
 * Make a portal that has scaling to not change the crossing entity's scale `/portal set_portal_nbt {teleportChangesScale:false}`
 * Make the portal fuse-view `/portal set_portal_nbt {fuseView:true}`
 * Adjust the width and height for a square portal: `/portal set_portal_nbt {width:100,height:100,specialShape:[]}`

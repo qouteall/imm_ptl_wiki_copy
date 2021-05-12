@@ -144,6 +144,10 @@ Set a portal entity's custom name. The custom name can be used for selecting the
 #### `/portal make_portal_round`
 Make the portal entity's shape to be an ellipse. If the portal's width equals height, the shape will be round.
 
+#### `/portal reset_portal_orientation`
+
+Resets the portal orientation.
+
 ## Direct Portal Creation Commands
 Can be used by level-2 permission ones and creative mode players.
 

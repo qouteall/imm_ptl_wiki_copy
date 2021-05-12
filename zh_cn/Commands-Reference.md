@@ -183,6 +183,10 @@ Delete the global portal that you are pointing to.
 
 将传送门的形状变为椭圆。如果传送门的宽度与高度相同，则形状变为圆形。
 
+#### `/portal reset_portal_orientation`
+
+Resets the portal orientation.
+
 ## 直接创建传送门的命令{#Direct Portal Creation Commands}
 
 创造模式玩家与op可以使用。
