@@ -38,9 +38,9 @@ See also: [Config Options](https://github.com/qouteall/ImmersivePortalsMod/wiki/
 
 Immersive Portals works on Minecraft Java Edition, and does not work on Bedrock edition.
 
-Firstly you need to install Fabric loader. (Check this https://fabricmc.net/wiki/install). Download the Fabric loader installer here: https://fabricmc.net/use/ . Then open the Fabric loader installer to install Fabric loader.
+Firstly you need to install Fabric loader. (Check this https://fabricmc.net/wiki/install ). Download the Fabric loader installer here: https://fabricmc.net/use/ . Then open the Fabric loader installer to install Fabric loader.
 
-After installing the Fabric loader, you need to download Fabric API (https://github.com/FabricMC/fabric/releases). Fabric API is a mod. Fabric API is not Fabric loader.
+After installing the Fabric loader, you need to download Fabric API (https://github.com/FabricMC/fabric/releases ). Fabric API is a mod. Fabric API is not Fabric loader.
 
 And then [download Immersive Portals mod](https://qouteall.fun/immptl). You now get two jar files. Put these two jar files into `mods` folder. (You don't need to open these two jar files.) The `mods` folder is in the game directory. You can open the game directory from the launcher. If `mods` folder does not exist, create it. (launching MC with Fabric once will create the `mods` folder)
 
