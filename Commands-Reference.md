@@ -211,7 +211,7 @@ Used for testing GUI portal functionality.
 
 For example, `/portal debug gui_portal minecraft:the_end 0 80 0`
 
-![](https://i.ibb.co/4KMhsH3/2021-02-05-15-15-05.png)
+![gui_portal.png](https://i.loli.net/2021/06/07/AKBYLdxikuEUR6o.png)
 
 Press ESC to quit.
 
