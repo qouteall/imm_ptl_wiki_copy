@@ -4,7 +4,7 @@ The Fabric version of Immersive Portals mod contains some API for other mods to 
 
 The API has undergone a big name/package rearrangement during the 1.17 update. The package `com.qouteall.immersive_portals` in 1.17 has become `qouteall.imm_ptl.core` in 1.17. The dimension API and the remote procedure call utility has been moved into a new mod `q_misc_util`.
 
-## API Overview
+### API Overview
 
 Immersive Portals mod's API is now split across 2 mods, one is Immersive Portals Core (`imm_ptl_core`), the other is the Miscellaneous Utility Library from qouteall (`q_misc_util`).
 
@@ -229,7 +229,7 @@ The mod Immersive Portals has:
 * Command stick
 * Portal helper
 
-#### Configure Dependency
+### Configure Dependency
 
 Add this into `repositories`
 
@@ -237,7 +237,7 @@ Add this into `repositories`
 maven { url 'https://jitpack.io' }
 ```
 
-##### In 1.17
+#### In 1.17
 
 Add this into `dependencies`
 
@@ -258,7 +258,7 @@ It's recommended to change `1.17-SNAPSHOT` to a release tag. [Release tags.](htt
 
 See https://jitpack.io/#qouteall/ImmersivePortalsMod
 
-##### In 1.16
+#### In 1.16
 
 ```
 modImplementation ('com.github.qouteall.ImmersivePortalsMod:imm_ptl_core:1.16-SNAPSHOT'){
