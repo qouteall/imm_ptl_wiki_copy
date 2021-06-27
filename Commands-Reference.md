@@ -201,13 +201,12 @@ Teleport entities across dimensions.
 #### `/portal goback`
 Sometimes you went into a one-way portal and want to come back, but you forgot the coordinate where you come in. Use this command to come back.
 
-## Debug Commands
+## Debugging Commands
 
 Can be used by creative mode players and permission 2 ones.
 
 #### `/portal debug gui_portal <dimension> <x> <y> <z>`
-Load the chunks near the specific position and display a GUI portal for the player.
-Used for testing GUI portal functionality.
+Load the chunks near the specific position and display a GUI portal for the player. Used for testing GUI portal functionality.
 
 For example, `/portal debug gui_portal minecraft:the_end 0 80 0`
 
@@ -222,7 +221,7 @@ Enable the experimental isometric view for the player. `viewHeight` is the corre
 
 For example, `/portal debug isometric_enable 100`
 
-![](https://i.ibb.co/Sw8wLBD/2021-02-05-15-25-05.png)
+![2021-02-05-15-25-05.png](https://i.loli.net/2021/06/27/2OWzeKhQNcZDIgl.png)
 
 
 Isometric view is implemented by replacing the projection matrix with the orthogonal projection matrix. Isometric view equivalents the camera being in an infinitely far place.
@@ -241,8 +240,31 @@ Creates a command stick . For example `/portal debug create_command_stick "/say 
 
 This command requires level 2 permission.
 
-## Deprecated Commands
-These commands are deprecated. They will be removed in 1.17.
+#### `/portal debug accelerate <num>`
 
-`/portal cb_set_portal_destination <portal> <dimension> <x> <y> <z>` `/portal cb_complete_bi_way_portal <portal>` `/portal cb_complete_bi_faced_portal <portal>` `/portal cb_complete_bi_way_bi_faced_portal <portal>` `/portal cb_remove_connected_portals <portal>` `/portal cb_set_portal_specific_accessor <portal> [player]` 
+Accelerate the player along the view direction. This is originally used for debugging collision issue, and then turns out to be useful for travelling.
+
+#### `/portal debug erase_chunk <radius> [downY] [upY]`
+
+Erase the blocks of the chunks near you. Can be used for checking dimension stack status. Requires level 3 permission.
+
+#### `/portal debug profile gc`
+
+Call `System.gc()` and show the memory usage. Requires level 4 permission.
+
+#### `/portal debug report_resource_consumption`
+
+Show chunk loading numbers.
+
+#### `/portal debug report_player_status`
+
+Show the player's current dimension, position and entity status both on client side and server side.
+
+#### `/portal debug is_chunk_loaded <x> <z>`
+
+Shows if the chunk is loaded in your current dimension on client side and server side.
+
+#### `/portal debug report_chunk_loaders`
+
+Report the chunk loaders originated by you.
 
