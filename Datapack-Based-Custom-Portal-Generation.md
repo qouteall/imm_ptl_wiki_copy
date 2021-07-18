@@ -5,7 +5,7 @@ Configure custom portal generation mechanics using JSON files in a datapack.
 
 ## Examples
 
-[Download the example datapack](https://github.com/qouteall/ImmersivePortalsMod/raw/1.16/example_custom_portal_gen.zip)
+[Download the example datapack](https://github.com/qouteall/ImmersivePortalsMod/raw/1.16/example_custom_portal_gen.zip) You can use the example datapack by putting it into the `datapacks` folder of the world.
 
 The example datapack has
 

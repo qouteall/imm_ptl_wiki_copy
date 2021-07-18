@@ -1,6 +1,6 @@
 
 ### OptiFine Compatibility
-Currently this mod's latest Fabric version is compatible with OptiFine G7. However portal rendering artefacts may appear when combined with OptiFine.
+Currently this mod's in 1.16.5 is compatible with OptiFine G7. However portal rendering artefacts may appear when combined with OptiFine. This mod in 1.17.x is not compatible with OptiFine shaders.
 
 You need to disable smooth world if you install OptiFine.
 
@@ -10,13 +10,5 @@ You need to turn off TAA (Temporal Anti Aliasing) and Motion Blur in the shader'
 
 The recommended shader is BSL shader.
 
-### Sodium Compatibility
 
-This mod is not compatible with the official Sodium. However, there is a fork of Sodium that is compatible with this mod: https://github.com/qouteall/sodium-fabric/releases
-
-The "optimized scale box" does not work with sodium.
-
-### Canvas Compatibility
-
-Incompatible.
 
