@@ -10,6 +10,8 @@ Immersive Portals mod's API is now split across 2 mods, one is Immersive Portals
 
 `q_misc_util` contains the dimension API and remote procedure call utility. `imm_ptl_core` contains the portal functionality.
 
+The mod `imm_ptl_core` is incompatible with some mods, but `q_misc_util` is compatible with most mods and you can safely include `q_mist_util` if you only want to use the dimension API and remote procedure call API.
+
 ### The Miscellaneous Utility API (`q_misc_util`)
 
 #### Dimension API
@@ -253,6 +255,9 @@ modImplementation ('com.github.qouteall.ImmersivePortalsMod:q_misc_util:1.17-SNA
 	exclude(group: "net.fabricmc.fabric-api")
 	transitive(false)
 }
+
+// If you want to make it jar-in-jar
+include ('com.github.qouteall.ImmersivePortalsMod:q_misc_util:1.17-SNAPSHOT')
 ```
 It's recommended to change `1.17-SNAPSHOT` to a release tag. [Release tags.](https://github.com/qouteall/ImmersivePortalsMod/releases)
 

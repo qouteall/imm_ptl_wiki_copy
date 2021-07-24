@@ -57,6 +57,10 @@ Set the portal destination to an entity's position.
 #### `/portal move_portal_destination <distance>`
 Move the portal's destination along the direction that you are looking at.
 
+#### `/portal relatively_move_portal_destination <dx> <dy> <dz>`
+
+Move the portal's destination by a vector in the other side's coordinate.
+
 ### Manage the Portal
 
 #### `/portal set_portal_nbt <nbt>`
@@ -74,9 +78,13 @@ Move the portal along the direction that you are looking at.
 #### `/portal set_portal_position <dimension> <x> <y> <z>`
 Change the portal's position.
 
+#### `/portal relatively_move_portal <dx> <dy> <dz>`
+
+Move the portal by a vector in the portal orientation coordinate. For example, `/portal relatively_move_portal 1 2 3` will move the portal 1 block along `axisW`, 2 blocks along `axisH` and 3 blocks along the normal.
+
 ### Portal Cluster Management
 
-[See also](https://github.com/qouteall/ImmersivePortalsMod/wiki/Portal-Customization#1-nether-portal--4-portal-entities)
+[How this mod manage bi-way and bi-faced portals](https://github.com/qouteall/ImmersivePortalsMod/wiki/Portal-Customization#1-nether-portal--4-portal-entities)
 
 #### `/portal complete_bi_way_portal`
 Create a new portal entity to make the portal bi-way. Duplicated portals will be removed.
@@ -200,6 +208,10 @@ Teleport entities across dimensions.
 
 #### `/portal goback`
 Sometimes you went into a one-way portal and want to come back, but you forgot the coordinate where you come in. Use this command to come back.
+
+#### `/portal adjust_rotation_to_connect <portal1> <portal2>`
+
+By specifying 2 portal entities, it will change these 2 portals' destination and rotation transformation to make them connect.
 
 ## Debugging Commands
 

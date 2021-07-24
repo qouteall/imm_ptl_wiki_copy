@@ -11,4 +11,3 @@ You need to turn off TAA (Temporal Anti Aliasing) and Motion Blur in the shader'
 The recommended shader is BSL shader.
 
 
-
