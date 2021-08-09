@@ -195,8 +195,11 @@ This mod (Fabric version)'s mod id is `immersive_portals`. It has 3 mods jar-in-
 * Immersive Portals Core (modid:`imm_ptl_core`)
 * Miscellaneous Utility from qouteall (modid:`q_misc_util`)
 * Cloth Config
-* Mod Menu
-  (Cloth Config and Mod Menu are used for providing the config GUI)
+* Mod Menu (not in 1.17.x)
+
+(Cloth Config and Mod Menu are used for providing the config GUI)
+
+
 
 The Immersive Portals Core contains [the core portal functionality](https://github.com/qouteall/ImmersivePortalsMod/wiki/Implementation-Details):
 

@@ -34,6 +34,14 @@ See also: [Config Options](https://github.com/qouteall/ImmersivePortalsMod/wiki/
 
 [Check this](https://github.com/qouteall/ImmersivePortalsMod/wiki/Portal-Customization#how-to-use-similar-functionality-in-survival-mode)
 
+##### The nether portal is not see-through
+
+This mod does not change existing vanilla portals. You need to light new portals.
+
+##### The nether portal does not link
+
+It can only link to an empty obsidian frame with the same shape and orientation (unless you change the nether portal mode in  the config).
+
 #### How to install Immersive Portals Mod (Fabric version)
 
 Immersive Portals works on Minecraft Java Edition, and does not work on Bedrock edition.
