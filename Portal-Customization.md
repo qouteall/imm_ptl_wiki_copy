@@ -88,8 +88,15 @@ You can create a small wrapping zone by `/portal create_small_inward_wrapping <x
 
 These commands create normal portals instead of global portals. Global portal wrapping zone commands (such as `/portal global remove_wrapping_zone`) does not affect them.
 
-### Create a Scaled Wrapping Zone
-You can create a scaled wrapping by `/portal create_scaled_box_view <x1> <y1> <z1> <x2> <y2> <z2> <scale> <placeTargetEntity> <isBiWay> [teleportChangesScale]`
+### Create a Scaled Box using MiniScaled Mod
+
+If you want to make scale boxes, try [MiniScaled](https://github.com/qouteall/MiniScaledMod/blob/1.17/README.md) mod. It provides easy-to-use scale box functionality.
+
+![](https://i.loli.net/2021/09/30/J9bBF82tRu5yIkW.png)
+
+### Create a Scaled Box using Commands
+
+Creating a scale box using commands is a little bit trickier. You can create a scaled wrapping by command `/portal create_scaled_box_view <x1> <y1> <z1> <x2> <y2> <z2> <scale> <placeTargetEntity> <isBiWay> [teleportChangesScale]`
 
 For example, if you want to create a box viewing the end island, use `/execute in minecraft:the_end run portal create_scaled_box_view -100 0 -100 100 128 100 20 @p true`
 (`-100 0 -100 100 128 100` is the inner box on the end dimension, `20` is the scale, the outer box will be placed on `@p` 's position)

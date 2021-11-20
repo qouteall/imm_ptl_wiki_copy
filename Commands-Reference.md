@@ -172,6 +172,8 @@ Create a small inward wrapping zone. The generated portals are normal portals. (
 Similar to the above but the wrapping zone is outward.
 
 #### `/portal create_scaled_box_view <x1> <y1> <z1> <x2> <y2> <z2> <scale> <placeTargetEntity> <isBiWay> [teleportChangesScale]`
+Note: [MiniScaled](https://github.com/qouteall/MiniScaledMod/blob/1.17/README.md) mod allows creating scale boxes easily.
+
 Create a scaled box wrapping zone. `<x1> <y1> <z1> <x2> <y2> <z2>` defines the inner box area. `<placeTargetEntity>` defines the outer box position. If `isBiWay` is true, it will generate the reverse portals for every portal. `teleportChangesScale` defines the generated portal's `teleportChangesScale` attribute.
 
 The command sender dimension is the dimension of the view box. For example, if you want to create a box viewing the end island, use `/execute in minecraft:the_end run portal create_scaled_box_view -100 0 -100 100 128 100 20 @p true`
@@ -180,10 +182,15 @@ The command sender dimension is the dimension of the view box. For example, if y
 
 ![image.png](https://i.loli.net/2021/11/20/n3zO8CYdRoMc2bl.png)
 #### `/portal create_scaled_box_view_optimized <x1> <y1> <z1> <x2> <y2> <z2> <scale> <placeTargetEntity>`
+
+Note: [MiniScaled](https://github.com/qouteall/MiniScaledMod/blob/1.17/README.md) mod allows creating scale boxes easily.
+
 Similar to the above but the created scale box has better rendering performance.
 
 The outer portals will have "fuse view" enabled and "rendering mergable" enabled.
+
 The inner portals will have "rendering mergable" enabled.
+
 The portals will have "teleport changes scale" disabled.
 
 This command requires that the scale box area is either aligned to chunk border (Press F3+G to see the chunk border) or does not have anything around that area (for example, a skyland). Because the merged portal rendering does not handle the front clipping well, if this requirement is not meet, the things outside the box may appear in view.
