@@ -126,7 +126,7 @@ It's recommended to check [Portal Attributes](https://github.com/qouteall/Immers
 
 ![](https://i.ibb.co/2djwR8C/axis.png)
 
-`axisW` and `axisH` are unit vectors and should be perpendicular to each other. The portal orientation has nothing to do with pitch and yaw (because pitch and yaw cannot represent all rotations).
+`axisW` and `axisH` are unit vectors and should be perpendicular to each other. The portal orientation has nothing to do with pitch and yaw (because pitch and yaw cannot represent tilted rotations).
 
 If the portal attribute gets changed on the server side after the portal has spawned, call `reloadAndSyncToClient` to sync the changes to client.
 

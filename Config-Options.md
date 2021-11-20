@@ -1,6 +1,6 @@
 ## How to Access the Config
 
-In Fabric version, you can access the config GUI via the mod menu (this mod has mod menu bundled in). The config file is `/config/immersive_portals_fabric.json` . In Forge version, the config file is `/config/immersive_portals-client.toml` and `/config/immersive_portals-common.toml` .
+In Fabric version, you can access the config GUI via the mod menu (In 1.17 you need to manually install mod menu). The config file is `/config/immersive_portals_fabric.json` . In Forge version, the config file is `/config/immersive_portals-client.toml` and `/config/immersive_portals-common.toml` .
 
 ## Client-Side Performance Configurations
 
