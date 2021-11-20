@@ -2,11 +2,9 @@ Use [vertical connecting portals](https://github.com/qouteall/ImmersivePortalsMo
 
 
 
-![](https://i.ibb.co/Xzjbq7H/2020-10-18-21-55-30.png)
+![image.png](https://i.loli.net/2021/11/20/aui8vcNer9hAmgJ.png)
 
-
-
-![](https://i.ibb.co/ZxL4KqK/2021-02-07-20-25-21.png)
+![image.png](https://i.loli.net/2021/11/20/r7sUyN6Azm4qiaF.png)
 
 
 
@@ -14,11 +12,11 @@ Use [vertical connecting portals](https://github.com/qouteall/ImmersivePortalsMo
 
 You can see the "Dimension Stack" button when creating a new world.
 
-![](https://i.ibb.co/LPNBZ0v/2020-09-20-21-03-15.png)
+![image.png](https://i.loli.net/2021/11/20/helqg7vkcdML5n3.png)
 
 
 
-![](https://i.ibb.co/p0wbZxJ/2021-02-09-17-21-21.png)
+![image.png](https://i.loli.net/2021/11/20/REKhZgzprG15XqB.png)
 
 
 
@@ -32,7 +30,7 @@ This controls the generated portals' scale transformation. The generated connect
 
 If you want that one block in nether corresponds to 8 blocks in overworld, set the overworld's scale to 8.
 
-![](https://i.ibb.co/dpgd3wQ/2020-11-29-10-57-12.png)
+![image.png](https://i.loli.net/2021/11/20/ywnkEq6F4pQS7Ha.png)
 
 It's recommended to either **(1)** set the scale between overworld and nether to be 8 or **(2)** set the nether portal mode to be `disabled`. Because dimension stack does not interfere with how nether portals work, if dimension stack allows player to travel between overworld and nether with 1 by 1 space ratio, and nether portal allows travelling with 1 by 8 space ratio, then the player can easily reach the world border by using two travel methods alternately.
 
@@ -40,7 +38,7 @@ It's recommended to either **(1)** set the scale between overworld and nether to
 
 Controls the portals' rotating transformation. If enabled, makes the dimension looks "flipped". Does not change the gravity direction in that dimension. If a flipped dimension connects to a non-flipped dimension, the connecting portal will have a 180 degrees rotation transformation along X axis.
 
-![](https://i.ibb.co/ypsWynH/2021-02-09-19-17-29.png)
+![image.png](https://i.loli.net/2021/11/20/pXxmBnrQd2CbVIE.png)
 
 #### Horizontal Rotation
 

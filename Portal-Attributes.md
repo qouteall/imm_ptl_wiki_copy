@@ -96,7 +96,7 @@ NBT tag: `specificPlayerId`
 #### Fuse View
 If true, the portal rendering will not render the sky background and maintain the depth value in the portal view area. This results in the things inside the portal and the things outside the portal being fused together.
 
-![](https://i.ibb.co/NCfsyrp/2020-12-19-14-06-20.png)
+![image.png](https://i.loli.net/2021/11/20/jhZId1mWuVrExe7.png)
 
 NBT tag: `fuseView`
 

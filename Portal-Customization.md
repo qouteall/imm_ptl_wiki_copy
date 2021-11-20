@@ -6,9 +6,9 @@
 This mod provides a new block called "Portal Helper".
 You can build two frames using that block and use flint and steel to light one. Then a new two-way two-faced portal will be generated. The portal's rotation and scale transformation will adapt to the shape difference.
 
-![](https://i.ibb.co/wRzvJB9/2020-12-14-22-28-18.png)
+![image.png](https://i.loli.net/2021/11/20/r3kjeCpyuFEbIBX.png)
 
-![](https://i.ibb.co/pP0znwJ/2020-12-14-22-28-39.png)
+![image.png](https://i.loli.net/2021/11/20/SGnbtJe35TPo1rC.png)
 
 If no linkable frame is found, it will generate a new frame nearby.
 
@@ -94,7 +94,7 @@ You can create a scaled wrapping by `/portal create_scaled_box_view <x1> <y1> <z
 For example, if you want to create a box viewing the end island, use `/execute in minecraft:the_end run portal create_scaled_box_view -100 0 -100 100 128 100 20 @p true`
 (`-100 0 -100 100 128 100` is the inner box on the end dimension, `20` is the scale, the outer box will be placed on `@p` 's position)
 
-![](https://i.ibb.co/yhXHYHm/2020-08-26-21-18-54.png)
+![image.png](https://i.loli.net/2021/11/20/n3zO8CYdRoMc2bl.png)
 
 ## Create the Portal that Points to Different Destinations for Different Players
 By using `/portal set_portal_specific_accessor` command you can make a portal entity only accessible for one player. By putting two different portal entities that are specific for two different players into the same place, you can create a portal that points to different destinations for different players.

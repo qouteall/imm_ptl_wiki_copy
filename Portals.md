@@ -4,7 +4,7 @@ After installing this mod, all existing nether portals will not change.
 
 A nether portal can have a non-rectangular shape and can be horizontal.
 
-![](https://i.ibb.co/KGqRqfZ/2020-12-13-16-49-25.png)
+![image.png](https://i.loli.net/2021/11/20/oRJmMSTIWCEprD3.png)
 
 When you use flint and steel to light an obsidian frame, it will search for an existing obsidian frame that it can link to. If no linkable obsidian frame is found, a new obsidian frame will be generated.
 
@@ -34,18 +34,18 @@ This mod has 4 end portal types: `normal`, `toObsidianPlatform`, `scaledView`, a
 
 The normal type of end portal points to (0 120 0) in the end dimension. When a player jumps into an end portal, the player will get slow falling effect for 6 seconds except when wearing elytra.
 
-![](https://i.ibb.co/C08FFJn/2020-05-26-21-55-16.png)
+![image.png](https://i.loli.net/2021/11/20/bJpMaWSZrmVeFPD.png)
 
 ### Mode : `toObsidianPlatform`
 
 Points to the obsidian platform.
-![](https://i.ibb.co/MsJRGtX/2020-12-13-17-45-49.png)
+![image.png](https://i.loli.net/2021/11/20/QrFmWA3lOjk7f2N.png)
 
 ### Mode : `scaledView`
 
 The `scaledView` type end portal shows an overlook of the entire end island. It consists of 6 portals with scale transformation and "fuse view" enabled.
 
-![](https://i.ibb.co/hmRS3KH/2020-09-15-21-13-34.png)
+![image.png](https://i.loli.net/2021/11/20/DS7iVrdEwZjQGnF.png)
 
 This type of end portal is laggier.
 
@@ -60,7 +60,7 @@ To create a mirror, use flint and steel to right-click on a glass wall.
 
 Mirrors can only be in rectangular shapes. Mirrors can be horizontal. Mirrors can be created on a stained glass wall or glass pane wall. Mirrors vanish when the glass wall is broken.
 
-![](https://i.ibb.co/Jr0fdfv/2020-05-26-21-58-45.png)
+![image.png](https://i.loli.net/2021/11/20/AKrQCBOvMaySbFs.png)
 
 ## Global Portals
 
@@ -86,25 +86,24 @@ There are two types of world wrapping, inward and outward.
 
 The inward world wrapping wraps a finite space and "repeat" it "infinitely". When you cross the right side then you appear on the left side. It is an invisible boundary.
 
-![](https://i.ibb.co/Bnt0Gqc/2020-05-26-22-04-06.png)
+![image.png](https://i.loli.net/2021/11/20/r7QdpFO9Bj4mMlz.png)
 
-![](https://i.ibb.co/jrXPhqV/2020-05-26-22-03-59.png)
+![image.png](https://i.loli.net/2021/11/20/HtwXsqSRVv4NAb2.png)
 
 Use command `/portal global create_inward_wrapping <x1> <z1> <x2> <z2>` to create an inward wrapping zone.
 The zone can be very big because it generates global portals.
 
 The outward world wrapping isolates an area out of space. When you want to go into it from the left, you will appear on the right.
 
-![](https://i.ibb.co/9g72926/2020-05-26-22-04-50.png)
+![image.png](https://i.loli.net/2021/11/20/hXp4kHzi2dZRqGE.png)
 
-![](https://i.ibb.co/1RL3wr4/2020-05-26-22-05-05.png)
+![image.png](https://i.loli.net/2021/11/20/LFQkhCZBV8jYSat.png)
 
 Use command `/portal global create_outward_wrapping <x1> <z1> <x2> <z2>` to create an outward wrapping zone.
 
 To remove a wrapping zone, using `/portal global remove_wrapping_zone` can remove the wrapping zone that you are in.
 
 If you want to remove an outward wrapping zone that you cannot enter, you can use `/portal global view_wrapping_zones` and know the wrapping zone's id, then you can use `/portal global remove_wrapping_zone <id>`.
-
 
 After setting up the wrapping portals, you may see z-fighting or missing block faces on the edge. This is because the portal overlaps with blocks.
 Use command `/portal global clear_wrapping_border` to clear all blocks in the outer border.
@@ -117,7 +116,7 @@ Example:
 `/portal global connect_floor minecraft:the_end minecraft:overworld`
 With this, you will return to the overworld when dropping into the void in end.
 
-![](https://i.ibb.co/JvDMZtj/2020-10-18-22-15-38.png)
+![image.png](https://i.loli.net/2021/11/20/y1dMQjhiPVDesJf.png)
 
 This connection is one-way. If you want to make it bi-way, use
 `/portal global connect_ceil minecraft:overworld minecraft:the_end`
