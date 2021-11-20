@@ -178,7 +178,7 @@ The command sender dimension is the dimension of the view box. For example, if y
 (`-100 0 -100 100 128 100` is a box with radius 100 on the end dimension, `20` is the scale, the outer box will be placed on `@p` 's position)
 
 
-![](https://i.ibb.co/yhXHYHm/2020-08-26-21-18-54.png)
+![image.png](https://i.loli.net/2021/11/20/n3zO8CYdRoMc2bl.png)
 #### `/portal create_scaled_box_view_optimized <x1> <y1> <z1> <x2> <y2> <z2> <scale> <placeTargetEntity>`
 Similar to the above but the created scale box has better rendering performance.
 

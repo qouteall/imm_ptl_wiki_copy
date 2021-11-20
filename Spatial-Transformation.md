@@ -4,7 +4,7 @@ This mod's teleportation is eye-based. If an entity goes through a portal, it wi
 
 ## Rotation Transformation
 
-![](https://i.ibb.co/LRGr8pK/2020-08-06-12-18-32.png)
+![image.png](https://i.loli.net/2021/11/20/2CHKJufPT6ILOxa.png)
 
 [Commands related to rotation](https://github.com/qouteall/ImmersivePortalsMod/wiki/Commands-Reference#rotation)
 
@@ -14,7 +14,7 @@ After crossing a portal with rotation transformation, the player's camera may be
 
 ## Scale Transformation
 
-![](https://i.ibb.co/T0xLjnP/2020-08-06-12-34-27.png)
+![image.png](https://i.loli.net/2021/11/20/6Y9dimqOSn8NUxA.png)
 
 [Commands related to scaling](https://github.com/qouteall/ImmersivePortalsMod/wiki/Commands-Reference#scale)
 

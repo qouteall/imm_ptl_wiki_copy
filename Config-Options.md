@@ -20,15 +20,15 @@ Specifies the maximum portal-in-portal rendering layer.
 
 When rendering infinite mirror room or world wrapping portals, the FPS may go very low because it renders too many portals in portals.
 
-![](https://i.ibb.co/4FFQdtd/Untitled3.png)
+![image.png](https://i.loli.net/2021/11/20/xs9Fb6JDjgWNRlh.png)
 
 Turning down the max portal layer can save your FPS.
 
-![](https://i.ibb.co/MCLrYZt/Untitled4.png)
+![image.png](https://i.loli.net/2021/11/20/8a9IntyHuMRBVcN.png)
 
 If it's 0, you can see the portal view area but the world inside the portal won't be rendered.
 
-![](https://i.ibb.co/XVMXDt9/2020-08-26-15-09-41.png)
+![image.png](https://i.loli.net/2021/11/20/NCKAx3HQZfDVrb7.png)
 
 ### Lag Attack Proof
 When FPS drops because of rendering too many portals, it will enter "lag attack proof" mode and only render one layer of portals and only render near portals which helps you recover from the lag. If that's enabled then you will not be lag-attacked by a mirror room.
@@ -100,7 +100,7 @@ If enabled, the newly generated nether portals will have vanilla nether portal t
 
 Won't affect existing nether portals.
 
-![](https://i.ibb.co/PGgkwFc/2021-01-06-21-39-35.png)
+![image.png](https://i.loli.net/2021/11/20/regLGPdYoUv9MHC.png)
 
 Horizontal nether portals won't have this overlay because the vanilla nether portal block does not have the horizontal variant.
 

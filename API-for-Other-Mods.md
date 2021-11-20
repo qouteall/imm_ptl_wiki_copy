@@ -124,7 +124,7 @@ The portal can face any rotation, be anywhere, point to any position in any dime
 
 It's recommended to check [Portal Attributes](https://github.com/qouteall/ImmersivePortalsMod/wiki/Portal-Attributes) .
 
-![](https://i.ibb.co/2djwR8C/axis.png)
+![axis.png](https://i.loli.net/2021/11/20/XbnLyzM2pWOEIwl.png)
 
 `axisW` and `axisH` are unit vectors and should be perpendicular to each other. The portal orientation has nothing to do with pitch and yaw (because pitch and yaw cannot represent tilted rotations).
 
@@ -180,7 +180,7 @@ If the client experiences conventional dimension change (with loading screen) th
 
 #### GUI Portal
 
-Use ` GuiPortalRendering.submitNextFrameRendering(worldRenderInfo, frameBuffer)` to ask it to render the world into the framebuffer in the next frame. The rendered dimension, position, camera transformation can be specified in the `WorldRenderInfo`
+Use ` GuiPortalRendering.submitNextFrameRendering(worldRenderInfo, frameBuffer)` to ask it to render the world into the framebuffer in the next frame. The rendered dimension, position, camera transformation can be specified in the `WorldRenderInfo`.
 
 That framebuffer will automatically be resized to be the same size as the game window.
 
@@ -195,9 +195,6 @@ This mod (Fabric version)'s mod id is `immersive_portals`. It has 3 mods jar-in-
 * Immersive Portals Core (modid:`imm_ptl_core`)
 * Miscellaneous Utility from qouteall (modid:`q_misc_util`)
 * Cloth Config
-* Mod Menu (not in 1.17.x)
-
-(Cloth Config and Mod Menu are used for providing the config GUI)
 
 
 
