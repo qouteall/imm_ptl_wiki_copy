@@ -54,19 +54,11 @@ If enabled, the bottom dimension will connect to the top dimension, creating a v
 
 
 
-### Common Questions
+### Re-configure Dimension Stack Using the Command
 
-#### How to enable dimension stack on server?
+This mod has command `/portal dimension_stack` (since MC 1.18) that allows re-configuring dimension stack after the world has been created.
 
-Firstly create the world on client and then copy the world to the server.
 
-Dimension stack could greatly degrade performance. You can shrink the loading distance and adjust [Performace Configurations](https://github.com/qouteall/ImmersivePortalsMod/wiki/Config-Options) when using dimension stack.
 
-#### How to disable dimension stack after the world has been created
 
-There is the game rule `ipDimensionStack` that controls whether bedrock is replaced by obsidian. If you want to disable the bedrock replacement,  use command`/gamerule ipDimensionStack false` . Existing generated chunks remain the same.
-
-The game rule only controls the bedrock generation. It does not interfere with global portals. To remove the global portals, use `/portal global remove_connection_ceil <dimension>` `/portal global remove_connection_floor <dimension>`. [See also](https://github.com/qouteall/ImmersivePortalsMod/wiki/Portals#vertical-dimension-connecting-portal)
-
-Vice versa for enabling dimension stack after the world has been created.
 

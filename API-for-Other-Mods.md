@@ -18,7 +18,7 @@ The mod `imm_ptl_core` is incompatible with some mods, but `q_misc_util` is comp
 
 After 1.16 most mods use datapack functionality to add new dimensions. However, that method has these drawbacks:
 
-* It stores all dimension options into `level.dat`. Upon upgrading, DFU cannot recognize non-vanilla generator types and swallows the nether and the end. [See also](https://github.com/TelepathicGrunt/Bumblezone-Fabric/issues/20) (Note: This mod has the code to automatically recover after the nether and end has been swallowed)
+* It stores all dimension options into `level.dat`. Upon upgrading, DFU cannot recognize non-vanilla generator types and swallows the nether and the end. (Note: This mod has the code to automatically recover after the nether and end has been swallowed in 1.16 and 1.17)
 * It requires the generator's seed to be hardcoded inside the dimension json.
 * Upon entering a world, the game shows the warning screen (worlds using experimental settings are not supported).
 

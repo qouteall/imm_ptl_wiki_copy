@@ -220,6 +220,10 @@ Sometimes you went into a one-way portal and want to come back, but you forgot t
 
 By specifying 2 portal entities, it will change these 2 portals' destination and rotation transformation to make them connect.
 
+#### `/portal dimension_stack`
+
+Shows a GUI that allows re-configuring the dimension stack.
+
 ## Debugging Commands
 
 Can be used by creative mode players and permission 2 ones.
