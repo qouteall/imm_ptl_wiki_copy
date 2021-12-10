@@ -184,7 +184,7 @@ Use ` GuiPortalRendering.submitNextFrameRendering(worldRenderInfo, frameBuffer)`
 
 That framebuffer will automatically be resized to be the same size as the game window.
 
-[Example](https://github.com/qouteall/ImmersivePortalsMod/blob/1.16/imm_ptl_core/src/main/java/com/qouteall/immersive_portals/api/example/ExampleGuiPortalRendering.java)
+[Example](https://github.com/qouteall/ImmersivePortalsMod/blob/1.18/imm_ptl_core/src/main/java/qouteall/imm_ptl/core/api/example/ExampleGuiPortalRendering.java)
 
 ![gui_portal.png](https://i.loli.net/2021/06/07/AKBYLdxikuEUR6o.png)
 
@@ -194,11 +194,11 @@ This mod (Fabric version)'s mod id is `immersive_portals`. It has 3 mods jar-in-
 
 * Immersive Portals Core (modid:`imm_ptl_core`)
 * Miscellaneous Utility from qouteall (modid:`q_misc_util`)
-* Cloth Config
+* Cloth Config (for config GUI)
 
 
 
-The Immersive Portals Core contains [the core portal functionality](https://github.com/qouteall/ImmersivePortalsMod/wiki/Implementation-Details):
+The Immersive Portals Core contains the core portal functionality:
 
 * Recursive portal rendering (Rendering context management, transformation management, OpenGL state and framebuffer management) and GUI portal rendering
 * Client multi-world loading
@@ -211,11 +211,9 @@ The Immersive Portals Core contains [the core portal functionality](https://gith
 * Cross portal entity rendering
 * Cross portal collision handling
 * Datapack-based custom portal generation (and general breakable portal)
-* Integration with OptiFine, Sodium (my fork), Pehkui
-* Dimension API
+* Integration with Pehkui, Sodium, Iris
 
-The Core registers portal entity types and portal placeholder block.
-The Core (hopefully) does not change existing vanilla behavior.
+The Core registers portal entity types and portal placeholder block. The Core (hopefully) does not change existing vanilla behavior.
 
 The mod `q_misc_util` has:
 
@@ -239,7 +237,7 @@ Add this into `repositories`
 maven { url 'https://jitpack.io' }
 ```
 
-#### In 1.17
+#### In 1.17 and 1.18
 
 Add this into `dependencies`
 
@@ -259,9 +257,9 @@ modImplementation ('com.github.qouteall.ImmersivePortalsMod:q_misc_util:1.17-SNA
 // If you want to make it jar-in-jar
 include ('com.github.qouteall.ImmersivePortalsMod:q_misc_util:1.17-SNAPSHOT')
 ```
-It's recommended to change `1.17-SNAPSHOT` to a release tag. [Release tags.](https://github.com/qouteall/ImmersivePortalsMod/releases)
+It's highly recommended to change `1.17-SNAPSHOT` to a release tag. See https://jitpack.io/#qouteall/ImmersivePortalsMod
 
-See https://jitpack.io/#qouteall/ImmersivePortalsMod
+Jitpack will build it when you firstly use it. If you enouter `Read time out`, it means that Jitpack haven't finished building it yet, simply try again.
 
 #### In 1.16
 

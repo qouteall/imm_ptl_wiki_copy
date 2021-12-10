@@ -1,13 +1,38 @@
+### Could a Server with This Mod Work with Vanilla Client?
+
+No. Because
+
+* Networking protocol differences. This mod allows the client to load multiple dimensions at the same time, while vanilla only allow one dimension to be loaded at the same time. The vanilla networking packets does not discriminate between different dimensions, so Immersive Portals change the networking protocol to discriminate between dimensions. (It's theoretically possible to automatically adjust to networking protocol differences, but it would be very complex and error-prone so it's not worth the effort)
+* This mod's portals are more flexible than vanilla. This mod's portal can be in any shape and can be tilted. Vanilla portal blocks cannot represent that.
+
+### Could a Client with This Mod Work with Vanilla Server?
+
+A client with this mod should be able to join a vanilla server (if not, report the issue).
+
+However, if the server does not have this mod, then the server does not send chunk data in remote dimension to client, so client cannot render the see-through portal.
+
+### Could a Portal Link to Another Server?
+
+No. Inter-server portals require sending packets across servers, cross-server visibility check, a cross-server dimension id system, and entity transfer between servers. It's very hard to implement.
 
 ### OptiFine Compatibility
-Currently this mod's in 1.16.5 is compatible with OptiFine G7. However portal rendering artefacts may appear when combined with OptiFine. This mod in 1.17.x is not compatible with OptiFine shaders.
 
-You need to disable smooth world if you install OptiFine.
+In MC 1.16.5, this mod is compatible with OptiFine G7 and OptiFine shaders. (The recommended shader is BSL shader. You need to turn off TAA (Temporal Anti Aliasing) and Motion Blur in the shader's option.)
 
-This mod is roughly compatible with most OptiFine shaders. Incompatible with path tracing shaders. The "Fuse View" feature does not work with shaders. The transparent objects in front of the portal can't be normally rendered.
+In MC 1.17.x, this mod is problematic with OptiFine, it's not recommended to use this mod with OptiFine.
 
-You need to turn off TAA (Temporal Anti Aliasing) and Motion Blur in the shader's option.
+In MC 1.18 and above, this mod is incompatible with OptiFine. Because OptiFine is not open-source, debugging with OptiFine is very hard. It's recommended to use Sodium and Iris.
 
-The recommended shader is BSL shader.
+### Sodium Compatibility
 
+In MC 1.18, this mod's version 1.0.4 is roughly compatible with Sodium 0.4.0-alpha5.
 
+In MC 1.17.1, this mod's version 0.35 is roughly compatible with Sodium 0.3.3.
+
+In 1.16.5 you can use [this](https://github.com/qouteall/sodium-fabric/releases).
+
+### Iris Compatibility
+
+In MC 1.18, version 1.0.4 is roughly compatible with the combination of Iris 1.1.3 and Sodium 0.4.0-alpha5.
+
+In MC 1.17.1, version 0.35 is roughly compatible with Iris 1.1.3.

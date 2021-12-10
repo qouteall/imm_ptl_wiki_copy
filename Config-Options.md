@@ -12,7 +12,7 @@ When you are nearby a portal, the FPS may drop due to these reasons:
 
 ### Reduced Portal Rendering
 
-If enabled, fewer chunks will be rendered inside the portal thus increase the FPS. And the faraway portals won't be rendered.
+Deprecated since MC 1.18. Start from MC 1.18, this mod can automatically shrink rendering when client FPS is low.
 
 ### Max Portal Layer
 
