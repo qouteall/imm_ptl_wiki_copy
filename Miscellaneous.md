@@ -21,18 +21,32 @@ In MC 1.16.5, this mod is compatible with OptiFine G7 and OptiFine shaders. (The
 
 In MC 1.17.x, this mod is problematic with OptiFine, it's not recommended to use this mod with OptiFine.
 
-In MC 1.18 and above, this mod is incompatible with OptiFine. Because OptiFine is not open-source, debugging with OptiFine is very hard. It's recommended to use Sodium and Iris.
+In MC 1.18 and above, this mod is incompatible with OptiFine. Because OptiFine is not open-source, debugging with OptiFine is very hard. It's recommended to use Sodium and Iris. [Check this](https://lambdaurora.dev/optifine_alternatives/)
 
 ### Sodium Compatibility
 
-In MC 1.18, this mod's version 1.0.4 is roughly compatible with Sodium 0.4.0-alpha5.
+In MC 1.18, ImmPtl 1.0.4 is roughly compatible with Sodium 0.4.0-alpha5.
 
-In MC 1.17.1, this mod's version 0.35 is roughly compatible with Sodium 0.3.3.
+In MC 1.17.1, ImmPtl 0.35 is roughly compatible with Sodium 0.3.3.
 
 In 1.16.5 you can use [this](https://github.com/qouteall/sodium-fabric/releases).
 
 ### Iris Compatibility
 
-In MC 1.18, version 1.0.4 is roughly compatible with the combination of Iris 1.1.3 and Sodium 0.4.0-alpha5.
+In MC 1.18.x, the latest version of ImmPtl is roughly compatible with the combination of Iris 1.1.3 and Sodium 0.4.0-alpha5.
 
-In MC 1.17.1, version 0.35 is roughly compatible with Iris 1.1.3.
+In MC 1.17.1, the latest version of ImmPtl is roughly compatible with Iris 1.1.3.
+
+Following things cannot be correctly rendered with shaders:
+
+* Semi-transparent things (e.g. stained glass) in front of the portal.  (Due to that, all mirrors will cover the glass texture with shaders on)
+* Fuse-view portals
+* Cross portal entity rendering.
+* Temporal Anti Aliasing (TAA) when a portal is in view
+* Motion Blur when a portal is in view
+* World Curvature with portals
+
+
+
+
+

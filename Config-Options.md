@@ -1,6 +1,10 @@
 ## How to Access the Config
 
-In Fabric version, you can access the config GUI via the mod menu (In 1.17 you need to manually install mod menu). The config file is `/config/immersive_portals_fabric.json` . In Forge version, the config file is `/config/immersive_portals-client.toml` and `/config/immersive_portals-common.toml` .
+In Fabric version, you can access the config GUI via the mod menu (In 1.17 and above you need to manually install mod menu).
+
+You can also access the config GUI by using command `/imm_ptl_client_debug config` in game if you don't install mod menu.
+
+The config file is `/config/immersive_portals_fabric.json` .
 
 ## Client-Side Performance Configurations
 
@@ -110,16 +114,12 @@ If the entity's scale is too small or too big after crossing the portal, its sca
 
 If this config value is `x`, the actual scale limit is `1/2x` to `x` .
 
-### Teleportation Debug
-
-Used for debugging.
-
 ### Portal Searching Range
 The range that the existing portal frame is being searched in when lighting a nether portal (or datapack custom portal).
 
 ### Ease Creative Permission
 
-If disabled, the creative mode players that does not have level 2 permission cannot use any `/portal` command.
+If enabled, the creative mode players that does not have level 2 permission cannot use any `/portal` command.
 
 ### Ease Command Stick Permission
 
