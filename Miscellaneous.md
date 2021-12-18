@@ -25,9 +25,11 @@ In MC 1.18 and above, this mod is incompatible with OptiFine. Because OptiFine i
 
 ### Sodium Compatibility
 
-In MC 1.18, ImmPtl 1.0.4 is roughly compatible with Sodium 0.4.0-alpha5.
+In MC 1.18, the latest version of ImmPtl is roughly compatible with Sodium 0.4.0-alpha5. 
 
-In MC 1.17.1, ImmPtl 0.35 is roughly compatible with Sodium 0.3.3.
+NOTE: The sodium from GitHub actions does not work. 
+
+In MC 1.17.1, the latest version of ImmPtl is roughly compatible with Sodium 0.3.3.
 
 In 1.16.5 you can use [this](https://github.com/qouteall/sodium-fabric/releases).
 
