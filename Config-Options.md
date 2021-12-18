@@ -93,6 +93,10 @@ Used for debugging.
 ### Nether Portal Mode
 [See also](https://github.com/qouteall/ImmersivePortalsMod/wiki/Portals#nether-portals)
 
+### Light Vanilla Nether Portal When Crouching
+
+If enabled, when you are crouching, flint and steel lights vanilla nether portal.
+
 ### End Portal Mode
 [See also](https://github.com/qouteall/ImmersivePortalsMod/wiki/Portals#end-portals)
 

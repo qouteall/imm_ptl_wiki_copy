@@ -48,7 +48,11 @@ Following things cannot be correctly rendered with shaders:
 * Motion Blur when a portal is in view
 * World Curvature with portals
 
+### Why is the Forge Version Unsupported?
 
+Because this mod is just a hobby project. Maintaining the Forge version turns out to be dull and tiresome. Forge's Mixin support is poor. And the Forge community is not friendly to coremodding. This mod is in Apache 2.0 license and anyone can port it to Forge.
+
+(There is a very small chance that I restart supporting the Forge version.)
 
 
 
