@@ -42,30 +42,9 @@ The maximum amount of portals that can be rendered in one frame.
 
 ## Server-Side Performance Configurations
 
-If a player is close to a portal, then the chunks on the other side will be loaded and ticked.
-The chunks near the player are directly loaded.
-The chunks that are only visible through the portal are remotely (indirectly) loaded chunks.
-The chunk loading radius of a portal is determined by the player's distance to the portal.
+If a player is close to a portal, then the chunks on the other side will be loaded and ticked. The chunk loading radius of a portal is determined by the player's distance to the portal.
 
-|Player distance to portal|Portal chunk loading radius|
-|-|-|
-|0 ~ 5|The same as the server loading distance|
-|5 ~ 15|Two thirds of the server loading distance|
-|15 ~ 48|One third of the server loading distance|
-|> 48|0|
-
-Global portals are different. The global portal's loading distance is `serverLoadingDistance - (playerDistanceToPortal / 16)`
-
-Not only the portals that near the player load chunks, a chunk-loading portal can make its nearby portal (within 16 blocks) to also become chunk loading portals. The indirect chunk loading radius is one fourth of the server loading distance.
-
-Reducing the extra chunks loaded can increase server performance.
-
-### Actively Load Remote Chunks
-
-If this is turned off, remote chunks will not be ticked.
-Redstone and entities will not move in remote chunks.
-Turning this off increases server performance.
-(If this is disabled, nether portal linking may not work normally.)
+This mod has one-layer indirect loading and two-layer indirect loading. One-layer indirect loading means portals nearby a player can load chunks. Two-layer indirect loading means the portals near the one-layer loading portal's destination can also load chunks.
 
 ### Indirect Loading Radius Cap
 Defines the maximum loading radius of indirect chunk loading through portals. Turning it down means that fewer chunks will be loaded when a player approaches a portal thus increase server performance.

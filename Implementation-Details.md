@@ -1,4 +1,4 @@
-The see-through portals and seamless teleportation are actually very hard to implement. This mod is a technical feat. Here I will introduce the implementation details of this mod:
+The see-through portals and seamless teleportation are actually very hard to implement. This mod is a feat in Minecraft modding. 
 
 ## Portal Rendering
 
@@ -89,7 +89,7 @@ If not correctly clipped, the portal will be rendered wrongly:
 
 This mod do clipping by transforming the vertex shader and set `gl_ClipDistance`.
 
-There is another culling method using oblique projection. http://www.terathon.com/lengyel/Lengyel-Oblique.pdf 
+There is another clipping method using oblique projection. http://www.terathon.com/lengyel/Lengyel-Oblique.pdf 
 
 This mod does not use oblique projection for clipping because **oblique projection cannot do correct clipping in all cases.** If the angle between the culling plane normal with view vector is not bigger than 90 degrees, it will not work at all.
 
