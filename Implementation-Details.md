@@ -54,13 +54,17 @@ That's only the main skeleton of portal rendering. Other details includes:
 * The face culling should be inversed when rendering odd number layers of mirrors (for example, 1, 3, 5 layers of mirrors).
 
 ### Frustum Culling Optimization
-When rendering portals, it will do advanced frustum culling to improve performance.
+This mod use frustum culling optimization in 3 cases: 
+
+* To determine whether a portal is invisible before occlusion query rendering
+* To cull the invisible sections when rendering portal content (inner frustum culling)
+* To cull the things occluded by portal in the outer world (outer frustum culling)
 
 For example, when rendering this scene
 
 ![](https://i.ibb.co/ykrDqxv/2020-03-06-21-59-27.png)
 
-The sections behind the portal will be culled. (outer frustum culling)
+The sections occluded by the portal will be culled. (outer frustum culling)
 
 ![](https://i.ibb.co/N25Y3hB/2020-03-06-21-59-37.png)
 
@@ -90,6 +94,14 @@ There is another culling method using oblique projection. http://www.terathon.co
 This mod does not use oblique projection for clipping because **oblique projection cannot do correct clipping in all cases.** If the angle between the culling plane normal with view vector is not bigger than 90 degrees, it will not work at all.
 
 And oblique projection make it harder to be compatible with Iris.
+
+### Portal Visibility Prediction Optimization Utilizing Temporal Coherence
+
+This mod use occlusion query to determine whether a portal is visible. Portal rendering is expensive so we need to only render visible portals.
+
+However, occlusion query itself has cost. Taking an occlusion query result requires waiting for GPU to finish the previous rendering. Normally CPU and GPU works asynchronously, CPU don't need to wait for GPU finish the first draw call to submit the second draw call. The synchronization can cost a lot of performance.
+
+This mod firstly submit the occlusion query and then predict the portal visibility from the old occlusion results, avoid waiting for the occlusion query result in most cases. The prediction is correct in most cases because of temporal coherence: a portal that's visible will likely to be visible in the next frame, vice versa. In case of successive prediction failure, it will automatically turn to conservative prediction mode. This will improve portal rendering performance in a scene with many portals.
 
 ### Mirror Rendering
 
@@ -124,13 +136,13 @@ For example, this sheep is partly in portal and partly outside of portal
 
 Vanilla Minecraft only allows loading one dimension in client at once. This mod eliminates that limitation and changed many code that's built upon one-client-world assumption. To maintain minimal intrusive and maximum generality, this mod switches the client world context when invoking code associated with remote dimensions.
 
-### Eliminate the Near-Loaded-Limitation
+### Eliminate the Near-Loading Limitation
 
 Vanilla Minecraft only allows chunks nearby the player to be loaded. This mod's portal allows loading very far chunks, so this limitation must be eliminated. Vanilla use a fixed size array to store chunk references and chunk rendering info references. This mod changed them into maps.
 
-### Chunk Visibility and Entity Visibility Changes
+### Chunk Visibility and Entity Visibility Tracking
 
-To do world information synchonization, the server must track the chunk visibility and entity visibility for every player. This mod rewrites chunk tracking algorithm. ImmPtl's chunk tracking algorithm updates periodcally and searches for directly and indrectly visible portals. To mitigate the lag spikes, this mod's chunk tracking algorithm make it gradually loads chunks from near to far. Entity tracking mechanics also gets changed.
+To do world information synchronization, the server must track the chunk visibility and entity visibility for every player. This mod rewrites chunk tracking algorithm. ImmPtl's chunk tracking algorithm updates periodically and searches for directly and indirectly visible portals. To mitigate the lag spikes, this mod's chunk tracking algorithm make it gradually loads chunks from near to far. Entity tracking mechanics also gets changed.
 
 ### Networking Protocol Changes
 
@@ -185,7 +197,15 @@ For example, in this dimension stack scene, placing a block upon the top nether 
 
 ![2021-12-18_15.19.55.png](https://s2.loli.net/2021/12/18/kPdh7RjqvtTFlY3.png)
 
-## Handling Rotation Animation and Gravity Change
+## Other
+
+### Handling Rotation Animation and Gravity Change
 
 If the player cross a portal with rotation transformation, its camera rotation may become tilted which is not a valid camera transformation. To make the teleportation seamless, this mod will do a smooth camera rotation transition. It involves some quaternion math. If gravity changer mod is present, it will take gravity rotations into consideration.
+
+### Portal Frame Matching
+
+This mod supports any-shaped nether portal (with size limit) and also supports adaptive matching for non-square portals. For example, these two L-shaped portals can match, although their scale and rotation are different.
+
+![2021-12-18_16.02.18.png](https://s2.loli.net/2021/12/18/KqDJszQhZGWVmIM.png)
 
