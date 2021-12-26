@@ -11,10 +11,6 @@ Discord server: https://discord.gg/BZxgURK
 
 Yes. The server and client should both install this mod. (This mod is not a plugin and cannot be used on bukkit or spigot.)
 
-##### How to enable dimension stack on a server?
-
-Firstly create the dimension stack world on client and then copy to server.
-
 ##### How to integrate with other mod's portals?
 
 You can use [datapack](https://github.com/qouteall/ImmersivePortalsMod/wiki/Datapack-Based-Custom-Portal-Generation#convert_vanilla_nether_portaljson-convent-vanilla-nether-portals-into-see-through-portals-if-the-shapes-are-compatible) to make it convert other mod's portals into see-through portals.
@@ -23,12 +19,7 @@ You can use [datapack](https://github.com/qouteall/ImmersivePortalsMod/wiki/Data
 
 Yes. (Especially with dimension stack and scaled-view-type end portal.)
 
-If you experience lag, you can
-* Turn down render distance.
-* Enable "reduced portal rendering".
-* Disable "actively load remote chunks".
-
-See also: [Config Options](https://github.com/qouteall/ImmersivePortalsMod/wiki/Config-Options)
+You can use Sodium, but not all Sodium versions are compatible with ImmPtl. [Check this](https://github.com/qouteall/ImmersivePortalsMod/wiki/Miscellaneous#sodium-compatibility)
 
 ##### How to make portal helper craft-able in survival?
 
@@ -41,6 +32,10 @@ This mod does not change existing vanilla portals. You need to light new portals
 ##### The nether portal does not link
 
 It can only link to an empty obsidian frame with the same shape and orientation (unless you change the nether portal mode in  the config).
+
+##### Which mods are incompatible with ImmPtl?
+
+[Known compatibility issues](https://github.com/qouteall/ImmersivePortalsMod/issues?q=is%3Aissue+is%3Aopen+label%3A%22Mod+Compatibility%22).
 
 #### How to install Immersive Portals Mod (Fabric version)
 

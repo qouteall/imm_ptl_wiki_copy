@@ -1,5 +1,5 @@
 
-这是空间折叠(Immersive Portals)模组的说明书。其说明内容针对1.16版本对应的模组。
+这是空间折叠(Immersive Portals, ImmPtl)模组的说明书。其说明内容针对1.16版本对应的模组。
 
 CurseForge: https://www.curseforge.com/minecraft/mc-mods/immersive-portals-mod
 
@@ -11,10 +11,6 @@ Discord server: https://discord.gg/BZxgURK
 
 是的。服务端与客户端都应装本模组。
 
-##### 怎样在服务器中使用位面纵向堆叠？{#How to enable dimension stack on a server?}
-
-先用客户端创建位面纵向堆叠的世界，再将存档复制到服务端上。
-
 
 ##### 怎样改变其他模组的传送门？{#How to integrate with other mod's portals?}
 
@@ -24,16 +20,23 @@ Discord server: https://discord.gg/BZxgURK
 
 是的。(尤其是位面纵向堆叠与缩放式末地传送门)
 
-如果你遇到卡顿，可以
-* 调低渲染距离
-* 开启 "限制性传送门渲染".
-* 关闭 "完全加载仅传送门可视区块".
-
-参见[设置选项](https://github.com/qouteall/ImmersivePortalsMod/wiki/Config-Options)
+可以用钠(sodium)模组，但不是所有版本的钠模组都与本模组兼容。[Check this](https://github.com/qouteall/ImmersivePortalsMod/wiki/Miscellaneous#sodium-compatibility)
 
 ##### 怎样在生存模式中使用传送门辅助方块{#How to make portal helper craft-able in survival?}
 
 [参见](https://github.com/qouteall/ImmersivePortalsMod/wiki/Portal-Customization#how-to-use-similar-functionality-in-survival-mode)
+
+##### 地狱传送门不能透视{#The nether portal is not see-through}
+
+安装本模组后，已有传送门不会变化，需要点亮新传送门。
+
+##### 地狱传送门无法连接{#The nether portal does not link}
+
+地狱传送门只能连接到相同方向、相同形状的黑曜石框架（除非在设置中修改地狱传送门模式）。
+
+##### 本模组与哪些模组不兼容？{#Which mods are incompatible with ImmPtl?}
+
+[Known compatibility issues](https://github.com/qouteall/ImmersivePortalsMod/issues?q=is%3Aissue+is%3Aopen+label%3A%22Mod+Compatibility%22).
 
 #### 怎样安装该模组{#How to install Immersive Portals Mod (Fabric version)}
 
