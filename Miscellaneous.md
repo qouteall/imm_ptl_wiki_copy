@@ -54,5 +54,11 @@ Because this mod is just a hobby project. Maintaining the Forge version turns ou
 
 (There is a very small chance that I restart supporting the Forge version.)
 
+### What Happens if I Remove ImmPtl?
 
+All see-through portals will vanish. Even if you re-install ImmPtl, the portals cannot recover. (There is a small chance that portals in unloaded chunks may remain.)
+
+Vanilla nether/end portals still exist. Dimension stack bedrock replacement will not work.
+
+ 
 

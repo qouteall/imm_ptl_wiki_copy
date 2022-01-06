@@ -8,21 +8,29 @@ Use [vertical connecting portals](https://github.com/qouteall/ImmersivePortalsMo
 
 
 
-
-
 You can see the "Dimension Stack" button when creating a new world.
 
-![image.png](https://i.loli.net/2021/11/20/helqg7vkcdML5n3.png)
+![2021-12-31_18.16.46.png](https://s2.loli.net/2021/12/31/k5ghxSuULNtGK9V.png)
 
 
 
-![image.png](https://i.loli.net/2021/11/20/REKhZgzprG15XqB.png)
+### Main Options
 
+#### Loop
 
+If enabled, the bottom dimension will connect to the top dimension, creating a vertical world wrapping.
 
-### Dimension Stack Options
+#### Gravity Change
+
+If enabled, the portals will change your gravity direction when you go through. It requires Gravity Changer mod.
+
+If no dimension is flipped, this option will have no effect.
+
+### Per-Dimension Options
 
 By clicking "Edit" you can edit the selected dimension entry's options:
+
+![2021-12-31_18.16.51.png](https://s2.loli.net/2021/12/31/9VBFmxTPLn17oRK.png)
 
 #### Scale
 
@@ -46,13 +54,15 @@ Controls the portals' rotating transformation. Make the dimension looks rotated 
 
 ![image.png](https://i.loli.net/2021/11/20/Fnv4GOCW8A3wiJM.png)
 
----
+#### TopY, BottomY
 
-#### Loop
+Specify the bottom and top Y level of the portal. You can left these two empty by default.
 
-If enabled, the bottom dimension will connect to the top dimension, creating a vertical world wrapping.
+If Bottom Y is left empty, it will use the dimension type's `min_y` property. If Top Y is left empty, it will use the dimension type's `min_y` + `logical_height`.
 
+#### Bedrock Replacement
 
+Specify a block that the bedrock will be replaced into. If empty, the bedrock will not be replaced.
 
 ### Re-configure Dimension Stack Using the Command
 

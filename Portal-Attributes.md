@@ -45,9 +45,15 @@ NBT tag: `scale`
 ### Teleportation Attributes
 
 #### Whether Teleportation Changes Scale
-Whether the teleportation changes entity scale if the portal has a scale transformation.
+Whether the teleportation changes entity scale if the portal has a scale transformation. It requires Pehkui mod to work.
 
 NBT tag: `teleportChangesScale`
+
+#### Whether Teleportation Changes Gravity Direction
+
+Whether the teleportation transforms the player's gravity location if the portal has a rotation transformation. It requires Gravity Changer mod to work.
+
+NBT tag: `teleportChangesGravity`
 
 #### Whether to Adjust The Entity's Position After Teleporting
 If true, the player will be moved up if the player is inside the ground after teleportation.

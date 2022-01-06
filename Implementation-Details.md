@@ -12,33 +12,33 @@ The portal rendering pseudocode:
 
 ```
 renderWorld() {
-	prepare
-	render solid things
-	renderPortals()
-	render transparent things
+    prepare
+    render solid things
+    renderPortals()
+    render transparent things
 }
 
 renderPortals() {
-	if exceeds recursion limit, exit
-	for each portal nearby {
-		if portal is in frustum {
-			render the portal shape with occlusion query
-				with stencil func: equal to the portal layer
-				with stencil operation: increment by 1
-			predict the portal visibility (avoid waiting for occlusion query result)
-			if the portal is deemed visible {
-				outerStencil = current portal layer
-				increment portal layer by 1
-				with stencil func: equal to the portal layer, do:
-					clear depth
-					renderWorld() with new position, new dimension, new camera transformation
-						(will do recursion)
-					set depth value by portal shape
-					reset stencil value to outerStencil
-				decrement portal layer by 1
-			}
-		}
-	}
+    if exceeds recursion limit, exit
+    for each portal nearby {
+        if portal is in frustum {
+            render the portal shape with occlusion query
+                with stencil func: equal to the portal layer
+                with stencil operation: increment by 1
+            predict the portal visibility (avoid waiting for occlusion query result)
+            if the portal is deemed visible {
+                outerStencil = current portal layer
+                increment portal layer by 1
+                with stencil func: equal to the portal layer, do:
+                    clear depth
+                    renderWorld() with new position, new dimension, new camera transformation
+                        (will do recursion)
+                    set depth value by portal shape
+                    reset stencil value to outerStencil
+                decrement portal layer by 1
+            }
+        }
+    }
 }
 ```
 
