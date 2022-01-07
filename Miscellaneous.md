@@ -35,7 +35,7 @@ In 1.16.5 you can use [this](https://github.com/qouteall/sodium-fabric/releases)
 
 ### Iris Compatibility
 
-In MC 1.18.x, the latest version of ImmPtl is roughly compatible with the combination of Iris 1.1.3 and Sodium 0.4.0-alpha5.
+In MC 1.18.x, the latest version of ImmPtl is roughly compatible with the combination of Iris 1.1.4 and Sodium 0.4.0-alpha5.
 
 In MC 1.17.1, the latest version of ImmPtl is roughly compatible with Iris 1.1.3.
 
