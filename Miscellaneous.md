@@ -17,7 +17,7 @@ No. Inter-server portals require sending packets across servers, cross-server vi
 
 ### OptiFine Compatibility
 
-In MC 1.16.5, this mod is compatible with OptiFine G7 and OptiFine shaders. (The recommended shader is BSL shader. You need to turn off TAA (Temporal Anti Aliasing) and Motion Blur in the shader's option.)
+~~In MC 1.16.5, this mod is compatible with OptiFine G7 and OptiFine shaders. (The recommended shader is BSL shader. You need to turn off TAA (Temporal Anti Aliasing) and Motion Blur in the shader's option.)~~ In MC 1.16.5 ImmPtl crashes with OptiFine G7. This issue is under investigation.
 
 In MC 1.17.x, this mod is problematic with OptiFine, it's not recommended to use this mod with OptiFine.
 
@@ -48,6 +48,8 @@ Following things cannot be correctly rendered with shaders:
 * Motion Blur when a portal is in view
 * World Curvature with portals
 
+SEUS PTGI shader is incompatible.
+
 ### Why is the Forge Version Unsupported?
 
 Because this mod is just a hobby project. Maintaining the Forge version turns out to be dull and tiresome. Forge's Mixin support is poor. And the Forge community is not friendly to coremodding. This mod is in Apache 2.0 license and anyone can port it to Forge.
@@ -56,7 +58,7 @@ Because this mod is just a hobby project. Maintaining the Forge version turns ou
 
 ### What Happens if I Remove ImmPtl?
 
-All see-through portals will vanish. Even if you re-install ImmPtl, the portals cannot recover. (There is a small chance that portals in unloaded chunks may remain.)
+All see-through portals will vanish. Even if you re-install ImmPtl, the portals cannot recover. (Portals in unloaded chunks may remain.)
 
 Vanilla nether/end portals still exist. Dimension stack bedrock replacement will not work.
 

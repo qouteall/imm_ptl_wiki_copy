@@ -17,8 +17,6 @@
 
 ### 高清修复模组（OptiFine）兼容性
 
-在MC 1.16.5中，本模组兼容OptiFine G7 以及光影。(光影推荐 BSL 。需要在光影的设置中关闭TAA (Temporal Anti Aliasing) 以及动态模糊。
-
 在MC 1.17.x中，本模组与OptiFine的兼容性较差，不推荐使用。
 
 从MC 1.18 开始，本模组不兼容OptiFine。由于OptiFine不开源，调试OptiFine兼容问题非常困难。建议使用 Sodium 和 Iris. [OptiFine Alternatives](https://lambdaurora.dev/optifine_alternatives/)
@@ -33,7 +31,7 @@
 
 ### Iris 兼容性
 
-在MC 1.18.x, 本模组最新版本在 Iris 1.1.3 和Sodium 0.4.0-alpha5同时安装的情况下与之兼容。
+在MC 1.18.x, 本模组最新版本在 Iris 1.1.4 和Sodium 0.4.0-alpha5同时安装的情况下与之兼容。
 
 在MC 1.17.1, 本模组兼容 Iris 1.1.3.
 
@@ -52,5 +50,9 @@
 
 (有小几率我可能重新开始维护Forge版本)
 
+### 如果卸载本模组，会发生什么?
 
+所有的可透视传送门将消失。就算重新安装本模组，消失的传送门也不会恢复。（未加载区块中的传送门有可能不消失。）
+
+原版传送门将仍然存在。位面纵向堆叠的基岩替换将不生效。
 
