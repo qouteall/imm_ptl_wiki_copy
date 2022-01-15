@@ -21,17 +21,9 @@
 
 从MC 1.18 开始，本模组不兼容OptiFine。由于OptiFine不开源，调试OptiFine兼容问题非常困难。建议使用 Sodium 和 Iris. [OptiFine Alternatives](https://lambdaurora.dev/optifine_alternatives/)
 
-### 钠模组（Sodium）兼容性
-
-在MC 1.18中，本模组的最新版本兼容Sodium 0.4.0-alpha5。
-
-在MC 1.17.1中，本模组最先版本兼容 Sodium 0.3.3.
-
-在1.16.5 可以用 [这个](https://github.com/qouteall/sodium-fabric/releases).
-
 ### Iris 兼容性
 
-在MC 1.18.x, 本模组最新版本在 Iris 1.1.4 和Sodium 0.4.0-alpha5同时安装的情况下与之兼容。
+在MC 1.18.x, 本模组最新版本在 Iris 1.1.4 和Sodium同时安装的情况下与之兼容。
 
 在MC 1.17.1, 本模组兼容 Iris 1.1.3.
 
