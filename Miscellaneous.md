@@ -25,7 +25,7 @@ In MC 1.18 and above, this mod is incompatible with OptiFine. Because OptiFine i
 
 ### Iris Compatibility
 
-In MC 1.18.x, the latest version of ImmPtl is roughly compatible with the combination of Iris 1.1.4 and Sodium 0.4.0-alpha5.
+In MC 1.18.x, the latest version of ImmPtl is roughly compatible with the combination of Iris 1.2.0 and Sodium.
 
 In MC 1.17.1, the latest version of ImmPtl is roughly compatible with Iris 1.1.3.
 

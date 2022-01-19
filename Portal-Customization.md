@@ -26,9 +26,9 @@ Portal helper generates unbreakable portals and is intended to be used in creati
 
 ### 1 Nether Portal = 4 Portal Entities
 
-**How does this mod distinguish between one-way portal, bi-way portal and bi-way bi-faced portal? There is no "bi-way" attribute. A bi-way portal is a combination of two one-way portals.**
+How does this mod distinguish between one-way portal, bi-way portal and bi-way bi-faced portal? There is no "bi-way" attribute. A bi-way portal is a combination of two one-way portals.
 
-**Every portal entity is a one-faced and one-way portal. A normal nether portal is bi-faced and bi-way, it consists of 2 portal entities in the overworld and 2 portal entities in the nether, 4 portal entities in total.**
+Every portal entity is a one-faced and one-way portal. A normal nether portal is bi-faced and bi-way, it consists of 2 portal entities in the overworld and 2 portal entities in the nether, 4 portal entities in total.
 
 Command `/portal delete_portal` will only remove one portal entity.
 
@@ -37,9 +37,9 @@ If it's used for a bi-way bi-faced portal, the portal entity that you are target
 
 Command `/portal complete_bi_way_portal` will create the "reverse" version of the portal entity thus make the portal bi-way. Command `/portal complete_bi_way_bi_faced_portal` creates 3 portals to make the portal bi-way bi-faced.
 
-Command `/portal eradicate_portal_clutter` removes the whole portal. If used to a bi-way bi-faced portal, all 4 portal entities will be removed.
+Command `/portal eradicate_portal_cluster` removes the whole portal. If used to a bi-way bi-faced portal, all 4 portal entities will be removed.
 
-If you want to edit a bi-way bi-faced portal, 4 portal entities need to be edited. It's recommended to firstly use `/portal remove_connected_portals` to make only one portal entity remain. Then you can move the portal or change its space transformation without leaving unwanted portal entities. Then you can make this portal two-way and two-faced by `/portal complete_bi_way_bi_faced_portal`.
+If you want to edit a bi-way bi-faced portal, 4 portal entities need to be edited. It's recommended to firstly enable `bindCluster` using command `/portal set_portal_nbt {bindCluster:true}`. Then when you edit one portal entity, the linked portal entities will also change accordingly.
 
 ### Portal-Targeted Commands
 

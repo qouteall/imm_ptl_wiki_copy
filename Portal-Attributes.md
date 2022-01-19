@@ -1,6 +1,7 @@
 These are the attributes that a portal has.
 
 You can edit them by `/portal set_portal_nbt` command.
+
 [Portal Customization](https://github.com/qouteall/ImmersivePortalsMod/wiki/Portal-Customization)
 
 ### Body Attributes
@@ -15,10 +16,14 @@ Width is the portal shape's length along the direction of `axisW`. Height is the
 
 NBT tags: `width` `height`
 
+Example: Set the width and height to 100: `/portal set_portal_nbt {width:100,height:100,specialShape:[]}`
+
 #### The Special Shape
 Optional. Consists of various 2d triangles.
 
 NBT tag: `specialShape` (It's a number list. Every 2 numbers represent a 2d point(x axis is axisW and y axis is axisH). Every 3 points represent a triangle)
+
+Example: Give the portal a triangular shape `/portal set_portal_nbt {width:2,height:2,specialShape:[-1.0d,0.0d,1.0d,0.0d,0d,1.0d],cullableXStart:0,cullableXEnd:0,cullableYStart:0,cullableYEnd:0}`
 
 ### Transformation Attributes
 
@@ -48,6 +53,8 @@ NBT tag: `scale`
 Whether the teleportation changes entity scale if the portal has a scale transformation. It requires Pehkui mod to work.
 
 NBT tag: `teleportChangesScale`
+
+Example: Make a portal that has scaling to not change the crossing entity's scale `/portal set_portal_nbt {teleportChangesScale:false}`
 
 #### Whether Teleportation Changes Gravity Direction
 
@@ -80,10 +87,12 @@ Using command `/portal set_portal_nbt` command to change this requires level-2 p
 
 NBT tag: `commandsOnTeleported`
 
+Example: Make the portal to damage the entities that cross this portal `/portal set_portal_nbt {commandsOnTeleported:["/effect give @s minecraft:instant_damage 1"]}`
+
 ### Accessibility Attributes
 
 #### Teleportable
-If set to false then you cannot teleport through but can still see through.
+If set to false, you cannot teleport through but can still see through.
 
 NBT tag: `teleportable`
 
@@ -97,6 +106,43 @@ Optional. The UUID of the specific player that can access this portal. If it's p
 
 NBT tag: `specificPlayerId`
 
+### Portal Animation
+
+All portals by default will change smoothly when you use `/portal` commands to change the portal's attributes.
+
+Following things can be animated:
+
+* Portal position, destination
+* Portal orientation
+* Portal rotation transformation
+* Portal scale transformation
+
+The portal width, height and shape cannot be animated.
+
+NBT tag: `animation`
+
+The `animation` tag has two sub-tags: `curve` and `durationTicks`. `curve` can be `linear`, `sine` or `circle`.
+
+Example:
+
+* Disable portal animation: `/portal set_portal_nbt {animation:{durationTicks:0}}`
+
+* Give the portal a linear animation with duration of 2 seconds: `/portal set_portal_nbt {animation:{curve:"linear",durationTicks:40}}`
+
+The portal animation is client-side. On the server side the portal moves abruptly. The animation can be smooth when the networking condition is not good.
+
+The portal animation can be triggered by `/portal` commands. Using `/tp` command won't trigger the animation.
+
+The relative teleportation/collision is not yet implemented. 
+
+### Bind-Cluster
+
+This mod's every portal entity is one-way and one-faced. A bi-way bi-faced nether portal consists of 4 portal entities. That 4 portal entities are called a portal cluster. To edit that bi-way bi-faced portal, 4 portal entities needs to be changed.
+
+By enabling `bindCluster`, if you edit one portal entity using `/portal` commands, the other 3 portals will also be updated accordingly. This makes portal manipulation easier.
+
+NBT tag: `bindCluster`
+
 ### Rendering Attributes
 
 #### Fuse View
@@ -105,6 +151,8 @@ If true, the portal rendering will not render the sky background and maintain th
 ![image.png](https://i.loli.net/2021/11/20/jhZId1mWuVrExe7.png)
 
 NBT tag: `fuseView`
+
+Example: Make the portal fuse-view `/portal set_portal_nbt {fuseView:true}`
 
 #### Rendering Mergable
 If true, when the portal touches another portal that has the same spacial transformation, these portals will be "grouped" and the rendering performance will be improved which result in higher FPS. But the front clipping functionality does not work normally when rendering the grouped portal.
@@ -138,6 +186,8 @@ If true, the portal won't break if the frame structure is broken.
 
 NBT tag: `unbreakable`
 
+Example: Make a nether portal unbreakable `/portal set_portal_nbt {unbreakable:true}`
+
 ### Overlay Attributes
 
 #### Overlay Block State
@@ -154,16 +204,6 @@ NBT tag: `overlayOpacity`
 The overlay offset along the portal's facing direction.
 
 NBT tag: `overlayOffset`
-
-## Command Examples
-
-* Make a nether portal unbreakable `/portal set_portal_nbt {unbreakable:true}`
-* Make a portal that has scaling to not change the crossing entity's scale `/portal set_portal_nbt {teleportChangesScale:false}`
-* Make the portal fuse-view `/portal set_portal_nbt {fuseView:true}`
-* Adjust the width and height for a square portal: `/portal set_portal_nbt {width:100,height:100,specialShape:[]}`
-* Make the portal to damage the entities that cross this portal: `/portal set_portal_nbt {commandsOnTeleported:["/effect give @s minecraft:instant_damage 1"]}`
-* Give the portal a diamond block overlay `/portal set_portal_nbt {overlayBlockState:{Name:"minecraft:diamond_block"},overlayOpacity:0.6,overlayOffset:-0.3}`  (Only works for breakable portals such as nether portals, not working for portals created by portal helper)
-* Give the portal a triangular shape `/portal set_portal_nbt {width:2,height:2,specialShape:[-1.0d,0.0d,1.0d,0.0d,0d,1.0d],cullableXStart:0,cullableXEnd:0,cullableYStart:0,cullableYEnd:0}`
 
 ### About Portal Shape Editing
 
