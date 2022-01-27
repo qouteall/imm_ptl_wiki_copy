@@ -116,12 +116,11 @@ Following things can be animated:
 * Portal orientation
 * Portal rotation transformation
 * Portal scale transformation
-
-The portal width, height and shape cannot be animated.
+* Portal width and height (If the portal has a special shape, then width and height cannot be animated)
 
 NBT tag: `animation`
 
-The `animation` tag has two sub-tags: `curve` and `durationTicks`. `curve` can be `linear`, `sine` or `circle`.
+The `animation` tag has two sub-tags: `curve` and `durationTicks`. `curve` can be `linear`, `sine` or `circle`. The `curve` does not change trajectory, it only determine the speed change during animation.
 
 Example:
 

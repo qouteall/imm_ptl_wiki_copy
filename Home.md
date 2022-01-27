@@ -60,4 +60,3 @@ And then [download Immersive Portals mod](https://qouteall.fun/immptl). You now 
 Note that you need to download the corresponding mod jar for the corresponding Minecraft version.
 
 It's recommended to use Pehkui mod with this mod. Pehkui provides entity scaling functionality. Pehkui: https://www.curseforge.com/minecraft/mc-mods/pehkui (Currently this mod does not have integration with Pehkui on Forge.)
-
