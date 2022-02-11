@@ -52,5 +52,19 @@ All see-through portals will vanish. Even if you re-install ImmPtl, the portals 
 
 Vanilla nether/end portals still exist. Dimension stack bedrock replacement will not work.
 
- 
+ ### Is it Possible to Make Fluid and Redstone Work Across a Portal?
+
+No. This mod's portal supports scaling and rotation transformation. The portal can be in anywhere and be in any orientation. It's hard to imagine how redstone signal transfers when the blocks are not aligned.
+
+![2022-02-11_22.07.25.png](https://s2.loli.net/2022/02/11/oBQI3VuXF7NKwqk.png)
+
+But you can use entities to carry signals through a portal. For example, an item dispenser on one side and a hopper on the other side.
+
+Although it's possible to implement cross portal redstone and fluid when the portal is aligned with blocks, it would be very hard to implement. And cross-portal redstone machines won't be stable because of the chunk loading delay.
+
+
+
+
+
+
 

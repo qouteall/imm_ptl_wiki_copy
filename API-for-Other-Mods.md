@@ -1,9 +1,5 @@
 The Fabric version of Immersive Portals mod contains some API for other mods to use.
 
-### 1.17 Update Log
-
-The API has undergone a big name/package rearrangement during the 1.17 update. The package `com.qouteall.immersive_portals` in 1.17 has become `qouteall.imm_ptl.core` in 1.17. The dimension API and the remote procedure call utility has been moved into a new mod `q_misc_util`.
-
 ### API Overview
 
 Immersive Portals mod's API is now split across 2 mods, one is Immersive Portals Core (`imm_ptl_core`), the other is the Miscellaneous Utility Library from qouteall (`q_misc_util`).
@@ -11,6 +7,10 @@ Immersive Portals mod's API is now split across 2 mods, one is Immersive Portals
 `q_misc_util` contains the dimension API and remote procedure call utility. `imm_ptl_core` contains the portal functionality.
 
 The mod `imm_ptl_core` is incompatible with some mods, but `q_misc_util` is compatible with most mods and you can safely include `q_mist_util` if you only want to use the dimension API and remote procedure call API.
+
+If you have any issue using the API, you can contact qouteall via [discord](https://discord.gg/BZxgURK) or open a [discussion](https://github.com/qouteall/ImmersivePortalsMod/discussions).
+
+Example: [MiniScaled mod](https://github.com/qouteall/MiniScaledMod) uses ImmPtl API.
 
 ### The Miscellaneous Utility API (`q_misc_util`)
 
@@ -259,13 +259,4 @@ include ('com.github.qouteall.ImmersivePortalsMod:q_misc_util:1.17-SNAPSHOT')
 ```
 It's highly recommended to change `1.17-SNAPSHOT` to a release tag. See https://jitpack.io/#qouteall/ImmersivePortalsMod
 
-Jitpack will build it when you firstly use it. If you enouter `Read time out`, it means that Jitpack haven't finished building it yet, simply try again.
-
-#### In 1.16
-
-```
-modImplementation ('com.github.qouteall.ImmersivePortalsMod:imm_ptl_core:1.16-SNAPSHOT'){
-	exclude(group: "net.fabricmc.fabric-api")
-}
-```
-
+JitPack will build it when you firstly use it. If you encounter `Read time out`, it means that JitPack haven't finished building it yet, simply try again.

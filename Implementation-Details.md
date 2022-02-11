@@ -130,6 +130,14 @@ For example, this sheep is partly in portal and partly outside of portal
 
 
 
+### Portal Rendering Merge Optimization
+
+A scale box consists of 6 outer portals and 6 inner portals. Without the portal rendering merge feature, it may require 2 or 3 portal renderings to render a scale box. After merging the portals in a scale box, one scale box can be rendered in one portal rendering.
+
+![miniscaled1.png](https://i.loli.net/2021/09/30/J9bBF82tRu5yIkW.png)
+
+
+
 ## Fundamental Changes to Minecraft
 
 ### Eliminate the One-Client-World Limitation
