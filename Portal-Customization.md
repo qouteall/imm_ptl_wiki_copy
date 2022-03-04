@@ -39,7 +39,7 @@ Command `/portal complete_bi_way_portal` will create the "reverse" version of th
 
 Command `/portal eradicate_portal_cluster` removes the whole portal. If used to a bi-way bi-faced portal, all 4 portal entities will be removed.
 
-If you want to edit a bi-way bi-faced portal, 4 portal entities need to be edited. It's recommended to firstly enable `bindCluster` using command `/portal set_portal_nbt {bindCluster:true}`. Then when you edit one portal entity, the linked portal entities will also change accordingly.
+If you want to edit a bi-way bi-faced portal, 4 portal entities need to be edited. It's recommended to firstly enable `bindCluster` using command `/portal set_portal_nbt {bindCluster:true}`. (Note: this feature does not exist before 1.18) Then when you edit one portal entity, the linked portal entities will also change accordingly.
 
 ### Portal-Targeted Commands
 

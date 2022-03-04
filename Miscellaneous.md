@@ -32,6 +32,7 @@ In MC 1.17.1, the latest version of ImmPtl is roughly compatible with Iris 1.1.3
 Following things cannot be correctly rendered with shaders:
 
 * Semi-transparent things (e.g. stained glass) in front of the portal.  (Due to that, all mirrors will cover the glass texture with shaders on)
+* Portal overlay
 * Fuse-view portals
 * Cross portal entity rendering.
 * Temporal Anti Aliasing (TAA) when a portal is in view
@@ -52,7 +53,7 @@ All see-through portals will vanish. Even if you re-install ImmPtl, the portals 
 
 Vanilla nether/end portals still exist. Dimension stack bedrock replacement will not work.
 
- ### Is it Possible to Make Fluid and Redstone Work Across a Portal?
+ ### Can Fluid, Redstone and Light Work Across a Portal?
 
 No. This mod's portal supports scaling and rotation transformation. The portal can be in anywhere and be in any orientation. It's hard to imagine how redstone signal transfers when the blocks are not aligned.
 
@@ -61,6 +62,8 @@ No. This mod's portal supports scaling and rotation transformation. The portal c
 But you can use entities to carry signals through a portal. For example, an item dispenser on one side and a hopper on the other side.
 
 Although it's possible to implement cross portal redstone and fluid when the portal is aligned with blocks, it would be very hard to implement. And cross-portal redstone machines won't be stable because of the chunk loading delay.
+
+About lighting: The nether portals by default has glowstone-level lighting. For custom portals, you can put lights behind the portal to make it looks seamless.
 
 
 
