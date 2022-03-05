@@ -18,11 +18,17 @@ Example: [MiniScaled mod](https://github.com/qouteall/MiniScaledMod) uses ImmPtl
 
 After 1.16 most mods use datapack functionality to add new dimensions. However, that method has these drawbacks:
 
-* It stores all dimension options into `level.dat`. Upon upgrading, DFU cannot recognize non-vanilla generator types and swallows the nether and the end. (Note: This mod has the code to automatically recover after the nether and end has been swallowed in 1.16 and 1.17)
+* It stores all dimension options into `level.dat`. Upon upgrading, DFU cannot recognize non-vanilla generator types and swallows the nether and the end. (Note: This mod has the code to automatically recover after the nether and end has been swallowed)
 * It requires the generator's seed to be hardcoded inside the dimension json.
 * Upon entering a world, the game shows the warning screen (worlds using experimental settings are not supported).
 
 IP's dimension API overcomes these obstacles. To use the dimension API, you need to keep the dimension type json and delete the dimension json. Then do this during initialization:
+
+In 1.18.2 and later versions:
+
+TODO
+
+In 1.17.1 and 1.18.1:
 
 ```java
 DimensionAPI.serverDimensionsLoadEvent.register((generatorOptions, registryManager) -> {

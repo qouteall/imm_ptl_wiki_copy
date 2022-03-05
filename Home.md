@@ -1,7 +1,7 @@
 
 This wiki describes the latest version of Immersive Portals Mod (ImmPtl) Fabric version.
 
-[On CurseForge](https://www.curseforge.com/minecraft/mc-mods/immersive-portals-mod)      [On Modrinth](https://modrinth.com/mod/immersiveportals)     [Discord Server](https://discord.gg/BZxgURK)     [Donate](https://www.patreon.com/qouteall)
+[GitHub Repo](https://github.com/qouteall/ImmersivePortalsMod)     [On CurseForge](https://www.curseforge.com/minecraft/mc-mods/immersive-portals-mod)      [On Modrinth](https://modrinth.com/mod/immersiveportals)     [Discord Server](https://discord.gg/BZxgURK)     [Donate](https://www.patreon.com/qouteall)
 
 #### Common Questions
 
