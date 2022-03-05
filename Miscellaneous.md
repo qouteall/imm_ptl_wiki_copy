@@ -17,11 +17,9 @@ No. Inter-server portals require sending packets across servers, cross-server vi
 
 ### OptiFine Compatibility
 
-~~In MC 1.16.5, this mod is compatible with OptiFine G7 and OptiFine shaders. (The recommended shader is BSL shader. You need to turn off TAA (Temporal Anti Aliasing) and Motion Blur in the shader's option.)~~ In MC 1.16.5 ImmPtl crashes with OptiFine G7. This issue is under investigation.
-
-In MC 1.17.x, this mod is problematic with OptiFine, it's not recommended to use this mod with OptiFine.
-
 In MC 1.18 and above, this mod is incompatible with OptiFine. Because OptiFine is not open-source, debugging with OptiFine is very hard. It's recommended to use Sodium and Iris. [Check this](https://lambdaurora.dev/optifine_alternatives/)
+
+In older MC versions, this mod is problematic with OptiFine so it's not recommended to use this mod with OptiFine.
 
 ### Iris Compatibility
 

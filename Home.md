@@ -1,17 +1,13 @@
 
-This wiki describes the latest version of Immersive Portals Mod Fabric version.
+This wiki describes the latest version of Immersive Portals Mod (ImmPtl) Fabric version.
 
-Mod download from CurseForge: https://www.curseforge.com/minecraft/mc-mods/immersive-portals-mod
-
-Modrinth: https://modrinth.com/mod/immersiveportals
-
-Discord server: https://discord.gg/BZxgURK
+[On CurseForge](https://www.curseforge.com/minecraft/mc-mods/immersive-portals-mod)      [On Modrinth](https://modrinth.com/mod/immersiveportals)     [Discord Server](https://discord.gg/BZxgURK)     [Donate](https://www.patreon.com/qouteall)
 
 #### Common Questions
 
 ##### Can I use it in multiplayer?
 
-Yes. The server and client must both install this mod. (This mod is not a plugin and cannot be used on bukkit or spigot.)
+Yes. The server and client must both install this mod. (This mod is not a plugin and cannot be used on Bukkit or Spigot.)
 
 ##### Sodium Compatibility?
 
