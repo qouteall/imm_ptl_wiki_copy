@@ -1,6 +1,6 @@
 ## How to Access the Config
 
-In Fabric version, you can access the config GUI via the mod menu (In 1.17 and above you need to manually install mod menu).
+In Fabric version, you can access the config GUI via the mod menu (you need to manually install mod menu).
 
 You can also access the config GUI by using command `/imm_ptl_client_debug config` in game if you don't install mod menu.
 
@@ -14,9 +14,7 @@ When you are nearby a portal, the FPS may drop due to these reasons:
 * More chunk mesh rebuild. This mod tries not to build any remote chunk in the render thread during portal rendering. But rebuilding the chunks that are viewed through portals sometimes still costs performance.
 * More frequent GC due to loading more chunks. Approaching a portal loads more chunks and entities which consumes more RAM and may increase GC frequency thus creating more lag spikes.
 
-### Reduced Portal Rendering
-
-Deprecated since MC 1.18. Start from MC 1.18, this mod can automatically shrink rendering when client FPS is low.
+This mod's latest version can automatically reduce the chunks rendered through portal when client FPS is low.
 
 ### Max Portal Layer
 
@@ -26,7 +24,7 @@ When rendering infinite mirror room or world wrapping portals, the FPS may go ve
 
 ![image.png](https://i.loli.net/2021/11/20/xs9Fb6JDjgWNRlh.png)
 
-Turning down the max portal layer can save your FPS.
+If you set that value to 1, then it won't render any portal inside a portal.
 
 ![image.png](https://i.loli.net/2021/11/20/8a9IntyHuMRBVcN.png)
 
@@ -35,7 +33,7 @@ If it's 0, you can see the portal view area but the world inside the portal won'
 ![image.png](https://i.loli.net/2021/11/20/NCKAx3HQZfDVrb7.png)
 
 ### Lag Attack Proof
-When FPS drops because of rendering too many portals, it will enter "lag attack proof" mode and only render one layer of portals and only render near portals which helps you recover from the lag. If that's enabled then you will not be lag-attacked by a mirror room.
+When FPS drops because of rendering too many portals (for example, a mirror room), it will enter "lag attack proof" mode and only render one layer of portals and only render near portals which helps you recover from the lag.
 
 ### Portal Render Limit
 The maximum amount of portals that can be rendered in one frame.
@@ -53,7 +51,7 @@ The loading radius cap of global portals is twice this value.
 
 ## Other Client-Side Configurations
 ### Compatibility Render Mode
-If it's enabled, the portal rendering algorithm that avoids using the stencil buffer will be used and portal-in-portal cannot be rendered. If you see portals through walls with OptiFine shaders enabled then you should enable this option.
+If it's enabled, the portal rendering algorithm that avoids using the stencil buffer will be used and portal-in-portal cannot be rendered. If you see portals through walls with (Iris) shaders enabled then you should enable this option.
 
 ### Render Yourself in Portal
 If disabled, you cannot see yourself in portals. But other players will still be rendered.
@@ -63,9 +61,6 @@ If enabled, the glass texture on mirrors will not be rendered.
 
 ### Cross Portal Entity Rendering
 If disabled, the entities that are touching a portal will look clipped. However, sometimes cross portal entity rendering may cause rendering issues.
-
-### Check GL Error
-Used for debugging.
 
 ## Other Server-Side Configurations
 
@@ -89,7 +84,7 @@ Won't affect existing nether portals.
 
 ![image.png](https://i.loli.net/2021/11/20/regLGPdYoUv9MHC.png)
 
-Horizontal nether portals won't have this overlay because the vanilla nether portal block does not have the horizontal variant.
+Horizontal nether portals won't have this overlay because the vanilla nether portal block does not have the horizontal variant. (May be changed in the future)
 
 ### Scale Limit
 

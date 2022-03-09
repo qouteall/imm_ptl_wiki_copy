@@ -266,3 +266,4 @@ include ('com.github.qouteall.ImmersivePortalsMod:q_misc_util:1.17-SNAPSHOT')
 It's highly recommended to change `1.17-SNAPSHOT` to a release tag. See https://jitpack.io/#qouteall/ImmersivePortalsMod
 
 JitPack will build it when you firstly use it. If you encounter `Read time out`, it means that JitPack haven't finished building it yet, simply try again.
+

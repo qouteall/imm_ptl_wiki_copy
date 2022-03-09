@@ -10,6 +10,8 @@ Use [vertical connecting portals](https://github.com/qouteall/ImmersivePortalsMo
 
 You can see the "Dimension Stack" button when creating a new world.
 
+![image.png](https://i.loli.net/2021/11/20/helqg7vkcdML5n3.png)
+
 ![2021-12-31_18.16.46.png](https://s2.loli.net/2021/12/31/k5ghxSuULNtGK9V.png)
 
 
@@ -44,7 +46,7 @@ It's recommended to either **(1)** set the scale between overworld and nether to
 
 #### Flipped
 
-Controls the portals' rotating transformation. If enabled, makes the dimension looks "flipped". Does not change the gravity direction in that dimension. If a flipped dimension connects to a non-flipped dimension, the connecting portal will have a 180 degrees rotation transformation along X axis.
+Controls the portals' rotating transformation. If enabled, makes the dimension looks "flipped". Does not change the gravity direction in that dimension (unless you enable gravity change option). If a flipped dimension connects to a non-flipped dimension, the connecting portal will have a 180 degrees rotation transformation along X axis.
 
 ![image.png](https://i.loli.net/2021/11/20/pXxmBnrQd2CbVIE.png)
 
