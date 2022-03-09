@@ -4,7 +4,7 @@
 
 ## 旋转变换{#Rotation Transformation}
 
-![](https://qouteall-1.oss-ap-northeast-1.aliyuncs.com/2020-08-06-12-18-32.png)
+![image.png](https://i.loli.net/2021/11/20/2CHKJufPT6ILOxa.png)
 
 [与旋转相关的命令](https://github.com/qouteall/ImmersivePortalsMod/wiki/Commands-Reference#rotation)
 
@@ -14,7 +14,7 @@
 
 ## 缩放变换{#Scale Transformation}
 
-![](https://qouteall-1.oss-ap-northeast-1.aliyuncs.com/2020-08-06-12-34-27.png)
+![image.png](https://i.loli.net/2021/11/20/6Y9dimqOSn8NUxA.png)
 
 [与缩放相关的命令](https://github.com/qouteall/ImmersivePortalsMod/wiki/Commands-Reference#scale)
 
