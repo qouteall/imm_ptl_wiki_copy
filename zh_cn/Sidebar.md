@@ -21,3 +21,5 @@
 [其它](https://github.com/qouteall/ImmersivePortalsMod/wiki/Miscellaneous)
 
 [API](https://github.com/qouteall/ImmersivePortalsMod/wiki/API-for-Other-Mods)
+
+[实现细节](https://github.com/qouteall/ImmersivePortalsMod/wiki/Implementation-Details)

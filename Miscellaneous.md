@@ -63,7 +63,9 @@ Although it's possible to implement cross portal redstone and fluid when the por
 
 About lighting: The nether portals by default has glowstone-level lighting. For custom portals, you can put lights behind the portal to make it looks seamless.
 
+### Upgrade a World that Have Immersive Portals Things
 
+For example if you have a world in MC 1.15.2 that contains immersive portals, and then you want to upgrade the world to 1.18.2, then you need to firstly upgrade to 1.16.5 then 1.17.1 then 1.18.2. Otherwise the portals may get lost.
 
 
 

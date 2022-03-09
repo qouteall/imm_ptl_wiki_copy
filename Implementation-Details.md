@@ -1,5 +1,3 @@
-The see-through portals and seamless teleportation are actually very hard to implement. This mod is a feat in Minecraft modding. 
-
 ## Portal Rendering
 
 There are two ways of rendering portal within the architecture of rasterization:
@@ -62,30 +60,30 @@ This mod use frustum culling optimization in 3 cases:
 
 For example, when rendering this scene
 
-![](https://i.ibb.co/ykrDqxv/2020-03-06-21-59-27.png)
+![2020-03-06-21-59-27.png](https://s2.loli.net/2022/03/09/YqCFz4iHWe1JKG2.png)
 
 The sections occluded by the portal will be culled. (outer frustum culling)
 
-![](https://i.ibb.co/N25Y3hB/2020-03-06-21-59-37.png)
+![2020-03-06-21-59-37.png](https://s2.loli.net/2022/03/09/hNSXDQslVRWAz4n.png)
 
 The sections out of portal view will be culled (inner frustum culling)
 
-![](https://i.ibb.co/sFGMwCd/2020-03-06-21-59-43.png)
+![2020-03-06-21-59-43.png](https://s2.loli.net/2022/03/09/Pm4sNZqthdiDbRe.png)
 
 Without advanced frustum culling:
-![](https://i.ibb.co/k6nvDbf/2020-03-06-22-00-05.png)
-![](https://i.ibb.co/wY5sYXM/2020-03-06-21-59-56.png)
+![2020-03-06-22-00-05.png](https://s2.loli.net/2022/03/09/fMXYQVu7ShaqOsD.png)
+![2020-03-06-21-59-56.png](https://s2.loli.net/2022/03/09/1bZDdTIcHSUf7B5.png)
 
 
 ### Front Clipping
 
 When rendering portal content, everything in front of the portal plane will be clipped. The gold block in this image is in nether behind the portal.
 
-![](https://i.ibb.co/4Yf48sq/2020-03-06-22-00-16.png)
+![2020-03-06-22-00-16.png](https://s2.loli.net/2022/03/09/nwox68favZd1Ym2.png)
 
 If not correctly clipped, the portal will be rendered wrongly:
 
-![](https://i.ibb.co/nrpxQZk/2020-03-06-22-00-40.png)
+![2020-03-06-22-00-40.png](https://s2.loli.net/2022/03/09/i3QrLWzctq9kmjh.png)
 
 This mod do clipping by transforming the vertex shader and set `gl_ClipDistance`.
 
