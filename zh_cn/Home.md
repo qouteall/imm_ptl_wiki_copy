@@ -51,9 +51,9 @@ MC 1.16.5: 使用 [这个](https://github.com/qouteall/sodium-fabric/releases).
 
 本模组仅适用于Java版Minecraft，不适用于基岩版。
 
-首先要安装Fabric加载器。 ( https://fabricmc.net/wiki/install)。 下载加载器的安装程序: https://fabricmc.net/use/  然后打开该程序，安装加载器。
+首先要安装Fabric加载器。 ( https://fabricmc.net/wiki/install )。 下载加载器的安装程序: https://fabricmc.net/use/  然后打开该程序，安装加载器。
 
-安装完Fabric加载器后，需要安装Fabric API。 (https://github.com/FabricMC/fabric/releases) 。Fabric API是一个模组，不是Fabric加载器。
+安装完Fabric加载器后，需要安装Fabric API。 ( https://github.com/FabricMC/fabric/releases ) 。Fabric API是一个模组，不是Fabric加载器。
 
 然后下载 [本模组](https://qouteall.fun/immptl)。现在你得到了两个jar文件，讲这两个jar文件放入 `mods` 文件夹。 (不用打开这两个jar文件。) `mods` 文件夹在游戏目录中。可以从启动器里打开游戏目录。若 `mods` 文件夹不存在，创建该文件夹。 (安装Fabric后正常启动游戏就会自动创建  `mods` 文件夹)
 

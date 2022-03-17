@@ -1,6 +1,6 @@
 The Fabric version of Immersive Portals mod contains some API for other mods to use.
 
-### API Overview
+## API Overview
 
 Immersive Portals mod's API is now split across 2 mods, one is Immersive Portals Core (`imm_ptl_core`), the other is the Miscellaneous Utility Library from qouteall (`q_misc_util`).
 
@@ -12,23 +12,123 @@ If you have any issue using the API, you can contact qouteall via [discord](http
 
 Example: [MiniScaled mod](https://github.com/qouteall/MiniScaledMod) uses ImmPtl API.
 
-### The Miscellaneous Utility API (`q_misc_util`)
+## The Miscellaneous Utility API (`q_misc_util`)
 
-#### Dimension API
+### Dimension API
 
-After 1.16 most mods use datapack functionality to add new dimensions. However, that method has these drawbacks:
+#### Basic Concepts of Dimensions
 
-* It stores all dimension options into `level.dat`. Upon upgrading, DFU cannot recognize non-vanilla generator types and swallows the nether and the end. (Note: This mod has the code to automatically recover after the nether and end has been swallowed)
-* It requires the generator's seed to be hardcoded inside the dimension json.
-* Upon entering a world, the game shows the warning screen (worlds using experimental settings are not supported).
+Minecraft allows defining dimension types, biomes and other things via datapacks. Fabric will turn mod files in `resources` into virtual datapacks.
 
-IP's dimension API overcomes these obstacles. To use the dimension API, you need to keep the dimension type json and delete the dimension json. Then do this during initialization:
+You can get a `DynamicRegistryManager` from a server, then you can get the dimension type registry from the registry manager, and then you can get the dimension type from the dimension type registry.
 
-In 1.18.2 and later versions:
+A dimension consists of:
 
-TODO
+* A dimension id (Its type is `RegistryKey<World>`. An `Identifier` can be converted to `RegistryKey<World>`)
+* A dimension type. It defines the world height, skylight and other properties. (You can define your dimension types in json files. Then you can get it from the `DynamicRegistryManager`)
+* A chunk generator. It defines how to generate chunks.
 
-In 1.17.1 and 1.18.1:
+#### Dynamically Adding and Removing Dimensions
+
+The Dimension API supports dynamically adding and removing dimensions when the server is running. **This feature is still experimental.**
+
+Add a new dimension dynamically:
+
+```java
+DynamicRegistryManager manager = MiscHelper.getServer().getRegistryManager();
+
+// get the dimension type
+RegistryEntry<DimensionType> dimensionType = manager.getEntry(
+    RegistryKey.of(Registry.DIMENSION_TYPE_KEY, new Identifier("namespace:dimension_type_id"))
+).get();
+
+// add the dimension
+DimensionAPI.addDimensionDynamically(
+    new Identifier("namespace:new_dimension_id"),
+    new DimensionOptions(
+        dimensionType,
+        new CustomChunkGenerator(...)
+    )
+);
+```
+
+That code will add the new dimension to the server world map and send dimension sync packets to client. When the server restarts, the dynamically added dimension will vanish. To make sure that dynamically added dimensions are still present when the server restarts, you need to save the dimension configuration:
+
+```java
+RegistryKey<World> dimId = RegistryKey.of(Registry.WORLD_KEY, new Identifier("namespace:new_dimension_id"));
+
+DimensionAPI.saveDimensionConfiguration(dimId);
+```
+
+Then it will save the configuration as a json file in the folder `q_dimension_configs` in the world saving.
+
+Remove a dimension dynamically:
+
+```
+RegistryKey<World> dimId = RegistryKey.of(Registry.WORLD_KEY, new Identifier("namespace:new_dimension_id"));
+
+ServerWorld world = MiscHelper.getServer().getWorld(dimId);
+
+DimensionAPI.removeDimensionDynamically(dimId);
+```
+
+That code will remove the dimension from the server world map and send sync packets to client.
+
+If you saved that dimension's configuration, you need to delete the configuration:
+
+```
+DimensionAPI.deleteDimensionConfiguration(dimId);
+```
+
+#### Adding Dimensions During Server Initialization
+
+The utility library supports another way of adding dimensions other than using JSON files:
+
+* It does not require hardcoding things of your dimension. You can create the chunk generator at runtime. You can use configs to control whether to add the dimensions. It does not require hardcoding the seed.
+* It will not add your dimension into `level.dat` and cause issues after uninstalling the mod.
+* It will show the warning screen ("worlds using experimental settings are not supported") when entering a world.
+
+IP's dimension API overcomes these obstacles. To use the dimension API, you need to keep the dimension type json and delete the dimension json. Then add the dimension in `DimensionAPI.serverDimensionsLoadEvent`.
+
+##### In 1.18.2:
+
+```java
+DimensionAPI.serverDimensionsLoadEvent.register((generatorOptions, registryManager) -> {
+    Registry<DimensionOptions> registry = generatorOptions.getDimensions();
+    
+    // get the dimension type
+    RegistryEntry<DimensionType> dimType = registryManager.get(Registry.DIMENSION_TYPE_KEY).getEntry(
+        RegistryKey.of(Registry.DIMENSION_TYPE_KEY, new Identifier("namespace:dimension_type_id"))
+    ).orElseThrow(() -> new RuntimeException("Missing dimension type"));
+        
+    Identifier dimId = new Identifier("namespace:dimension_id");
+    
+    // get the biome registry for initializing the biome source
+    Registry<Biome> biomeRegistry = registryManager.get(Registry.BIOME_KEY);
+    BiomeSource biomeSource = new CustomBiomeSource(seed, biomeRegistry);
+        
+    // add the dimension
+    DimensionAPI.addDimension(
+        registry, dimId, dimType,
+        createVoidGenerator(registryManager)
+    );
+    
+    // mark it non-persistent so it won't be saved into level.dat
+    DimensionAPI.markDimensionNonPersistent(dimId);
+});
+```
+
+To remove the screen of "worlds using experimental settings are not supported", you need to do mark the namespace stable.
+
+For example, your dimension is `aaa:bbb`, then do this during mod initialization:
+
+```
+LifecycleHack.markNamespaceStable("aaa");
+```
+
+>  In Mojang mapping, `DynamicRegistryManager` is `RegistryAccess`, `RegistryKey` is `ResourceKey`, `DimensionOptions` is `WorldStem`, `GeneratorOptions` is `WorldGenSettings`, `RegistryEntry` is `Holder`, `Identifier` is `ResourceLocation`.
+
+##### In 1.17.1 and 1.18.1:
 
 ```java
 DimensionAPI.serverDimensionsLoadEvent.register((generatorOptions, registryManager) -> {
@@ -56,7 +156,7 @@ DimensionAPI.serverDimensionsLoadEvent.register((generatorOptions, registryManag
 });
 ```
 
-#### Networking Utility (Remote Procedure Call)
+### Networking Utility (Remote Procedure Call)
 
 Fabric provides the networking API. But adding a new type of packet requires  (1) Write packet serialization/deserialization code (2) Write the packet handling code, which requires sending the task to the client/server thread to execute it (3) Give it an identifier and register it. This networking utility makes it easier.
 
@@ -106,9 +206,9 @@ The supported argument types are
 
 Using unsupported argument types will cause serialization/deserialization issues.
 
-### Immersive Portals API (`imm_ptl_core`)
+## Immersive Portals API (`imm_ptl_core`)
 
-#### Create a Portal
+### Create a Portal
 
 Example:
 
@@ -138,7 +238,7 @@ If the portal attribute gets changed on the server side after the portal has spa
 
 To create the reverse/flipped portal entity, use `PortalAPI.createReversePortal` `PortalAPI.createFlippedPortal` . [How bi-way portals and bi-faced portals are organized](https://github.com/qouteall/ImmersivePortalsMod/wiki/Portal-Customization#1-nether-portal--4-portal-entities)
 
-##### About Rotations and Quaternions
+#### About Rotations and Quaternions
 
 You can set the portal's rotating transformation by `setRotationTransformation()` . The rotation transformation is represented using quaternion. There is a vanilla quaternion class `net.minecraft.util.math.Quaternion` and IP's quaternion class `DQuaternion`. The vanilla quaternion uses float and is mutable. `DQuaternion` uses double and is immutable.
 
@@ -156,7 +256,7 @@ Quaternion can not only represent a rotating process, it can also represent an o
 
 IP does not use Euler angle for rotation because Euler angle requires handling many edge cases and is more complex.
 
-#### Chunk Loading API
+### Chunk Loading API
 
 Vanilla has the force-load functionality but it only loads the chunk and does not synchronize the chunk to player client. This mod supports loading chunks and synchronize the chunk (blocks, entities, etc.) to the specific player.
 
@@ -178,13 +278,13 @@ PortalAPI.addChunkLoaderForPlayer(
 
 Call `removeChunkLoaderForPlayer` when you want to unload.
 
-#### Access Multiple Client Worlds
+### Access Multiple Client Worlds
 
 This mod eliminates the limitation that only one dimension can be loaded on client at the same time. If you want to get the nether world, use `ClientWorldLoader.getWorld(World.NETHER)` . The client world will be created when it's used at the first time.
 
 If the client experiences conventional dimension change (with loading screen) then all worlds will be unloaded and recreated later.
 
-#### GUI Portal
+### GUI Portal
 
 Use ` GuiPortalRendering.submitNextFrameRendering(worldRenderInfo, frameBuffer)` to ask it to render the world into the framebuffer in the next frame. The rendered dimension, position, camera transformation can be specified in the `WorldRenderInfo`.
 
@@ -194,7 +294,7 @@ That framebuffer will automatically be resized to be the same size as the game w
 
 ![gui_portal.png](https://i.loli.net/2021/06/07/AKBYLdxikuEUR6o.png)
 
-#### Mod Structure
+## Mod Structure
 
 This mod (Fabric version)'s mod id is `immersive_portals`. It has 3 mods jar-in-jar.
 
@@ -223,7 +323,7 @@ The Core registers portal entity types and portal placeholder block. The Core (h
 
 The mod `q_misc_util` has:
 
-* Dimension API
+* Dimension API and Dynamic Dimension Management
 * Remote procedure call
 
 The mod Immersive Portals has:
@@ -235,7 +335,9 @@ The mod Immersive Portals has:
 * Command stick
 * Portal helper
 
-### Configure Dependency
+## Configure Dependency
+
+In your `build.gradle`:
 
 Add this into `repositories`
 
@@ -243,27 +345,25 @@ Add this into `repositories`
 maven { url 'https://jitpack.io' }
 ```
 
-#### In 1.17 and 1.18
-
 Add this into `dependencies`
 
 ```
 // Dependency of Immersive Portals Core:
-modImplementation ('com.github.qouteall.ImmersivePortalsMod:imm_ptl_core:1.17-SNAPSHOT'){
+modImplementation ('com.github.qouteall.ImmersivePortalsMod:imm_ptl_core:v1.3.3-1.18'){
 	exclude(group: "net.fabricmc.fabric-api")
 	transitive(false)
 }
 
 // Dependency of the Miscellaneous Utility Library from qouteall
-modImplementation ('com.github.qouteall.ImmersivePortalsMod:q_misc_util:1.17-SNAPSHOT'){
+modImplementation ('com.github.qouteall.ImmersivePortalsMod:q_misc_util:v1.3.3-1.18'){
 	exclude(group: "net.fabricmc.fabric-api")
 	transitive(false)
 }
 
 // If you want to make it jar-in-jar
-include ('com.github.qouteall.ImmersivePortalsMod:q_misc_util:1.17-SNAPSHOT')
+include ('com.github.qouteall.ImmersivePortalsMod:q_misc_util:v1.3.3-1.18')
 ```
-It's highly recommended to change `1.17-SNAPSHOT` to a release tag. See https://jitpack.io/#qouteall/ImmersivePortalsMod
+You should change the version `v1.3.3-1.18` to the latest version. See https://jitpack.io/#qouteall/ImmersivePortalsMod
 
 JitPack will build it when you firstly use it. If you encounter `Read time out`, it means that JitPack haven't finished building it yet, simply try again.
 

@@ -1,43 +1,3 @@
-## Global Portal Commands
-The global portal commands require level 2 permission.
-
-#### `/portal global convert_global_portal_to_normal_portal`
-Can only be used by a player. Converts the global portal instance that you are pointing to into a normal portal. Requires the player to be near the portal center.
-
-#### `/portal global convert_normal_portal_to_global_portal`
-Can only be used by a player. Converts the normal portal entity that you are pointing to into a global portal.
-
-#### `/portal global delete_global_portal `
-
-Delete the global portal that you are pointing to.
-
-#### `/portal global create_inward_wrapping <x1> <z1> <x2> <z2>`
-Create an inward wrapping zone. The created portals are global portals. The two XZ coordinates define the wrapping area. The generated portals go from y level 0 to y level 256.
-
-#### `/portal global create_outward_wrapping <x1> <z1> <x2> <z2>`
-Similar to the above but creates an outward wrapping zone.
-
-#### `/portal global remove_wrapping_zone`
-Remove the global portal wrapping zone that you are in. This does not work for the wrapping zone constituted by normal portals.
-
-#### `/portal global view_wrapping_zones`
-View the wrapping zones in the current dimension and know their ids.
-
-#### `/portal global remove_wrapping_zone <id>`
-Remove a global portal wrapping zone by its id.
-
-#### `/portal global connect_floor <dimensionA> <dimensionB>`
-Creates a global portal that connects `dimensionA` 's floor with `dimensionB` 's top. It only generates one one-way global portal instance.
-
-#### `/portal global connect_ceil <dimensionA> <dimensionB>`
-Creates a global portal that connects `dimensionA` 's ceiling with `dimensionB` 's bottom. It only generates one one-way global portal instance.
-
-#### `/portal global connection_remove_floor <dimension>`
-Remove the floor connection portal in that dimension. This command only removes one global portal instance.
-
-#### `/portal global connection_remove_ceil <dimension>`
-Remove the ceil connection portal in that dimension. This command only removes one global portal instance.
-
 
 ## Portal Targeted Commands
 Not only the ones with level 2 permission, but any creative mode players can also use the portal targeted commands.
@@ -130,6 +90,14 @@ Similar to the above.
 #### `/portal set_portal_scale <scale>`
 Set the portal's scale transformation.
 
+#### `/portal multiply_portal_scale <scale>`
+
+Multiply the portal's scale by a number.
+
+#### `/portal divide_portal_scale <scale>`
+
+Divide the portal's scale by a number.
+
 ### Player-specific Property
 
 #### `/portal set_portal_specific_accessor <player>`
@@ -156,7 +124,68 @@ Make the portal entity's shape to be an ellipse. If the portal's width equals he
 
 Resets the portal orientation.
 
+#### `/portal adjust_portal_to_fit_square_frame`
+
+Automatically adjust the portal size and position to fit a square frame. Can handle the frames that is not aligned with blocks (for example, fence blocks and end rod blocks).
+
+#### `/portal set_portal_size <width> <height>`
+
+Remove the portal's custom shape, making it square and set its width and height.
+
+## Global Portal Commands
+
+The global portal commands require level 2 permission.
+
+#### `/portal global convert_global_portal_to_normal_portal`
+
+Can only be used by a player. Converts the global portal instance that you are pointing to into a normal portal. Requires the player to be near the portal center.
+
+#### `/portal global convert_normal_portal_to_global_portal`
+
+Can only be used by a player. Converts the normal portal entity that you are pointing to into a global portal.
+
+#### `/portal global delete_global_portal `
+
+Delete the global portal that you are pointing to.
+
+#### `/portal global create_inward_wrapping <x1> <z1> <x2> <z2>`
+
+Create an inward wrapping zone. The created portals are global portals. The two XZ coordinates define the wrapping area. The generated portals go from y level 0 to y level 256.
+
+#### `/portal global create_outward_wrapping <x1> <z1> <x2> <z2>`
+
+Similar to the above but creates an outward wrapping zone.
+
+#### `/portal global remove_wrapping_zone`
+
+Remove the global portal wrapping zone that you are in. This does not work for the wrapping zone constituted by normal portals.
+
+#### `/portal global view_wrapping_zones`
+
+View the wrapping zones in the current dimension and know their ids.
+
+#### `/portal global remove_wrapping_zone <id>`
+
+Remove a global portal wrapping zone by its id.
+
+#### `/portal global connect_floor <dimensionA> <dimensionB>`
+
+Creates a global portal that connects `dimensionA` 's floor with `dimensionB` 's top. It only generates one one-way global portal instance.
+
+#### `/portal global connect_ceil <dimensionA> <dimensionB>`
+
+Creates a global portal that connects `dimensionA` 's ceiling with `dimensionB` 's bottom. It only generates one one-way global portal instance.
+
+#### `/portal global connection_remove_floor <dimension>`
+
+Remove the floor connection portal in that dimension. This command only removes one global portal instance.
+
+#### `/portal global connection_remove_ceil <dimension>`
+
+Remove the ceil connection portal in that dimension. This command only removes one global portal instance.
+
 ## Direct Portal Creation Commands
+
 Can be used by level-2 permission ones and creative mode players.
 
 #### `/portal make_portal <width> <height> <dimension> <toX> <toY> <toZ>`
@@ -223,6 +252,22 @@ By specifying 2 portal entities, it will change these 2 portals' destination and
 #### `/portal dimension_stack`
 
 Shows a GUI that allows re-configuring the dimension stack.
+
+## Dimension Management Commands
+
+These commands are provided by mod `q_misc_util` (this mod is bundled by Immersive Portals).
+
+#### `/dims clone_dimension <templateDimension> <newDimensionID> [newSeed]`
+
+Dynamically add a new dimension. That new dimension's dimension type and chunk generator will be the same as the `templateDimension`. If you provide the argument `newSeed`, then the new dimension will be in another seed. It's possible to clone other mod's dimensions.
+
+Example: `/dims clone_dimension minecraft:overworld "aaa:bbb"` will dynamically add dimension `aaa:bbb` whiches world generation is the same as the overworld.
+
+The configuration of the new dimensions will be saved in the `q_dimension_configs` folder in the world saving.
+
+#### `/dims remove_dimension <dimension>`
+
+Dynamically remove a dimension. Cannot remove a vanilla dimension.
 
 ## Debugging Commands
 
