@@ -6,7 +6,7 @@ The latest version of this mod has the functionality of dynamically adding and r
 
 Example: command `/dims clone_dimension minecraft:overworld "aaa:bbb"` dynamically adds new dimension `aaa:bbb` that has the same world generation as the overworld. Command `/dims remove_dimension aaa:bbb` can remove it.
 
-[See Also](./wiki/Commands-Reference#Dimension-Management-Commands)
+[See Also](/wiki/Commands-Reference#Dimension-Management-Commands)
 
 ### Alternate Dimensions
 
