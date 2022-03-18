@@ -26,7 +26,11 @@ A dimension consists of:
 
 * A dimension id (Its type is `RegistryKey<World>`. An `Identifier` can be converted to `RegistryKey<World>`)
 * A dimension type. It defines the world height, skylight and other properties. (You can define your dimension types in json files. Then you can get it from the `DynamicRegistryManager`)
-* A chunk generator. It defines how to generate chunks.
+* A chunk generator. It defines how to generate chunks. To create the chunk generator, you probably need to access the registries to get the biomes and other things via `DynamicRegistryManager`.
+
+A `DimensionOptions` contains a dimension type `RegistryEntry` and a chunk generator.
+
+In Mojang mapping, `DynamicRegistryManager` is `RegistryAccess`, `RegistryKey` is `ResourceKey`, `DimensionOptions` is `WorldStem`, `GeneratorOptions` is `WorldGenSettings`, `RegistryEntry` is `Holder`, `Identifier` is `ResourceLocation`.
 
 #### Dynamically Adding and Removing Dimensions
 
@@ -52,7 +56,9 @@ DimensionAPI.addDimensionDynamically(
 );
 ```
 
-That code will add the new dimension to the server world map and send dimension sync packets to client. When the server restarts, the dynamically added dimension will vanish. To make sure that dynamically added dimensions are still present when the server restarts, you need to save the dimension configuration:
+That code will add the new dimension to the server world map and send dimension sync packets to client. You should not do this during server initialization.
+
+When the server restarts, the dynamically added dimension will vanish. To make sure that dynamically added dimensions are still present when the server restarts, you need to save the dimension configuration:
 
 ```java
 RegistryKey<World> dimId = RegistryKey.of(Registry.WORLD_KEY, new Identifier("namespace:new_dimension_id"));
@@ -88,7 +94,7 @@ The utility library supports another way of adding dimensions other than using J
 * It will not add your dimension into `level.dat` and cause issues after uninstalling the mod.
 * It will show the warning screen ("worlds using experimental settings are not supported") when entering a world.
 
-IP's dimension API overcomes these obstacles. To use the dimension API, you need to keep the dimension type json and delete the dimension json. Then add the dimension in `DimensionAPI.serverDimensionsLoadEvent`.
+IP's dimension API overcomes these obstacles. To use the dimension API, you need to keep the dimension type json and delete the dimension json. Then add the dimension in `DimensionAPI.serverDimensionsLoadEvent` using `DimensionAPI.addDimension`. (`DimensionAPI.addDimension` should not be used outside of the event.)
 
 ##### In 1.18.2:
 
@@ -110,7 +116,7 @@ DimensionAPI.serverDimensionsLoadEvent.register((generatorOptions, registryManag
     // add the dimension
     DimensionAPI.addDimension(
         registry, dimId, dimType,
-        createVoidGenerator(registryManager)
+        new CustomChunkGenerator()
     );
     
     // mark it non-persistent so it won't be saved into level.dat
@@ -125,8 +131,6 @@ For example, your dimension is `aaa:bbb`, then do this during mod initialization
 ```
 LifecycleHack.markNamespaceStable("aaa");
 ```
-
->  In Mojang mapping, `DynamicRegistryManager` is `RegistryAccess`, `RegistryKey` is `ResourceKey`, `DimensionOptions` is `WorldStem`, `GeneratorOptions` is `WorldGenSettings`, `RegistryEntry` is `Holder`, `Identifier` is `ResourceLocation`.
 
 ##### In 1.17.1 and 1.18.1:
 
