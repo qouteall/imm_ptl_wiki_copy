@@ -26,7 +26,7 @@ A dimension consists of:
 
 * A dimension id (Its type is `RegistryKey<World>`. An `Identifier` can be converted to `RegistryKey<World>`)
 * A dimension type. It defines the world height, skylight and other properties. (You can define your dimension types in json files. Then you can get it from the `DynamicRegistryManager`)
-* A chunk generator. It defines how to generate chunks. To create the chunk generator, you probably need to access the registries to get the biomes and other things via `DynamicRegistryManager`.
+* A chunk generator. It does world generation of that dimension. To create the chunk generator, you probably need to access the registries to get the biomes and other things via `DynamicRegistryManager`.
 
 A `DimensionOptions` contains a dimension type `RegistryEntry` and a chunk generator.
 
@@ -70,19 +70,19 @@ Then it will save the configuration as a json file in the folder `q_dimension_co
 
 Remove a dimension dynamically:
 
-```
+```java
 RegistryKey<World> dimId = RegistryKey.of(Registry.WORLD_KEY, new Identifier("namespace:new_dimension_id"));
 
 ServerWorld world = MiscHelper.getServer().getWorld(dimId);
 
-DimensionAPI.removeDimensionDynamically(dimId);
+DimensionAPI.removeDimensionDynamically(world);
 ```
 
-That code will remove the dimension from the server world map and send sync packets to client.
+That code will remove the dimension from the server world map and send sync packets to client. This will not delete the world saving (blocks, entities) of that dimension. If you re-add the dimension, the blocks and entities will still be there.
 
 If you saved that dimension's configuration, you need to delete the configuration:
 
-```
+```java
 DimensionAPI.deleteDimensionConfiguration(dimId);
 ```
 
@@ -94,7 +94,7 @@ The utility library supports another way of adding dimensions other than using J
 * It will not add your dimension into `level.dat` and cause issues after uninstalling the mod.
 * It will show the warning screen ("worlds using experimental settings are not supported") when entering a world.
 
-IP's dimension API overcomes these obstacles. To use the dimension API, you need to keep the dimension type json and delete the dimension json. Then add the dimension in `DimensionAPI.serverDimensionsLoadEvent` using `DimensionAPI.addDimension`. (`DimensionAPI.addDimension` should not be used outside of the event.)
+ImmPtl's dimension API overcomes these obstacles. To use the dimension API, you need to keep the dimension type json and delete the dimension json. Then add the dimension in `DimensionAPI.serverDimensionsLoadEvent` using `DimensionAPI.addDimension`. (`DimensionAPI.addDimension` should not be used outside of the event.)
 
 ##### In 1.18.2:
 
@@ -126,7 +126,7 @@ DimensionAPI.serverDimensionsLoadEvent.register((generatorOptions, registryManag
 
 To remove the screen of "worlds using experimental settings are not supported", you need to do mark the namespace stable.
 
-For example, your dimension is `aaa:bbb`, then do this during mod initialization:
+For example, if your dimension is `aaa:bbb`, then do this during mod initialization:
 
 ```
 LifecycleHack.markNamespaceStable("aaa");
@@ -150,13 +150,13 @@ DimensionAPI.serverDimensionsLoadEvent.register((generatorOptions, registryManag
     
     // directly register the dimension
     Identifier dimensionId = new Identifier("namespace:dimension_id");
-    IPDimensionAPI.addDimension(
+    DimensionAPI.addDimension(
         seed, registry, dimensionId, () -> dimensionType,
         new CustomChunkGenerator(seed, biomeSource)
     );
     
     // mark it non-persistent so it won't be saved into level.dat
-    IPDimensionAPI.markDimensionNonPersistent(dimensionId);
+    DimensionAPI.markDimensionNonPersistent(dimensionId);
 });
 ```
 
@@ -244,7 +244,7 @@ To create the reverse/flipped portal entity, use `PortalAPI.createReversePortal`
 
 #### About Rotations and Quaternions
 
-You can set the portal's rotating transformation by `setRotationTransformation()` . The rotation transformation is represented using quaternion. There is a vanilla quaternion class `net.minecraft.util.math.Quaternion` and IP's quaternion class `DQuaternion`. The vanilla quaternion uses float and is mutable. `DQuaternion` uses double and is immutable.
+You can set the portal's rotating transformation by `setRotationTransformation()` . The rotation transformation is represented using quaternion. There is a vanilla quaternion class `net.minecraft.util.math.Quaternion` and ImmPtl's quaternion class `DQuaternion`. The vanilla quaternion uses float and is mutable. `DQuaternion` uses double and is immutable.
 
 A quaternion is a rotating transformation. For example you can create a rotation along Y axis for 45 degrees by `DQuaternion.rotateByDegrees(new Vec3d(0,1,0),45).toMcQuaternion()` . 
 
@@ -258,7 +258,7 @@ About quaternions, you just need to know these:
 
 Quaternion can not only represent a rotating process, it can also represent an orientation.  You can manipulate portal orientation by `PortalAPI.getPortalOrientationQuaternion` and `PortalAPI.setPortalOrientationQuaternion` .
 
-IP does not use Euler angle for rotation because Euler angle requires handling many edge cases and is more complex.
+ImmPtl does not use Euler angle for rotation because Euler angle requires handling many edge cases and is more complex.
 
 ### Chunk Loading API
 
@@ -310,17 +310,17 @@ This mod (Fabric version)'s mod id is `immersive_portals`. It has 3 mods jar-in-
 
 The Immersive Portals Core contains the core portal functionality:
 
-* Recursive portal rendering (Rendering context management, transformation management, OpenGL state and framebuffer management) and GUI portal rendering
+* Recursive portal rendering
 * Client multi-world loading
 * Server-side remote chunk loading
 * Remote chunk/entity networking synchronization
-* Client dimension transition without loading screen
-* Multidimensional player position mutual synchronization
+* Client dimension transition without loading screen and multi-dimensional position synchronization
 * Global portal management
 * Cross portal block interaction, cross portal sound
 * Cross portal entity rendering
 * Cross portal collision handling
 * Datapack-based custom portal generation (and general breakable portal)
+* GUI portal rendering
 * Integration with Pehkui, Sodium, Iris
 
 The Core registers portal entity types and portal placeholder block. The Core (hopefully) does not change existing vanilla behavior.

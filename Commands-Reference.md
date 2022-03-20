@@ -201,7 +201,7 @@ Create a small inward wrapping zone. The generated portals are normal portals. (
 Similar to the above but the wrapping zone is outward.
 
 #### `/portal create_scaled_box_view <x1> <y1> <z1> <x2> <y2> <z2> <scale> <placeTargetEntity> <isBiWay> [teleportChangesScale]`
-Note: [MiniScaled](https://github.com/qouteall/MiniScaledMod/blob/1.17/README.md) mod allows creating scale boxes easily.
+Note: [MiniScaled](https://www.curseforge.com/minecraft/mc-mods/miniscaled) mod allows creating scale boxes easily.
 
 Create a scaled box wrapping zone. `<x1> <y1> <z1> <x2> <y2> <z2>` defines the inner box area. `<placeTargetEntity>` defines the outer box position. If `isBiWay` is true, it will generate the reverse portals for every portal. `teleportChangesScale` defines the generated portal's `teleportChangesScale` attribute.
 
@@ -319,6 +319,8 @@ Erase the blocks of the chunks near you. Can be used for checking dimension stac
 #### `/portal debug profile gc`
 
 Call `System.gc()` and show the memory usage. Requires level 4 permission.
+
+Note: The memory usage is influenced by many random factors. To test whether it has a memory leak, you should run the game for at least 5 minutes.
 
 #### `/portal debug report_resource_consumption`
 
