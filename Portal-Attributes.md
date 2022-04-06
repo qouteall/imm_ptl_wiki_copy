@@ -1,6 +1,6 @@
 These are the attributes that a portal has.
 
-You can edit them by `/portal set_portal_nbt` command.
+You can edit them by `/portal set_portal_nbt` command. (Don't use `/data` command)
 
 [Portal Customization](https://github.com/qouteall/ImmersivePortalsMod/wiki/Portal-Customization)
 

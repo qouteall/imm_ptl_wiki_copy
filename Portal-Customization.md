@@ -69,7 +69,7 @@ There are some portal-targeted commands for managing portals. You need to point 
 
 [Portal Attributes](https://github.com/qouteall/ImmersivePortalsMod/wiki/Portal-Attributes)
 
-Note: these portal targeted commands only affect one portal entity. To edit a bi-way bi-faced portal, it's recommended to use `/portal remove_connected_portals` first.
+Note: It's not recommended to use `/data` command to change the portal's NBT data because `/data` command will not synchronize the portal data to the client and start portal animation. It's recommended to use `/portal set_portal_nbt` command.
 
 #### Edit Portals Using Command Blocks and Functions
 All portal targeted commands can be used by non-player command executors. If the command sender is a portal entity, the command will target that portal entity. For example `/execute as @e[type=immersive_portals:portal] run portal set_portal_destination minecraft:the_end 0 80 0`
