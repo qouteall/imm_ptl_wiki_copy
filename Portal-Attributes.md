@@ -89,6 +89,8 @@ NBT tag: `commandsOnTeleported`
 
 Example: Make the portal to damage the entities that cross this portal `/portal set_portal_nbt {commandsOnTeleported:["/effect give @s minecraft:instant_damage 1"]}`
 
+If the command contains quotation mark `"`, you need to change it to `\"`. Example: `/portal set_portal_nbt {commandsOnTeleported:["/say \"hi\""]}` 
+
 ### Accessibility Attributes
 
 #### Teleportable

@@ -68,7 +68,7 @@ Specify a block that the bedrock will be replaced into. If empty, the bedrock wi
 
 ### Re-configure Dimension Stack Using the Command
 
-This mod has command `/portal dimension_stack` (since MC 1.18) that allows re-configuring dimension stack after the world has been created.
+This mod has command `/portal dimension_stack` (since MC 1.18) that allows re-configuring dimension stack when the world was already created.
 
 
 

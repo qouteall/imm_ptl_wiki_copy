@@ -261,13 +261,17 @@ These commands are provided by mod `q_misc_util` (this mod is bundled by Immersi
 
 Dynamically add a new dimension. That new dimension's dimension type and chunk generator will be the same as the `templateDimension`. If you provide the argument `newSeed`, then the new dimension will be in another seed. It's possible to clone other mod's dimensions.
 
+This command only clones the dimension type and world generator. It will not clone the things in world (blocks, entities, ...).
+
 Example: `/dims clone_dimension minecraft:overworld "aaa:bbb"` will dynamically add dimension `aaa:bbb` whiches world generation is the same as the overworld.
 
 The configuration of the new dimensions will be saved in the `q_dimension_configs` folder in the world saving.
 
 #### `/dims remove_dimension <dimension>`
 
-Dynamically remove a dimension. Cannot remove a vanilla dimension.
+Dynamically remove a dimension.
+
+This command will not delete the world saving of that dimension. If you re-add that dimension, its blocks and entities will still be there.
 
 ## Debugging Commands
 
