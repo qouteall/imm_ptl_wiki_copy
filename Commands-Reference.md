@@ -224,8 +224,10 @@ The portals will have "teleport changes scale" disabled.
 
 This command requires that the scale box area is either aligned to chunk border (Press F3+G to see the chunk border) or does not have anything around that area (for example, a skyland). Because the merged portal rendering does not handle the front clipping well, if this requirement is not meet, the things outside the box may appear in view.
 
-#### `/portal cb_make_portal <width> <height> <fromEntity> <toEntity>`
+#### `/portal cb_make_portal <width> <height> <fromEntity> <toEntity> [portalName]`
 Create a portal entity that goes from `fromEntity` to `toEntity`. The portal's orientation is determined by `fromEntity` 's orientation.
+
+If the `portalName` is present, the generated portal will have the custom name. You can then select that portal using `@e[name="xxx"]`.
 
 #### `/portal create_connected_rooms roomSize <sizeX> <sizeY> <sizeZ> roomNumber <roomNumber>`
 
