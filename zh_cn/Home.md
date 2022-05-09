@@ -15,7 +15,7 @@ Discord server: https://discord.gg/BZxgURK
 
 MC 1.18.1: 兼容 Sodium 0.4.0-alpha6.
 
-MC 1.17.1: 兼容 Sodium 0.3.3.
+MC 1.17.1: 兼容 Sodium 0.3.4.
 
 MC 1.16.5: 使用 [这个](https://github.com/qouteall/sodium-fabric/releases).
 
