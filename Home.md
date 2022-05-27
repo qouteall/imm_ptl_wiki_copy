@@ -23,6 +23,8 @@ Yes. (Especially with dimension stack and scaled-view-type end portal.)
 
 You can use Sodium (but not all Sodium versions are compatible with ImmPtl, see the above).
 
+If it shows "Memory not enough" warning, you can [allocate more RAM to Minecraft](https://www.google.com/search?q=minecraft+allocate+more+ram).
+
 ##### Which mods are incompatible with ImmPtl?
 
 [Known compatibility issues](https://github.com/qouteall/ImmersivePortalsMod/issues?q=is%3Aissue+is%3Aopen+label%3A%22Mod+Compatibility%22).
@@ -43,7 +45,11 @@ This mod does not change existing vanilla portals. You need to light new portals
 
 It can only link to an empty obsidian frame with the same shape and orientation (unless you change the nether portal mode in  the config).
 
-#### How to install Immersive Portals Mod (Fabric version)
+##### It says "Memory not enough"
+
+[Allocate more memory to the game]([Check this](https://github.com/qouteall/ImmersivePortalsMod/wiki/Miscellaneous#How-to-Allocate-More-Memory-to-the-Game)).
+
+#### How to Install Immersive Portals Mod (Fabric version)
 
 Immersive Portals works on Minecraft Java Edition, and does not work on Bedrock edition.
 
@@ -54,5 +60,3 @@ After installing the Fabric loader, you need to download Fabric API (https://git
 And then [download Immersive Portals mod](https://qouteall.fun/immptl). You now get two jar files. Put these two jar files into `mods` folder. (You don't need to open these two jar files.) The `mods` folder is in the game directory. You can open the game directory from the launcher. If `mods` folder does not exist, create it. (launching MC with Fabric once will create the `mods` folder)
 
 Note that you need to download the corresponding mod jar for the corresponding Minecraft version.
-
-It's recommended to use Pehkui mod with this mod. Pehkui provides entity scaling functionality. Pehkui: https://www.curseforge.com/minecraft/mc-mods/pehkui (Currently this mod does not have integration with Pehkui on Forge.)

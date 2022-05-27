@@ -70,7 +70,11 @@ Specify a block that the bedrock will be replaced into. If empty, the bedrock wi
 
 This mod has command `/portal dimension_stack` (since MC 1.18) that allows re-configuring dimension stack when the world was already created.
 
+### How to Use Dimension Stack on a Server
 
+The first method: create a dimension stack world on client and then copy it to the server.
+
+The second method: use command `/portal dimension_stack` to enable dimension stack on the server and manually replace existing bedrock blocks into obsidian.
 
 
 

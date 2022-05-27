@@ -298,6 +298,14 @@ That framebuffer will automatically be resized to be the same size as the game w
 
 ![gui_portal.png](https://i.loli.net/2021/06/07/AKBYLdxikuEUR6o.png)
 
+
+
+## How to Make Other Mod's Portals See-through
+
+Immersive Portals' datapack-custom-portal system allows converting a conventional portal (a portal that is similar to nether portal, for example the portal of Paradise Lost) to see-through when the player goes through the portal. That JSON file can be directly put into the mod jar. [Example in Paradise Lost mod](https://github.com/devs-immortal/Paradise-Lost/blob/1.18.2/src/main/resources/data/the_aether/custom_portal_generation/ip_aether_portal.json). If the mod author did not put the conversion generation file into the mod jar, you can also use your own datapack to add it.
+
+It converts when after the player goes through portal once. The portal is not converted when lighting the portal because ImmPtl didn't know how to select the destination and generate the frame, until the player goes through the portal once.
+
 ## Mod Structure
 
 This mod (Fabric version)'s mod id is `immersive_portals`. It has 3 mods jar-in-jar.

@@ -11,12 +11,14 @@ Two unit vectors that are perpendicular to each other. These two vectors define 
 
 NBT tags:`axisWX` `axisWY` `axisWZ` `axisHX` `axisHY` `axisHZ`
 
+It's recommended to use command `/portal rotate_portal_body` to edit this attribute.
+
 #### Width, Height
 Width is the portal shape's length along the direction of `axisW`. Height is the portal shape's length along the direction of `axisH`.
 
 NBT tags: `width` `height`
 
-Example: Set the width and height to 100: `/portal set_portal_nbt {width:100,height:100,specialShape:[]}`
+It's recommended to use command `/portal set_portal_size` to edit this attribute.
 
 #### The Special Shape
 Optional. Consists of various 2d triangles.
