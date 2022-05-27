@@ -66,15 +66,3 @@ About lighting: The nether portals by default has glowstone-level lighting. For 
 ### Upgrade a World that Have Immersive Portals Things
 
 For example if you have a world in MC 1.15.2 that contains immersive portals, and then you want to upgrade the world to 1.18.2, then you need to firstly upgrade to 1.16.5 then 1.17.1 then 1.18.2. Otherwise the portals may get lost.
-
-### How to Allocate More Memory to the Game
-
-Portals may load many chunks at the same time. If the game does not have enough RAM, it may lag extremely due to GC. Minecraft by default only allocate the game 2GB memory even if your computer have more memory. You can allocate more memory to the game:
-
-Open the launcher. Click "Edit" for the game installation:
-
-![image.png](https://s2.loli.net/2022/05/28/W5cX9V36K2MBnIZ.png)
-
-Then click "More Options", you will see the JVM arguments. For example, if your PC has 8GB RAM, then you can allocate 4GB memory to the game. So change `-Xmx2G` to `-Xmx4G`. Then click "Save".
-
-![image.png](https://s2.loli.net/2022/05/28/fbJXARoYr9BKlWh.png)
