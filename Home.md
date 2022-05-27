@@ -19,11 +19,11 @@ In 1.16.5 you can use [this](https://github.com/qouteall/sodium-fabric/releases)
 
 ##### Will the portal impact performance?
 
-Yes. (Especially with dimension stack and scaled-view-type end portal.)
+Yes. (Especially with dimension stack.)
 
 You can use Sodium (but not all Sodium versions are compatible with ImmPtl, see the above).
 
-If it shows "Memory not enough" warning, you can [allocate more RAM to Minecraft](https://www.google.com/search?q=minecraft+allocate+more+ram).
+If it shows "Memory not enough" warning, you can [allocate more RAM to Minecraft](https://filmora.wondershare.com/game-recording/how-to-allocate-more-ram-to-minecraft.html).
 
 ##### Which mods are incompatible with ImmPtl?
 
@@ -44,10 +44,6 @@ This mod does not change existing vanilla portals. You need to light new portals
 ##### The nether portal does not link
 
 It can only link to an empty obsidian frame with the same shape and orientation (unless you change the nether portal mode in  the config).
-
-##### It says "Memory not enough"
-
-[Allocate more memory to the game]([Check this](https://github.com/qouteall/ImmersivePortalsMod/wiki/Miscellaneous#How-to-Allocate-More-Memory-to-the-Game)).
 
 #### How to Install Immersive Portals Mod (Fabric version)
 
