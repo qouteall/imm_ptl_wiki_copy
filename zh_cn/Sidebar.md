@@ -8,7 +8,7 @@
 
 [数据包自定义传送门生成](https://github.com/qouteall/ImmersivePortalsMod/wiki/Datapack-Based-Custom-Portal-Generation)
 
-[附加位面](https://github.com/qouteall/ImmersivePortalsMod/wiki/Alternate-Dimensions)
+[位面管理](https://github.com/qouteall/ImmersivePortalsMod/wiki/Dimension-Management)
 
 [位面纵向堆叠](https://github.com/qouteall/ImmersivePortalsMod/wiki/Dimension-Stack)
 

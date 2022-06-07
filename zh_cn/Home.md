@@ -1,5 +1,5 @@
 
-这是空间折叠(Immersive Portals, ImmPtl)模组的说明书。仅针对Fabric版本。
+这是沉浸传送门(Immersive Portals, ImmPtl)模组的说明书。仅针对Fabric版本。
 
 CurseForge: https://www.curseforge.com/minecraft/mc-mods/immersive-portals-mod
 
